@@ -1,0 +1,1662 @@
+// =============================================================================
+// Delta Finance360 AI-Powered Management Reporting — Database Schema
+// Prisma + Neon PostgreSQL
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// =============================================================================
+// CORE / MULTI-TENANT
+// =============================================================================
+
+model Company {
+  id              Int      @id @default(autoincrement())
+  name            String   // "Delta Air Lines, Inc."
+  ticker          String   // "DAL"
+  platformName    String   // "Delta Finance360"
+  tagline         String   @default("")
+  subtitle        String   @default("")
+  logoPath        String   @default("")
+  logoAlt         String   @default("")
+  copyrightHolder String   @default("")
+  copyrightYear   Int      @default(2026)
+  poweredBy       String   @default("")
+  ceo             String   @default("")
+  cfo             String   @default("")
+  fiscalYearEnd   String   @default("") // "September 30"
+  industry        String   @default("")
+  headquarters    String   @default("")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  brandColors            BrandColors?
+  fiscalPeriods          FiscalPeriod[]
+  businessSegments       BusinessSegment[]
+  financialStatements    FinancialStatement[]
+  revenueBridgeItems     RevenueBridgeItem[]
+  financialRatios        FinancialRatio[]
+  workingCapitalMetrics  WorkingCapitalMetric[]
+  kpiDefinitions         KPIDefinition[]
+  locations              Location[]
+  supplyChainMetrics     SupplyChainMetric[]
+  digitalMetrics         DigitalMetric[]
+  industryKPIs           IndustryKPI[]
+  strategicInitiatives   StrategicInitiative[]
+  riskItems              RiskItem[]
+  forwardOutlook         ForwardOutlook[]
+  keyOpportunities       KeyOpportunity[]
+  marketData             MarketData[]
+  competitors            Competitor[]
+  regionalBreakdown      RegionalBreakdown[]
+  scenarioLevers         ScenarioLever[]
+  preBuiltScenarios      PreBuiltScenario[]
+  alertTemplates         AlertTemplate[]
+  reportTemplates        ReportTemplate[]
+  closeTasks             CloseTask[]
+  trialBalanceItems      TrialBalanceItem[]
+  personalizedInsights   PersonalizedInsight[]
+  executiveNarratives    ExecutiveNarrative[]
+  businessPillars        BusinessPillar[]
+  criticalActions        CriticalAction[]
+  forwardInsights        ForwardInsight[]
+  executiveBriefings     ExecutiveBriefing[]
+  businessInsights       BusinessInsight[]
+  riskOpportunities      RiskOpportunity[]
+  businessConsoles       BusinessConsole[]
+  operationsSummary      OperationsSummary?
+  scenarioBaseline       ScenarioBaseline?
+  journalEntryStats      JournalEntryStats?
+
+  // Layer 1+2: Data Platform
+  dataSources            DataSource[]
+  dataFlows              DataFlow[]
+  dataQualityChecks      DataQualityCheck[]
+  masterDataEntities     MasterDataEntity[]
+
+  // Layer 3: Analytics Products
+  forecastResults        ForecastResult[]
+  anomalyDetections      AnomalyDetection[]
+
+  // Layer 4: EPM
+  inCycleEstimates       InCycleEstimate[]
+  planningMilestones     PlanningMilestone[]
+  platformConfigs        PlatformConfig[]
+  driverForecasts        DriverForecast[]
+
+  // Commentary
+  commentary             Commentary[]
+
+  // Enrichment Layer: Dimensional Data
+  monthlyFinancials             MonthlyFinancial[]
+  regionalPerformance           RegionalPerformance[]
+  productCategoryPerformance    ProductCategoryPerformance[]
+  daypartPerformance            DaypartPerformance[]
+  costDriverDetails             CostDriverDetail[]
+  varianceExplanations          VarianceExplanation[]
+  weeklySnapshots               WeeklySnapshot[]
+  elasticityFactors             ElasticityFactor[]
+  competitorQuarterlyMetrics    CompetitorQuarterlyMetric[]
+  storeClusters                 StoreCluster[]
+
+  // Platform Enhancement Layer
+  storeFormatMix               StoreFormatMix[]
+  strategyExecution            StrategyExecution[]
+  commodityPrices              CommodityPrice[]
+  fxImpacts                    FXImpact[]
+  laborMetrics                 LaborMetric[]
+  customerSatisfaction         CustomerSatisfaction[]
+  promotionalCalendar          PromotionalCalendar[]
+  storeRenovations             StoreRenovation[]
+
+  @@map("companies")
+}
+
+model BrandColors {
+  id           Int    @id @default(autoincrement())
+  companyId    Int    @unique
+  primary      String // "#006241"
+  primaryDark  String // "#1E3932"
+  primaryLight String // "#D4E9E2"
+  primaryAlt   String // "#00704A"
+  navBg        String @default("")
+  navBgLight   String @default("")
+  accent       String @default("")
+  success      String @default("")
+  warning      String @default("")
+  danger       String @default("")
+  info         String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("brand_colors")
+}
+
+// =============================================================================
+// TIME DIMENSION
+// =============================================================================
+
+model FiscalPeriod {
+  id        Int    @id @default(autoincrement())
+  companyId Int
+  type      String // "quarter" | "annual"
+  label     String // "Q4 FY25" or "FY25"
+  year      Int    // 2025
+  quarter   Int?   // 1-4, null for annual
+  startDate String @default("")
+  endDate   String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  // Fact tables linked to this period
+  quarterlyResults      QuarterlyResult?
+  segmentResults        SegmentResult[]
+  financialStatements   FinancialStatement[]
+  revenueBridgeItems    RevenueBridgeItem[]
+  financialRatios       FinancialRatio[]
+  workingCapitalMetrics WorkingCapitalMetric[]
+  kpiValues             KPIValue[]
+  locationMetrics       LocationMetric[]
+  supplyChainMetrics    SupplyChainMetric[]
+  driverMetrics         DriverMetric[]
+  marketData            MarketData[]
+  regionalBreakdown     RegionalBreakdown[]
+  forwardOutlook        ForwardOutlook[]
+
+  // Enrichment Layer
+  monthlyFinancials          MonthlyFinancial[]
+  regionalPerformance        RegionalPerformance[]
+  productCategoryPerformance ProductCategoryPerformance[]
+  daypartPerformance         DaypartPerformance[]
+  costDriverDetails          CostDriverDetail[]
+  varianceExplanations       VarianceExplanation[]
+  competitorQuarterlyMetrics CompetitorQuarterlyMetric[]
+  storeClusters              StoreCluster[]
+
+  // Platform Enhancement Layer
+  storeFormatMix             StoreFormatMix[]
+  fxImpacts                  FXImpact[]
+  laborMetrics               LaborMetric[]
+  customerSatisfaction       CustomerSatisfaction[]
+
+  @@unique([companyId, label])
+  @@map("fiscal_periods")
+}
+
+// =============================================================================
+// FINANCIAL DATA
+// =============================================================================
+
+model QuarterlyResult {
+  id              Int    @id @default(autoincrement())
+  periodId        Int    @unique
+  revenue         Float  // in billions
+  revenueYoY      Float  // percentage
+  operatingIncome Float
+  operatingMargin Float
+  eps             Float
+  compStoreSales  Float
+  netNewStores    Int?
+
+  period FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@map("quarterly_results")
+}
+
+model BusinessSegment {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  name           String // "North America"
+  description    String @default("")
+  revenuePercent Float  // percent of total
+
+  company        Company         @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  segmentResults SegmentResult[]
+
+  @@unique([companyId, name])
+  @@map("business_segments")
+}
+
+model SegmentResult {
+  id              Int    @id @default(autoincrement())
+  segmentId       Int
+  periodId        Int
+  revenue         Float  // in billions
+  yoyChange       Float  // percentage
+  operatingMargin Float?
+
+  segment BusinessSegment @relation(fields: [segmentId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod    @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([segmentId, periodId])
+  @@map("segment_results")
+}
+
+model FinancialStatement {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  periodId        Int
+  lineItem        String // "revenue", "cogs", "grossProfit", "operatingExpenses", "operatingIncome", "netIncome"
+  label           String // Human-readable: "Net Revenues"
+  actual          Float  // in millions
+  plan            Float
+  priorYear       Float
+  variance        Float
+  variancePercent Float
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, lineItem])
+  @@map("financial_statements")
+}
+
+model RevenueBridgeItem {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  periodId    Int
+  label       String // "Comp Store Sales"
+  impact      Float  // in millions, positive = favorable
+  description String @default("")
+  category    String // "volume" | "mix" | "pricing" | "cost" | "fx" | "other"
+  sortOrder   Int    @default(0)
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@map("revenue_bridge_items")
+}
+
+model FinancialRatio {
+  id        Int    @id @default(autoincrement())
+  companyId Int
+  periodId  Int
+  name      String // "currentRatio", "debtToEquity", etc.
+  value     Float
+  benchmark Float?
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, name])
+  @@map("financial_ratios")
+}
+
+model WorkingCapitalMetric {
+  id       Int    @id @default(autoincrement())
+  companyId Int
+  periodId Int
+  name     String // "dso", "inventoryDays", "dpo"
+  actual   Float
+  target   Float
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, name])
+  @@map("working_capital_metrics")
+}
+
+// =============================================================================
+// KPIs — Core value-add for forecast vs actuals
+// =============================================================================
+
+model KPIDefinition {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  category    String // "primary" | "operational" | "digital" | "financial"
+  label       String // "Global Revenue"
+  unit        String // "%", "B", "M", etc.
+  description String @default("")
+  formula     String @default("") // e.g., "comp_transactions + comp_ticket"
+  dataSource  String @default("") // e.g., "POS System", "Rewards Platform"
+  sortOrder   Int    @default(0)
+
+  company Company    @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  values  KPIValue[]
+
+  @@unique([companyId, label])
+  @@map("kpi_definitions")
+}
+
+model KPIValue {
+  id              Int     @id @default(autoincrement())
+  kpiDefinitionId Int
+  periodId        Int
+  dataType        String  // "actual" | "forecast" | "budget" | "plan"
+  value           String  // String to handle both numbers and formatted values like "40,990"
+  target          String? // Same — could be "41,500" or "2%"
+  trend           String  // "up" | "down" | "flat"
+  trendValue      String  @default("") // "+5.0% YoY"
+  status          String  // "good" | "warning" | "critical"
+
+  kpiDefinition KPIDefinition @relation(fields: [kpiDefinitionId], references: [id], onDelete: Cascade)
+  period        FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([kpiDefinitionId, periodId, dataType])
+  @@map("kpi_values")
+}
+
+// =============================================================================
+// OPERATIONS
+// =============================================================================
+
+model OperationsSummary {
+  id                    Int   @id @default(autoincrement())
+  companyId             Int   @unique
+  totalLocations        Int
+  locationGrowth        Int   // net new
+  locationGrowthPercent Float
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("operations_summary")
+}
+
+model Location {
+  id        Int    @id @default(autoincrement())
+  companyId Int
+  name      String // "Kent Roasting Plant"
+  type      String // "Roasting Facility", "Distribution Center", etc.
+  region    String @default("")
+  country   String @default("")
+  format    String @default("") // "Traditional", "Drive-Thru Only", etc.
+  ownership String @default("") // "company-operated" | "licensed"
+
+  company Company          @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  metrics LocationMetric[]
+
+  @@map("locations")
+}
+
+model LocationMetric {
+  id         Int     @id @default(autoincrement())
+  locationId Int
+  periodId   Int?    // nullable for current/static metrics
+  label      String
+  value      String  // String to handle mixed types
+  target     String?
+  status     String  // "good" | "warning" | "critical"
+
+  location Location      @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  period   FiscalPeriod? @relation(fields: [periodId], references: [id], onDelete: SetNull)
+
+  @@map("location_metrics")
+}
+
+model SupplyChainMetric {
+  id        Int     @id @default(autoincrement())
+  companyId Int
+  periodId  Int?
+  label     String
+  value     String
+  target    String
+  trend     String  // "up" | "down" | "flat"
+  status    String  // "good" | "warning" | "critical"
+
+  company Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod? @relation(fields: [periodId], references: [id], onDelete: SetNull)
+
+  @@map("supply_chain_metrics")
+}
+
+model DigitalMetric {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  label       String
+  value       String
+  description String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("digital_metrics")
+}
+
+model IndustryKPI {
+  id          Int     @id @default(autoincrement())
+  companyId   Int
+  label       String
+  value       String
+  target      String?
+  benchmark   String?
+  description String  @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("industry_kpis")
+}
+
+// =============================================================================
+// STRATEGIC
+// =============================================================================
+
+model StrategicInitiative {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  externalId  String // original "green-apron" style id
+  name        String
+  description String @default("")
+  status      String // "on-track" | "at-risk" | "behind" | "completed"
+  budget      Float  // millions
+  spent       Float  // millions
+  progress    Int    // 0-100
+
+  company    Company                @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  milestones InitiativeMilestone[]
+  kpis       InitiativeKPI[]
+
+  @@unique([companyId, externalId])
+  @@map("strategic_initiatives")
+}
+
+model InitiativeMilestone {
+  id           Int    @id @default(autoincrement())
+  initiativeId Int
+  name         String
+  date         String
+  status       String // "completed" | "in-progress" | "planned"
+
+  initiative StrategicInitiative @relation(fields: [initiativeId], references: [id], onDelete: Cascade)
+
+  @@map("initiative_milestones")
+}
+
+model InitiativeKPI {
+  id           Int    @id @default(autoincrement())
+  initiativeId Int
+  label        String
+  target       String
+  actual       String
+  status       String // "good" | "warning" | "critical"
+
+  initiative StrategicInitiative @relation(fields: [initiativeId], references: [id], onDelete: Cascade)
+
+  @@map("initiative_kpis")
+}
+
+model RiskItem {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  externalId  String // original id
+  category    String
+  title       String
+  description String @default("")
+  severity    String // "high" | "medium" | "low"
+  likelihood  String // "high" | "medium" | "low"
+  impact      String @default("")
+  mitigation  String @default("")
+  owner       String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, externalId])
+  @@map("risk_items")
+}
+
+model ForwardOutlook {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  periodId       Int?
+  period         String // "Q1 FY26" etc.
+  revenueForecast Float
+  revenuePlan    Float
+  marginForecast Float
+  marginPlan     Float
+  keyAssumptions Json   @default("[]") // string[]
+
+  company    Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  fiscalPeriod FiscalPeriod? @relation(fields: [periodId], references: [id], onDelete: SetNull)
+
+  @@map("forward_outlook")
+}
+
+model KeyOpportunity {
+  id            Int    @id @default(autoincrement())
+  companyId     Int
+  title         String
+  revenueImpact String
+  description   String @default("")
+  timeline      String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("key_opportunities")
+}
+
+// =============================================================================
+// MARKET & COMPETITIVE INTELLIGENCE
+// =============================================================================
+
+model MarketData {
+  id                 Int    @id @default(autoincrement())
+  companyId          Int
+  periodId           Int?
+  totalMarketSize    String // "$100B"
+  companyMarketShare Float
+  marketShareTarget  Float
+  marketShareYoY     Float
+  segmentGrowth      Float
+  marketDrivers      Json   @default("[]") // string[]
+  marketChallenges   Json   @default("[]") // string[]
+
+  company Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod? @relation(fields: [periodId], references: [id], onDelete: SetNull)
+
+  @@map("market_data")
+}
+
+model Competitor {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  name        String
+  marketShare Float
+  yoyChange   Float
+  strengths   Json   @default("[]") // string[]
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, name])
+  @@map("competitors")
+}
+
+model RegionalBreakdown {
+  id         Int    @id @default(autoincrement())
+  companyId  Int
+  periodId   Int?
+  region     String
+  revenue    Float
+  growth     Float
+  keyInsight String @default("")
+
+  company Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod? @relation(fields: [periodId], references: [id], onDelete: SetNull)
+
+  @@map("regional_breakdown")
+}
+
+// =============================================================================
+// SCENARIOS
+// =============================================================================
+
+model ScenarioBaseline {
+  id               Int   @id @default(autoincrement())
+  companyId        Int   @unique
+  baselineRevenue  Float // billions
+  baselineMargin   Float // percent
+  detailedBaseline Json? // Full P&L structure: segments, COGS, OpEx, tax rate, sensitivity
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("scenario_baselines")
+}
+
+model ScenarioLever {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  externalId  String // "leasing-growth"
+  name        String
+  category    String
+  min         Float
+  max         Float
+  defaultVal  Float
+  step        Float
+  unit        String // "%", "$M", etc.
+  description String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, externalId])
+  @@map("scenario_levers")
+}
+
+model PreBuiltScenario {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  externalId     String // "global-tariff-escalation"
+  name           String
+  description    String @default("")
+  icon           String @default("")
+  confidence     Int    // 0-100
+  revenueImpact  Float  // millions
+  marginImpact   Float  // basis points
+  keyAssumptions Json   @default("[]") // string[]
+  leverSettings  Json   @default("{}") // Record<string, number>
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, externalId])
+  @@map("pre_built_scenarios")
+}
+
+// =============================================================================
+// ALERTS
+// =============================================================================
+
+model AlertTemplate {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  externalId       String
+  title            String
+  category         String
+  metricId         String @default("") // Links to KPIDefinition label or driver metric
+  threshold        String
+  severity         String // "critical" | "warning" | "info"
+  description      String @default("")
+  suggestedActions Json   @default("[]") // string[]
+  alertType        String @default("threshold") // "threshold" | "anomaly" | "forecast" | "trend"
+  frequency        String @default("weekly")    // "realtime" | "hourly" | "daily" | "weekly" | "monthly"
+  conditionPrefix  String @default("")          // e.g., "Falls below", "Exceeds", "Predicted to reach"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, externalId])
+  @@map("alert_templates")
+}
+
+// =============================================================================
+// REPORTS
+// =============================================================================
+
+model ReportTemplate {
+  id            Int      @id @default(autoincrement())
+  companyId     Int
+  externalId    String
+  name          String
+  category      String
+  frequency     String
+  description   String   @default("")
+  department    String   @default("")
+  format        String   @default("")
+  owner         String   @default("")
+  rating        Float    @default(4.0)
+  views         Int      @default(0)
+  isNew         Boolean  @default(false)
+  isTrending    Boolean  @default(false)
+  lastGenerated String?
+
+  // Business alignment — connects reports to console architecture
+  relatedConsoleId String?              // slug of parent console
+  relatedReportIds Json     @default("[]") // string[] of sibling report externalIds
+  dataSource       String   @default("")   // 'POS System', 'SAP S/4HANA', etc.
+  accessLevel      String   @default("All Finance")
+  audience         Json     @default("[]") // string[] of persona labels
+  tags             Json     @default("[]") // string[] of searchable tags
+
+  // Detail page content
+  executiveSummary String   @default("")   // 2-3 sentence summary
+  aiInsight        String   @default("")   // AI-generated latest finding
+  recommendations  Json     @default("[]") // string[]
+  keyMetrics       Json     @default("[]") // ReportKeyMetric[]
+  chartData        Json     @default("[]") // ReportChartConfig[]
+  tableData        Json?                   // ReportTableData (optional)
+
+  // Scheduling
+  nextUpdate       String   @default("")   // 'Every Monday 6:00 AM' or 'Mar 15, 2026'
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, externalId])
+  @@map("report_templates")
+}
+
+// =============================================================================
+// MONTH-END CLOSE
+// =============================================================================
+
+model CloseTask {
+  id         Int    @id @default(autoincrement())
+  companyId  Int
+  externalId String
+  phase      String
+  name       String
+  status     String // "completed" | "in-progress" | "pending" | "blocked"
+  owner      String @default("")
+  dueDate    String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, externalId])
+  @@map("close_tasks")
+}
+
+model JournalEntryStats {
+  id          Int   @id @default(autoincrement())
+  companyId   Int   @unique
+  total       Int
+  totalAmount Float // millions
+  automated   Int
+  manual      Int
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("journal_entry_stats")
+}
+
+model TrialBalanceItem {
+  id         Int    @id @default(autoincrement())
+  companyId  Int
+  label      String
+  actual     Float
+  priorMonth Float
+  budget     Float
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("trial_balance_items")
+}
+
+// =============================================================================
+// EXECUTIVE SUMMARY & MONTHLY REPORT DATA
+// =============================================================================
+
+model ExecutiveNarrative {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  periodLabel      String // "Q4 FY25"
+  overallStatus    String // "Recovering" | "Growing" | "Declining"
+  statusColor      String // "green" | "yellow" | "red"
+  narrative        String // Long-form narrative text
+  keyAchievements  Json   @default("[]") // string[]
+  concerns         Json   @default("[]") // string[]
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodLabel])
+  @@map("executive_narratives")
+}
+
+model BusinessPillar {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  periodLabel     String // "Q4 FY25"
+  externalId      String // "commercial" | "operational" | "financial" | "risk"
+  label           String // "Commercial Performance"
+  value           String // "$9.6B"
+  change          Float  // 5.0
+  target          String // "$9.4B"
+  status          String // "above" | "below" | "on-track"
+  color           String // "green" | "red" | "yellow"
+  keyInsight      String @default("")
+  actionRequired  Boolean @default(false)
+  metrics         Json   @default("[]") // Array of { label, value, change, vsTarget }
+  forecast        String @default("") // forecast text for exec summary
+  sparkline       Json   @default("[]") // number[] for sparkline chart
+  subMetrics      Json   @default("[]") // Array of { name, value } for exec summary detail
+  sortOrder       Int    @default(0)
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodLabel, externalId])
+  @@map("business_pillars")
+}
+
+model CriticalAction {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  title           String
+  priority        String // "high" | "medium" | "low" | "critical"
+  urgency         String // "immediate" | "urgent" | "planned" | "critical"
+  owner           String
+  dueDate         String
+  description     String @default("")
+  financialImpact String @default("")
+  riskLevel       String @default("")
+  status          String @default("pending") // "pending" | "in-progress" | "in-review" | "completed"
+  category        String @default("") // "Digital" | "Strategic" | "Commercial" | "Financial"
+  businessOutcome String @default("") // "Commercial" | "Operational" | "Financial" | "Risk"
+  impact          String @default("") // Short impact description
+  riskAssessment  String @default("")
+  stakeholders    Json   @default("[]") // string[]
+  dependencies    Json   @default("[]") // string[]
+  sortOrder       Int    @default(0)
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("critical_actions")
+}
+
+model ForwardInsight {
+  id         Int    @id @default(autoincrement())
+  companyId  Int
+  type       String // "opportunity" | "risk"
+  title      String
+  insight    String @default("")
+  impact     String @default("")
+  timeframe  String @default("")
+  confidence String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("forward_insights")
+}
+
+model ExecutiveBriefing {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  periodLabel     String // "Q4 FY25"
+  summary         String
+  keyHighlights   Json   @default("[]") // Array of { type, text }
+  recommendations Json   @default("[]") // string[]
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodLabel])
+  @@map("executive_briefings")
+}
+
+model BusinessInsight {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  category        String // "Comp Store Sales", "Store Portfolio", etc.
+  businessOutcome String // "Commercial" | "Operational" | "Financial" | "Risk"
+  title           String
+  metric          String @default("")
+  change          Float  @default(0)
+  status          String @default("medium") // "low" | "medium" | "high" | "critical"
+  insight         String @default("")
+  drivers         Json   @default("[]") // string[]
+  actions         Json   @default("[]") // string[]
+  relatedMetrics  Json   @default("{}") // Record<string, string>
+  sortOrder       Int    @default(0)
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("business_insights")
+}
+
+model RiskOpportunity {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  type        String // "risk" | "opportunity"
+  title       String
+  probability String @default("") // "High" | "Medium" | "Low" | "Very High"
+  impact      String @default("") // "$150-200M"
+  mitigation  String @default("") // for risks
+  action      String @default("") // for opportunities
+  trend       String @default("") // "increasing" | "stable" | "decreasing"
+  sortOrder   Int    @default(0)
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("risk_opportunities")
+}
+
+// =============================================================================
+// AI SEARCH / PERSONALIZED INSIGHTS
+// =============================================================================
+
+model PersonalizedInsight {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  title           String
+  category        String
+  insightLevel    String @default("L1") // "L1" (Facts) | "L2" (Variance) | "L3" (Forecast) | "L4" (What-If) | "L5" (Root Cause)
+  metricId        String @default("") // Links to KPIDefinition label or driver metric
+  kpiValue        String @default("")
+  trendDirection  String @default("") // "up" | "down" | "flat"
+  priority        String @default("medium") // "high" | "medium" | "low"
+  summary         String @default("")
+  confidenceScore Float  @default(0)
+  consoleLink     String @default("")
+  recommendations Json   @default("[]") // string[] or structured recommendations
+  relatedDrivers  Json   @default("[]") // related driver info
+
+  company    Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  commentary Commentary[]
+
+  @@map("personalized_insights")
+}
+
+// =============================================================================
+// COMMENTARY — Human-authored business context linked to AI insights
+// =============================================================================
+
+model Commentary {
+  id              Int      @id @default(autoincrement())
+  companyId       Int
+  externalId      String   @default(uuid())
+
+  // Content
+  title           String
+  content         String   // markdown-formatted rich text
+  contentPlain    String   @default("")
+
+  // Author metadata
+  authorName      String   @default("Sarah Johnson")
+  authorRole      String   @default("VP, Financial Planning & Analysis")
+
+  // Classification
+  category        String   // "Revenue & Market", "Financial Performance", etc.
+  tags            Json     @default("[]")
+  relatedKPIs     Json     @default("[]")
+  relatedConsoles Json     @default("[]")
+  relatedDrivers  Json     @default("[]")
+
+  // Linkage to AI insights
+  linkedInsightId Int?
+
+  // Time context
+  fiscalPeriod    String   @default("")
+  periodType      String   @default("quarter")
+
+  // Status & classification
+  status          String   @default("published")
+  priority        String   @default("medium")
+  commentaryType  String   @default("analysis")
+
+  // Driver-level linkage & AI aggregation
+  driverId            Int?     // FK to ConsoleDriver for hierarchy placement
+  aggregationLevel    String   @default("manual") // "driver" | "console" | "category" | "executive" | "manual"
+  isAiGenerated       Boolean  @default(false)
+  sourceCommentaryIds Json     @default("[]") // Int[] of child commentary IDs used in aggregation
+
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  company       Company              @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  linkedInsight PersonalizedInsight?  @relation(fields: [linkedInsightId], references: [id], onDelete: SetNull)
+  driver        ConsoleDriver?       @relation(fields: [driverId], references: [id], onDelete: SetNull)
+
+  @@unique([companyId, externalId])
+  @@map("commentary")
+}
+
+// =============================================================================
+// BUSINESS ARCHITECTURE — Semantic Model (recursive driver tree)
+// =============================================================================
+
+model BusinessConsole {
+  id        Int    @id @default(autoincrement())
+  companyId Int
+  title     String // "North America Performance"
+  category  String // "Revenue & Market"
+  segment   String @default("") // "north-america", "international", etc.
+  objective String @default("")
+
+  company Company         @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  drivers ConsoleDriver[]
+
+  @@unique([companyId, title])
+  @@map("business_consoles")
+}
+
+model ConsoleDriver {
+  id               Int    @id @default(autoincrement())
+  consoleId        Int
+  parentDriverId   Int?   // null for top-level drivers (self-referential)
+  name             String
+  description      String @default("")
+  causalityWeight  Float? // 0.0-1.0 weight of this driver's impact on parent
+  impactDirection  String @default("") // "positive" | "negative" | "mixed"
+  sortOrder        Int    @default(0)
+
+  console  BusinessConsole @relation(fields: [consoleId], references: [id], onDelete: Cascade)
+  parent   ConsoleDriver?  @relation("DriverHierarchy", fields: [parentDriverId], references: [id], onDelete: SetNull)
+  children ConsoleDriver[] @relation("DriverHierarchy")
+  metrics  DriverMetric[]
+
+  // Cross-references (many-to-many via join table)
+  crossReferencesFrom DriverCrossReference[] @relation("CrossRefFrom")
+  crossReferencesTo   DriverCrossReference[] @relation("CrossRefTo")
+  driverForecasts     DriverForecast[]
+  commentary          Commentary[]
+
+  @@map("console_drivers")
+}
+
+model DriverMetric {
+  id           Int     @id @default(autoincrement())
+  driverId     Int
+  periodId     Int?    // nullable for current/static values
+  name         String
+  unit         String  // "currency" | "percent" | "count" | "ratio" | "time" | "score" | "index"
+  currentValue String  @default("")
+  target       String  @default("")
+  frequency    String  @default("") // "quarterly" | "monthly" | "daily" | "weekly"
+  direction    String  @default("") // "higher" | "lower" | "on_target"
+
+  driver ConsoleDriver @relation(fields: [driverId], references: [id], onDelete: Cascade)
+  period FiscalPeriod? @relation(fields: [periodId], references: [id], onDelete: SetNull)
+
+  @@map("driver_metrics")
+}
+
+model DriverCrossReference {
+  id             Int    @id @default(autoincrement())
+  sourceDriverId Int
+  targetDriverId Int
+  relationship   String @default("") // Description of how they're related
+
+  sourceDriver ConsoleDriver @relation("CrossRefFrom", fields: [sourceDriverId], references: [id], onDelete: Cascade)
+  targetDriver ConsoleDriver @relation("CrossRefTo", fields: [targetDriverId], references: [id], onDelete: Cascade)
+
+  @@unique([sourceDriverId, targetDriverId])
+  @@map("driver_cross_references")
+}
+
+// =============================================================================
+// LAYER 1: DATA INPUTS — Source system registry
+// =============================================================================
+
+model DataSource {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  externalId       String // "sap-erp", "salesforce-crm", "excel-treasury"
+  name             String // "SAP S/4HANA"
+  type             String // "ERP" | "CRM" | "Excel" | "3rd Party" | "API" | "Manual"
+  category         String // "Financial" | "Operational" | "Market" | "HR" | "Digital"
+  description      String @default("")
+  connectionType   String @default("") // "Direct API" | "Batch ETL" | "File Upload" | "Streaming"
+  refreshFrequency String @default("") // "Real-time" | "Daily" | "Weekly" | "Monthly"
+  lastSyncAt       String @default("") // ISO date string
+  status           String @default("active") // "active" | "degraded" | "error" | "inactive"
+  recordCount      Int    @default(0)
+  owner            String @default("") // "Finance IT" | "Data Engineering"
+
+  company   Company    @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  dataFlows DataFlow[]
+
+  @@unique([companyId, externalId])
+  @@map("data_sources")
+}
+
+// =============================================================================
+// LAYER 2: FINANCE DATA LAKE — Data lineage, quality, and governance
+// =============================================================================
+
+model DataFlow {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  sourceId         Int
+  targetLayer      String // "bronze" | "silver" | "gold"
+  targetEntity     String // "financial_statements" | "kpi_values" | "segment_results" etc.
+  transformations  Json   @default("[]") // string[] description of transforms
+  lastRunAt        String @default("")
+  lastRunStatus    String @default("success") // "success" | "warning" | "failed"
+  recordsProcessed Int    @default(0)
+  recordsRejected  Int    @default(0)
+  avgLatencyMs     Int    @default(0)
+
+  company       Company            @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  source        DataSource         @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  qualityChecks DataQualityCheck[]
+
+  @@map("data_flows")
+}
+
+model DataQualityCheck {
+  id           Int    @id @default(autoincrement())
+  companyId    Int
+  flowId       Int?
+  checkName    String // "Null Check - Revenue" | "Range Validation - Margin"
+  checkType    String // "completeness" | "accuracy" | "timeliness" | "consistency" | "validity"
+  targetEntity String // which DB table/entity this validates
+  rule         String @default("") // "Revenue > 0 for all active periods"
+  status       String // "pass" | "warn" | "fail"
+  score        Float  @default(100) // 0-100 quality score
+  lastRunAt    String @default("")
+  failedRecords Int   @default(0)
+  totalRecords  Int   @default(0)
+  details      String @default("") // failure details
+
+  company Company   @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  flow    DataFlow? @relation(fields: [flowId], references: [id], onDelete: SetNull)
+
+  @@map("data_quality_checks")
+}
+
+model MasterDataEntity {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  domain          String // "Chart of Accounts" | "Cost Centers" | "Store Master" | "Product Hierarchy"
+  entityCount     Int    @default(0)
+  lastUpdated     String @default("")
+  steward         String @default("") // "Finance Ops" | "Store Operations"
+  goldenRecordPct Float  @default(100) // % of records that are master-governed
+  duplicateCount  Int    @default(0)
+  status          String @default("active") // "active" | "under-review" | "stale"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, domain])
+  @@map("master_data_entities")
+}
+
+// =============================================================================
+// LAYER 3: DATA & ANALYTICS PRODUCTS — ML Models, Forecasting, Anomaly Detection
+// =============================================================================
+
+model ForecastResult {
+  id              Int      @id @default(autoincrement())
+  companyId       Int
+  metricName      String   // "Revenue" | "Operating Margin" | "Comp Store Sales" | "Store Count"
+  periodLabel     String   // "Q2 FY26"
+  modelType       String   // "ARIMA" | "Prophet" | "XGBoost" | "Ensemble"
+  forecastValue   Float
+  lowerBound      Float    // 90% CI lower
+  upperBound      Float    // 90% CI upper
+  actualValue     Float?   // null for future periods
+  confidenceScore Float    @default(0.85) // 0-1
+  mape            Float    @default(0) // Mean Absolute Percentage Error
+  createdAt       DateTime @default(now())
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, metricName, periodLabel, modelType])
+  @@map("forecast_results")
+}
+
+model AnomalyDetection {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  metricName     String // "NA Comp Transactions" | "Mobile Order %"
+  detectedAt     String // ISO date
+  severity       String // "critical" | "warning" | "info"
+  direction      String // "above_expected" | "below_expected"
+  expectedValue  Float
+  actualValue    Float
+  deviationPct   Float  // how far off in percentage
+  explanation    String @default("") // AI-generated explanation
+  status         String @default("new") // "new" | "acknowledged" | "resolved" | "false-positive"
+  relatedDrivers Json   @default("[]") // string[] of driver names that likely caused this
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("anomaly_detections")
+}
+
+// =============================================================================
+// LAYER 4: EPM — In-Cycle Estimates for current period tracking
+// =============================================================================
+
+model InCycleEstimate {
+  id                Int    @id @default(autoincrement())
+  companyId         Int
+  periodLabel       String // "Q2 FY26"
+  metricName        String // "Revenue" | "Operating Income" | "Comp Store Sales"
+  mtdActual         Float  // month-to-date actual
+  qtdActual         Float  // quarter-to-date actual
+  flashEstimate     Float  // extrapolated quarter-end estimate
+  forecastValue     Float  // official forecast
+  budgetValue       Float  // budget/plan value
+  priorYearActual   Float  // prior year same period
+  daysThroughPeriod Int    // e.g., 47 out of 91
+  totalDaysInPeriod Int    @default(91)
+  lastUpdated       String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodLabel, metricName])
+  @@map("in_cycle_estimates")
+}
+
+// =============================================================================
+// EPM Configuration & Driver-Based Planning
+// =============================================================================
+
+model PlanningMilestone {
+  id          Int    @id @default(autoincrement())
+  companyId   Int
+  fiscalYear  String // "FY26"
+  label       String // "Q1 Close & Review", "Q2 Flash Estimate"
+  description String @default("")
+  month       String // "Oct", "Jan", "Mar"
+  status      String // "complete", "in-progress", "upcoming"
+  sortOrder   Int    @default(0)
+  category    String @default("planning") // "planning", "close", "review", "board"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@map("planning_milestones")
+}
+
+model PlatformConfig {
+  id        Int    @id @default(autoincrement())
+  companyId Int
+  module    String // "forecasting", "in-cycle", "bridge", "simulation", "planning"
+  key       String // "mape_threshold_good", "status_at_risk_threshold"
+  value     String // stored as string, parsed by consumer
+  type      String @default("number") // "number", "string", "json", "boolean"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, module, key])
+  @@map("platform_configs")
+}
+
+model DriverForecast {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  driverId       Int
+  metricName     String // "Comparable Transactions", "Average Ticket"
+  periodLabel    String // "Q2 FY26"
+  forecastValue  Float
+  actualValue    Float?
+  budgetValue    Float?
+  priorYearValue Float?
+  elasticity     Float? // impact multiplier: each 1 unit change = $XM revenue
+  elasticityUnit String @default("$M") // "$M", "bps", "%"
+
+  company Company       @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  driver  ConsoleDriver @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+  @@map("driver_forecasts")
+}
+
+// =============================================================================
+// ENRICHMENT LAYER: Dimensional Data for Rich AI Analysis
+// =============================================================================
+
+// Monthly P&L by segment — enables month-over-month analysis
+model MonthlyFinancial {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  periodId         Int    // FK to quarter
+  month            Int    // 1, 2, 3 within the quarter
+  monthLabel       String // "Oct 2024", "Nov 2024"
+  segment          String // "North America" | "International" | "Channel Development" | "Consolidated"
+  revenue          Float  // millions
+  cogs             Float  // millions
+  grossProfit      Float  // millions
+  storeOpex        Float  // millions
+  otherOpex        Float  // millions
+  operatingIncome  Float  // millions
+  compStoreSales   Float? // percentage
+  transactions     Float? // millions
+  averageTicket    Float? // dollars
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, month, segment])
+  @@map("monthly_financials")
+}
+
+// Regional performance — enables geographic drill-down
+model RegionalPerformance {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  periodId         Int
+  region           String // "US - West", "US - Northeast", "China - Tier 1", "Japan", "UK", etc.
+  storeCount       Int
+  revenue          Float  // millions
+  revenueYoY       Float  // percentage
+  compStoreSales   Float  // percentage
+  compTransactions Float  // percentage
+  averageTicket    Float  // dollars
+  operatingMargin  Float  // percentage
+  rewardsMemberPct Float? // percentage of transactions from Rewards
+  mobileOrderPct   Float? // percentage of transactions via mobile
+  newStores        Int?
+  closedStores     Int?
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, region])
+  @@map("regional_performance")
+}
+
+// Product category performance — enables product mix analysis
+model ProductCategoryPerformance {
+  id                Int    @id @default(autoincrement())
+  companyId         Int
+  periodId          Int
+  category          String // "Espresso Beverages", "Cold Beverages", "Refreshers & Tea", "Food", "Packaged & Other"
+  segment           String // "North America" | "International" | "Consolidated"
+  revenue           Float  // millions
+  revenueYoY        Float  // percentage
+  mixPercent        Float  // percentage of total segment revenue
+  mixChange         Float  // change in mix percentage YoY (bps)
+  averageTicket     Float  // dollars
+  grossMarginPct    Float  // percentage
+  customizationRate Float? // percentage of orders with add-ons
+  unitsPerTransaction Float? // items per transaction
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, category, segment])
+  @@map("product_category_performance")
+}
+
+// Daypart performance — enables intra-day analysis
+model DaypartPerformance {
+  id                Int    @id @default(autoincrement())
+  companyId         Int
+  periodId          Int
+  daypart           String // "Morning (5-11am)", "Midday (11am-2pm)", "Afternoon (2-5pm)", "Evening (5-Close)"
+  segment           String // "North America" | "International" | "Consolidated"
+  transactionPct    Float  // percentage of daily transactions
+  revenuePct        Float  // percentage of daily revenue
+  compSales         Float  // comp sales growth for this daypart
+  averageTicket     Float  // dollars
+  laborCostPct      Float  // labor as % of daypart revenue
+  throughputMinutes Float? // average service time in minutes
+  foodAttachRate    Float? // percentage of transactions with food item
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, daypart, segment])
+  @@map("daypart_performance")
+}
+
+// Cost driver decomposition — enables cost analysis
+model CostDriverDetail {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  periodId         Int
+  segment          String // "North America" | "International" | "Channel Development" | "Consolidated"
+  costCategory     String // "COGS" | "Store Operating Expenses" | "G&A" | "Depreciation" | "Restructuring"
+  costSubcategory  String // e.g., "Green Coffee", "Dairy & Alternatives", "Store Labor", "Rent & Occupancy"
+  amount           Float  // millions
+  percentOfRevenue Float  // percentage
+  yoyChange        Float  // percentage change
+  budget           Float  // millions
+  varianceToBudget Float  // millions (favorable = positive)
+  driver           String @default("") // explanation: "Commodity inflation", "Wage increases", etc.
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, segment, costCategory, costSubcategory])
+  @@map("cost_driver_details")
+}
+
+// Pre-computed variance explanations — enables "why" analysis
+model VarianceExplanation {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  periodId        Int
+  metricName      String // "Revenue", "Operating Margin", "Comp Store Sales", "EPS"
+  varianceType    String // "actual_vs_plan" | "actual_vs_prior_year" | "actual_vs_forecast" | "sequential"
+  totalVariance   Float  // the total variance amount
+  totalVarianceUnit String // "$M" | "bps" | "%" | "per share"
+  driverBreakdown Json   // Array of { driver, impact, impactUnit, explanation, confidence }
+  narrative       String // AI-readable narrative explaining the variance
+  recommendations Json   @default("[]") // string[] of recommended actions
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, metricName, varianceType])
+  @@map("variance_explanations")
+}
+
+// Weekly KPI snapshots — enables trend analysis at higher granularity
+model WeeklySnapshot {
+  id            Int    @id @default(autoincrement())
+  companyId     Int
+  weekNumber    Int    // 1-52
+  weekLabel     String // "W1 Q2 FY26" or "Jan 6-12, 2026"
+  weekStartDate String // ISO date
+  metricName    String // "Revenue Run Rate", "Comp Sales Trend", "Mobile Order %", etc.
+  value         Float
+  priorWeek     Float?
+  weekOverWeek  Float? // % change
+  yoyValue      Float? // same week prior year
+  yoyChange     Float? // % change vs prior year
+  status        String @default("on_track") // "on_track" | "watch" | "at_risk" | "ahead"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, weekLabel, metricName])
+  @@map("weekly_snapshots")
+}
+
+// Elasticity factors — enables "what if" sensitivity analysis
+model ElasticityFactor {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  driverMetric   String // "Comp Transactions", "Average Ticket", "Coffee Cost per Lb"
+  impactedMetric String // "Revenue", "Operating Margin", "EPS"
+  elasticity     Float  // e.g., 1% change in driver = X change in impacted
+  elasticityUnit String // "$M", "bps", "cents"
+  direction      String // "positive" (driver up → metric up) | "negative" (driver up → metric down)
+  confidence     Float  // 0-1
+  description    String @default("") // "Each 1% increase in comp transactions drives ~$XM in revenue"
+  segment        String @default("Consolidated") // can be segment-specific
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, driverMetric, impactedMetric, segment])
+  @@map("elasticity_factors")
+}
+
+// Competitor quarterly metrics — enables competitive benchmarking over time
+model CompetitorQuarterlyMetric {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  periodId       Int
+  competitorName String // "Dutch Bros", "Dunkin'", "Luckin Coffee", "McDonald's McCafé"
+  metricName     String // "Revenue", "Store Count", "Comp Sales", "Market Share"
+  value          Float
+  unit           String // "$B", "count", "%"
+  yoyChange      Float? // percentage
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, competitorName, metricName])
+  @@map("competitor_quarterly_metrics")
+}
+
+// Store cluster/cohort analysis — enables portfolio analysis
+model StoreCluster {
+  id               Int    @id @default(autoincrement())
+  companyId        Int
+  periodId         Int
+  clusterName      String // "High-Volume Urban", "Drive-Thru Suburban", "Licensed Airport", "New (<1yr)", etc.
+  storeCount       Int
+  pctOfPortfolio   Float  // percentage of total stores
+  avgRevenue       Float  // average annual revenue per store ($K)
+  avgTicket        Float  // dollars
+  avgDailyTxns     Int    // average daily transactions
+  compSales        Float  // comp sales growth %
+  operatingMargin  Float  // percentage
+  rewardsPct       Float  // percentage of transactions from Rewards members
+  mobileOrderPct   Float  // percentage mobile order
+  avgDriveThruTime Float? // minutes (only for DT stores)
+  laborCostPct     Float  // labor as % of revenue
+  fourWallROI      Float? // store-level return on investment %
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, clusterName])
+  @@map("store_clusters")
+}
+
+// =============================================================================
+// PLATFORM ENHANCEMENT LAYER
+// =============================================================================
+
+model StoreFormatMix {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  periodId       Int
+  segment        String // "North America" | "International" | "Consolidated"
+  format         String // "Company-Operated" | "Licensed" | "Drive-Thru" | "Reserve" | "Delivery-Only"
+  storeCount     Int
+  pctOfTotal     Float  // percentage of segment total
+  avgRevenue     Float  // $K annual per store
+  yoyGrowth      Float  // %
+  compSales      Float? // %
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, segment, format])
+  @@map("store_format_mix")
+}
+
+model StrategyExecution {
+  id           Int    @id @default(autoincrement())
+  companyId    Int
+  pillar       String // "Morning Coffee Ritual" | "Afternoon Experience" | "Barista Culture" | "Store Design" | "Brand Communication"
+  kpiName      String
+  baseline     Float
+  target       Float
+  current      Float
+  unit         String // "%" | "min" | "$" | "score" | "count"
+  status       String // "on-track" | "at-risk" | "behind" | "ahead"
+  quarterLabel String // "Q2 FY26"
+  commentary   String @default("")
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, pillar, kpiName, quarterLabel])
+  @@map("strategy_execution")
+}
+
+model CommodityPrice {
+  id             Int    @id @default(autoincrement())
+  companyId      Int
+  commodity      String // "Arabica Coffee" | "Robusta Coffee" | "Dairy" | "Sugar" | "Vanilla" | "Paper/Packaging"
+  periodLabel    String // "Q2 FY26"
+  spotPrice      Float
+  hedgedPrice    Float?
+  priorYearPrice Float
+  unit           String // "$/lb" | "$/gal" | "$/ton"
+  hedgeCoverage  Float? // % of next 12 months hedged
+  yoyChange      Float  // %
+  forecastNext   Float? // forecasted next quarter
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, commodity, periodLabel])
+  @@map("commodity_prices")
+}
+
+model FXImpact {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  periodId        Int
+  currencyPair    String // "CNY/USD" | "JPY/USD" | "GBP/USD" | "CAD/USD" | "EUR/USD"
+  segment         String // "International" | "Channel Development"
+  revenueImpact   Float  // $M (negative = headwind)
+  operatingImpact Float  // $M
+  avgRate         Float
+  priorYearRate   Float
+  hedgedRate      Float?
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, currencyPair])
+  @@map("fx_impacts")
+}
+
+model LaborMetric {
+  id                  Int    @id @default(autoincrement())
+  companyId           Int
+  periodId            Int
+  region              String // "US - West" | "US - Northeast" | "China" etc.
+  avgWageRate         Float  // $/hr
+  turnoverRate        Float  // % annual
+  hoursPerStore       Float  // weekly avg
+  overtimePct         Float  // % of total hours
+  trainingHours       Float  // per partner per quarter
+  partnerSatisfaction Float? // score 0-100
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, region])
+  @@map("labor_metrics")
+}
+
+model CustomerSatisfaction {
+  id                   Int    @id @default(autoincrement())
+  companyId            Int
+  periodId             Int
+  region               String
+  npsScore             Float  // -100 to +100
+  csatScore            Float  // 0-100
+  waitTimeSatisfaction Float? // 0-100
+  orderAccuracy        Float? // %
+  sampleSize           Int?
+
+  company Company      @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  period  FiscalPeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, periodId, region])
+  @@map("customer_satisfaction")
+}
+
+model PromotionalCalendar {
+  id              Int    @id @default(autoincrement())
+  companyId       Int
+  campaignName    String // "Pumpkin Spice Launch" | "Red Cup Season"
+  startDate       String // ISO date
+  endDate         String
+  category        String // "seasonal" | "LTO" | "loyalty" | "value" | "brand"
+  revenueImpact   Float? // $M estimated incremental
+  transactionLift Float? // %
+  ticketLift      Float? // %
+  status          String // "planned" | "active" | "completed" | "cancelled"
+  region          String @default("Global") // "North America" | "International" | "Global"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, campaignName, startDate])
+  @@map("promotional_calendar")
+}
+
+model StoreRenovation {
+  id                         Int    @id @default(autoincrement())
+  companyId                  Int
+  renovationType             String // "Siren System" | "Store Remodel" | "Drive-Thru Enhancement" | "New Format"
+  segment                    String // "North America" | "International"
+  storesComplete             Int
+  storesInProgress           Int
+  storesPlanned              Int
+  totalTarget                Int
+  completionPct              Float
+  avgCost                    Float  // $K per store
+  avgRevenueUplift           Float? // % revenue increase post-renovation
+  avgThroughputImprovement   Float? // % improvement
+  quarterLabel               String // "Q2 FY26"
+
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, renovationType, segment, quarterLabel])
+  @@map("store_renovations")
+}
+
+// =============================================================================
+// AI CHAT — Persistent conversation threads
+// =============================================================================
+
+model ChatThread {
+  id        String        @id @default(cuid())
+  title     String        @default("New conversation")
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  messages  ChatMessage[]
+
+  @@map("chat_threads")
+}
+
+model ChatMessage {
+  id        String     @id @default(cuid())
+  threadId  String
+  role      String     // "user" | "assistant"
+  content   String
+  metadata  Json?      // model tier, tool results, etc.
+  createdAt DateTime   @default(now())
+
+  thread ChatThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+
+  @@map("chat_messages")
+}

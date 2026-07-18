@@ -1,0 +1,44 @@
+name: Deploy to Vercel
+
+# DISABLED — Vercel's native GitHub App integration handles production deploys
+# automatically on push to main. Running this workflow alongside the GitHub App
+# causes two deployments to race for the production alias, with the Actions
+# build (which lacks Vercel's full cloud context) sometimes winning and
+# producing a broken 404 deployment.
+#
+# To re-enable: change the `on` trigger back and remove the GitHub App
+# integration in the Vercel project settings so only one path deploys.
+#
+# Required secrets when re-enabling: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
+
+on:
+  workflow_dispatch:  # manual trigger only — automatic push deploys disabled
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy to Vercel (production)
+        run: vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
