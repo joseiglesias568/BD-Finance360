@@ -1,0 +1,13 @@
+{
+  "name": "BD Finance360",
+  "short_name": "BD360",
+  "description": "AI-Powered Management Reporting for Becton, Dickinson and Company",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/logo-icon.svg", "sizes": "192x192", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#00A651",
+  "background_color": "#003B2C",
+  "display": "standalone",
+  "start_url": "/"
+}

@@ -1,0 +1,317 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for Finance360 - BD Branding */
+:root {
+    /* BD Brand Colors (RGB format) */
+    --primary-navy: 0 166 81; /* #00A651 - BD Green */
+    --primary-navy-light: 0 122 61; /* #007A3D - Dark BD Green */
+    --primary-green: 0 166 81; /* #00A651 - BD Green */
+    --primary-green-dark: 0 122 61; /* #007A3D - Dark BD Green */
+    --primary-green-light: 230 245 236; /* #E6F5EC - Light Green Tint */
+
+    --secondary-green: 0 90 139; /* #005A8B - BD Blue */
+    --secondary-green-light: 0 154 199; /* #009AC7 - Info blue */
+    --secondary-blue: 59 130 246; /* #3b82f6 - Info Blue */
+    --secondary-success: 16 185 129; /* #10b981 - Success green */
+    --secondary-warning: 245 158 11; /* #f59e0b - Warning amber */
+    --secondary-danger: 239 68 68; /* #ef4444 - Danger red */
+
+    --background-secondary: 249 250 251;
+    --background-dark: 0 59 44; /* #003B2C - Nav background */
+
+    --text-primary: 17 24 39;
+    --text-secondary: 107 114 128;
+    --text-muted: 156 163 175;
+    --text-inverse: 255 255 255;
+
+    --accent-green: 0 166 81; /* #00A651 - BD Green */
+    --accent-red: 239 68 68;
+    --accent-yellow: 245 158 11;
+
+    --border-default: 229 231 235;
+    --border-green: 0 166 81; /* #00A651 */
+
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --glow-green: 0 0 20px rgba(0, 166, 81, 0.3);
+    --glow-green-intense: 0 0 40px rgba(0, 166, 81, 0.5);
+
+    /* Tailwind/shadcn UI variables (HSL format) */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 145 100% 33%; /* #00A651 - BD Green HSL */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border-color: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 145 100% 33%; /* #00A651 HSL */
+    --radius: 0.5rem;
+}
+
+/* Graphik Font Import - Removed duplicate Inter import (handled by Next.js) */
+
+/* Global styles */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: hsl(var(--background));
+    color: rgb(var(--text-primary));
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes for Finance360 theme */
+@layer utilities {
+
+    /* Text colors */
+    .text-primary {
+        color: rgb(var(--primary-green));
+    }
+
+    /* Background colors */
+    .bg-primary {
+        background-color: rgb(var(--primary-green));
+    }
+
+    .bg-dark {
+        background-color: rgb(var(--background-dark));
+    }
+
+    /* Professional card style */
+    .card {
+        @apply bg-white rounded-lg shadow-sm border border-gray-100 transition-shadow hover:shadow-md;
+    }
+
+    /* Clean button styles - Verizon Black */
+    .btn-primary {
+        @apply text-white font-medium py-2 px-4 rounded-md transition-colors;
+        background-color: #003B2C;
+    }
+    .btn-primary:hover {
+        background-color: #007A3D;
+    }
+
+    .btn-secondary {
+        @apply bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium py-2 px-4 rounded-md transition-colors;
+    }
+
+    .btn-ghost {
+        @apply hover:bg-gray-100 text-gray-700 font-medium py-2 px-4 rounded-md transition-colors;
+    }
+
+    /* Minimal input style - Verizon Black focus */
+    .input {
+        @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:border-transparent transition-colors;
+        --tw-ring-color: #003B2C;
+    }
+
+    /* Clean metric card */
+    .metric-card {
+        @apply bg-white p-6 rounded-lg border border-gray-100 hover:shadow-sm transition-all;
+    }
+
+    /* Professional gradient text - Verizon Black */
+    .gradient-text {
+        @apply bg-gradient-to-r bg-clip-text text-transparent;
+        --tw-gradient-from: #003B2C;
+        --tw-gradient-to: #003B2C;
+    }
+}
+
+/* Remove excessive animations and color transitions */
+/* REMOVED: Global transition on all elements causes Safari repaint issues */
+/* Instead, apply transitions only where needed via Tailwind classes */
+
+/* Scrollbar styling for professional look */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(var(--background-secondary));
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(var(--text-muted));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--text-secondary));
+}
+
+/* Hide scrollbar for specific elements */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Finance360 Brand Utility Classes - Verizon Branding */
+.bg-navy {
+    background: rgb(var(--primary-navy));
+}
+
+.bg-navy-gradient {
+    background: linear-gradient(135deg, rgb(var(--primary-navy)) 0%, rgb(var(--primary-navy-light)) 100%);
+}
+
+.bg-cyan-gradient {
+    /* Legacy class - now uses Verizon Black */
+    background: linear-gradient(135deg, rgb(var(--primary-green)) 0%, rgb(var(--primary-green-dark)) 100%);
+}
+
+.bg-purple-gradient {
+    /* Legacy alias - uses Verizon Black */
+    background: linear-gradient(135deg, #003B2C 0%, #003B2C 100%);
+}
+
+.text-cyan {
+    /* Legacy class - now uses Verizon Black */
+    color: rgb(var(--primary-green));
+}
+
+.text-purple {
+    /* Legacy alias - uses Verizon Black */
+    color: rgb(var(--secondary-green));
+}
+
+.text-magenta {
+    color: rgb(var(--secondary-danger));
+}
+
+.border-cyan {
+    /* Legacy class - now uses Verizon Black */
+    border-color: rgba(var(--primary-green) / 0.2);
+}
+
+.border-purple {
+    /* Legacy alias - uses Verizon Black */
+    border-color: rgba(var(--primary-green) / 0.2);
+}
+
+.glow-cyan {
+    /* Legacy class - now uses Verizon Black */
+    box-shadow: var(--glow-green);
+}
+
+.glow-cyan-hover:hover {
+    box-shadow: var(--glow-green);
+}
+
+.glow-purple {
+    /* Legacy alias - uses Verizon Black */
+    box-shadow: var(--glow-green);
+}
+
+.glow-purple-intense {
+    /* Legacy alias - uses Verizon Black */
+    box-shadow: var(--glow-green-intense);
+}
+
+/* Additional utility classes for components */
+.text-navy-900 {
+    color: rgb(var(--primary-navy));
+}
+
+.border-cyan-500 {
+    /* Legacy class - now uses Verizon Black */
+    border-color: rgb(var(--primary-green));
+}
+
+.border-purple-500 {
+    /* Legacy alias - uses Verizon Black */
+    border-color: rgb(var(--primary-green));
+}
+
+.bg-cyan-50 {
+    /* Legacy class - now uses Verizon Black */
+    background-color: rgba(var(--primary-green) / 0.05);
+}
+
+.bg-purple-50 {
+    /* Legacy alias - uses Verizon Black */
+    background-color: rgba(var(--primary-green) / 0.05);
+}
+
+/* Animation delays for login page */
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+/* Safari-optimized pulse animation using transform instead of opacity */
+@keyframes safari-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-safari-pulse {
+    animation: safari-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    /* Force GPU acceleration for smoother animation in Safari */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Safari-specific optimizations to prevent pulsing/flickering */
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    /* Optimize backdrop-blur for Safari - reduce blur amount for better performance */
+    .backdrop-blur-sm {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
+
+    .backdrop-blur {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+    }
+
+    .backdrop-blur-lg {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+}
+
+/* Force GPU acceleration for fixed position elements in Safari */
+.fixed {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Optimize font rendering for Safari */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        /* Safari-specific: Optimize font rendering only */
+        body {
+            -webkit-font-smoothing: subpixel-antialiased;
+            -moz-osx-font-smoothing: auto;
+        }
+    }
+}
