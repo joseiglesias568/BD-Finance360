@@ -219,7 +219,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
 
                 {/* Console link indicator */}
                 {report.relatedConsoleId && CONSOLE_SHORT[report.relatedConsoleId] && (
-                    <div className="flex items-center mb-2 text-xs text-[#003B2C] bg-[#F0F0F0]/50 rounded px-2 py-1">
+                    <div className="flex items-center mb-2 text-xs text-[#1c519c] bg-[#F0F0F0]/50 rounded px-2 py-1">
                         <LayoutDashboard className="w-3 h-3 mr-1 flex-shrink-0" />
                         <span className="truncate">{CONSOLE_SHORT[report.relatedConsoleId]}</span>
                     </div>
@@ -277,7 +277,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                             </div>
                             <div className="flex items-center space-x-6">
                                 <div className="text-center">
-                                    <div className="text-2xl font-bold text-[#003B2C]">{allReports.length}</div>
+                                    <div className="text-2xl font-bold text-[#1c519c]">{allReports.length}</div>
                                     <div className="text-xs text-gray-500">Total Reports</div>
                                 </div>
                                 <div className="text-center">
@@ -289,7 +289,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     <div className="text-xs text-gray-500">Trending</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-2xl font-bold text-[#003B2C]">{favorites.size}</div>
+                                    <div className="text-2xl font-bold text-[#1c519c]">{favorites.size}</div>
                                     <div className="text-xs text-gray-500">Favorites</div>
                                 </div>
                             </div>
@@ -304,12 +304,12 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     placeholder="Search reports..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full pl-12 pr-4 py-3 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C] focus:border-[#003B2C] bg-gray-50"
+                                    className="w-full pl-12 pr-4 py-3 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c] focus:border-[#1c519c] bg-gray-50"
                                 />
                             </div>
                             <button
                                 onClick={() => setShowFilters(!showFilters)}
-                                className={`px-4 py-3 rounded-lg border transition-colors flex items-center space-x-2 ${showFilters ? 'bg-[#F0F0F0] border-[#003B2C] text-[#003B2C]' : 'border-gray-200 hover:bg-gray-50'
+                                className={`px-4 py-3 rounded-lg border transition-colors flex items-center space-x-2 ${showFilters ? 'bg-[#F0F0F0] border-[#1c519c] text-[#1c519c]' : 'border-gray-200 hover:bg-gray-50'
                                     }`}
                             >
                                 <Filter className="w-4 h-4" />
@@ -343,7 +343,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                         key={category.id}
                                         onClick={() => setSelectedCategory(category.id)}
                                         className={`px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap flex items-center space-x-2 ${selectedCategory === category.id
-                                                ? 'bg-[#003B2C] text-white shadow-sm'
+                                                ? 'bg-[#1c519c] text-white shadow-sm'
                                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                             }`}
                                     >
@@ -365,7 +365,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                         onClick={() => setFilters(f => ({ ...f, frequency: f.frequency === freq ? '' : freq }))}
                                         className={`px-3 py-1 rounded text-xs font-medium transition-all ${
                                             filters.frequency === freq
-                                                ? 'bg-[#003B2C] text-white'
+                                                ? 'bg-[#1c519c] text-white'
                                                 : 'bg-gray-50 text-gray-500 hover:bg-gray-100 border border-gray-200'
                                         }`}
                                     >
@@ -394,7 +394,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     <select
                                         value={filters.department}
                                         onChange={(e) => setFilters({ ...filters, department: e.target.value })}
-                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C]"
+                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c]"
                                     >
                                         <option value="">All Departments</option>
                                         {filterOptions.departments.map(d => (
@@ -408,7 +408,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     <select
                                         value={filters.frequency}
                                         onChange={(e) => setFilters({ ...filters, frequency: e.target.value })}
-                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C]"
+                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c]"
                                     >
                                         <option value="">All Frequencies</option>
                                         {filterOptions.frequencies.map(f => (
@@ -422,7 +422,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     <select
                                         value={filters.format}
                                         onChange={(e) => setFilters({ ...filters, format: e.target.value })}
-                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C]"
+                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c]"
                                     >
                                         <option value="">All Formats</option>
                                         {filterOptions.formats.map(f => (
@@ -436,7 +436,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     <select
                                         value={filters.rating}
                                         onChange={(e) => setFilters({ ...filters, rating: parseFloat(e.target.value) })}
-                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C]"
+                                        className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c]"
                                     >
                                         <option value="0">All Ratings</option>
                                         <option value="4">4+ Stars</option>
@@ -473,7 +473,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                             <button
                                 key={report.externalId}
                                 onClick={() => router.push(`/report-hub/${report.externalId}`)}
-                                className="flex-shrink-0 bg-white border border-gray-200 rounded-lg px-4 py-2.5 hover:border-[#003B2C] hover:shadow-sm transition-all flex items-center space-x-2 min-w-[200px] max-w-[260px]"
+                                className="flex-shrink-0 bg-white border border-gray-200 rounded-lg px-4 py-2.5 hover:border-[#1c519c] hover:shadow-sm transition-all flex items-center space-x-2 min-w-[200px] max-w-[260px]"
                             >
                                 <div className="text-left min-w-0">
                                     <div className="text-sm font-medium text-gray-900 truncate">{report.name}</div>
@@ -522,7 +522,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                             <div className="mt-6 text-center">
                                 <button
                                     onClick={() => setDisplayCount(prev => prev + 24)}
-                                    className="px-6 py-2.5 bg-white border border-gray-300 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 hover:border-[#003B2C] hover:text-[#003B2C] transition-all"
+                                    className="px-6 py-2.5 bg-white border border-gray-300 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 hover:border-[#1c519c] hover:text-[#1c519c] transition-all"
                                 >
                                     Load More ({filteredReports.length - displayCount} remaining)
                                 </button>
@@ -544,9 +544,9 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                     <div className="flex-1">
                                         <div className="flex items-center space-x-3 mb-2">
                                             <h3 className="font-semibold text-gray-900">{report.name}</h3>
-                                            <span className={`px-2 py-1 text-xs rounded-full ${report.category === 'financial' ? 'bg-[#F0F0F0] text-[#003B2C]' :
+                                            <span className={`px-2 py-1 text-xs rounded-full ${report.category === 'financial' ? 'bg-[#F0F0F0] text-[#1c519c]' :
                                                 report.category === 'store-operations' ? 'bg-emerald-100 text-emerald-700' :
-                                                    report.category === 'digital-loyalty' ? 'bg-[#F0F0F0] text-[#003B2C]' :
+                                                    report.category === 'digital-loyalty' ? 'bg-[#F0F0F0] text-[#1c519c]' :
                                                         'bg-gray-100 text-gray-700'
                                                 }`}>
                                                 {report.category}
@@ -581,7 +581,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                 setSearchQuery('');
                                 setSelectedCategory('all');
                             }}
-                            className="px-4 py-2 bg-[#003B2C] text-white rounded-lg hover:bg-[#003B2C] transition-colors"
+                            className="px-4 py-2 bg-[#1c519c] text-white rounded-lg hover:bg-[#1c519c] transition-colors"
                         >
                             Clear All Filters
                         </button>
@@ -607,7 +607,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Modal Header */}
-                            <div className="relative bg-gradient-to-r from-[#003B2C] to-[#003B2C] p-6">
+                            <div className="relative bg-gradient-to-r from-[#1c519c] to-[#1c519c] p-6">
                                 <button
                                     onClick={() => setSelectedReport(null)}
                                     className="absolute top-4 right-4 p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors"
@@ -636,11 +636,11 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
 
                                         {selectedReport.aiInsight && (
                                             <div className="bg-[#F0F0F0] rounded-lg p-4 mb-6">
-                                                <h3 className="font-semibold text-[#003B2C] mb-2 flex items-center">
+                                                <h3 className="font-semibold text-[#1c519c] mb-2 flex items-center">
                                                     <Info className="w-4 h-4 mr-2" />
                                                     AI Insight
                                                 </h3>
-                                                <p className="text-[#003B2C] text-sm">{selectedReport.aiInsight}</p>
+                                                <p className="text-[#1c519c] text-sm">{selectedReport.aiInsight}</p>
                                             </div>
                                         )}
 
@@ -664,7 +664,7 @@ export default function ReportHubClient({ reportsConfig }: ReportHubClientProps)
                                                     setRecentIds(getRecentlyViewed());
                                                     router.push(`/report-hub/${selectedReport.externalId}`);
                                                 }}
-                                                className="flex-1 px-6 py-3 bg-[#003B2C] text-white rounded-lg font-medium hover:bg-[#003B2C] transition-colors flex items-center justify-center"
+                                                className="flex-1 px-6 py-3 bg-[#1c519c] text-white rounded-lg font-medium hover:bg-[#1c519c] transition-colors flex items-center justify-center"
                                             >
                                                 <ExternalLink className="w-5 h-5 mr-2" />
                                                 Open Report

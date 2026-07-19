@@ -175,12 +175,12 @@ export const insightCharts: InsightChartsConfig = {
       ],
       // Color values are placeholders pending Step 6 finalization; structure preserved for chart engine.
       waterfallSteps: [
-        { name: 'FY 2025 Base',         base: 0,    value: 10.0, color: '#003B2C' },
+        { name: 'FY 2025 Base',         base: 0,    value: 10.0, color: '#1c519c' },
         { name: 'Premium Mix',          base: 10.0, value: 1.5,  color: '#10B981' },
         { name: 'AmEx + Loyalty',       base: 11.5, value: 1.0,  color: '#14B8A6' },
         { name: 'MRO Margin',           base: 12.5, value: 0.5,  color: '#3B82F6' },
         { name: 'Capacity Discipline',  base: 13.0, value: 1.0,  color: '#3B82F6' },
-        { name: '3-5yr Target',         base: 0,    value: 14.0, color: '#003B2C' },
+        { name: '3-5yr Target',         base: 0,    value: 14.0, color: '#1c519c' },
       ],
       stats: {
         personnelCost: 'ALPA renews Dec 2026',

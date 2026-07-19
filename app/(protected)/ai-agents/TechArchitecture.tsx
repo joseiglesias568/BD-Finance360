@@ -60,7 +60,7 @@ const architectureRows: ArchitectureRow[] = [
     {
         name: 'Consumption Layer',
         icon: Monitor,
-        gradient: 'from-[#003B2C] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
         layerKey: 'layer4',
         sections: [
             {
@@ -97,7 +97,7 @@ const architectureRows: ArchitectureRow[] = [
     {
         name: 'Data and Analytics Products',
         icon: Brain,
-        gradient: 'from-[#003B2C] to-[#007A3D]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
         layerKey: 'layer3',
         sections: [
             {
@@ -116,7 +116,7 @@ const architectureRows: ArchitectureRow[] = [
     {
         name: 'Finance Data Lake',
         icon: Database,
-        gradient: 'from-[#003B2C] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
         layerKey: 'layer2',
         sections: [
             {
@@ -135,7 +135,7 @@ const architectureRows: ArchitectureRow[] = [
     {
         name: 'Data Inputs',
         icon: Server,
-        gradient: 'from-[#007A3D] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
         layerKey: 'layer1',
         sections: [
             {
@@ -190,9 +190,9 @@ function FlowArrow() {
     return (
         <div className="flex justify-center py-1">
             <div className="flex flex-col items-center">
-                <div className="w-0.5 h-3 bg-[#003B2C]/20" />
-                <ArrowDown className="w-5 h-5 text-[#003B2C]/40" />
-                <div className="w-0.5 h-3 bg-[#003B2C]/20" />
+                <div className="w-0.5 h-3 bg-[#1c519c]/20" />
+                <ArrowDown className="w-5 h-5 text-[#1c519c]/40" />
+                <div className="w-0.5 h-3 bg-[#1c519c]/20" />
             </div>
         </div>
     );
@@ -249,7 +249,7 @@ export default function TechArchitecture() {
             >
                 <div className="flex items-start space-x-4">
                     <div className="p-3 bg-[#F0F0F0] rounded-lg">
-                        <Server className="w-6 h-6 text-[#003B2C]" />
+                        <Server className="w-6 h-6 text-[#1c519c]" />
                     </div>
                     <div className="flex-1">
                         <h2 className="text-xl font-bold text-gray-900 mb-2">
@@ -281,7 +281,7 @@ export default function TechArchitecture() {
                                     {/* Row Header */}
                                     <div className="flex items-center justify-between mb-4">
                                         <div className="flex items-center space-x-3">
-                                            <div className="p-2 bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-lg">
+                                            <div className="p-2 bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-lg">
                                                 <RowIcon className="w-5 h-5 text-white" />
                                             </div>
                                             <h3 className="font-bold text-gray-900">{row.name}</h3>
@@ -305,7 +305,7 @@ export default function TechArchitecture() {
                                                         className="bg-gray-50 rounded-lg p-4 border border-gray-100"
                                                     >
                                                         <div className="flex items-center space-x-2 mb-3">
-                                                            <SectionIcon className="w-4 h-4 text-[#003B2C]" />
+                                                            <SectionIcon className="w-4 h-4 text-[#1c519c]" />
                                                             <span className="text-sm font-semibold text-gray-800">{section.name}</span>
                                                         </div>
                                                         <div className="space-y-1.5">
@@ -314,7 +314,7 @@ export default function TechArchitecture() {
                                                                     <Link
                                                                         key={item.label}
                                                                         href={item.href}
-                                                                        className="flex items-center justify-between text-xs text-[#003B2C] bg-white rounded px-2.5 py-1.5 border border-gray-100 hover:bg-[#F0F0F0]/50 hover:border-[#003B2C]/20 transition-colors group"
+                                                                        className="flex items-center justify-between text-xs text-[#1c519c] bg-white rounded px-2.5 py-1.5 border border-gray-100 hover:bg-[#F0F0F0]/50 hover:border-[#1c519c]/20 transition-colors group"
                                                                     >
                                                                         <span>{item.label}</span>
                                                                         <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -340,17 +340,17 @@ export default function TechArchitecture() {
                                                     <Link
                                                         key={item.label}
                                                         href={item.href}
-                                                        className="flex items-center gap-1.5 px-3 py-2 bg-[#F0F0F0] rounded-lg hover:bg-[#003B2C]/20 transition-colors group"
+                                                        className="flex items-center gap-1.5 px-3 py-2 bg-[#F0F0F0] rounded-lg hover:bg-[#1c519c]/20 transition-colors group"
                                                     >
-                                                        <span className="text-sm font-medium text-[#003B2C]">{item.label}</span>
-                                                        <ExternalLink className="w-3 h-3 text-[#003B2C] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                                        <span className="text-sm font-medium text-[#1c519c]">{item.label}</span>
+                                                        <ExternalLink className="w-3 h-3 text-[#1c519c] opacity-0 group-hover:opacity-100 transition-opacity" />
                                                     </Link>
                                                 ) : (
                                                     <div
                                                         key={item.label}
                                                         className="flex items-center px-3 py-2 bg-[#F0F0F0] rounded-lg"
                                                     >
-                                                        <span className="text-sm font-medium text-[#003B2C]">{item.label}</span>
+                                                        <span className="text-sm font-medium text-[#1c519c]">{item.label}</span>
                                                     </div>
                                                 )
                                             ))}
@@ -370,7 +370,7 @@ export default function TechArchitecture() {
                 transition={{ delay: 0.6 }}
             >
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center space-x-2">
-                    <HelpCircle className="w-5 h-5 text-[#003B2C]" />
+                    <HelpCircle className="w-5 h-5 text-[#1c519c]" />
                     <span>Key Considerations</span>
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -383,7 +383,7 @@ export default function TechArchitecture() {
                             className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm hover:shadow-md transition-all"
                         >
                             <div className="flex items-start space-x-3">
-                                <div className="w-8 h-8 rounded-full bg-[#003B2C] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                <div className="w-8 h-8 rounded-full bg-[#1c519c] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
                                     {consideration.id}
                                 </div>
                                 <p className="text-sm text-gray-700 leading-relaxed">
@@ -400,7 +400,7 @@ export default function TechArchitecture() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#003B2C]/10"
+                className="p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#1c519c]/10"
             >
                 <p className="text-xs text-gray-500 italic">
                     Illustrative and non-exhaustive. Additional technologies may be considered across these layers as requirements evolve.

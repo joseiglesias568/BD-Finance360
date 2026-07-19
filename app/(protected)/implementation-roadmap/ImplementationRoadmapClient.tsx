@@ -109,7 +109,7 @@ const PHASES: Phase[] = [
       { label: 'Q3', activities: ['Predictive analytics', 'ML model deployment', 'Additional use cases', 'Governance framework'] },
       { label: 'Q4', activities: ['Performance review', 'Roadmap planning', 'Capability expansion', 'Value realization report'] },
     ],
-    investment: 'High', accentColor: '#003B2C', bgColor: 'bg-gray-900', borderColor: 'border-gray-800', icon: TrendingUp,
+    investment: 'High', accentColor: '#1c519c', bgColor: 'bg-gray-900', borderColor: 'border-gray-800', icon: TrendingUp,
     dataSourceCount: '10+ (full ecosystem)', keyRisk: 'Change management, executive sponsorship continuity, data quality at scale',
   },
 ];

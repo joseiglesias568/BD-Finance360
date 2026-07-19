@@ -30,7 +30,7 @@ import {
 const dataTypes = [
     {
         category: 'Structured · Internal',
-        color: '#003B2C',
+        color: '#1c519c',
         bg: '#F0F0F0',
         icon: Database,
         tagline: 'The numbers your teams already produce.',
@@ -91,7 +91,7 @@ const foundationSteps = [
         step: '1',
         title: 'Agree on what matters — before you build anything.',
         icon: BookOpen,
-        color: '#003B2C',
+        color: '#1c519c',
         detail: 'The most common mistake is starting with technology. Start with questions instead: What decisions need better data? Who makes them? How often? What would "good" look like? This conversation — between finance, operations, and data teams — defines the scope and prevents wasted effort.',
         output: 'A prioritised list of decisions to support, and the data needed for each.',
     },
@@ -209,7 +209,7 @@ const governancePillars = [
     {
         icon: Users,
         title: 'Ownership — not just access.',
-        color: '#003B2C',
+        color: '#1c519c',
         desc: 'Every data product has a named business owner — not just a technical custodian. The Finance data product is owned by Finance. The Revenue Management product is owned by Revenue Management. Ownership means accountability for quality, documentation, and change management.',
     },
     {
@@ -253,7 +253,7 @@ export default function DataFoundationPage() {
         <div className="bg-gray-50 min-h-screen">
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] text-white">
+            <div className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] text-white">
                 <div className="max-w-6xl mx-auto px-6 py-14">
                     <motion.div initial="hidden" animate="show" variants={fade} transition={{ duration: 0.5 }}>
                         <div className="flex items-center gap-2 mb-4">
@@ -293,7 +293,7 @@ export default function DataFoundationPage() {
                 {/* ── Section 1: What Data Goes In ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 1</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 1</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">Four categories of data — all of them matter.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">Finance360 draws on all four. The structured data gives you the numbers. The unstructured data gives you the story behind them. Internal data tells you what happened. External data tells you whether it was good.</p>
                     </motion.div>
@@ -338,7 +338,7 @@ export default function DataFoundationPage() {
                 {/* ── Section 2: Building the Foundation ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 2</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 2</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">Five steps to a foundation that holds.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">The sequence matters. Organisations that skip to step 4 — buying a tool before agreeing on definitions — almost always rebuild. These steps aren't a technology project. They're a business discipline.</p>
                     </motion.div>
@@ -381,12 +381,12 @@ export default function DataFoundationPage() {
                 {/* ── Section 3: Maturity Curve ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 3</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 3</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">The maturity curve — and what gets unlocked at each stage.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-4">No organisation jumps from raw data to AI in one step. Each stage builds on the one before it. The good news: value is captured at every milestone — you don't have to reach Stage 5 before the investment pays off.</p>
                         <div className="flex items-center gap-2 mb-8 px-4 py-2.5 bg-[#F0F0F0] rounded-lg w-fit">
-                            <TrendingUp className="w-4 h-4 text-[#003B2C]" />
-                            <span className="text-xs font-medium text-[#003B2C]">Finance360 is currently operating at Stage 4 — Activated — for Becton, Dickinson and Company's core financial domains.</span>
+                            <TrendingUp className="w-4 h-4 text-[#1c519c]" />
+                            <span className="text-xs font-medium text-[#1c519c]">Finance360 is currently operating at Stage 4 — Activated — for Becton, Dickinson and Company's core financial domains.</span>
                         </div>
                     </motion.div>
 
@@ -417,7 +417,7 @@ export default function DataFoundationPage() {
                                     key={s.stage}
                                     initial="hidden" whileInView="show" viewport={{ once: true }}
                                     variants={fade} transition={{ duration: 0.3, delay: i * 0.06 }}
-                                    className={`rounded-2xl border p-5 ${isCurrentOrBeyond ? 'border-[#003B2C]/20 bg-[#F0F0F0]/30' : 'bg-white border-gray-200'}`}
+                                    className={`rounded-2xl border p-5 ${isCurrentOrBeyond ? 'border-[#1c519c]/20 bg-[#F0F0F0]/30' : 'bg-white border-gray-200'}`}
                                 >
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: s.bg }}>
@@ -427,7 +427,7 @@ export default function DataFoundationPage() {
                                             <div className="flex flex-wrap items-center gap-2 mb-1">
                                                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{s.stage}</span>
                                                 <span className="text-base font-bold text-gray-900">{s.name}</span>
-                                                {i === 3 && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#003B2C] text-white">Current — Finance360</span>}
+                                                {i === 3 && <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#1c519c] text-white">Current — Finance360</span>}
                                             </div>
                                             <p className="text-xs text-gray-500 italic mb-3">Milestone: {s.milestone}</p>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -458,7 +458,7 @@ export default function DataFoundationPage() {
                 {/* ── Section 4: Governance ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 4</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 4</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">Data as a permanent asset — not a one-time project.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">A network has a maintenance schedule. A building has a facilities team. Data needs the same ongoing care — or it quietly degrades until someone notices the reports don't match reality. These six pillars are what a mature data organisation operates continuously.</p>
                     </motion.div>
@@ -491,7 +491,7 @@ export default function DataFoundationPage() {
                 >
                     <div className="flex items-start gap-4 mb-6">
                         <div className="w-12 h-12 rounded-xl bg-[#F0F0F0] flex items-center justify-center shrink-0">
-                            <Sparkles className="w-6 h-6 text-[#003B2C]" />
+                            <Sparkles className="w-6 h-6 text-[#1c519c]" />
                         </div>
                         <div>
                             <h3 className="text-lg font-bold text-gray-900 mb-1">Where BD Finance360 sits today.</h3>
@@ -500,7 +500,7 @@ export default function DataFoundationPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {[
-                            { icon: Database, label: 'Structured financial data', detail: 'Q1 FY25 – Q1 FY26 quarterly results, P&L, bridge items, and KPIs are certified and cited to 10-K / 10-Q filings.', color: '#003B2C' },
+                            { icon: Database, label: 'Structured financial data', detail: 'Q1 FY25 – Q1 FY26 quarterly results, P&L, bridge items, and KPIs are certified and cited to 10-K / 10-Q filings.', color: '#1c519c' },
                             { icon: Globe, label: 'External data joined in', detail: 'Peer utility revenue, FERC filings, Missouri PSC rate case data, and regulated utility industry benchmarks are sourced and tagged alongside internal data.', color: '#0070C0' },
                             { icon: FileText, label: 'Unstructured data activated', detail: '800+ AI-generated insights and 35+ commentary entries drawn from earnings transcripts, press releases, and conference decks.', color: '#7C3AED' },
                             { icon: Shield, label: 'Provenance as governance', detail: 'Every value is tagged [CITED], [DERIVED], [INTERPOLATED], or [ASSUMED] — a lightweight but effective governance layer for a demo platform.', color: '#9F1239' },
@@ -526,7 +526,7 @@ export default function DataFoundationPage() {
                 {/* ── CTA ── */}
                 <motion.section
                     initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}
-                    className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-3xl p-10 text-white text-center"
+                    className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-3xl p-10 text-white text-center"
                 >
                     <Database className="w-8 h-8 text-[#009AC7] mx-auto mb-4" />
                     <h3 className="text-2xl font-extrabold mb-3">The foundation is what makes the rest credible.</h3>

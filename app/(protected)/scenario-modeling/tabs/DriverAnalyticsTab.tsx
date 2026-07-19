@@ -48,7 +48,7 @@ function TreeSection({
                 type="button"
                 onClick={() => onSelectLeaf(lid)}
                 className={`w-full text-left pl-2 py-1.5 rounded-md text-sm flex items-center gap-2 ${
-                    active ? 'bg-[#003B2C]/10 text-[#003B2C] font-medium' : 'text-gray-700 hover:bg-gray-50'
+                    active ? 'bg-[#1c519c]/10 text-[#1c519c] font-medium' : 'text-gray-700 hover:bg-gray-50'
                 }`}
                 style={{ paddingLeft: 8 + depth * 14 }}
             >
@@ -140,7 +140,7 @@ export default function DriverAnalyticsTab({ levers }: DriverAnalyticsTabProps) 
         <div className="space-y-4">
             <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
                 <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                    <GitBranch className="w-5 h-5 text-[#003B2C]" />
+                    <GitBranch className="w-5 h-5 text-[#1c519c]" />
                     Driver analytics — CFO cascade
                 </h2>
                 <p className="text-sm text-gray-600 mt-1">
@@ -169,7 +169,7 @@ export default function DriverAnalyticsTab({ levers }: DriverAnalyticsTabProps) 
                     ) : (
                         <>
                             <div>
-                                <h3 className="text-base font-bold text-[#003B2C]">{meta?.name ?? node.label}</h3>
+                                <h3 className="text-base font-bold text-[#1c519c]">{meta?.name ?? node.label}</h3>
                                 <p className="text-xs text-gray-500 mt-0.5">{meta?.description}</p>
                             </div>
 
@@ -184,7 +184,7 @@ export default function DriverAnalyticsTab({ levers }: DriverAnalyticsTabProps) 
                                 </div>
                                 <div className="rounded-lg bg-gray-50 border border-gray-100 p-3">
                                     <p className="text-[10px] font-bold uppercase text-gray-400">Contribution score</p>
-                                    <p className="text-2xl font-bold text-[#003B2C] mt-0.5">{score}</p>
+                                    <p className="text-2xl font-bold text-[#1c519c] mt-0.5">{score}</p>
                                     <p className="text-[10px] text-gray-500">Structural salience vs OI (illustrative)</p>
                                 </div>
                             </div>

@@ -88,7 +88,7 @@ export default function NarrativeTab({ brief, timeline, competitive, strategic }
                 onClick={() => setActiveSubTab(tab.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
                   activeSubTab === tab.id
-                    ? 'bg-white text-[#003B2C] shadow-sm'
+                    ? 'bg-white text-[#1c519c] shadow-sm'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -103,7 +103,7 @@ export default function NarrativeTab({ brief, timeline, competitive, strategic }
           <button
             onClick={() => setCommentaryMode('analytics')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-              commentaryMode === 'analytics' ? 'bg-white text-[#003B2C] shadow-sm' : 'text-gray-500'
+              commentaryMode === 'analytics' ? 'bg-white text-[#1c519c] shadow-sm' : 'text-gray-500'
             }`}
           >
             <Brain className="w-3.5 h-3.5" />
@@ -112,7 +112,7 @@ export default function NarrativeTab({ brief, timeline, competitive, strategic }
           <button
             onClick={() => setCommentaryMode('user')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-              commentaryMode === 'user' ? 'bg-white text-[#003B2C] shadow-sm' : 'text-gray-500'
+              commentaryMode === 'user' ? 'bg-white text-[#1c519c] shadow-sm' : 'text-gray-500'
             }`}
           >
             <MessageSquare className="w-3.5 h-3.5" />
@@ -140,7 +140,7 @@ function BriefView({ brief }: { brief: NarrativeBrief }) {
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h2 className="text-lg font-bold text-[#003B2C]">{brief.title}</h2>
+            <h2 className="text-lg font-bold text-[#1c519c]">{brief.title}</h2>
             <p className="text-sm text-gray-500 mt-0.5">{brief.period}</p>
           </div>
           <StatusBadge status={brief.overallStatus} />
@@ -150,15 +150,15 @@ function BriefView({ brief }: { brief: NarrativeBrief }) {
           <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{brief.summary}</p>
         </div>
 
-        <div className="mt-6 p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#003B2C]/10">
-          <h3 className="text-sm font-semibold text-[#003B2C] mb-3 flex items-center gap-1.5">
+        <div className="mt-6 p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#1c519c]/10">
+          <h3 className="text-sm font-semibold text-[#1c519c] mb-3 flex items-center gap-1.5">
             <Lightbulb className="w-4 h-4" />
             Key Takeaways
           </h3>
           <ul className="space-y-2">
             {brief.keyTakeaways.map((takeaway, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-[#003B2C]">
-                <CheckCircle2 className="w-4 h-4 text-[#003B2C] mt-0.5 flex-shrink-0" />
+              <li key={i} className="flex items-start gap-2 text-sm text-[#1c519c]">
+                <CheckCircle2 className="w-4 h-4 text-[#1c519c] mt-0.5 flex-shrink-0" />
                 <span>{takeaway}</span>
               </li>
             ))}
@@ -172,7 +172,7 @@ function BriefView({ brief }: { brief: NarrativeBrief }) {
 function TimelineView({ events }: { events: TimelineEvent[] }) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-      <h2 className="text-lg font-bold text-[#003B2C] mb-6">Key Developments</h2>
+      <h2 className="text-lg font-bold text-[#1c519c] mb-6">Key Developments</h2>
       <div className="relative">
         {/* Vertical line */}
         <div className="absolute left-4 top-2 bottom-2 w-0.5 bg-gray-200" />
@@ -200,7 +200,7 @@ function TimelineView({ events }: { events: TimelineEvent[] }) {
                     {isPositive && <TrendingUp className="w-3.5 h-3.5 text-emerald-500" />}
                     {isNegative && <TrendingDown className="w-3.5 h-3.5 text-red-500" />}
                   </div>
-                  <h3 className="text-sm font-semibold text-[#003B2C]">{event.title}</h3>
+                  <h3 className="text-sm font-semibold text-[#1c519c]">{event.title}</h3>
                   <p className="text-xs text-gray-600 mt-1 leading-relaxed">{event.description}</p>
                 </div>
               </motion.div>
@@ -251,12 +251,12 @@ function CompetitiveView({ data }: { data: CompetitiveData }) {
 
       {/* Competitor Actions */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-        <h3 className="text-sm font-semibold text-[#003B2C] mb-4">Recent Competitor Activity</h3>
+        <h3 className="text-sm font-semibold text-[#1c519c] mb-4">Recent Competitor Activity</h3>
         <div className="space-y-3">
           {data.competitors.map((c, i) => (
             <div key={i} className="bg-gray-50 rounded-lg p-4">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-sm font-semibold text-[#003B2C]">{c.competitor}</span>
+                <span className="text-sm font-semibold text-[#1c519c]">{c.competitor}</span>
                 <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
                 <span className="text-sm text-gray-600">{c.action}</span>
               </div>
@@ -291,12 +291,12 @@ function StrategicView({ themes }: { themes: StrategicTheme[] }) {
         >
           <div className="flex items-start justify-between mb-3">
             <div>
-              <h3 className="text-sm font-semibold text-[#003B2C]">{theme.name}</h3>
+              <h3 className="text-sm font-semibold text-[#1c519c]">{theme.name}</h3>
               <p className="text-xs text-gray-500 mt-0.5">{theme.description}</p>
             </div>
             <div className="flex items-center gap-3">
               <StatusBadge status={theme.status} />
-              <span className="text-sm font-bold text-[#003B2C]">{theme.progress}%</span>
+              <span className="text-sm font-bold text-[#1c519c]">{theme.progress}%</span>
             </div>
           </div>
 
@@ -306,7 +306,7 @@ function StrategicView({ themes }: { themes: StrategicTheme[] }) {
               initial={{ width: 0 }}
               animate={{ width: `${theme.progress}%` }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="h-full rounded-full bg-[#003B2C]"
+              className="h-full rounded-full bg-[#1c519c]"
             />
           </div>
 
@@ -317,7 +317,7 @@ function StrategicView({ themes }: { themes: StrategicTheme[] }) {
               <ul className="space-y-1.5">
                 {theme.initiatives.map((init, i) => (
                   <li key={i} className="text-xs text-gray-700 flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#1c519c] mt-0.5 flex-shrink-0" />
                     {init}
                   </li>
                 ))}
@@ -332,7 +332,7 @@ function StrategicView({ themes }: { themes: StrategicTheme[] }) {
                   <div key={i} className="flex items-center justify-between text-xs">
                     <span className="text-gray-600">{kpi.label}</span>
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-[#003B2C]">{kpi.current}</span>
+                      <span className="font-medium text-[#1c519c]">{kpi.current}</span>
                       <span className="text-gray-400">/</span>
                       <span className="text-gray-500">{kpi.target}</span>
                       <StatusBadge status={kpi.status} dotOnly />

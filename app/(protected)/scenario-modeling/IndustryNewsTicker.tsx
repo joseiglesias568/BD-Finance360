@@ -96,7 +96,7 @@ export default function IndustryNewsTicker() {
 
     return (
         <div
-            className="border-b border-[#001a3d] bg-gradient-to-r from-[#001433] via-[#003B2C] to-[#003B2C] text-white shadow-inner"
+            className="border-b border-[#001a3d] bg-gradient-to-r from-[#001433] via-[#1c519c] to-[#1c519c] text-white shadow-inner"
             role="region"
             aria-label="MedTech &amp; medical device industry headlines ticker"
         >

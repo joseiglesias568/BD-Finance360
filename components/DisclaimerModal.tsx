@@ -47,7 +47,7 @@ export default function DisclaimerModal() {
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Header */}
-                            <div className="bg-gradient-to-r from-[#003B2C] to-[#003B2C] p-4 rounded-t-xl">
+                            <div className="bg-gradient-to-r from-[#1c519c] to-[#1c519c] p-4 rounded-t-xl">
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center space-x-2">
                                         <AlertTriangle className="w-6 h-6 text-white" />
@@ -100,8 +100,8 @@ export default function DisclaimerModal() {
                                     </div>
                                 </div>
 
-                                <div className="bg-[#F0F0F0] border border-[#003B2C]/20 rounded-lg p-3 mb-5">
-                                    <p className="text-xs text-[#003B2C]">
+                                <div className="bg-[#F0F0F0] border border-[#1c519c]/20 rounded-lg p-3 mb-5">
+                                    <p className="text-xs text-[#1c519c]">
                                         By accessing this prototype, you acknowledge and accept these limitations.
                                     </p>
                                 </div>
@@ -109,7 +109,7 @@ export default function DisclaimerModal() {
                                 {/* Action Button */}
                                 <button
                                     onClick={handleAcknowledge}
-                                    className="w-full px-4 py-2.5 bg-gradient-to-r from-[#003B2C] to-[#003B2C] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#003B2C]/30 transition-all"
+                                    className="w-full px-4 py-2.5 bg-gradient-to-r from-[#1c519c] to-[#1c519c] text-white font-medium rounded-lg hover:shadow-lg hover:shadow-[#1c519c]/30 transition-all"
                                 >
                                     I Understand & Accept
                                 </button>

@@ -72,7 +72,7 @@ export default function OverviewTab({
           <div className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h2 className="text-lg font-bold text-[#003B2C]">{performanceSummary.title}</h2>
+                <h2 className="text-lg font-bold text-[#1c519c]">{performanceSummary.title}</h2>
                 <p className="text-sm text-gray-500 mt-0.5">{performanceSummary.period}</p>
               </div>
               <div className="flex items-center gap-3">
@@ -80,7 +80,7 @@ export default function OverviewTab({
                   <button
                     onClick={() => setCommentaryMode('analytics')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                      commentaryMode === 'analytics' ? 'bg-white text-[#003B2C] shadow-sm' : 'text-gray-500'
+                      commentaryMode === 'analytics' ? 'bg-white text-[#1c519c] shadow-sm' : 'text-gray-500'
                     }`}
                   >
                     <Brain className="w-3.5 h-3.5" />
@@ -89,7 +89,7 @@ export default function OverviewTab({
                   <button
                     onClick={() => setCommentaryMode('user')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                      commentaryMode === 'user' ? 'bg-white text-[#003B2C] shadow-sm' : 'text-gray-500'
+                      commentaryMode === 'user' ? 'bg-white text-[#1c519c] shadow-sm' : 'text-gray-500'
                     }`}
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
@@ -104,15 +104,15 @@ export default function OverviewTab({
               <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{performanceSummary.summary}</p>
             </div>
 
-            <div className="mt-6 p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#003B2C]/10">
-              <h3 className="text-sm font-semibold text-[#003B2C] mb-3 flex items-center gap-1.5">
+            <div className="mt-6 p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#1c519c]/10">
+              <h3 className="text-sm font-semibold text-[#1c519c] mb-3 flex items-center gap-1.5">
                 <Lightbulb className="w-4 h-4" />
                 Key Takeaways
               </h3>
               <ul className="space-y-2">
                 {performanceSummary.keyTakeaways.map((takeaway, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#003B2C]">
-                    <CheckCircle2 className="w-4 h-4 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                  <li key={i} className="flex items-start gap-2 text-sm text-[#1c519c]">
+                    <CheckCircle2 className="w-4 h-4 text-[#1c519c] mt-0.5 flex-shrink-0" />
                     <span>{takeaway}</span>
                   </li>
                 ))}
@@ -144,7 +144,7 @@ export default function OverviewTab({
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm h-full p-4">
             <div className="flex items-center gap-2 mb-3">
               <Bell className="w-4 h-4 text-gray-500" />
-              <h3 className="text-sm font-semibold text-[#003B2C]">Needs Attention</h3>
+              <h3 className="text-sm font-semibold text-[#1c519c]">Needs Attention</h3>
               {attentionItems.length > 0 && (
                 <span className="ml-auto px-1.5 py-0.5 bg-red-100 text-red-700 rounded-full text-xs font-bold">
                   {attentionItems.length}
@@ -189,7 +189,7 @@ export default function OverviewTab({
       <section>
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h2 className="text-base font-semibold text-[#003B2C]">Driver Performance</h2>
+            <h2 className="text-base font-semibold text-[#1c519c]">Driver Performance</h2>
             <p className="text-xs text-gray-500 mt-0.5">Click any driver to explore in the Drivers tab</p>
           </div>
         </div>
@@ -200,10 +200,10 @@ export default function OverviewTab({
       <section className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <FileText className="w-4 h-4 text-[#003B2C]" />
-            <h3 className="text-sm font-semibold text-[#003B2C]">Related Reports</h3>
+            <FileText className="w-4 h-4 text-[#1c519c]" />
+            <h3 className="text-sm font-semibold text-[#1c519c]">Related Reports</h3>
           </div>
-          <Link href="/report-hub" className="text-xs text-[#003B2C] hover:underline flex items-center gap-1">
+          <Link href="/report-hub" className="text-xs text-[#1c519c] hover:underline flex items-center gap-1">
             View All Reports <ExternalLink className="w-3 h-3" />
           </Link>
         </div>
@@ -217,14 +217,14 @@ export default function OverviewTab({
             <Link
               key={report.id}
               href={`/report-hub/${report.id}`}
-              className="group bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#003B2C]/30 rounded-lg p-3 transition-all"
+              className="group bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#1c519c]/30 rounded-lg p-3 transition-all"
             >
               <div className="flex items-start justify-between mb-1.5">
-                <h4 className="text-xs font-semibold text-gray-900 group-hover:text-[#003B2C] line-clamp-2">{report.name}</h4>
-                <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-[#003B2C] flex-shrink-0 mt-0.5" />
+                <h4 className="text-xs font-semibold text-gray-900 group-hover:text-[#1c519c] line-clamp-2">{report.name}</h4>
+                <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-[#1c519c] flex-shrink-0 mt-0.5" />
               </div>
               <p className="text-[10px] text-gray-500 mb-1.5 line-clamp-2">{report.desc}</p>
-              <span className="inline-block px-1.5 py-0.5 bg-emerald-100 text-[#003B2C] text-[10px] font-medium rounded-full">{report.freq}</span>
+              <span className="inline-block px-1.5 py-0.5 bg-emerald-100 text-[#1c519c] text-[10px] font-medium rounded-full">{report.freq}</span>
             </Link>
           ))}
         </div>

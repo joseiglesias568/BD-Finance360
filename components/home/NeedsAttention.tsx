@@ -62,7 +62,7 @@ export default function NeedsAttention({ alerts, actions }: NeedsAttentionProps)
     return (
         <div>
             <div className="flex items-center space-x-2 mb-4">
-                <Bell className="w-5 h-5 text-[#003B2C]" />
+                <Bell className="w-5 h-5 text-[#1c519c]" />
                 <h2 className="text-lg font-bold text-gray-900">Needs Your Attention</h2>
                 <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-red-100 text-red-700">
                     {items.length}
@@ -102,7 +102,7 @@ export default function NeedsAttention({ alerts, actions }: NeedsAttentionProps)
                         </div>
                         <h3 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-1">{item.title}</h3>
                         <p className="text-xs text-gray-500 mb-3 line-clamp-2">{item.description}</p>
-                        <div className="flex items-center text-xs text-[#003B2C] font-medium">
+                        <div className="flex items-center text-xs text-[#1c519c] font-medium">
                             View <ArrowRight className="w-3 h-3 ml-1" />
                         </div>
                     </motion.a>

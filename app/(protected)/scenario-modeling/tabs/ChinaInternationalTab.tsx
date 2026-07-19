@@ -170,8 +170,8 @@ export default function ChinaInternationalTab({ leverValues, onLeverChange }: Gl
 
                 {/* AI Insight */}
                 <div className="bg-[#F0F0F0] rounded-lg p-4 flex items-start space-x-3">
-                    <Sparkles className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
-                    <div className="text-sm text-[#003B2C]">
+                    <Sparkles className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
+                    <div className="text-sm text-[#1c519c]">
                         <span className="font-semibold">AI Insight:</span>{' '}
                         {impact.stelara.aoiDelta > 150
                             ? `Strong biosimilar conversion at ${impact.stelara.conversionPct}% drives $${impact.stelara.aoiDelta}M AOI uplift — the highest-margin Health Services catalyst in FY2026. Specialty Rx growth at +${impact.specialty.growth}% adds $${(impact.specialty.delta / 1000).toFixed(1)}B revenue at ~3% net margin. Oak Street VBC at ${impact.oakStreet.patients.toLocaleString()} patients is scaling toward profitability.`
@@ -343,8 +343,8 @@ export default function ChinaInternationalTab({ leverValues, onLeverChange }: Gl
                             <div className="flex justify-between"><span className="text-gray-600">Retail Carve-out</span><span className="font-semibold">10%</span></div>
                         </div>
                     </div>
-                    <div className="text-center p-4 bg-[#F0F0F0] rounded-lg border-2 border-[#003B2C]">
-                        <p className="text-xs text-[#003B2C] font-medium mb-2">Specialty Rx (~$70B base)</p>
+                    <div className="text-center p-4 bg-[#F0F0F0] rounded-lg border-2 border-[#1c519c]">
+                        <p className="text-xs text-[#1c519c] font-medium mb-2">Specialty Rx (~$70B base)</p>
                         <div className="space-y-1 text-xs">
                             <div className="flex justify-between"><span className="text-gray-600">Oncology</span><span className="font-semibold">28%</span></div>
                             <div className="flex justify-between"><span className="text-gray-600">Immunology</span><span className="font-semibold">25%</span></div>

@@ -198,7 +198,7 @@ export default function ForwardOutlook({ periodLabel, strategic, financials }: F
 
       {/* Section B: Forecast Period Cards — only show periods after the last actual */}
       {forwardOutlook.filter(p => p.period !== lastActualLabel).length > 0 && (
-        <div className="bg-gradient-to-r from-[#007A3D] to-[#2A2A2A] rounded-xl p-6 text-white">
+        <div className="bg-gradient-to-r from-[#1c519c] to-[#2A2A2A] rounded-xl p-6 text-white">
           <h2 className="text-lg font-bold mb-1">Forward-Looking Forecast</h2>
           <p className="text-sm text-[#F0F0F0] mb-3">Financial outlook by period</p>
           {/* Stale guidance notice — FY26 EPS was issued Jan 13, 2026 and not updated post-fuel spike */}
@@ -315,7 +315,7 @@ export default function ForwardOutlook({ periodLabel, strategic, financials }: F
                     onClick={() => setExpandedPeriod(isOpen ? null : period.period)}
                     className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50/50 transition-colors"
                   >
-                    <span className="text-sm font-semibold text-[#003B2C]">{period.period}</span>
+                    <span className="text-sm font-semibold text-[#1c519c]">{period.period}</span>
                     <div className="flex items-center gap-2">
                       <span className="text-xs text-gray-400">{period.keyAssumptions.length} assumptions</span>
                       <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -333,7 +333,7 @@ export default function ForwardOutlook({ periodLabel, strategic, financials }: F
                         <div className="px-4 pb-3 space-y-1.5">
                           {period.keyAssumptions.map((assumption, idx) => (
                             <div key={idx} className="flex items-start text-sm text-gray-600">
-                              <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 mr-3 rounded-full bg-[#003B2C]" />
+                              <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 mr-3 rounded-full bg-[#1c519c]" />
                               {assumption}
                             </div>
                           ))}

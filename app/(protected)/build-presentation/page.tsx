@@ -25,7 +25,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const cadenceColors: Record<string, { bg: string; text: string }> = {
-  Monthly: { bg: 'bg-[#003B2C]/10', text: 'text-[#003B2C]' },
+  Monthly: { bg: 'bg-[#1c519c]/10', text: 'text-[#1c519c]' },
   Quarterly: { bg: 'bg-blue-50', text: 'text-blue-700' },
   Annual: { bg: 'bg-amber-50', text: 'text-amber-700' },
 };
@@ -49,14 +49,14 @@ function MeetingCard({ meeting, index }: { meeting: MeetingConfig; index: number
       transition={{ duration: 0.4, delay: 0.05 + index * 0.07 }}
       className={`bg-white rounded-xl border border-gray-200 p-6 h-full flex flex-col transition-all duration-200 ${
         isReady
-          ? 'group hover:shadow-lg hover:border-[#003B2C]/30 cursor-pointer'
+          ? 'group hover:shadow-lg hover:border-[#1c519c]/30 cursor-pointer'
           : 'opacity-60 cursor-not-allowed'
       }`}
     >
       {/* Top row: icon + cadence badge */}
       <div className="flex items-start justify-between mb-4">
-        <div className={`p-2.5 rounded-lg ${isReady ? 'bg-[#003B2C]/8 group-hover:bg-[#003B2C]/12' : 'bg-gray-100'} transition-colors`}>
-          <Icon className={`w-5 h-5 ${isReady ? 'text-[#003B2C]' : 'text-gray-400'}`} />
+        <div className={`p-2.5 rounded-lg ${isReady ? 'bg-[#1c519c]/8 group-hover:bg-[#1c519c]/12' : 'bg-gray-100'} transition-colors`}>
+          <Icon className={`w-5 h-5 ${isReady ? 'text-[#1c519c]' : 'text-gray-400'}`} />
         </div>
         <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full ${cadence.bg} ${cadence.text}`}>
           {meeting.cadence}
@@ -64,7 +64,7 @@ function MeetingCard({ meeting, index }: { meeting: MeetingConfig; index: number
       </div>
 
       {/* Meeting name */}
-      <h3 className={`text-[15px] font-semibold mb-1.5 transition-colors ${isReady ? 'text-gray-900 group-hover:text-[#003B2C]' : 'text-gray-600'}`}>
+      <h3 className={`text-[15px] font-semibold mb-1.5 transition-colors ${isReady ? 'text-gray-900 group-hover:text-[#1c519c]' : 'text-gray-600'}`}>
         {meeting.name}
       </h3>
 
@@ -116,8 +116,8 @@ export default function BuildPresentationPage() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-[#003B2C]/10 rounded-xl">
-                <Presentation className="w-6 h-6 text-[#003B2C]" />
+              <div className="p-2.5 bg-[#1c519c]/10 rounded-xl">
+                <Presentation className="w-6 h-6 text-[#1c519c]" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Meeting Hub</h1>
@@ -147,12 +147,12 @@ export default function BuildPresentationPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 + meetings.length * 0.07 }}
-              className="group bg-white rounded-xl border-2 border-dashed border-gray-200 p-6 hover:border-[#003B2C]/40 hover:bg-[#003B2C]/[0.02] transition-all duration-200 cursor-pointer h-full flex flex-col items-center justify-center text-center min-h-[220px]"
+              className="group bg-white rounded-xl border-2 border-dashed border-gray-200 p-6 hover:border-[#1c519c]/40 hover:bg-[#1c519c]/[0.02] transition-all duration-200 cursor-pointer h-full flex flex-col items-center justify-center text-center min-h-[220px]"
             >
-              <div className="p-3 rounded-full bg-gray-50 group-hover:bg-[#003B2C]/10 transition-colors mb-3">
-                <Plus className="w-6 h-6 text-gray-400 group-hover:text-[#003B2C] transition-colors" />
+              <div className="p-3 rounded-full bg-gray-50 group-hover:bg-[#1c519c]/10 transition-colors mb-3">
+                <Plus className="w-6 h-6 text-gray-400 group-hover:text-[#1c519c] transition-colors" />
               </div>
-              <h3 className="text-sm font-semibold text-gray-600 group-hover:text-[#003B2C] transition-colors mb-1">
+              <h3 className="text-sm font-semibold text-gray-600 group-hover:text-[#1c519c] transition-colors mb-1">
                 Create Custom Presentation
               </h3>
               <p className="text-xs text-gray-400 max-w-[200px]">

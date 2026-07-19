@@ -72,18 +72,18 @@ function DataConnectionBanner({
     const qualityScore = dataQuality.overallScore || 97.2;
 
     return (
-        <div className="bg-gradient-to-r from-[#F0F0F0]/60 via-white to-[#F0F0F0]/40 border-b border-[#003B2C]/10">
+        <div className="bg-gradient-to-r from-[#F0F0F0]/60 via-white to-[#F0F0F0]/40 border-b border-[#1c519c]/10">
             <div className="px-4 sm:px-6 lg:px-8 py-3">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="relative">
-                            <div className="p-2 bg-[#003B2C]/10 rounded-lg">
-                                <Database className="w-5 h-5 text-[#003B2C]" />
+                            <div className="p-2 bg-[#1c519c]/10 rounded-lg">
+                                <Database className="w-5 h-5 text-[#1c519c]" />
                             </div>
                             <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse border-2 border-white" />
                         </div>
                         <div>
-                            <p className="text-sm font-semibold text-[#003B2C]">
+                            <p className="text-sm font-semibold text-[#1c519c]">
                                 Connected: BD MedTech Curated Data Layer
                             </p>
                             <p className="text-xs text-gray-500">
@@ -93,17 +93,17 @@ function DataConnectionBanner({
                     </div>
                     <div className="hidden sm:flex items-center gap-8">
                         <div className="text-center">
-                            <p className="text-lg font-bold text-[#003B2C]">{activeSources}</p>
+                            <p className="text-lg font-bold text-[#1c519c]">{activeSources}</p>
                             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Active Sources</p>
                         </div>
                         <div className="w-px h-8 bg-gray-200" />
                         <div className="text-center">
-                            <p className="text-lg font-bold text-[#003B2C]">{recordsDisplay}</p>
+                            <p className="text-lg font-bold text-[#1c519c]">{recordsDisplay}</p>
                             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Records</p>
                         </div>
                         <div className="w-px h-8 bg-gray-200" />
                         <div className="text-center">
-                            <p className="text-lg font-bold text-[#003B2C]">{qualityScore}%</p>
+                            <p className="text-lg font-bold text-[#1c519c]">{qualityScore}%</p>
                             <p className="text-[10px] text-gray-500 uppercase tracking-wide">Data Quality</p>
                         </div>
                     </div>
@@ -175,7 +175,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
             {/* Left: Data Catalog */}
             <div className="w-72 shrink-0">
                 <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                    <div className="px-4 py-3 bg-[#003B2C] text-white">
+                    <div className="px-4 py-3 bg-[#1c519c] text-white">
                         <div className="flex items-center gap-2">
                             <Server className="w-4 h-4" />
                             <h3 className="text-sm font-semibold">Data Catalog</h3>
@@ -199,13 +199,13 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                                             onClick={() => setSelectedEntity(item.name)}
                                             className={`w-full px-4 py-2.5 flex items-center gap-3 text-left transition-colors border-b border-gray-50 ${
                                                 isSelected
-                                                    ? 'bg-[#F0F0F0]/50 border-l-2 border-l-[#003B2C]'
+                                                    ? 'bg-[#F0F0F0]/50 border-l-2 border-l-[#1c519c]'
                                                     : 'hover:bg-gray-50'
                                             }`}
                                         >
-                                            <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#003B2C]' : 'text-gray-400'}`} />
+                                            <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#1c519c]' : 'text-gray-400'}`} />
                                             <div className="flex-1 min-w-0">
-                                                <p className={`text-xs font-medium truncate ${isSelected ? 'text-[#003B2C]' : 'text-gray-700'}`}>
+                                                <p className={`text-xs font-medium truncate ${isSelected ? 'text-[#1c519c]' : 'text-gray-700'}`}>
                                                     {item.name}
                                                 </p>
                                                 <p className="text-[10px] text-gray-400">
@@ -228,7 +228,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                 <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="text-sm font-semibold text-gray-900">Query Builder</h3>
-                        <span className="text-[10px] px-2 py-0.5 bg-[#F0F0F0] text-[#003B2C] rounded-full font-medium">
+                        <span className="text-[10px] px-2 py-0.5 bg-[#F0F0F0] text-[#1c519c] rounded-full font-medium">
                             {selectedEntity}
                         </span>
                     </div>
@@ -238,7 +238,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                             <select
                                 value={measure}
                                 onChange={(e) => setMeasure(e.target.value)}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C]"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c]"
                             >
                                 {measureOptions.map((m) => (
                                     <option key={m} value={m}>{m}</option>
@@ -255,7 +255,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                                     onChange={(e) => setQuery(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && runQuery()}
                                     placeholder="e.g., North America revenue Q4..."
-                                    className="w-full pl-9 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C]"
+                                    className="w-full pl-9 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c]"
                                 />
                             </div>
                         </div>
@@ -263,7 +263,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                             <button
                                 onClick={runQuery}
                                 disabled={loading}
-                                className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#003B2C] text-white rounded-lg text-sm font-medium hover:bg-[#003B2C] disabled:opacity-50 transition-colors"
+                                className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#1c519c] text-white rounded-lg text-sm font-medium hover:bg-[#1c519c] disabled:opacity-50 transition-colors"
                             >
                                 <Play className="w-3.5 h-3.5" />
                                 {loading ? 'Running...' : 'Run Query'}
@@ -289,7 +289,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                             </h3>
                             <button
                                 onClick={() => setShowRawJson(!showRawJson)}
-                                className="text-[10px] font-medium text-[#003B2C] hover:underline"
+                                className="text-[10px] font-medium text-[#1c519c] hover:underline"
                             >
                                 {showRawJson ? 'Table View' : 'View Raw JSON'}
                             </button>
@@ -308,7 +308,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                         <div className="px-5 py-3 border-b border-gray-100 flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                                <Table2 className="w-4 h-4 text-[#003B2C]" />
+                                <Table2 className="w-4 h-4 text-[#1c519c]" />
                                 <h3 className="text-sm font-semibold text-gray-700">
                                     Sample Data Preview: Quarterly Financial Summary
                                 </h3>
@@ -355,7 +355,7 @@ function DataPlayground({ financials }: { financials: FinancialConfig }) {
                             <p className="text-[10px] text-gray-400">
                                 Showing {financials.quarters.length} rows from aee.financials.quarterly_results
                             </p>
-                            <button className="flex items-center gap-1 text-[10px] font-medium text-[#003B2C] hover:underline">
+                            <button className="flex items-center gap-1 text-[10px] font-medium text-[#1c519c] hover:underline">
                                 <Download className="w-3 h-3" /> Export CSV
                             </button>
                         </div>
@@ -430,7 +430,7 @@ function HypothesisTesting({ hypotheses }: { hypotheses: HypothesisTest[] }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: h.id * 0.05 }}
                         className={`text-left bg-white rounded-xl border p-5 shadow-sm transition-all hover:shadow-md ${
-                            selected === h.id ? 'border-[#003B2C] ring-2 ring-[#003B2C]/20' : 'border-gray-200'
+                            selected === h.id ? 'border-[#1c519c] ring-2 ring-[#1c519c]/20' : 'border-gray-200'
                         }`}
                     >
                         <div className="flex items-start justify-between mb-2">
@@ -465,8 +465,8 @@ function HypothesisTesting({ hypotheses }: { hypotheses: HypothesisTest[] }) {
                             >
                                 <p className="text-sm text-gray-700 mb-2">{h.details}</p>
                                 <div className="p-3 bg-[#F0F0F0]/40 rounded-lg">
-                                    <span className="text-xs font-semibold text-[#003B2C]">Effect Size: </span>
-                                    <span className="text-sm text-[#003B2C] font-medium">{h.effectSize}</span>
+                                    <span className="text-xs font-semibold text-[#1c519c]">Effect Size: </span>
+                                    <span className="text-sm text-[#1c519c] font-medium">{h.effectSize}</span>
                                 </div>
                             </motion.div>
                         )}
@@ -550,7 +550,7 @@ function CustomVisualizations({ financials }: { financials: FinancialConfig }) {
                         <select
                             value={metric}
                             onChange={(e) => setMetric(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c]"
                         >
                             {metricOptions.map((m) => (
                                 <option key={m} value={m}>{m}</option>
@@ -568,8 +568,8 @@ function CustomVisualizations({ financials }: { financials: FinancialConfig }) {
                                         onClick={() => setChartType(ct.id)}
                                         className={`flex-1 flex flex-col items-center gap-1 px-2 py-2 rounded-lg border text-xs transition-colors ${
                                             chartType === ct.id
-                                                ? 'bg-[#003B2C] text-white border-[#003B2C]'
-                                                : 'bg-white text-gray-600 border-gray-200 hover:border-[#003B2C]/30'
+                                                ? 'bg-[#1c519c] text-white border-[#1c519c]'
+                                                : 'bg-white text-gray-600 border-gray-200 hover:border-[#1c519c]/30'
                                         }`}
                                     >
                                         <Icon className="w-4 h-4" />
@@ -583,7 +583,7 @@ function CustomVisualizations({ financials }: { financials: FinancialConfig }) {
                         <select
                             value={timeRange}
                             onChange={(e) => setTimeRange(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c]"
                         >
                             {timeRanges.map((t) => (
                                 <option key={t} value={t}>{t}</option>
@@ -600,7 +600,7 @@ function CustomVisualizations({ financials }: { financials: FinancialConfig }) {
                         {metric} &mdash; {chartTypes.find((c) => c.id === chartType)?.label} &mdash; {timeRange}
                     </h4>
                     <div className="flex items-center gap-3">
-                        <button className="flex items-center gap-1 text-xs text-[#003B2C] font-medium hover:underline">
+                        <button className="flex items-center gap-1 text-xs text-[#1c519c] font-medium hover:underline">
                             <Download className="w-3 h-3" /> Export
                         </button>
                         <span className="text-[10px] text-gray-400">Powered by Recharts</span>
@@ -698,7 +698,7 @@ function CustomVisualizations({ financials }: { financials: FinancialConfig }) {
                         <button
                             key={template.label}
                             onClick={() => { setMetric(template.metric); setChartType(template.chart); }}
-                            className="p-3 border border-gray-200 rounded-lg text-left hover:border-[#003B2C]/30 hover:bg-[#F0F0F0]/20 transition-colors"
+                            className="p-3 border border-gray-200 rounded-lg text-left hover:border-[#1c519c]/30 hover:bg-[#F0F0F0]/20 transition-colors"
                         >
                             <p className="text-xs font-medium text-gray-800">{template.label}</p>
                             <p className="text-xs text-gray-400 mt-0.5">{template.chart} chart</p>
@@ -737,11 +737,11 @@ export default function SandboxClient({ hypotheses, dataSources, dataQuality, fi
             <div className="bg-white border-b border-gray-200">
                 <div className="px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex items-center space-x-4">
-                        <div className="p-3 bg-[#003B2C] rounded-xl shadow-lg shadow-emerald-500/20">
+                        <div className="p-3 bg-[#1c519c] rounded-xl shadow-lg shadow-emerald-500/20">
                             <Beaker className="w-8 h-8 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-[#003B2C]">Analytics Sandbox</h1>
+                            <h1 className="text-2xl font-bold text-[#1c519c]">Analytics Sandbox</h1>
                             <p className="text-gray-600 mt-1">
                                 Connect directly to your curated data layer &mdash; build ad-hoc dashboards, explore data entities, and create custom analytics
                             </p>
@@ -766,8 +766,8 @@ export default function SandboxClient({ hypotheses, dataSources, dataQuality, fi
                                     className={`
                                         flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors
                                         ${activeTab === tab.id
-                                            ? 'border-[#003B2C] text-[#003B2C]'
-                                            : 'border-transparent text-gray-500 hover:text-[#003B2C] hover:border-gray-300'
+                                            ? 'border-[#1c519c] text-[#1c519c]'
+                                            : 'border-transparent text-gray-500 hover:text-[#1c519c] hover:border-gray-300'
                                         }
                                     `}
                                 >

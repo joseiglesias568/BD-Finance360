@@ -56,7 +56,7 @@ interface HomeTileSectionProps {
 // ── Status display helpers ───────────────────────────────────────────────────
 
 const statusConfig = {
-    good:     { bar: 'bg-[#003B2C]', badge: 'bg-emerald-50 text-emerald-700 border-emerald-200', label: 'On Track' },
+    good:     { bar: 'bg-[#1c519c]', badge: 'bg-emerald-50 text-emerald-700 border-emerald-200', label: 'On Track' },
     warning:  { bar: 'bg-amber-500', badge: 'bg-amber-50 text-amber-700 border-amber-200', label: 'Monitor' },
     critical: { bar: 'bg-red-500',   badge: 'bg-red-50 text-red-700 border-red-200', label: 'Below Target' },
 };
@@ -80,7 +80,7 @@ function SparklineSVG({ points, status }: { points: number[]; status: TileStatus
         const y = pad + (1 - (v - min) / range) * (h - pad * 2);
         return `${x},${y}`;
     }).join(' ');
-    const stroke = status === 'good' ? '#003B2C' : status === 'critical' ? '#ef4444' : '#f59e0b';
+    const stroke = status === 'good' ? '#1c519c' : status === 'critical' ? '#ef4444' : '#f59e0b';
     return (
         <svg className="w-full h-6" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none">
             <polyline points={coords} fill="none" stroke={stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -181,7 +181,7 @@ function WhiteTileCard({ tile, onClick }: { tile: CFOTileData; onClick: () => vo
         <motion.div
             whileHover={{ y: -4, transition: { duration: 0.15 } }}
             onClick={onClick}
-            className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-[#003B2C]/20 transition-all cursor-pointer overflow-hidden group"
+            className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-[#1c519c]/20 transition-all cursor-pointer overflow-hidden group"
         >
             {/* Status accent bar */}
             <div className={`h-1 ${sc.bar}`} />
@@ -197,7 +197,7 @@ function WhiteTileCard({ tile, onClick }: { tile: CFOTileData; onClick: () => vo
 
                 {/* Headline number + status badge */}
                 <div className="flex items-start justify-between mb-1">
-                    <span className="text-2xl font-bold text-[#003B2C]">
+                    <span className="text-2xl font-bold text-[#1c519c]">
                         {tile.headlineValue}
                     </span>
                     <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${sc.badge}`}>
@@ -541,7 +541,7 @@ export default function HomeTileSection({
                         className={`inline-flex items-center text-sm font-medium transition-colors ${
                             variant === 'hero'
                                 ? 'text-white/70 hover:text-white'
-                                : 'text-[#003B2C] hover:text-[#003B2C]'
+                                : 'text-[#1c519c] hover:text-[#1c519c]'
                         }`}
                     >
                         {linkLabel} <ArrowRight className="w-4 h-4 ml-1" />

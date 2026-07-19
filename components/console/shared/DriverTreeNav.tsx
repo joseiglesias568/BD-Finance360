@@ -47,7 +47,7 @@ function TreeNode({
         }}
         className={`w-full text-left flex items-center gap-2 px-3 py-2.5 rounded-lg transition-all group
           ${isSelected
-            ? 'bg-[#F0F0F0] border-l-3 border-[#003B2C]'
+            ? 'bg-[#F0F0F0] border-l-3 border-[#1c519c]'
             : 'hover:bg-gray-50 border-l-3 border-transparent'
           }`}
         style={{ paddingLeft: `${12 + depth * 16}px` }}
@@ -68,7 +68,7 @@ function TreeNode({
         {/* Content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <span className={`text-sm truncate ${isSelected ? 'font-semibold text-[#003B2C]' : 'font-medium text-gray-700 group-hover:text-[#003B2C]'}`}>
+            <span className={`text-sm truncate ${isSelected ? 'font-semibold text-[#1c519c]' : 'font-medium text-gray-700 group-hover:text-[#1c519c]'}`}>
               {node.name}
             </span>
             <StatusBadge status={node.status} dotOnly />

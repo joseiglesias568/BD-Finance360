@@ -365,7 +365,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                     <select
                         value={selectedPeriod}
                         onChange={(e) => setSelectedPeriod(e.target.value)}
-                        className="text-sm bg-white border border-gray-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                        className="text-sm bg-white border border-gray-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                     >
                         <option value="current-quarter">Current Quarter (Q4 FY25)</option>
                         <option value="ytd">Year to Date</option>
@@ -397,13 +397,13 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
 
                 <div className="bg-[#F0F0F0] rounded-lg p-4">
                     <h4 className="text-sm font-medium text-gray-900 mb-3 flex items-center">
-                        <Lightbulb className="w-4 h-4 mr-2 text-[#003B2C]" />
+                        <Lightbulb className="w-4 h-4 mr-2 text-[#1c519c]" />
                         Key Takeaways
                     </h4>
                     <ul className="space-y-2">
                         {marketStory.executiveSummary.keyTakeaways.map((takeaway, index) => (
                             <li key={index} className="flex items-start">
-                                <ChevronRight className="w-4 h-4 text-[#003B2C] mt-0.5 mr-2 flex-shrink-0" />
+                                <ChevronRight className="w-4 h-4 text-[#1c519c] mt-0.5 mr-2 flex-shrink-0" />
                                 <span className="text-sm text-gray-700">{takeaway}</span>
                             </li>
                         ))}
@@ -437,7 +437,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                 className="bg-white rounded-xl shadow-sm p-6"
             >
                 <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center">
-                    <Clock className="w-5 h-5 mr-2 text-[#003B2C]" />
+                    <Clock className="w-5 h-5 mr-2 text-[#1c519c]" />
                     {marketStory.marketEvolution.title}
                 </h3>
 
@@ -457,7 +457,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                             >
                                 <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center ${event.status === 'positive' ? 'bg-emerald-100' : 'bg-red-100'
                                     }`}>
-                                    <div className={`w-3 h-3 rounded-full ${event.status === 'positive' ? 'bg-[#003B2C]' : 'bg-red-500'
+                                    <div className={`w-3 h-3 rounded-full ${event.status === 'positive' ? 'bg-[#1c519c]' : 'bg-red-500'
                                         }`}></div>
                                 </div>
                                 <div className="ml-6 flex-1">
@@ -465,7 +465,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                                         <div className="flex items-center justify-between mb-2">
                                             <h4 className="text-sm font-semibold text-gray-900">{event.period}</h4>
                                             <span className={`text-xs font-medium px-2 py-1 rounded-full ${event.status === 'positive'
-                                                ? 'bg-emerald-100 text-[#003B2C]'
+                                                ? 'bg-emerald-100 text-[#1c519c]'
                                                 : 'bg-red-100 text-red-700'
                                                 }`}>
                                                 {event.impact}
@@ -497,7 +497,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                 className="bg-white rounded-xl shadow-sm p-6"
             >
                 <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center">
-                    <Target className="w-5 h-5 mr-2 text-[#003B2C]" />
+                    <Target className="w-5 h-5 mr-2 text-[#1c519c]" />
                     {marketStory.competitiveLandscape.title}
                 </h3>
 
@@ -510,7 +510,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                                 : marketStory.competitiveLandscape.strengths
                             ).map((strength: string, index: number) => (
                                 <li key={index} className="flex items-start">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#003B2C] mt-1.5 mr-2 flex-shrink-0"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#1c519c] mt-1.5 mr-2 flex-shrink-0"></div>
                                     <span className="text-sm text-gray-700">{strength}</span>
                                 </li>
                             ))}
@@ -550,7 +550,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                                     </div>
                                     <div>
                                         <span className="text-gray-500">Our Response:</span>
-                                        <p className="text-[#003B2C] font-medium mt-1">{move.ourResponse}</p>
+                                        <p className="text-[#1c519c] font-medium mt-1">{move.ourResponse}</p>
                                     </div>
                                 </div>
                             </div>
@@ -567,7 +567,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                 className="bg-white rounded-xl shadow-sm p-6"
             >
                 <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center">
-                    <Zap className="w-5 h-5 mr-2 text-[#003B2C]" />
+                    <Zap className="w-5 h-5 mr-2 text-[#1c519c]" />
                     Strategic Themes & Progress
                 </h3>
 
@@ -585,7 +585,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                             {/* Progress bar */}
                             <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                                 <div
-                                    className="bg-[#003B2C] h-2 rounded-full transition-all duration-500"
+                                    className="bg-[#1c519c] h-2 rounded-full transition-all duration-500"
                                     style={{ width: `${theme.progress}%` }}
                                 />
                             </div>
@@ -611,7 +611,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <span className="text-xs text-gray-500">Target:</span>
-                                            <span className="text-xs font-medium text-[#003B2C]">{theme.metrics.target}</span>
+                                            <span className="text-xs font-medium text-[#1c519c]">{theme.metrics.target}</span>
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <span className="text-xs text-gray-500">Trend:</span>
@@ -636,7 +636,7 @@ export default function BusinessNarrative({ dbData }: BusinessNarrativeProps) {
                 className="bg-white rounded-xl shadow-sm p-6"
             >
                 <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center">
-                    <BarChart3 className="w-5 h-5 mr-2 text-[#003B2C]" />
+                    <BarChart3 className="w-5 h-5 mr-2 text-[#1c519c]" />
                     {marketStory.futureOutlook.title}
                 </h3>
 

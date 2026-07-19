@@ -874,8 +874,8 @@ const workflows: Workflow[] = [
 ];
 
 const categoryConfig = {
-    insights: { icon: Brain, color: 'emerald', bgColor: 'bg-[#F0F0F0]/30', borderColor: 'border-[#F0F0F0]', textColor: 'text-[#003B2C]', badgeBg: 'bg-[#F0F0F0]', badgeText: 'text-[#003B2C]', buttonBg: 'bg-[#003B2C]', label: 'Insights & Discovery' },
-    reporting: { icon: FileText, color: 'green', bgColor: 'bg-[#F0F0F0]', borderColor: 'border-[#003B2C]/20', textColor: 'text-[#003B2C]', badgeBg: 'bg-[#F0F0F0]', badgeText: 'text-[#003B2C]', buttonBg: 'bg-[#003B2C]', label: 'Reporting & Narratives' },
+    insights: { icon: Brain, color: 'emerald', bgColor: 'bg-[#F0F0F0]/30', borderColor: 'border-[#F0F0F0]', textColor: 'text-[#1c519c]', badgeBg: 'bg-[#F0F0F0]', badgeText: 'text-[#1c519c]', buttonBg: 'bg-[#1c519c]', label: 'Insights & Discovery' },
+    reporting: { icon: FileText, color: 'green', bgColor: 'bg-[#F0F0F0]', borderColor: 'border-[#1c519c]/20', textColor: 'text-[#1c519c]', badgeBg: 'bg-[#F0F0F0]', badgeText: 'text-[#1c519c]', buttonBg: 'bg-[#1c519c]', label: 'Reporting & Narratives' },
     planning: { icon: Target, color: 'green', bgColor: 'bg-green-50', borderColor: 'border-green-200', textColor: 'text-green-600', badgeBg: 'bg-green-100', badgeText: 'text-green-800', buttonBg: 'bg-green-600', label: 'Planning & Forecasting' },
     analysis: { icon: BarChart3, color: 'orange', bgColor: 'bg-orange-50', borderColor: 'border-orange-200', textColor: 'text-orange-600', badgeBg: 'bg-orange-100', badgeText: 'text-orange-800', buttonBg: 'bg-orange-600', label: 'Analysis & Analytics' },
     automation: { icon: Zap, color: 'emerald', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-200', textColor: 'text-emerald-700', badgeBg: 'bg-emerald-100', badgeText: 'text-emerald-800', buttonBg: 'bg-emerald-600', label: 'Automation & Alerts' }
@@ -1058,7 +1058,7 @@ export default function WorkflowAnimations() {
             >
                 <div className="flex items-start space-x-4">
                     <div className="p-3 bg-[#F0F0F0] rounded-lg">
-                        <Network className="w-6 h-6 text-[#003B2C]" />
+                        <Network className="w-6 h-6 text-[#1c519c]" />
                     </div>
                     <div className="flex-1">
                         <h2 className="text-xl font-bold text-gray-900 mb-2">Delta Workflow Orchestration</h2>
@@ -1068,10 +1068,10 @@ export default function WorkflowAnimations() {
                         </p>
                         <div className="mt-4 p-4 bg-gradient-to-r from-[#F0F0F0]/30 to-[#F0F0F0]/30 rounded-lg border border-[#F0F0F0]">
                             <div className="flex items-start space-x-3">
-                                <Zap className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                <Zap className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                 <div className="text-sm text-gray-700">
-                                    <strong className="text-[#003B2C]">Behind the Scenes:</strong> Agents work autonomously to process data, generate insights, and orchestrate workflows. 
-                                    <strong className="text-[#003B2C]"> User Interaction Points</strong> are clearly marked where you can review, modify, or approve agent outputs.
+                                    <strong className="text-[#1c519c]">Behind the Scenes:</strong> Agents work autonomously to process data, generate insights, and orchestrate workflows. 
+                                    <strong className="text-[#1c519c]"> User Interaction Points</strong> are clearly marked where you can review, modify, or approve agent outputs.
                                 </div>
                             </div>
                         </div>
@@ -1103,7 +1103,7 @@ export default function WorkflowAnimations() {
                         onClick={() => setSelectedCategory('all')}
                         className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center space-x-2 ${
                             selectedCategory === 'all'
-                                ? 'bg-[#003B2C] text-white'
+                                ? 'bg-[#1c519c] text-white'
                                 : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                         }`}
                     >
@@ -1143,7 +1143,7 @@ export default function WorkflowAnimations() {
                                 onClick={() => setSelectedWorkflow(workflow)}
                                 className={`p-4 rounded-lg border-2 text-left transition-all ${
                                     selectedWorkflow.id === workflow.id
-                                        ? 'border-[#003B2C] bg-[#F0F0F0]/30 shadow-md'
+                                        ? 'border-[#1c519c] bg-[#F0F0F0]/30 shadow-md'
                                         : 'border-gray-200 hover:border-[#F0F0F0] bg-white'
                                 }`}
                             >
@@ -1183,7 +1183,7 @@ export default function WorkflowAnimations() {
                         {isAnimating && !isPaused ? (
                             <button
                                 onClick={pauseAnimation}
-                                className="flex items-center space-x-2 px-6 py-3 bg-[#003B2C] text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                                className="flex items-center space-x-2 px-6 py-3 bg-[#1c519c] text-white rounded-lg font-medium hover:shadow-lg transition-all"
                             >
                                 <Pause className="w-5 h-5" />
                                 <span>Pause</span>
@@ -1191,7 +1191,7 @@ export default function WorkflowAnimations() {
                         ) : isAnimating && isPaused ? (
                             <button
                                 onClick={resumeAnimation}
-                                className="flex items-center space-x-2 px-6 py-3 bg-[#003B2C] text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                                className="flex items-center space-x-2 px-6 py-3 bg-[#1c519c] text-white rounded-lg font-medium hover:shadow-lg transition-all"
                             >
                                 <Play className="w-5 h-5" />
                                 <span>Resume</span>
@@ -1199,7 +1199,7 @@ export default function WorkflowAnimations() {
                         ) : (
                             <button
                                 onClick={startAnimation}
-                                className="flex items-center space-x-2 px-6 py-3 bg-[#003B2C] text-white rounded-lg font-medium hover:shadow-lg transition-all"
+                                className="flex items-center space-x-2 px-6 py-3 bg-[#1c519c] text-white rounded-lg font-medium hover:shadow-lg transition-all"
                             >
                                 <Play className="w-5 h-5" />
                                 <span>Show Workflow</span>
@@ -1212,9 +1212,9 @@ export default function WorkflowAnimations() {
                 <div className="mb-6">
                     <div className="flex items-center justify-center">
                         <div className="flex items-center space-x-3 px-5 py-3 bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] rounded-lg border-2 border-[#F0F0F0] shadow-md">
-                            <Users className="w-5 h-5 text-[#003B2C]" />
+                            <Users className="w-5 h-5 text-[#1c519c]" />
                             <div>
-                                <div className="text-xs font-semibold text-[#003B2C] uppercase tracking-wide">User Interaction</div>
+                                <div className="text-xs font-semibold text-[#1c519c] uppercase tracking-wide">User Interaction</div>
                                 <p className="text-sm text-gray-800 font-medium">&ldquo;{selectedWorkflow.userQuery}&rdquo;</p>
                             </div>
                         </div>
@@ -1248,7 +1248,7 @@ export default function WorkflowAnimations() {
                                                 transition={{ duration: 0.3 }}
                                                 className={`flex items-start space-x-3 p-3 rounded-lg cursor-pointer transition-all ${
                                                     isActive
-                                                        ? 'bg-[#F0F0F0] border-2 border-[#003B2C] shadow-md'
+                                                        ? 'bg-[#F0F0F0] border-2 border-[#1c519c] shadow-md'
                                                         : isCompleted
                                                         ? 'bg-green-50 border-2 border-green-400'
                                                         : 'bg-white border border-gray-200 hover:border-gray-300'
@@ -1257,7 +1257,7 @@ export default function WorkflowAnimations() {
                                                 {/* Step Number */}
                                                 <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
                                                     isActive
-                                                        ? 'bg-[#003B2C] text-white'
+                                                        ? 'bg-[#1c519c] text-white'
                                                         : isCompleted
                                                         ? 'bg-green-500 text-white'
                                                         : 'bg-gray-400 text-white'
@@ -1268,10 +1268,10 @@ export default function WorkflowAnimations() {
                                                 <div className="flex-1 min-w-0">
                                                     <div className="flex items-center space-x-2 mb-1">
                                                         {Icon && <Icon className={`w-4 h-4 flex-shrink-0 ${
-                                                            isActive ? 'text-[#003B2C]' : isCompleted ? 'text-green-600' : 'text-gray-400'
+                                                            isActive ? 'text-[#1c519c]' : isCompleted ? 'text-green-600' : 'text-gray-400'
                                                         }`} />}
                                                         <h4 className={`text-sm font-semibold ${
-                                                            isActive ? 'text-[#003B2C]' : isCompleted ? 'text-green-900' : 'text-gray-700'
+                                                            isActive ? 'text-[#1c519c]' : isCompleted ? 'text-green-900' : 'text-gray-700'
                                                         }`}>
                                                             {step.name || `Step ${index + 1}`}
                                                         </h4>
@@ -1280,7 +1280,7 @@ export default function WorkflowAnimations() {
                                                         <motion.div
                                                             animate={{ opacity: [0.5, 1, 0.5] }}
                                                             transition={{ duration: 1.5, repeat: Infinity }}
-                                                            className="text-xs text-[#003B2C] font-medium"
+                                                            className="text-xs text-[#1c519c] font-medium"
                                                         >
                                                             Processing...
                                                         </motion.div>
@@ -1304,7 +1304,7 @@ export default function WorkflowAnimations() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4 }}
-                                className="bg-white rounded-xl border-2 border-[#003B2C] shadow-lg overflow-hidden"
+                                className="bg-white rounded-xl border-2 border-[#1c519c] shadow-lg overflow-hidden"
                             >
                                 {(() => {
                                     const step = selectedWorkflow.steps[activeStepIndex];
@@ -1318,12 +1318,12 @@ export default function WorkflowAnimations() {
                                             {/* Step Header */}
                                             <div className="bg-gradient-to-r from-[#F0F0F0]/30 to-[#F0F0F0] px-6 py-5 border-b border-[#F0F0F0]">
                                                 <div className="flex items-center space-x-4 mb-3">
-                                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#003B2C] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1c519c] text-white flex items-center justify-center font-bold text-lg shadow-md">
                                                         {activeStepIndex + 1}
                                                     </div>
                                                     <div className="flex-1">
                                                         <div className="flex items-center space-x-3 mb-2">
-                                                            <Icon className="w-6 h-6 text-[#003B2C]" />
+                                                            <Icon className="w-6 h-6 text-[#1c519c]" />
                                                             <h3 className="text-xl font-bold text-gray-900">{step.name}</h3>
                                                         </div>
                                                         <p className="text-gray-700">{step.description}</p>
@@ -1335,7 +1335,7 @@ export default function WorkflowAnimations() {
                                             {step.agents && step.agents.length > 0 && (
                                                 <div className="px-6 py-5 bg-[#F0F0F0]/30 border-b border-[#F0F0F0]">
                                                     <div className="flex items-center space-x-2 mb-4">
-                                                        <Brain className="w-5 h-5 text-[#003B2C]" />
+                                                        <Brain className="w-5 h-5 text-[#1c519c]" />
                                                         <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">
                                                             AI Agents Working Behind the Scenes
                                                         </span>
@@ -1348,7 +1348,7 @@ export default function WorkflowAnimations() {
                                                                     scale: [1, 1.05, 1]
                                                                 }}
                                                                 transition={{ duration: 1.5, repeat: Infinity }}
-                                                                className="px-4 py-2 rounded-lg bg-[#003B2C] text-white font-medium text-sm flex items-center space-x-2 shadow-md"
+                                                                className="px-4 py-2 rounded-lg bg-[#1c519c] text-white font-medium text-sm flex items-center space-x-2 shadow-md"
                                                             >
                                                                 <Sparkles className="w-4 h-4" />
                                                                 <span>{agent}</span>
@@ -1360,10 +1360,10 @@ export default function WorkflowAnimations() {
 
                                             {/* User Interaction */}
                                             {hasUserInteraction && (
-                                                <div className="px-6 py-4 bg-[#F0F0F0] border-b border-[#003B2C]/20">
+                                                <div className="px-6 py-4 bg-[#F0F0F0] border-b border-[#1c519c]/20">
                                                     <div className="flex items-center space-x-2">
-                                                        <Users className="w-5 h-5 text-[#003B2C]" />
-                                                        <span className="text-sm font-semibold text-[#003B2C]">
+                                                        <Users className="w-5 h-5 text-[#1c519c]" />
+                                                        <span className="text-sm font-semibold text-[#1c519c]">
                                                             User Action Required
                                                         </span>
                                                     </div>
@@ -1374,10 +1374,10 @@ export default function WorkflowAnimations() {
                                             {step.data && (
                                                 <div className="px-6 py-4 bg-[#F0F0F0]/20 border-b border-[#F0F0F0]">
                                                     <div className="flex items-start space-x-3">
-                                                        <Database className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                                        <Database className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                                         <div className="flex-1">
                                                             <div className="text-xs font-semibold text-gray-700 mb-1 uppercase tracking-wide">Data Flow</div>
-                                                            <div className="text-sm text-[#003B2C]">{step.data}</div>
+                                                            <div className="text-sm text-[#1c519c]">{step.data}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1388,7 +1388,7 @@ export default function WorkflowAnimations() {
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                     {/* Step Duration/Status */}
                                                     <div className="flex items-start space-x-2">
-                                                        <Activity className="w-4 h-4 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                                        <Activity className="w-4 h-4 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                                         <div>
                                                             <div className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-1">Status</div>
                                                             <div className="text-sm text-gray-900">
@@ -1399,7 +1399,7 @@ export default function WorkflowAnimations() {
                                                     
                                                     {/* Step Position */}
                                                     <div className="flex items-start space-x-2">
-                                                        <Target className="w-4 h-4 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                                        <Target className="w-4 h-4 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                                         <div>
                                                             <div className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-1">Progress</div>
                                                             <div className="text-sm text-gray-900">
@@ -1413,7 +1413,7 @@ export default function WorkflowAnimations() {
                                                 {step.agents && step.agents.length > 0 && (
                                                     <div className="mt-4 pt-4 border-t border-gray-200">
                                                         <div className="flex items-center space-x-2">
-                                                            <Network className="w-4 h-4 text-[#003B2C]" />
+                                                            <Network className="w-4 h-4 text-[#1c519c]" />
                                                             <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
                                                                 {step.agents.length} AI Agent{step.agents.length !== 1 ? 's' : ''} {step.agents.length > 1 ? 'collaborating' : 'working'} on this step
                                                             </span>

@@ -346,7 +346,7 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
                     stroke="currentColor"
                     strokeWidth="2"
                     points={points}
-                    className="text-[#003B2C]"
+                    className="text-[#1c519c]"
                 />
             </svg>
         );
@@ -492,7 +492,7 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-                        <Target className="w-5 h-5 mr-2 text-[#003B2C]" />
+                        <Target className="w-5 h-5 mr-2 text-[#1c519c]" />
                         Market Share can be influenced through these areas:
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">
@@ -595,7 +595,7 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-                        <Sparkles className="w-5 h-5 mr-2 text-[#003B2C]" />
+                        <Sparkles className="w-5 h-5 mr-2 text-[#1c519c]" />
                         Opportunities to improve Market Share
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">
@@ -616,7 +616,7 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
                                 <div className="flex items-start space-x-3">
                                     {opp.type === 'opportunity' ? (
                                         <div className="p-2 bg-emerald-100 rounded-lg">
-                                            <Lightbulb className="w-5 h-5 text-[#003B2C]" />
+                                            <Lightbulb className="w-5 h-5 text-[#1c519c]" />
                                         </div>
                                     ) : (
                                         <div className="p-2 bg-red-100 rounded-lg">
@@ -635,9 +635,9 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
                                         }`}>
                                         {opp.priority}
                                     </span>
-                                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${opp.urgency === 'immediate' ? 'bg-emerald-100 text-[#003B2C]' :
+                                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${opp.urgency === 'immediate' ? 'bg-emerald-100 text-[#1c519c]' :
                                             opp.urgency === 'urgent' ? 'bg-orange-100 text-orange-700' :
-                                                'bg-[#F0F0F0] text-[#003B2C]'
+                                                'bg-[#F0F0F0] text-[#1c519c]'
                                         }`}>
                                         {opp.urgency}
                                     </span>
@@ -660,7 +660,7 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
                                         <p className="text-xs text-gray-700">{opp.drivers.join(', ')}</p>
                                     </div>
                                 </div>
-                                <button className="px-4 py-2 bg-[#003B2C] text-white rounded-lg text-sm font-medium hover:bg-[#007A3D] transition-colors flex items-center">
+                                <button className="px-4 py-2 bg-[#1c519c] text-white rounded-lg text-sm font-medium hover:bg-[#1c519c] transition-colors flex items-center">
                                     Take Action
                                     <ArrowUpRight className="w-4 h-4 ml-1" />
                                 </button>
@@ -675,10 +675,10 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
             <div className="bg-white rounded-xl border border-gray-200 p-6 mt-6">
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">
-                        <FileText className="w-5 h-5 text-[#003B2C]" />
+                        <FileText className="w-5 h-5 text-[#1c519c]" />
                         <h3 className="text-lg font-semibold text-gray-900">Related Reports</h3>
                     </div>
-                    <Link href="/report-hub" className="text-sm text-[#003B2C] hover:underline flex items-center">
+                    <Link href="/report-hub" className="text-sm text-[#1c519c] hover:underline flex items-center">
                         View All Reports <ExternalLink className="w-3.5 h-3.5 ml-1" />
                     </Link>
                 </div>
@@ -692,16 +692,16 @@ export default function ExecutiveSummary({ filters, dbData }: ExecutiveSummaryPr
                         <Link
                             key={report.id}
                             href={`/report-hub/${report.id}`}
-                            className="group bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#003B2C]/30 rounded-lg p-4 transition-all"
+                            className="group bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#1c519c]/30 rounded-lg p-4 transition-all"
                         >
                             <div className="flex items-start justify-between mb-2">
-                                <h4 className="text-sm font-semibold text-gray-900 group-hover:text-[#003B2C] line-clamp-2">
+                                <h4 className="text-sm font-semibold text-gray-900 group-hover:text-[#1c519c] line-clamp-2">
                                     {report.name}
                                 </h4>
-                                <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#003B2C] flex-shrink-0 mt-0.5" />
+                                <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#1c519c] flex-shrink-0 mt-0.5" />
                             </div>
                             <p className="text-xs text-gray-500 mb-2 line-clamp-2">{report.desc}</p>
-                            <span className="inline-block px-2 py-0.5 bg-emerald-100 text-[#003B2C] text-xs font-medium rounded-full">
+                            <span className="inline-block px-2 py-0.5 bg-emerald-100 text-[#1c519c] text-xs font-medium rounded-full">
                                 {report.freq}
                             </span>
                         </Link>

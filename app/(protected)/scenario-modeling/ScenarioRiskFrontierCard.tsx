@@ -45,7 +45,7 @@ export default function ScenarioRiskFrontierCard({
         const sy = (y: number) =>
             h - pad - ((y - minY) / (maxY - minY || 1)) * (h - pad * 2);
         return (
-            <svg width={w} height={h} className="text-[#003B2C]" aria-hidden>
+            <svg width={w} height={h} className="text-[#1c519c]" aria-hidden>
                 <rect width={w} height={h} fill="#f8fafc" rx={6} />
                 {frontier.map((p, i) => (
                     <circle
@@ -65,7 +65,7 @@ export default function ScenarioRiskFrontierCard({
         <div className="mt-6 border border-gray-200 rounded-xl bg-white shadow-sm overflow-hidden">
             <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-gradient-to-r from-[#f8fafc] to-white border-b border-gray-100">
                 <div>
-                    <p className="text-sm font-semibold text-[#003B2C]">Risk & allocation analytics</p>
+                    <p className="text-sm font-semibold text-[#1c519c]">Risk & allocation analytics</p>
                     <p className="text-xs text-gray-500">
                         Monte Carlo uses the same P&amp;L engine as sliders; frontier scatter explores random CFO-style
                         budget mixes across growth, productivity, leverage, and loyalty.
@@ -75,7 +75,7 @@ export default function ScenarioRiskFrontierCard({
                     type="button"
                     onClick={onRun}
                     disabled={loading}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#003B2C] text-white text-sm font-medium hover:bg-[#003B2C] disabled:opacity-50"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1c519c] text-white text-sm font-medium hover:bg-[#1c519c] disabled:opacity-50"
                 >
                     {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Shuffle className="w-4 h-4" />}
                     Run simulation

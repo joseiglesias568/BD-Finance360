@@ -909,9 +909,9 @@ const agents: Agent[] = [
 ];
 
 const categoryColors = {
-    orchestrator: 'from-[#003B2C] to-[#003B2C]',
-    super: 'from-[#003B2C] to-[#003B2C]',
-    utility: 'from-[#007A3D] to-[#003B2C]'
+    orchestrator: 'from-[#1c519c] to-[#1c519c]',
+    super: 'from-[#1c519c] to-[#1c519c]',
+    utility: 'from-[#1c519c] to-[#1c519c]'
 };
 
 const statusColors = {
@@ -937,7 +937,7 @@ export default function AgentGallery() {
             >
                 <div className="flex items-start space-x-4">
                     <div className="p-3 bg-[#F0F0F0] rounded-lg">
-                        <Brain className="w-6 h-6 text-[#003B2C]" />
+                        <Brain className="w-6 h-6 text-[#1c519c]" />
                     </div>
                     <div className="flex-1">
                         <h2 className="text-xl font-bold text-gray-900 mb-2">Delta Agent Ecosystem</h2>
@@ -948,17 +948,17 @@ export default function AgentGallery() {
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
                             <div className="p-4 bg-[#F0F0F0]/30 rounded-lg">
-                                <div className="text-2xl font-bold text-[#003B2C]">1</div>
+                                <div className="text-2xl font-bold text-[#1c519c]">1</div>
                                 <div className="text-sm font-medium text-gray-700 mt-1">Orchestrator</div>
                                 <div className="text-xs text-gray-500">Coordinates all workflows</div>
                             </div>
                             <div className="p-4 bg-[#F0F0F0] rounded-lg">
-                                <div className="text-2xl font-bold text-[#003B2C]">5</div>
+                                <div className="text-2xl font-bold text-[#1c519c]">5</div>
                                 <div className="text-sm font-medium text-gray-700 mt-1">Super Agents</div>
                                 <div className="text-xs text-gray-500">Handle complex operations</div>
                             </div>
                             <div className="p-4 bg-emerald-50 rounded-lg">
-                                <div className="text-2xl font-bold text-[#003B2C]">{agents.filter(a => a.category === 'utility' && a.status === 'active').length}</div>
+                                <div className="text-2xl font-bold text-[#1c519c]">{agents.filter(a => a.category === 'utility' && a.status === 'active').length}</div>
                                 <div className="text-sm font-medium text-gray-700 mt-1">Active Utility</div>
                                 <div className="text-xs text-gray-500">Used in workflows</div>
                             </div>
@@ -968,8 +968,8 @@ export default function AgentGallery() {
                                 <div className="text-xs text-gray-500">Not yet in workflows</div>
                             </div>
                         </div>
-                        <div className="mt-4 p-3 bg-[#F0F0F0] rounded-lg border border-[#003B2C]/20">
-                            <p className="text-sm text-[#003B2C]">
+                        <div className="mt-4 p-3 bg-[#F0F0F0] rounded-lg border border-[#1c519c]/20">
+                            <p className="text-sm text-[#1c519c]">
                                 <strong>Status Indicators:</strong> <span className="inline-block w-3 h-3 rounded-full bg-green-500 ml-2 mr-1"></span> Green = Used in workflows | <span className="inline-block w-3 h-3 rounded-full bg-gray-400 ml-2 mr-1"></span> Grey = Available but not yet used
                             </p>
                         </div>
@@ -985,7 +985,7 @@ export default function AgentGallery() {
                         onClick={() => setFilterCategory(category)}
                         className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
                             filterCategory === category
-                                ? 'bg-[#003B2C] text-white'
+                                ? 'bg-[#1c519c] text-white'
                                 : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                         }`}
                     >
@@ -1028,7 +1028,7 @@ export default function AgentGallery() {
                                         <div className="text-xs text-gray-500 mb-1">Used in {agent.workflows.length} workflow{agent.workflows.length !== 1 ? 's' : ''}</div>
                                     </div>
                                 )}
-                                <div className="flex items-center text-[#003B2C] text-sm font-medium group-hover:gap-2 transition-all">
+                                <div className="flex items-center text-[#1c519c] text-sm font-medium group-hover:gap-2 transition-all">
                                     <span>View Details</span>
                                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                                 </div>
@@ -1091,7 +1091,7 @@ export default function AgentGallery() {
                                     <ul className="space-y-2">
                                         {selectedAgent.responsibilities.map((resp, idx) => (
                                             <li key={idx} className="flex items-start space-x-2">
-                                                <CheckCircle className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                                <CheckCircle className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                                 <span className="text-gray-600">{resp}</span>
                                             </li>
                                         ))}
@@ -1121,7 +1121,7 @@ export default function AgentGallery() {
                                             {selectedAgent.workflows.map((workflowId) => {
                                                 const workflow = workflows.find(w => w.id === workflowId);
                                                 return workflow ? (
-                                                    <span key={workflowId} className="px-3 py-1 bg-[#F0F0F0] text-[#003B2C] text-sm rounded-full">
+                                                    <span key={workflowId} className="px-3 py-1 bg-[#F0F0F0] text-[#1c519c] text-sm rounded-full">
                                                         {workflow.name}
                                                     </span>
                                                 ) : null;

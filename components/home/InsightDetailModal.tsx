@@ -52,7 +52,7 @@ export default function InsightDetailModal({ insight, onClose, onViewConsole, in
                     style={{ maxHeight: 'calc(100vh - 48px)' }}
                 >
                     {/* Dark Header - compact */}
-                    <div className="bg-[#003B2C] px-5 py-3 flex items-center justify-between flex-shrink-0">
+                    <div className="bg-[#1c519c] px-5 py-3 flex items-center justify-between flex-shrink-0">
                         <h2 className="text-base font-bold text-white">{insight.title}</h2>
                         <div className="flex items-center space-x-4">
                             {insight.dataSource && (
@@ -82,7 +82,7 @@ export default function InsightDetailModal({ insight, onClose, onViewConsole, in
                     <div className="bg-white border-b border-gray-200 px-5 py-2 flex items-center justify-between flex-shrink-0">
                         <div className="flex items-center gap-1.5">
                             {['Period', 'Segment', 'Region'].map((filter) => (
-                                <div key={filter} className="flex items-center space-x-1 bg-[#003B2C] text-white text-[11px] font-medium px-2.5 py-1 rounded-md">
+                                <div key={filter} className="flex items-center space-x-1 bg-[#1c519c] text-white text-[11px] font-medium px-2.5 py-1 rounded-md">
                                     <span>{filter}</span>
                                     <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                                 </div>
@@ -186,7 +186,7 @@ export default function InsightDetailModal({ insight, onClose, onViewConsole, in
                                     return (
                                         <div
                                             key={idx}
-                                            className={`bg-[#003B2C] rounded-xl p-3.5 border-l-4 ${colorSet.border}`}
+                                            className={`bg-[#1c519c] rounded-xl p-3.5 border-l-4 ${colorSet.border}`}
                                         >
                                             <div className="flex items-start space-x-2.5">
                                                 <div className={`w-5 h-5 rounded-full ${colorSet.number} flex items-center justify-center flex-shrink-0 mt-0.5`}>
@@ -203,7 +203,7 @@ export default function InsightDetailModal({ insight, onClose, onViewConsole, in
 
                                 {/* Predictive Forecast */}
                                 {insight.predictiveInsight && (
-                                    <div className="bg-[#003B2C] rounded-xl p-3.5 border-l-4 border-l-purple-500">
+                                    <div className="bg-[#1c519c] rounded-xl p-3.5 border-l-4 border-l-purple-500">
                                         <div className="flex items-start space-x-2.5">
                                             <div className="w-5 h-5 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                                                 <TrendingUp className="w-2.5 h-2.5 text-white" />
@@ -224,7 +224,7 @@ export default function InsightDetailModal({ insight, onClose, onViewConsole, in
                                     disabled={!insight?.consoleAvailable}
                                     className={`w-full px-4 py-3 text-sm font-semibold rounded-xl transition-all ${
                                         insight?.consoleAvailable
-                                            ? 'text-white bg-[#003B2C] hover:bg-[#007A3D] shadow-lg'
+                                            ? 'text-white bg-[#1c519c] hover:bg-[#1c519c] shadow-lg'
                                             : 'text-gray-400 bg-gray-200 cursor-not-allowed'
                                     }`}
                                 >

@@ -34,7 +34,7 @@ export default function EPMLayout({ children }: { children: React.ReactNode }) {
                   href={item.href}
                   className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive
-                      ? 'bg-[#003B2C]/10 text-[#003B2C]'
+                      ? 'bg-[#1c519c]/10 text-[#1c519c]'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                   }`}
                 >
@@ -49,15 +49,15 @@ export default function EPMLayout({ children }: { children: React.ReactNode }) {
           <div className="mt-6 px-3">
             <div className="rounded-lg bg-[#F0F0F0] p-3">
               <div className="flex items-start gap-2">
-                <Info className="h-3.5 w-3.5 text-[#003B2C] mt-0.5 shrink-0" />
+                <Info className="h-3.5 w-3.5 text-[#1c519c] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-[10px] font-semibold text-[#003B2C] leading-tight">
+                  <p className="text-[10px] font-semibold text-[#1c519c] leading-tight">
                     Connected to EPM Platform
                   </p>
-                  <p className="text-[9px] text-[#003B2C]/70 mt-1 leading-relaxed">
+                  <p className="text-[9px] text-[#1c519c]/70 mt-1 leading-relaxed">
                     This hub surfaces analytics from your EPM tool. Forecast adjustments, R&O submissions, and plan inputs are managed in the EPM input application.
                   </p>
-                  <button className="mt-2 flex items-center gap-1 text-[9px] font-semibold text-[#003B2C] hover:underline">
+                  <button className="mt-2 flex items-center gap-1 text-[9px] font-semibold text-[#1c519c] hover:underline">
                     <ExternalLink className="h-2.5 w-2.5" />
                     Open EPM Input Tool
                   </button>

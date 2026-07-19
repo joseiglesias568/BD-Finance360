@@ -69,13 +69,13 @@ export default function AIDock({ consoleTitle, onSubmit }: AIDockProps) {
                     <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                       <div className={`max-w-[80%] px-3 py-2 rounded-lg text-sm ${
                         msg.role === 'user'
-                          ? 'bg-[#003B2C] text-white'
-                          : 'bg-[#F0F0F0]/40 text-[#003B2C] border border-[#003B2C]/10'
+                          ? 'bg-[#1c519c] text-white'
+                          : 'bg-[#F0F0F0]/40 text-[#1c519c] border border-[#1c519c]/10'
                       }`}>
                         {msg.role === 'ai' && (
                           <div className="flex items-center gap-1 mb-1">
-                            <Sparkles className="w-3 h-3 text-[#003B2C]" />
-                            <span className="text-[10px] font-semibold text-[#003B2C]">AI</span>
+                            <Sparkles className="w-3 h-3 text-[#1c519c]" />
+                            <span className="text-[10px] font-semibold text-[#1c519c]">AI</span>
                           </div>
                         )}
                         {msg.text}
@@ -91,7 +91,7 @@ export default function AIDock({ consoleTitle, onSubmit }: AIDockProps) {
           <div className="bg-white border border-gray-200 rounded-t-xl shadow-lg px-4 py-3">
             <div className="flex items-center gap-3">
               <div className="p-1.5 bg-[#F0F0F0]/50 rounded-lg">
-                <Sparkles className="w-4 h-4 text-[#003B2C]" />
+                <Sparkles className="w-4 h-4 text-[#1c519c]" />
               </div>
               <input
                 type="text"
@@ -112,7 +112,7 @@ export default function AIDock({ consoleTitle, onSubmit }: AIDockProps) {
               <button
                 onClick={handleSubmit}
                 disabled={!query.trim()}
-                className="p-2 bg-[#003B2C] text-white rounded-lg hover:bg-[#003B2C] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="p-2 bg-[#1c519c] text-white rounded-lg hover:bg-[#1c519c] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 <Send className="w-4 h-4" />
               </button>

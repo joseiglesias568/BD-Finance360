@@ -135,9 +135,9 @@ export default function RiskHeatMap({ risks }: RiskHeatMapProps) {
                 <p className="font-semibold text-red-600">{selectedRisk.impact}</p>
               </div>
             </div>
-            <div className="mt-3 p-3 bg-[#F0F0F0]/30 rounded-lg border border-[#003B2C]/10">
-              <p className="text-xs font-semibold text-[#003B2C] mb-1">Mitigation Strategy</p>
-              <p className="text-sm text-[#003B2C]">{selectedRisk.mitigation}</p>
+            <div className="mt-3 p-3 bg-[#F0F0F0]/30 rounded-lg border border-[#1c519c]/10">
+              <p className="text-xs font-semibold text-[#1c519c] mb-1">Mitigation Strategy</p>
+              <p className="text-sm text-[#1c519c]">{selectedRisk.mitigation}</p>
             </div>
           </motion.div>
         )}

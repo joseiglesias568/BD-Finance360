@@ -81,7 +81,7 @@ export default function ChatPanel({ isOpen, onClose, initialQuery }: ChatPanelPr
         if (part.toolInvocation?.state === 'result') return null; // Hide completed tool results (data already used by AI)
         return (
           <span key={i} className="flex items-center gap-1.5 text-xs text-gray-500 italic my-1">
-            <span className="w-3 h-3 border-2 border-[#003B2C] border-t-transparent rounded-full animate-spin inline-block" />
+            <span className="w-3 h-3 border-2 border-[#1c519c] border-t-transparent rounded-full animate-spin inline-block" />
             Querying {toolName}...
           </span>
         );
@@ -122,7 +122,7 @@ export default function ChatPanel({ isOpen, onClose, initialQuery }: ChatPanelPr
             className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl z-50 flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#003B2C] text-white">
+            <div className="flex items-center justify-between px-4 py-3 bg-[#1c519c] text-white">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
                 <h2 className="font-semibold text-sm">Delta Finance360 AI</h2>
@@ -141,7 +141,7 @@ export default function ChatPanel({ isOpen, onClose, initialQuery }: ChatPanelPr
               {messages.length === 0 && (
                 <div className="text-center py-8">
                   <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#F0F0F0] flex items-center justify-center">
-                    <MessageSquare className="w-6 h-6 text-[#003B2C]" />
+                    <MessageSquare className="w-6 h-6 text-[#1c519c]" />
                   </div>
                   <h3 className="font-medium text-gray-900 mb-1">Ask me anything</h3>
                   <p className="text-xs text-gray-500 mb-6">
@@ -170,7 +170,7 @@ export default function ChatPanel({ isOpen, onClose, initialQuery }: ChatPanelPr
                     <div
                       className={`rounded-xl px-3.5 py-2.5 text-sm ${
                         message.role === 'user'
-                          ? 'bg-[#003B2C] text-white'
+                          ? 'bg-[#1c519c] text-white'
                           : 'bg-gray-100 text-gray-900'
                       }`}
                     >
@@ -192,9 +192,9 @@ export default function ChatPanel({ isOpen, onClose, initialQuery }: ChatPanelPr
                 <div className="flex justify-start">
                   <div className="bg-gray-100 rounded-xl px-4 py-3">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 bg-[#003B2C] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <div className="w-2 h-2 bg-[#003B2C] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <div className="w-2 h-2 bg-[#003B2C] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      <div className="w-2 h-2 bg-[#1c519c] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <div className="w-2 h-2 bg-[#1c519c] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <div className="w-2 h-2 bg-[#1c519c] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                     </div>
                   </div>
                 </div>
@@ -217,13 +217,13 @@ export default function ChatPanel({ isOpen, onClose, initialQuery }: ChatPanelPr
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ask about Delta financials..."
-                  className="flex-1 px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003B2C]/30 focus:border-[#003B2C]/30"
+                  className="flex-1 px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1c519c]/30 focus:border-[#1c519c]/30"
                   disabled={isLoading}
                 />
                 <button
                   type="submit"
                   disabled={isLoading || !inputValue.trim()}
-                  className="p-2.5 bg-[#003B2C] hover:bg-[#007A3D] text-white rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="p-2.5 bg-[#1c519c] hover:bg-[#1c519c] text-white rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4" />
                 </button>

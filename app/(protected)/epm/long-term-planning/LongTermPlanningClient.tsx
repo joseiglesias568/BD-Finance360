@@ -50,8 +50,8 @@ const METRIC_OPTIONS: SelectedMetric[] = [
   'EPS',
 ];
 
-const BRAND_GREEN = '#003B2C';
-const HOUSE_GREEN = '#003B2C';
+const BRAND_GREEN = '#1c519c';
+const HOUSE_GREEN = '#1c519c';
 const SOFT_GREEN = '#F0F0F0';
 
 // =============================================================================
@@ -285,7 +285,7 @@ export default function LongTermPlanningClient({ levers, baseline }: LongTermPla
                     }}
                     className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                       selectedMetric === metric
-                        ? 'font-semibold text-[#003B2C] bg-[#F0F0F0]/40'
+                        ? 'font-semibold text-[#1c519c] bg-[#F0F0F0]/40'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
                   >
@@ -322,7 +322,7 @@ export default function LongTermPlanningClient({ levers, baseline }: LongTermPla
               {hasChanges && (
                 <button
                   onClick={() => dispatch({ type: 'RESET', defaults: defaultValues })}
-                  className="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-[#003B2C] transition-colors px-2 py-1 rounded-md border border-gray-200 hover:border-[#003B2C]/30"
+                  className="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-[#1c519c] transition-colors px-2 py-1 rounded-md border border-gray-200 hover:border-[#1c519c]/30"
                 >
                   <RotateCcw className="h-3 w-3" />
                   Reset All

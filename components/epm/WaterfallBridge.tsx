@@ -168,7 +168,7 @@ export default function WaterfallBridge({
               if (!active || !payload?.[1]) return null;
               const d = payload[1].payload as WaterfallDatum;
               return (
-                <div className="bg-[#003B2C] text-white rounded-lg px-3 py-2 text-xs shadow-lg">
+                <div className="bg-[#1c519c] text-white rounded-lg px-3 py-2 text-xs shadow-lg">
                   <p className="font-semibold">{d.name}</p>
                   {d.isTotal ? (
                     <p>{formatVal(d.rawImpact, isEPS)}</p>
@@ -189,7 +189,7 @@ export default function WaterfallBridge({
             {chartData.map((d, i) => (
               <Cell
                 key={i}
-                fill={d.isTotal ? '#003B2C' : d.isPositive ? '#003B2C' : '#dc2626'}
+                fill={d.isTotal ? '#1c519c' : d.isPositive ? '#1c519c' : '#dc2626'}
                 opacity={d.isTotal ? 1 : 0.85}
               />
             ))}

@@ -211,7 +211,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                 <div className="px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                            <div className="p-2 bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-lg shadow-lg">
+                            <div className="p-2 bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-lg shadow-lg">
                                 <Brain className="w-6 h-6 text-white" />
                             </div>
                             <div>
@@ -221,7 +221,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                         </div>
                         <button
                             onClick={() => setShowCreateModal(true)}
-                            className="px-4 py-2 bg-[#003B2C] text-white rounded-lg font-semibold hover:bg-[#003B2C] transition-all flex items-center space-x-2"
+                            className="px-4 py-2 bg-[#1c519c] text-white rounded-lg font-semibold hover:bg-[#1c519c] transition-all flex items-center space-x-2"
                         >
                             <Plus className="w-4 h-4" />
                             <span>Create Alert</span>
@@ -239,7 +239,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`py-3 px-1 border-b-2 font-medium text-sm transition-colors ${activeTab === tab
-                                    ? 'border-[#003B2C] text-[#003B2C]'
+                                    ? 'border-[#1c519c] text-[#1c519c]'
                                     : 'border-transparent text-gray-500 hover:text-gray-700'
                                     }`}
                             >
@@ -269,7 +269,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                 <div className="flex items-center justify-between">
                                     <div>
                                         <p className="text-sm text-gray-600">Active</p>
-                                        <p className="text-2xl font-bold text-[#003B2C]">
+                                        <p className="text-2xl font-bold text-[#1c519c]">
                                             {alerts.filter(a => a.enabled).length}
                                         </p>
                                     </div>
@@ -319,7 +319,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     key={cat}
                                     onClick={() => setCategoryFilter(cat)}
                                     className={`px-3 py-1 text-xs rounded-full font-medium transition-colors ${categoryFilter === cat
-                                        ? 'bg-[#003B2C] text-white'
+                                        ? 'bg-[#1c519c] text-white'
                                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                         }`}
                                 >
@@ -396,7 +396,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                                     <td className="px-3 py-2.5 text-center">
                                                         <button
                                                             onClick={(e) => { e.stopPropagation(); toggleAlert(alert.id); }}
-                                                            className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${alert.enabled ? 'bg-[#003B2C]' : 'bg-gray-200'
+                                                            className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${alert.enabled ? 'bg-[#1c519c]' : 'bg-gray-200'
                                                                 }`}
                                                         >
                                                             <span
@@ -431,7 +431,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                                                                 : [...prev, alert.id]
                                                                         );
                                                                     }}
-                                                                    className="p-1 text-[#003B2C] hover:bg-[#F0F0F0] rounded transition-colors"
+                                                                    className="p-1 text-[#1c519c] hover:bg-[#F0F0F0] rounded transition-colors"
                                                                     title="AI Suggested Actions"
                                                                 >
                                                                     {isExpanded ? (
@@ -453,15 +453,15 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                                 {/* Expandable AI Suggested Actions Row */}
                                                 {isExpanded && alert.suggestedActions && (
                                                     <tr>
-                                                        <td colSpan={8} className="px-3 py-3 bg-[#F0F0F0]/40 border-t border-b border-[#003B2C]/20">
+                                                        <td colSpan={8} className="px-3 py-3 bg-[#F0F0F0]/40 border-t border-b border-[#1c519c]/20">
                                                             <div className="flex items-start space-x-2">
-                                                                <Brain className="w-4 h-4 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                                                <Brain className="w-4 h-4 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                                                 <div className="flex-1">
-                                                                    <p className="text-xs font-semibold text-[#003B2C] mb-1.5">AI Suggested Next Actions</p>
+                                                                    <p className="text-xs font-semibold text-[#1c519c] mb-1.5">AI Suggested Next Actions</p>
                                                                     <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
                                                                         {alert.suggestedActions.map((action, idx) => (
                                                                             <div key={idx} className="flex items-start space-x-1.5">
-                                                                                <span className="text-[10px] font-bold text-[#003B2C] bg-[#F0F0F0] rounded-full w-4 h-4 flex items-center justify-center flex-shrink-0 mt-0.5">{idx + 1}</span>
+                                                                                <span className="text-[10px] font-bold text-[#1c519c] bg-[#F0F0F0] rounded-full w-4 h-4 flex items-center justify-center flex-shrink-0 mt-0.5">{idx + 1}</span>
                                                                                 <span className="text-xs text-gray-700">{action}</span>
                                                                             </div>
                                                                         ))}
@@ -492,7 +492,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                             return (
                                 <div key={category}>
                                     <div className="flex items-center space-x-2 mb-3">
-                                        <Icon className="w-4 h-4 text-[#003B2C]" />
+                                        <Icon className="w-4 h-4 text-[#1c519c]" />
                                         <h3 className="text-sm font-semibold text-gray-900">{category}</h3>
                                         <span className="text-xs text-gray-400">({categoryTemplates.length} templates)</span>
                                     </div>
@@ -506,7 +506,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                                     initial={{ opacity: 0, scale: 0.95 }}
                                                     animate={{ opacity: 1, scale: 1 }}
                                                     whileHover={{ scale: 1.02 }}
-                                                    className="bg-white rounded-lg border border-gray-200 p-4 cursor-pointer hover:border-[#003B2C] hover:shadow-lg transition-all"
+                                                    className="bg-white rounded-lg border border-gray-200 p-4 cursor-pointer hover:border-[#1c519c] hover:shadow-lg transition-all"
                                                     onClick={() => {
                                                         setSelectedTemplate(template);
                                                         setShowCreateModal(true);
@@ -514,7 +514,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                                 >
                                                     <div className="flex items-start space-x-3">
                                                         <div className="p-2 bg-[#F0F0F0] rounded-lg">
-                                                            <TplIcon className="w-5 h-5 text-[#003B2C]" />
+                                                            <TplIcon className="w-5 h-5 text-[#1c519c]" />
                                                         </div>
                                                         <div className="flex-1 min-w-0">
                                                             <h3 className="font-semibold text-gray-900 text-sm">{template.name}</h3>
@@ -564,7 +564,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <p className="text-xs text-gray-600 mt-0.5">Americas fee revenue growth declined -2.4% QoQ, driven by capital markets weakness. Transaction volume down -3.1% while average fee rate held flat at +0.7%.</p>
                                     <div className="flex items-center space-x-3 mt-1.5">
                                         <span className="text-[10px] text-gray-400 flex items-center"><Clock className="w-2.5 h-2.5 mr-0.5" />2 hours ago</span>
-                                        <span className="text-[10px] text-[#003B2C] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />5 AI actions recommended</span>
+                                        <span className="text-[10px] text-[#1c519c] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />5 AI actions recommended</span>
                                         <span className="text-[10px] text-gray-400">Notified via Email, Slack</span>
                                     </div>
                                 </div>
@@ -601,7 +601,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <p className="text-xs text-gray-600 mt-0.5">Work order response time averaged 5:23 hours across 287 managed properties, 18% of the portfolio. Highest concentration in metro NYC and Chicago markets.</p>
                                     <div className="flex items-center space-x-3 mt-1.5">
                                         <span className="text-[10px] text-gray-400 flex items-center"><Clock className="w-2.5 h-2.5 mr-0.5" />5 hours ago</span>
-                                        <span className="text-[10px] text-[#003B2C] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />Property-level drill down available</span>
+                                        <span className="text-[10px] text-[#1c519c] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />Property-level drill down available</span>
                                     </div>
                                 </div>
                             </div>
@@ -637,7 +637,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <p className="text-xs text-gray-600 mt-0.5">Q2 FY26 revenue forecast confidence band widened to ±3.4%, up from ±1.8% last week. Key drivers: consumer sentiment index decline and weather pattern uncertainty in key markets.</p>
                                     <div className="flex items-center space-x-3 mt-1.5">
                                         <span className="text-[10px] text-gray-400 flex items-center"><Clock className="w-2.5 h-2.5 mr-0.5" />12 hours ago</span>
-                                        <span className="text-[10px] text-[#003B2C] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />Scenario analysis generated</span>
+                                        <span className="text-[10px] text-[#1c519c] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />Scenario analysis generated</span>
                                     </div>
                                 </div>
                             </div>
@@ -673,7 +673,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <p className="text-xs text-gray-600 mt-0.5">Active client accounts declined to 12,400 (-2.3% QoQ). Analysis shows standard tier clients driving the decline, with platform engagement frequency down 18% vs. prior quarter.</p>
                                     <div className="flex items-center space-x-3 mt-1.5">
                                         <span className="text-[10px] text-gray-400 flex items-center"><Clock className="w-2.5 h-2.5 mr-0.5" />2 days ago</span>
-                                        <span className="text-[10px] text-[#003B2C] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />Retention campaign recommended</span>
+                                        <span className="text-[10px] text-[#1c519c] font-medium flex items-center"><Brain className="w-2.5 h-2.5 mr-0.5" />Retention campaign recommended</span>
                                     </div>
                                 </div>
                             </div>
@@ -709,7 +709,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <p className="text-xs text-gray-600 mt-0.5">Workforce cost ratio hit 32.4% of property revenue in week 12. Scheduling model optimization could recover 40-60bps. 127 properties above the 35% individual threshold.</p>
                                     <div className="flex items-center space-x-3 mt-1.5">
                                         <span className="text-[10px] text-gray-400 flex items-center"><Clock className="w-2.5 h-2.5 mr-0.5" />3 days ago</span>
-                                        <span className="text-[10px] text-[#003B2C] font-medium">Property operations review initiated</span>
+                                        <span className="text-[10px] text-[#1c519c] font-medium">Property operations review initiated</span>
                                     </div>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                             {/* Activity: China resolved */}
                             <div className="p-4 flex items-start space-x-3">
                                 <div className="p-2 bg-emerald-50 rounded-lg flex-shrink-0">
-                                    <Globe className="w-4 h-4 text-[#003B2C]" />
+                                    <Globe className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center space-x-2">
@@ -755,7 +755,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Alert Name</label>
                                     <input
                                         type="text"
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B2C] focus:border-transparent"
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1c519c] focus:border-transparent"
                                         defaultValue={selectedTemplate?.name || ''}
                                     />
                                 </div>
@@ -764,7 +764,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     <div className="flex items-center space-x-2">
                                         <input
                                             type="number"
-                                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B2C] focus:border-transparent"
+                                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1c519c] focus:border-transparent"
                                             defaultValue={selectedTemplate?.defaultThreshold || 0}
                                         />
                                         <span className="text-sm text-gray-600">{selectedTemplate?.unit || '%'}</span>
@@ -779,7 +779,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                             { id: 'anomaly', label: 'Anomaly', desc: 'Detects unusual patterns' },
                                             { id: 'trend', label: 'Trend', desc: 'Sustained direction change' },
                                         ].map(t => (
-                                            <label key={t.id} className={`flex flex-col p-2 border rounded-lg cursor-pointer hover:bg-gray-50 ${selectedTemplate?.alertType === t.id ? 'border-[#003B2C] bg-[#F0F0F0]/30' : 'border-gray-200'}`}>
+                                            <label key={t.id} className={`flex flex-col p-2 border rounded-lg cursor-pointer hover:bg-gray-50 ${selectedTemplate?.alertType === t.id ? 'border-[#1c519c] bg-[#F0F0F0]/30' : 'border-gray-200'}`}>
                                                 <span className="text-xs font-medium text-gray-900">{t.label}</span>
                                                 <span className="text-[10px] text-gray-500">{t.desc}</span>
                                             </label>
@@ -793,7 +793,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                             const Icon = channel.icon;
                                             return (
                                                 <label key={channel.id} className="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
-                                                    <input type="checkbox" className="text-[#003B2C]" defaultChecked={channel.id === 'app' || channel.id === 'email'} />
+                                                    <input type="checkbox" className="text-[#1c519c]" defaultChecked={channel.id === 'app' || channel.id === 'email'} />
                                                     <Icon className="w-4 h-4 text-gray-600" />
                                                     <span className="text-sm text-gray-700">{channel.name}</span>
                                                 </label>
@@ -818,7 +818,7 @@ export default function AIAlertsClient({ alertsConfig }: AIAlertsClientProps) {
                                     setShowCreateModal(false);
                                     setSelectedTemplate(null);
                                 }}
-                                className="px-4 py-2 bg-[#003B2C] text-white rounded-lg font-semibold hover:bg-[#003B2C] transition-all"
+                                className="px-4 py-2 bg-[#1c519c] text-white rounded-lg font-semibold hover:bg-[#1c519c] transition-all"
                             >
                                 Create Alert
                             </button>

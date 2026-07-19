@@ -135,7 +135,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                             <select
                                 value={selectedMetric}
                                 onChange={(e) => setSelectedMetric(e.target.value)}
-                                className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                                className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                             >
                                 <option value="feeRevenueGrowth">Adjusted Revenue Growth</option>
                                 <option value="segmentGrowth">Segment Growth</option>
@@ -146,7 +146,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                             <select
                                 value={selectedView}
                                 onChange={(e) => setSelectedView(e.target.value)}
-                                className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                                className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                             >
                                 <option value="trend">Trend Analysis</option>
                                 <option value="drivers">Driver Contribution</option>
@@ -226,7 +226,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-2">
                                     <div
-                                        className={`h-2 rounded-full transition-all ${driver.contribution > 0 ? 'bg-[#003B2C]' : 'bg-red-500'
+                                        className={`h-2 rounded-full transition-all ${driver.contribution > 0 ? 'bg-[#1c519c]' : 'bg-red-500'
                                             }`}
                                         style={{ width: `${Math.abs(driver.contribution) * 10}%` }}
                                     />
@@ -270,7 +270,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                                     <div key={item.name} className="flex-1 flex flex-col items-center">
                                         <div className="relative w-full">
                                             <div
-                                                className={`w-full rounded-t-lg transition-all ${isStart || isEnd ? 'bg-[#003B2C]' :
+                                                className={`w-full rounded-t-lg transition-all ${isStart || isEnd ? 'bg-[#1c519c]' :
                                                     item.type === 'positive' ? 'bg-green-500' : 'bg-red-500'
                                                     }`}
                                                 style={{ height: `${height}px` }}
@@ -297,7 +297,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                 >
                     <div className="flex items-center justify-between mb-4">
                         <h4 className="font-semibold text-gray-900">Competitive Market Share</h4>
-                        <button className="text-sm text-[#003B2C] hover:text-[#007A3D] font-medium">
+                        <button className="text-sm text-[#1c519c] hover:text-[#1c519c] font-medium">
                             View Details
                         </button>
                     </div>
@@ -306,7 +306,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                         {competitiveData.map((comp) => (
                             <div key={comp.competitor} className="relative">
                                 <div className="flex items-center justify-between mb-1">
-                                    <span className={`text-sm font-medium ${comp.competitor === 'Delta' ? 'text-[#003B2C]' : 'text-gray-700'
+                                    <span className={`text-sm font-medium ${comp.competitor === 'Delta' ? 'text-[#1c519c]' : 'text-gray-700'
                                         }`}>
                                         {comp.competitor}
                                     </span>
@@ -320,7 +320,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-3">
                                     <div
-                                        className={`h-3 rounded-full transition-all ${comp.competitor === 'Delta' ? 'bg-[#003B2C]' : 'bg-gray-400'
+                                        className={`h-3 rounded-full transition-all ${comp.competitor === 'Delta' ? 'bg-[#1c519c]' : 'bg-gray-400'
                                             }`}
                                         style={{ width: `${comp.share * 8}%` }}
                                     />
@@ -398,9 +398,9 @@ export default function Analytics({ dbData }: AnalyticsProps) {
             </div>
 
             {/* Driver Insights Panel — sourced from DB market + strategic data */}
-            <div className="bg-gradient-to-r from-[#F0F0F0] to-emerald-50 rounded-xl p-6 border border-[#003B2C]/20">
+            <div className="bg-gradient-to-r from-[#F0F0F0] to-emerald-50 rounded-xl p-6 border border-[#1c519c]/20">
                 <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                    <Layers className="w-5 h-5 mr-2 text-[#003B2C]" />
+                    <Layers className="w-5 h-5 mr-2 text-[#1c519c]" />
                     Driver-Based Insights & Recommendations
                 </h4>
                 <div className="grid grid-cols-3 gap-4">
@@ -440,7 +440,7 @@ export default function Analytics({ dbData }: AnalyticsProps) {
                         <p className="text-lg font-semibold text-gray-900">
                             {dbData?.strategic?.keyOpportunities?.[0]?.title ?? 'Digital Platform Monetization'}
                         </p>
-                        <p className="text-sm text-[#003B2C] mt-1">
+                        <p className="text-sm text-[#1c519c] mt-1">
                             {dbData?.strategic?.keyOpportunities?.[0]?.revenueImpact ?? '+$300M incremental revenue potential'}
                         </p>
                         <p className="text-xs text-gray-600 mt-2">

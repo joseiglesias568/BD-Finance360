@@ -78,11 +78,11 @@ export default function ThreadSidebar({
 
   if (isCollapsed) {
     return (
-      <div className="w-14 border-r border-gray-200/50 bg-[#003B2C] flex flex-col items-center py-4 gap-3">
+      <div className="w-14 border-r border-gray-200/50 bg-[#1c519c] flex flex-col items-center py-4 gap-3">
         <button onClick={onToggleCollapse} className="p-2 rounded-lg hover:bg-white/10 text-white/70 hover:text-white transition-colors" title="Expand sidebar">
           <PanelLeft className="w-5 h-5" />
         </button>
-        <button onClick={onNewChat} className="p-2 rounded-lg bg-[#003B2C] hover:bg-[#007A3D] text-white transition-colors shadow-sm" title="New chat">
+        <button onClick={onNewChat} className="p-2 rounded-lg bg-[#1c519c] hover:bg-[#1c519c] text-white transition-colors shadow-sm" title="New chat">
           <Plus className="w-5 h-5" />
         </button>
       </div>
@@ -90,7 +90,7 @@ export default function ThreadSidebar({
   }
 
   return (
-    <div className="w-72 border-r border-gray-200/50 bg-[#003B2C] flex flex-col h-full">
+    <div className="w-72 border-r border-gray-200/50 bg-[#1c519c] flex flex-col h-full">
       {/* Header */}
       <div className="p-3 flex items-center justify-between border-b border-white/10">
         <button onClick={onToggleCollapse} className="p-2 rounded-lg hover:bg-white/10 text-white/70 hover:text-white transition-colors" title="Collapse sidebar">
@@ -98,7 +98,7 @@ export default function ThreadSidebar({
         </button>
         <button
           onClick={onNewChat}
-          className="flex items-center gap-2 px-3 py-2 bg-[#003B2C] hover:bg-[#007A3D] text-white text-sm font-medium rounded-lg transition-all shadow-sm hover:shadow"
+          className="flex items-center gap-2 px-3 py-2 bg-[#1c519c] hover:bg-[#1c519c] text-white text-sm font-medium rounded-lg transition-all shadow-sm hover:shadow"
         >
           <Plus className="w-4 h-4" />
           New Chat
@@ -114,7 +114,7 @@ export default function ThreadSidebar({
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search conversations..."
-              className="w-full pl-8 pr-3 py-2 text-xs bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-1 focus:ring-[#003B2C] focus:bg-white/10 transition-all"
+              className="w-full pl-8 pr-3 py-2 text-xs bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:ring-1 focus:ring-[#1c519c] focus:bg-white/10 transition-all"
             />
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function ThreadSidebar({
                             value={editTitle}
                             onChange={e => setEditTitle(e.target.value)}
                             onKeyDown={e => { if (e.key === 'Enter') confirmRename(); if (e.key === 'Escape') setEditingId(null); }}
-                            className="flex-1 px-2.5 py-1.5 text-xs bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-[#003B2C]"
+                            className="flex-1 px-2.5 py-1.5 text-xs bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-[#1c519c]"
                             autoFocus
                           />
                           <button onClick={confirmRename} className="p-1.5 text-emerald-400 hover:text-emerald-300 rounded hover:bg-white/5"><Check className="w-3.5 h-3.5" /></button>

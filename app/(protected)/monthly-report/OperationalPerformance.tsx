@@ -56,7 +56,7 @@ export default function OperationalPerformance({ periodLabel, operations, kpis }
         <div className="bg-white rounded-xl border border-gray-200 p-6">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-1.5 bg-[#F0F0F0] rounded-lg">
-              <Building className="w-4 h-4 text-[#003B2C]" />
+              <Building className="w-4 h-4 text-[#1c519c]" />
             </div>
             <div>
               <h2 className="text-base font-bold text-gray-900">Facility Performance</h2>
@@ -134,7 +134,7 @@ export default function OperationalPerformance({ periodLabel, operations, kpis }
               {digitalKPIs.slice(0, 4).map((kpi) => (
                 <div key={kpi.label} className="p-3 border border-gray-200 rounded-lg">
                   <p className="text-xs text-gray-500 mb-1">{kpi.label}</p>
-                  <p className="text-xl font-bold text-[#003B2C]">
+                  <p className="text-xl font-bold text-[#1c519c]">
                     {kpi.value}{kpi.unit && !String(kpi.value).includes(kpi.unit) ? kpi.unit : ''}
                   </p>
                   <div className="flex items-center justify-between mt-1">

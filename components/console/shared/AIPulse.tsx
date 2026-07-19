@@ -38,7 +38,7 @@ export default function AIPulse({ insights, onInvestigate }: AIPulseProps) {
 
   return (
     <div
-      className="bg-[#003B2C] rounded-xl p-5 text-white relative overflow-hidden"
+      className="bg-[#1c519c] rounded-xl p-5 text-white relative overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

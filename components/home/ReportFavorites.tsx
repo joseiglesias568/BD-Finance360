@@ -48,7 +48,7 @@ export default function ReportFavorites({ reportsConfig }: ReportFavoritesProps)
                 </div>
                 <Link
                     href="/report-hub"
-                    className="flex items-center text-sm font-medium text-[#003B2C] hover:text-[#007A3D] transition-colors"
+                    className="flex items-center text-sm font-medium text-[#1c519c] hover:text-[#1c519c] transition-colors"
                 >
                     See All
                     <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -60,7 +60,7 @@ export default function ReportFavorites({ reportsConfig }: ReportFavoritesProps)
                     <motion.div
                         key={report.id}
                         whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                        className="bg-white rounded-xl border border-gray-200/80 hover:border-[#003B2C]/20 hover:shadow-md transition-all cursor-pointer group"
+                        className="bg-white rounded-xl border border-gray-200/80 hover:border-[#1c519c]/20 hover:shadow-md transition-all cursor-pointer group"
                     >
                         <div className="p-4">
                             {/* Category + Favorite */}
@@ -81,7 +81,7 @@ export default function ReportFavorites({ reportsConfig }: ReportFavoritesProps)
                                     <FileText className="w-3 h-3 text-gray-400" />
                                     <span className="text-[10px] text-gray-400 font-medium">{report.frequency}</span>
                                 </div>
-                                <div className="flex items-center text-xs font-medium text-[#003B2C] group-hover:text-[#007A3D] transition-colors">
+                                <div className="flex items-center text-xs font-medium text-[#1c519c] group-hover:text-[#1c519c] transition-colors">
                                     <span>View Details</span>
                                     <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" />
                                 </div>

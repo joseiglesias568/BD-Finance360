@@ -21,8 +21,8 @@ import {
 // ── Shared styling ─────────────────────────────────────────────────────────────
 
 const COLORS = {
-    green: '#003B2C',
-    greenLight: '#007A3D',
+    green: '#1c519c',
+    greenLight: '#1c519c',
     emerald: '#10B981',
     blue: '#3B82F6',
     amber: '#F59E0B',
@@ -39,7 +39,7 @@ const FILL_COLORS = [COLORS.green, COLORS.amber, COLORS.blue, COLORS.teal, COLOR
 const axisStyle = { fontSize: 10, fill: '#6B7280' };
 const tooltipStyle = {
     contentStyle: {
-        background: '#003B2C',
+        background: '#1c519c',
         border: 'none',
         borderRadius: 8,
         fontSize: 11,
@@ -83,7 +83,7 @@ function MarketShareChart({ data, trendData }: { data: InsightChartDataPoint[]; 
                     </ResponsiveContainer>
                     <div className="flex items-center gap-2">
                         <div className="flex items-center gap-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#003B2C]" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#1c519c]" />
                             <span className="text-[8px] text-gray-400">BD</span>
                         </div>
                         <div className="flex items-center gap-1">
@@ -105,7 +105,7 @@ function TransactionVolumeChart({ data, breakdowns }: { data: InsightChartDataPo
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Industry Passenger Revenue (% YoY)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#003B2C] rounded" /><span className="text-[9px] text-gray-400">Actual</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Actual</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-amber-400 rounded" style={{ borderTop: '1px dashed #F59E0B' }} /><span className="text-[9px] text-gray-400">Forecast</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
                 </div>
@@ -160,7 +160,7 @@ function RevenueChart({ data, growth }: { data: InsightChartDataPoint[]; growth?
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Revenue by Segment ($B)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#003B2C]" /><span className="text-[9px] text-gray-400">Mainline</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Mainline</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Regional</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">Loyalty / Other</span></div>
                 </div>
@@ -207,7 +207,7 @@ function PortfolioRetentionChart({ data, stats }: { data: InsightChartDataPoint[
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Managed Portfolio (B sqft) & Retention (%)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#003B2C]" /><span className="text-[9px] text-gray-400">Portfolio</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Portfolio</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-indigo-500" /><span className="text-[9px] text-gray-400">Retention</span></div>
                 </div>
             </div>
@@ -252,7 +252,7 @@ function OccupancyChart({ data, stats }: { data: InsightChartDataPoint[]; stats?
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Office Occupancy Rate (%) & Leasing Volume</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#003B2C] rounded" /><span className="text-[9px] text-gray-400">Occupancy</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Occupancy</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-teal-400 opacity-40" /><span className="text-[9px] text-gray-400">Leasing Vol</span></div>
                 </div>
@@ -411,7 +411,7 @@ function ServiceMixChart({ data, stats }: { data: InsightChartDataPoint[]; stats
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Resilient</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">Transact.</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#003B2C] rounded" /><span className="text-[9px] text-gray-400">Margin</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Margin</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -462,7 +462,7 @@ function DigitalProgressChart({ data, breakdowns }: { data: InsightChartDataPoin
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Digital Transformation Progress</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#003B2C]" /><span className="text-[9px] text-gray-400">Adoption</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Adoption</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
                 </div>
             </div>
@@ -559,7 +559,7 @@ function ServiceLineChart({ data, growth }: { data: InsightChartDataPoint[]; gro
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Revenue by Service Line (%)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#003B2C]" /><span className="text-[9px] text-gray-400">Leasing</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Leasing</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Cap Mkts</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">FM</span></div>
                 </div>
@@ -606,7 +606,7 @@ function EPSChart({ data, breakdowns }: { data: InsightChartDataPoint[]; breakdo
             <div className="flex items-center justify-between mb-1">
                 <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Non-GAAP EPS Trajectory ($/share)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#003B2C]" /><span className="text-[9px] text-gray-400">Actual</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Actual</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
                 </div>
             </div>

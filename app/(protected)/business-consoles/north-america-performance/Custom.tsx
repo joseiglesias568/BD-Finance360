@@ -70,7 +70,7 @@ function WidgetChart({ widgetId }: { widgetId: string }) {
     }
 
     const tooltipStyle = {
-        contentStyle: { background: '#003B2C', border: 'none', borderRadius: 8, fontSize: 11, color: '#fff', padding: '6px 10px' },
+        contentStyle: { background: '#1c519c', border: 'none', borderRadius: 8, fontSize: 11, color: '#fff', padding: '6px 10px' },
         itemStyle: { color: '#fff', fontSize: 11 },
     };
 
@@ -256,7 +256,7 @@ export default function Custom() {
                             value={dashboardName}
                             onChange={(e) => setDashboardName(e.target.value)}
                             placeholder="e.g., Capital Markets Pipeline Tracker"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                         />
                     </div>
 
@@ -269,7 +269,7 @@ export default function Custom() {
                             onChange={(e) => setDashboardDescription(e.target.value)}
                             placeholder="Brief description of this dashboard's purpose..."
                             rows={3}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                         />
                     </div>
 
@@ -289,17 +289,17 @@ export default function Custom() {
                                                     key={widget.id}
                                                     onClick={() => toggleWidget(widget.id)}
                                                     className={`p-4 rounded-lg border-2 transition-all ${isSelected
-                                                        ? 'border-[#003B2C] bg-[#F0F0F0]'
+                                                        ? 'border-[#1c519c] bg-[#F0F0F0]'
                                                         : 'border-gray-200 hover:border-gray-300'
                                                         }`}
                                                 >
                                                     <div className="flex items-center space-x-3">
-                                                        <div className={`p-2 rounded-lg ${isSelected ? 'bg-[#003B2C]/10' : 'bg-gray-100'
+                                                        <div className={`p-2 rounded-lg ${isSelected ? 'bg-[#1c519c]/10' : 'bg-gray-100'
                                                             }`}>
-                                                            <Icon className={`w-5 h-5 ${isSelected ? 'text-[#003B2C]' : 'text-gray-600'
+                                                            <Icon className={`w-5 h-5 ${isSelected ? 'text-[#1c519c]' : 'text-gray-600'
                                                                 }`} />
                                                         </div>
-                                                        <span className={`text-sm font-medium ${isSelected ? 'text-[#003B2C]' : 'text-gray-700'
+                                                        <span className={`text-sm font-medium ${isSelected ? 'text-[#1c519c]' : 'text-gray-700'
                                                             }`}>
                                                             {widget.name}
                                                         </span>
@@ -355,7 +355,7 @@ export default function Custom() {
                         onClick={handleCreateDashboard}
                         disabled={!dashboardName || selectedWidgets.length === 0}
                         className={`px-6 py-2 text-sm font-medium text-white rounded-lg transition-colors ${dashboardName && selectedWidgets.length > 0
-                            ? 'bg-[#003B2C] hover:bg-[#007A3D]'
+                            ? 'bg-[#1c519c] hover:bg-[#1c519c]'
                             : 'bg-gray-300 cursor-not-allowed'
                             }`}
                     >
@@ -402,7 +402,7 @@ export default function Custom() {
                             <button
                                 onClick={() => setEditMode(!editMode)}
                                 className={`p-2 rounded-lg transition-colors ${editMode
-                                    ? 'bg-emerald-100 text-[#003B2C]'
+                                    ? 'bg-emerald-100 text-[#1c519c]'
                                     : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                                     }`}
                             >
@@ -424,8 +424,8 @@ export default function Custom() {
                     </div>
 
                     {editMode && (
-                        <div className="mt-4 p-4 bg-[#F0F0F0] rounded-lg border border-[#003B2C]/20">
-                            <p className="text-sm text-[#003B2C]">
+                        <div className="mt-4 p-4 bg-[#F0F0F0] rounded-lg border border-[#1c519c]/20">
+                            <p className="text-sm text-[#1c519c]">
                                 Edit mode enabled. Drag widgets to rearrange, or click the settings icon to configure.
                             </p>
                         </div>
@@ -450,7 +450,7 @@ export default function Custom() {
                                 <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center space-x-3">
                                         <div className="p-2 bg-[#F0F0F0] rounded-lg">
-                                            <Icon className="w-5 h-5 text-[#003B2C]" />
+                                            <Icon className="w-5 h-5 text-[#1c519c]" />
                                         </div>
                                         <h3 className="text-base font-semibold text-gray-900">
                                             {widget?.name || 'Unknown Widget'}
@@ -495,7 +495,7 @@ export default function Custom() {
                             </div>
                             <button
                                 onClick={() => setIsCreating(true)}
-                                className="flex items-center space-x-2 px-4 py-2 bg-[#003B2C] text-white rounded-lg hover:bg-[#007A3D] transition-colors"
+                                className="flex items-center space-x-2 px-4 py-2 bg-[#1c519c] text-white rounded-lg hover:bg-[#1c519c] transition-colors"
                             >
                                 <Plus className="w-4 h-4" />
                                 <span className="text-sm font-medium">Create Dashboard</span>
@@ -533,7 +533,7 @@ export default function Custom() {
                                         {dashboard.widgets.slice(0, 3).map((widget) => (
                                             <span
                                                 key={widget}
-                                                className="inline-flex px-2 py-1 bg-[#F0F0F0] text-[#003B2C] text-xs rounded"
+                                                className="inline-flex px-2 py-1 bg-[#F0F0F0] text-[#1c519c] text-xs rounded"
                                             >
                                                 {widget.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
                                             </span>
@@ -575,11 +575,11 @@ export default function Custom() {
                         ))}
 
                         {/* Template Cards */}
-                        <div className="bg-gradient-to-br from-[#F0F0F0] to-emerald-50 rounded-xl p-6 border border-[#003B2C]/20">
+                        <div className="bg-gradient-to-br from-[#F0F0F0] to-emerald-50 rounded-xl p-6 border border-[#1c519c]/20">
                             <div className="flex items-center justify-center h-full">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-[#003B2C]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                        <Grid className="w-6 h-6 text-[#003B2C]" />
+                                    <div className="w-12 h-12 bg-[#1c519c]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                                        <Grid className="w-6 h-6 text-[#1c519c]" />
                                     </div>
                                     <h4 className="text-sm font-medium text-gray-900 mb-1">
                                         Use a Template
@@ -587,7 +587,7 @@ export default function Custom() {
                                     <p className="text-xs text-gray-600 mb-3">
                                         Start with pre-built BD dashboard templates
                                     </p>
-                                    <button className="text-xs font-medium text-[#003B2C] hover:text-[#007A3D]">
+                                    <button className="text-xs font-medium text-[#1c519c] hover:text-[#1c519c]">
                                         Browse Templates
                                     </button>
                                 </div>

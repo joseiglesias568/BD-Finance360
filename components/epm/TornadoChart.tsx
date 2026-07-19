@@ -50,7 +50,7 @@ export default function TornadoChart({ items, height = 300 }: TornadoChartProps)
             const d = payload[0]?.payload;
             if (!d) return null;
             return (
-              <div className="bg-[#003B2C] text-white rounded-lg px-3 py-2 text-xs shadow-lg">
+              <div className="bg-[#1c519c] text-white rounded-lg px-3 py-2 text-xs shadow-lg">
                 <p className="font-semibold mb-1">{d.name}</p>
                 {d.downside !== 0 && (
                   <p className="text-red-300">Downside: ${d.downside}M</p>
@@ -71,7 +71,7 @@ export default function TornadoChart({ items, height = 300 }: TornadoChartProps)
         </Bar>
         <Bar dataKey="upside" radius={[0, 3, 3, 0]}>
           {chartData.map((_, i) => (
-            <Cell key={i} fill="#003B2C" opacity={0.8} />
+            <Cell key={i} fill="#1c519c" opacity={0.8} />
           ))}
         </Bar>
       </BarChart>

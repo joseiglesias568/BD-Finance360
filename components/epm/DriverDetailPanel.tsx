@@ -41,10 +41,10 @@ export default function DriverDetailPanel({ lineItem, row, periods, drivers }: D
       animate={{ opacity: 1, height: 'auto' }}
       exit={{ opacity: 0, height: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-[#003B2C]/5 rounded-xl p-5 mt-3 space-y-5"
+      className="bg-[#1c519c]/5 rounded-xl p-5 mt-3 space-y-5"
     >
       <div className="flex items-center gap-2 mb-1">
-        <div className="w-1 h-5 rounded-full bg-[#003B2C]" />
+        <div className="w-1 h-5 rounded-full bg-[#1c519c]" />
         <h3 className="text-sm font-bold text-gray-900">{lineItem} — 18-Month Forecast with Confidence Band</h3>
       </div>
 
@@ -77,11 +77,11 @@ export default function DriverDetailPanel({ lineItem, row, periods, drivers }: D
         </ResponsiveContainer>
         <div className="flex items-center gap-4 mt-2 px-2">
           <div className="flex items-center gap-1.5 text-[10px] text-gray-500">
-            <div className="w-4 h-0.5 bg-[#003B2C] rounded" />
+            <div className="w-4 h-0.5 bg-[#1c519c] rounded" />
             <span>ML Forecast</span>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] text-gray-500">
-            <div className="w-4 h-0.5 bg-[#003B2C] rounded" style={{ borderTop: '2px dashed #003B2C' }} />
+            <div className="w-4 h-0.5 bg-[#1c519c] rounded" style={{ borderTop: '2px dashed #1c519c' }} />
             <span>Actuals</span>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] text-gray-500">

@@ -100,7 +100,7 @@ export default function ExecutiveDashboard({
   return (
     <div className="space-y-8">
       {/* Section A: State of the Business Banner */}
-      <div className="bg-gradient-to-r from-[#003B2C] to-[#003B2C] rounded-xl shadow-lg p-6 text-white">
+      <div className="bg-gradient-to-r from-[#1c519c] to-[#1c519c] rounded-xl shadow-lg p-6 text-white">
         <div className="flex items-center gap-3 mb-3">
           <span className="px-3 py-1 bg-white/20 rounded-lg backdrop-blur-sm text-sm font-semibold">
             State of the Business
@@ -142,7 +142,7 @@ export default function ExecutiveDashboard({
           {topActions.map((action) => {
             const isExpanded = expandedAction === action.id;
             return (
-              <div key={action.id} className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#003B2C]/30 transition-colors">
+              <div key={action.id} className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#1c519c]/30 transition-colors">
                 <button
                   onClick={() => setExpandedAction(isExpanded ? null : action.id)}
                   className="w-full flex items-center gap-4 px-4 py-3 text-left hover:bg-gray-50/50"
@@ -154,7 +154,7 @@ export default function ExecutiveDashboard({
                   <span className={`px-2 py-0.5 rounded text-[10px] font-semibold border shrink-0 ${getPriorityColorClasses(action.priority)}`}>
                     {action.priority.toUpperCase()}
                   </span>
-                  <span className="px-2 py-0.5 bg-[#F0F0F0] text-[#003B2C] rounded text-[10px] font-semibold shrink-0">
+                  <span className="px-2 py-0.5 bg-[#F0F0F0] text-[#1c519c] rounded text-[10px] font-semibold shrink-0">
                     {action.category}
                   </span>
                   <span className="text-xs text-gray-500 shrink-0 w-16 text-right">{action.owner}</span>
@@ -200,7 +200,7 @@ export default function ExecutiveDashboard({
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="p-1.5 bg-[#F0F0F0] rounded-lg">
-              <Eye className="w-4 h-4 text-[#003B2C]" />
+              <Eye className="w-4 h-4 text-[#1c519c]" />
             </div>
             <h2 className="text-lg font-bold text-gray-900">What to Watch</h2>
           </div>

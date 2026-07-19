@@ -29,8 +29,8 @@ export default function ConsoleTabRail({ tabs, activeTab, onTabChange }: Console
                 onClick={() => onTabChange(tab.id)}
                 className={`flex items-center gap-2 px-4 py-3 border-b-2 text-sm font-medium transition-all whitespace-nowrap
                   ${isActive
-                    ? 'border-[#003B2C] text-[#003B2C]'
-                    : 'border-transparent text-gray-500 hover:text-[#003B2C] hover:border-gray-300'
+                    ? 'border-[#1c519c] text-[#1c519c]'
+                    : 'border-transparent text-gray-500 hover:text-[#1c519c] hover:border-gray-300'
                   }`}
               >
                 <Icon className="w-4 h-4" />

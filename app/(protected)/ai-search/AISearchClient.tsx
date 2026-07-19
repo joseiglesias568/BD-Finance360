@@ -79,13 +79,13 @@ const FOLLOW_UP_SUGGESTIONS = [
 // Markdown components for premium rendering
 const markdownComponents = {
   p: ({ children }: any) => <p className="mb-3 last:mb-0 leading-relaxed">{children}</p>,
-  h1: ({ children }: any) => <h1 className="text-lg font-bold mb-3 mt-4 first:mt-0 text-[#003B2C]">{children}</h1>,
-  h2: ({ children }: any) => <h2 className="text-base font-semibold mb-2 mt-3 first:mt-0 text-[#003B2C]">{children}</h2>,
-  h3: ({ children }: any) => <h3 className="text-sm font-semibold mb-2 mt-3 first:mt-0 text-[#003B2C]">{children}</h3>,
+  h1: ({ children }: any) => <h1 className="text-lg font-bold mb-3 mt-4 first:mt-0 text-[#1c519c]">{children}</h1>,
+  h2: ({ children }: any) => <h2 className="text-base font-semibold mb-2 mt-3 first:mt-0 text-[#1c519c]">{children}</h2>,
+  h3: ({ children }: any) => <h3 className="text-sm font-semibold mb-2 mt-3 first:mt-0 text-[#1c519c]">{children}</h3>,
   ul: ({ children }: any) => <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>,
   ol: ({ children }: any) => <ol className="list-decimal pl-5 mb-3 space-y-1">{children}</ol>,
   li: ({ children }: any) => <li className="leading-relaxed">{children}</li>,
-  strong: ({ children }: any) => <strong className="font-semibold text-[#003B2C]">{children}</strong>,
+  strong: ({ children }: any) => <strong className="font-semibold text-[#1c519c]">{children}</strong>,
   em: ({ children }: any) => <em className="italic">{children}</em>,
   code: ({ children, className }: any) => {
     const isBlock = className?.includes('language-');
@@ -96,11 +96,11 @@ const markdownComponents = {
         </code>
       );
     }
-    return <code className="bg-[#F0F0F0]/50 text-[#003B2C] px-1.5 py-0.5 rounded text-xs font-mono">{children}</code>;
+    return <code className="bg-[#F0F0F0]/50 text-[#1c519c] px-1.5 py-0.5 rounded text-xs font-mono">{children}</code>;
   },
   pre: ({ children }: any) => <pre className="my-3">{children}</pre>,
   blockquote: ({ children }: any) => (
-    <blockquote className="border-l-[3px] border-[#003B2C]/30 pl-4 italic text-gray-600 my-3">{children}</blockquote>
+    <blockquote className="border-l-[3px] border-[#1c519c]/30 pl-4 italic text-gray-600 my-3">{children}</blockquote>
   ),
   table: ({ children }: any) => (
     <div className="overflow-x-auto my-3 rounded-lg border border-gray-200">
@@ -108,7 +108,7 @@ const markdownComponents = {
     </div>
   ),
   thead: ({ children }: any) => <thead className="bg-[#F0F0F0]/30">{children}</thead>,
-  th: ({ children }: any) => <th className="px-3 py-2 text-left font-semibold text-[#003B2C] border-b border-gray-200">{children}</th>,
+  th: ({ children }: any) => <th className="px-3 py-2 text-left font-semibold text-[#1c519c] border-b border-gray-200">{children}</th>,
   td: ({ children }: any) => <td className="px-3 py-2 border-b border-gray-100">{children}</td>,
   hr: () => <hr className="my-4 border-gray-200" />,
 };
@@ -136,9 +136,9 @@ function renderMessageParts(parts: any[] | undefined) {
           key={i}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="flex items-center gap-2 text-xs text-[#003B2C]/70 my-2"
+          className="flex items-center gap-2 text-xs text-[#1c519c]/70 my-2"
         >
-          <span className="w-3.5 h-3.5 border-2 border-[#003B2C] border-t-transparent rounded-full animate-spin inline-block" />
+          <span className="w-3.5 h-3.5 border-2 border-[#1c519c] border-t-transparent rounded-full animate-spin inline-block" />
           <span className="font-medium">Querying {toolName}...</span>
         </motion.span>
       );
@@ -147,8 +147,8 @@ function renderMessageParts(parts: any[] | undefined) {
     if (typeof part.type === 'string' && part.type.startsWith('tool-')) {
       const toolName = part.type.replace(/^tool-/, '');
       return (
-        <span key={i} className="flex items-center gap-2 text-xs text-[#003B2C]/70 my-2">
-          <span className="w-3.5 h-3.5 border-2 border-[#003B2C] border-t-transparent rounded-full animate-spin inline-block" />
+        <span key={i} className="flex items-center gap-2 text-xs text-[#1c519c]/70 my-2">
+          <span className="w-3.5 h-3.5 border-2 border-[#1c519c] border-t-transparent rounded-full animate-spin inline-block" />
           <span className="font-medium">Querying {toolName}...</span>
         </span>
       );
@@ -177,10 +177,10 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="p-1.5 rounded-lg text-gray-400 hover:text-[#003B2C] hover:bg-[#F0F0F0]/50 transition-all"
+      className="p-1.5 rounded-lg text-gray-400 hover:text-[#1c519c] hover:bg-[#F0F0F0]/50 transition-all"
       title="Copy to clipboard"
     >
-      {copied ? <Check className="w-3.5 h-3.5 text-[#003B2C]" /> : <Clipboard className="w-3.5 h-3.5" />}
+      {copied ? <Check className="w-3.5 h-3.5 text-[#1c519c]" /> : <Clipboard className="w-3.5 h-3.5" />}
     </button>
   );
 }
@@ -423,13 +423,13 @@ export default function AISearchClient() {
               >
                 {/* Premium icon */}
                 <div className="relative w-20 h-20 mx-auto mb-8">
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#003B2C] to-[#003B2C] shadow-xl shadow-[#003B2C]/20" />
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#1c519c] to-[#1c519c] shadow-xl shadow-[#1c519c]/20" />
                   <div className="absolute inset-0 rounded-3xl flex items-center justify-center">
                     <Sparkles className="w-9 h-9 text-white" />
                   </div>
-                  <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#003B2C]/20 to-transparent blur-xl -z-10" />
+                  <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#1c519c]/20 to-transparent blur-xl -z-10" />
                 </div>
-                <h1 className="text-3xl font-bold text-[#003B2C] mb-3 tracking-tight">
+                <h1 className="text-3xl font-bold text-[#1c519c] mb-3 tracking-tight">
                   What can I help you analyze?
                 </h1>
                 <p className="text-base text-gray-500 max-w-lg mx-auto leading-relaxed">
@@ -453,14 +453,14 @@ export default function AISearchClient() {
                       setInputValue(text);
                       inputRef.current?.focus();
                     }}
-                    className={`group relative flex items-start gap-3.5 p-4 bg-gradient-to-br ${gradient} border border-gray-200/60 rounded-2xl hover:border-[#003B2C]/20 hover:shadow-lg hover:shadow-[#003B2C]/5 transition-all duration-300 text-left`}
+                    className={`group relative flex items-start gap-3.5 p-4 bg-gradient-to-br ${gradient} border border-gray-200/60 rounded-2xl hover:border-[#1c519c]/20 hover:shadow-lg hover:shadow-[#1c519c]/5 transition-all duration-300 text-left`}
                   >
                     <div className={`p-2.5 rounded-xl ${iconBg} flex-shrink-0 transition-transform group-hover:scale-105`}>
                       <Icon className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
                       <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-1 block">{subtitle}</span>
-                      <span className="text-sm text-gray-700 group-hover:text-[#003B2C] leading-snug block">{text}</span>
+                      <span className="text-sm text-gray-700 group-hover:text-[#1c519c] leading-snug block">{text}</span>
                     </div>
                   </motion.button>
                 ))}
@@ -479,7 +479,7 @@ export default function AISearchClient() {
                 >
                   {msg.role === 'user' ? (
                     <div className="max-w-[75%]">
-                      <div className="bg-[#003B2C] text-white rounded-2xl rounded-br-md px-5 py-3 text-sm shadow-sm">
+                      <div className="bg-[#1c519c] text-white rounded-2xl rounded-br-md px-5 py-3 text-sm shadow-sm">
                         <div className="whitespace-pre-wrap leading-relaxed">{msg.content}</div>
                       </div>
                       <div className="text-[10px] text-gray-400 mt-1.5 text-right pr-1">
@@ -489,13 +489,13 @@ export default function AISearchClient() {
                   ) : (
                     <div className="max-w-[85%] flex gap-3">
                       <div className="flex-shrink-0 mt-1">
-                        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#003B2C] to-[#003B2C] flex items-center justify-center shadow-sm">
+                        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1c519c] to-[#1c519c] flex items-center justify-center shadow-sm">
                           <Sparkles className="w-4 h-4 text-white" />
                         </div>
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <span className="text-xs font-semibold text-[#003B2C]">Delta AI</span>
+                          <span className="text-xs font-semibold text-[#1c519c]">Delta AI</span>
                           <span className="text-[10px] text-gray-400">{formatTimestamp(msg.createdAt)}</span>
                         </div>
                         <div className="bg-white rounded-2xl rounded-tl-md px-5 py-4 text-sm text-gray-800 border border-gray-100 shadow-sm">
@@ -525,7 +525,7 @@ export default function AISearchClient() {
                 >
                   {message.role === 'user' ? (
                     <div className="max-w-[75%]">
-                      <div className="bg-[#003B2C] text-white rounded-2xl rounded-br-md px-5 py-3 text-sm shadow-sm">
+                      <div className="bg-[#1c519c] text-white rounded-2xl rounded-br-md px-5 py-3 text-sm shadow-sm">
                         <div className="whitespace-pre-wrap leading-relaxed">
                           {message.parts?.filter((p: any) => p.type === 'text').map((p: any) => p.text).join('') || ''}
                         </div>
@@ -534,16 +534,16 @@ export default function AISearchClient() {
                   ) : (
                     <div className="max-w-[85%] flex gap-3">
                       <div className="flex-shrink-0 mt-1">
-                        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#003B2C] to-[#003B2C] flex items-center justify-center shadow-sm">
+                        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1c519c] to-[#1c519c] flex items-center justify-center shadow-sm">
                           <Sparkles className="w-4 h-4 text-white" />
                         </div>
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <span className="text-xs font-semibold text-[#003B2C]">Delta AI</span>
+                          <span className="text-xs font-semibold text-[#1c519c]">Delta AI</span>
                           {status === 'streaming' && (
-                            <span className="text-[10px] text-[#003B2C] font-medium flex items-center gap-1">
-                              <span className="w-1.5 h-1.5 bg-[#003B2C] rounded-full animate-pulse" />
+                            <span className="text-[10px] text-[#1c519c] font-medium flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 bg-[#1c519c] rounded-full animate-pulse" />
                               Responding
                             </span>
                           )}
@@ -574,24 +574,24 @@ export default function AISearchClient() {
                 >
                   <div className="flex gap-3">
                     <div className="flex-shrink-0 mt-1">
-                      <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#003B2C] to-[#003B2C] flex items-center justify-center shadow-sm">
+                      <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#1c519c] to-[#1c519c] flex items-center justify-center shadow-sm">
                         <Sparkles className="w-4 h-4 text-white" />
                       </div>
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-xs font-semibold text-[#003B2C]">Delta AI</span>
-                        <span className="text-[10px] text-[#003B2C] font-medium flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 bg-[#003B2C] rounded-full animate-pulse" />
+                        <span className="text-xs font-semibold text-[#1c519c]">Delta AI</span>
+                        <span className="text-[10px] text-[#1c519c] font-medium flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 bg-[#1c519c] rounded-full animate-pulse" />
                           Analyzing
                         </span>
                       </div>
                       <div className="bg-white rounded-2xl rounded-tl-md px-5 py-4 border border-gray-100 shadow-sm">
                         <div className="flex items-center gap-2">
                           <div className="flex gap-1">
-                            <div className="w-2 h-2 bg-[#003B2C]/60 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                            <div className="w-2 h-2 bg-[#003B2C]/60 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                            <div className="w-2 h-2 bg-[#003B2C]/60 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                            <div className="w-2 h-2 bg-[#1c519c]/60 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                            <div className="w-2 h-2 bg-[#1c519c]/60 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                            <div className="w-2 h-2 bg-[#1c519c]/60 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                           </div>
                           <span className="text-xs text-gray-400 ml-1">Searching data sources...</span>
                         </div>
@@ -618,7 +618,7 @@ export default function AISearchClient() {
                           setInputValue(suggestion);
                           inputRef.current?.focus();
                         }}
-                        className="px-3.5 py-2 text-xs bg-white border border-gray-200 rounded-xl text-gray-600 hover:text-[#003B2C] hover:border-[#003B2C]/30 hover:bg-[#F0F0F0]/20 transition-all duration-200 shadow-sm hover:shadow"
+                        className="px-3.5 py-2 text-xs bg-white border border-gray-200 rounded-xl text-gray-600 hover:text-[#1c519c] hover:border-[#1c519c]/30 hover:bg-[#F0F0F0]/20 transition-all duration-200 shadow-sm hover:shadow"
                       >
                         {suggestion}
                       </button>
@@ -652,7 +652,7 @@ export default function AISearchClient() {
         <div className="p-4 pb-5">
           <div className="max-w-3xl mx-auto">
             <form onSubmit={handleSubmit} className="relative">
-              <div className="flex items-end gap-2 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-lg shadow-gray-900/5 focus-within:ring-2 focus-within:ring-[#003B2C]/20 focus-within:border-[#003B2C]/30 transition-all duration-200">
+              <div className="flex items-end gap-2 bg-white border border-gray-200 rounded-2xl px-4 py-3 shadow-lg shadow-gray-900/5 focus-within:ring-2 focus-within:ring-[#1c519c]/20 focus-within:border-[#1c519c]/30 transition-all duration-200">
                 <textarea
                   ref={inputRef}
                   value={inputValue}
@@ -672,7 +672,7 @@ export default function AISearchClient() {
                 <button
                   type="submit"
                   disabled={isLoading || !inputValue.trim()}
-                  className="p-2.5 bg-[#003B2C] hover:bg-[#007A3D] text-white rounded-xl transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0 shadow-sm hover:shadow-md active:scale-95"
+                  className="p-2.5 bg-[#1c519c] hover:bg-[#1c519c] text-white rounded-xl transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0 shadow-sm hover:shadow-md active:scale-95"
                 >
                   <Send className="w-4 h-4" />
                 </button>

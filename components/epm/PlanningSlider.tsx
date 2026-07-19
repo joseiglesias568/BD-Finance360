@@ -22,7 +22,7 @@ export default function PlanningSlider({
       <div className="flex items-center justify-between">
         <label className="text-xs font-medium text-gray-700">{label}</label>
         <div className="flex items-center gap-1.5">
-          <span className={`text-sm font-bold tabular-nums ${isChanged ? 'text-[#003B2C]' : 'text-gray-900'}`}>
+          <span className={`text-sm font-bold tabular-nums ${isChanged ? 'text-[#1c519c]' : 'text-gray-900'}`}>
             {unit === '$M' || unit === '$B' ? `${unit === '$B' ? '$' : '$'}${value.toFixed(unit === '$B' ? 1 : 0)}${unit === '$B' ? 'B' : 'M'}` :
              unit === '%' ? `${value.toFixed(1)}%` :
              unit === 'stores' ? value.toLocaleString() :
@@ -48,7 +48,7 @@ export default function PlanningSlider({
           onChange={(e) => onChange(parseFloat(e.target.value))}
           className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
           style={{
-            background: `linear-gradient(to right, #003B2C 0%, #003B2C ${pct}%, #E5E7EB ${pct}%, #E5E7EB 100%)`,
+            background: `linear-gradient(to right, #1c519c 0%, #1c519c ${pct}%, #E5E7EB ${pct}%, #E5E7EB 100%)`,
           }}
         />
       </div>

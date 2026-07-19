@@ -38,7 +38,7 @@ const agents = [
         id: 'orchestrator',
         name: 'The Team Lead',
         role: 'Orchestrator Agent',
-        color: '#003B2C',
+        color: '#1c519c',
         bg: '#F0F0F0',
         icon: Brain,
         plain: 'Reads your request, decides which specialists to call, and assembles the final answer — like a project manager who never sleeps.',
@@ -97,9 +97,9 @@ const agents = [
 ];
 
 const workflowSteps = [
-    { icon: Database, label: 'Source Data Arrives', sub: '10-K · 10-Q · Earnings releases · Internal metrics', color: '#003B2C' },
+    { icon: Database, label: 'Source Data Arrives', sub: '10-K · 10-Q · Earnings releases · Internal metrics', color: '#1c519c' },
     { icon: Shield, label: 'Guardian validates & tags', sub: 'Every value gets a [CITED] or [DERIVED] label', color: '#9F1239' },
-    { icon: Brain, label: 'Team Lead routes the request', sub: 'Decides which specialists are needed', color: '#003B2C' },
+    { icon: Brain, label: 'Team Lead routes the request', sub: 'Decides which specialists are needed', color: '#1c519c' },
     { icon: BarChart2, label: 'Specialists do the work', sub: 'Crunch numbers · Write narrative · Detect anomalies', color: '#0070C0' },
     { icon: Eye, label: 'Human checkpoint', sub: 'Finance team reviews, edits, and approves', color: '#065F46' },
     { icon: Sparkles, label: 'Output to dashboard', sub: 'Insight cards · Charts · Alerts · Briefings', color: '#7C3AED' },
@@ -109,7 +109,7 @@ const appSpotlights = [
     {
         page: 'Executive Summary',
         href: '/executive-summary',
-        color: '#003B2C',
+        color: '#1c519c',
         bg: '#F0F0F0',
         icon: TrendingUp,
         aiFeatures: [
@@ -163,7 +163,7 @@ const glp1Scenario = {
     label: 'GLP-1 Demand Acceleration',
     tagline: 'BioPharma Systems upside as GLP-1 drug manufacturers accelerate prefillable device procurement',
     triggerIcon: TrendingUp,
-    triggerIconColor: '#003B2C',
+    triggerIconColor: '#1c519c',
     scenario: 'GLP-1 Device Demand Acceleration — Revised Scenario Analysis',
     trigger: {
         time: '8:32 AM',
@@ -174,7 +174,7 @@ const glp1Scenario = {
         {
             time: '8:32:01',
             agent: 'The Team Lead',
-            agentColor: '#003B2C',
+            agentColor: '#1c519c',
             agentBg: '#F0F0F0',
             icon: Brain,
             action: 'Reads & routes the request',
@@ -234,7 +234,7 @@ const glp1Scenario = {
         {
             time: '8:32:24',
             agent: 'The Team Lead',
-            agentColor: '#003B2C',
+            agentColor: '#1c519c',
             agentBg: '#F0F0F0',
             icon: Sparkles,
             action: 'Assembles and publishes the full output',
@@ -263,7 +263,7 @@ const glp1Scenario = {
         },
     ],
     outcomes: [
-        { icon: Clock, label: 'Agent work time', value: '26 seconds', sub: 'From request to published output', color: '#003B2C' },
+        { icon: Clock, label: 'Agent work time', value: '26 seconds', sub: 'From request to published output', color: '#1c519c' },
         { icon: TrendingUp, label: 'EPS upside modeled', value: '$0.12–$0.70 range', sub: 'Base, upside, and acceleration scenarios', color: '#0070C0' },
         { icon: CheckCircle, label: 'Delivered to CFO', value: 'On time', sub: 'Human review: 83 minutes', color: '#065F46' },
     ],
@@ -311,7 +311,7 @@ const vobpScenario = {
         {
             time: '2:15:01',
             agent: 'The Team Lead',
-            agentColor: '#003B2C',
+            agentColor: '#1c519c',
             agentBg: '#F0F0F0',
             icon: Brain,
             action: 'Reads & routes the request',
@@ -371,7 +371,7 @@ const vobpScenario = {
         {
             time: '2:15:24',
             agent: 'The Team Lead',
-            agentColor: '#003B2C',
+            agentColor: '#1c519c',
             agentBg: '#F0F0F0',
             icon: Sparkles,
             action: 'Assembles and publishes',
@@ -400,7 +400,7 @@ const vobpScenario = {
         },
     ],
     outcomes: [
-        { icon: Clock, label: 'Agent work time', value: '25 seconds', sub: 'From request to published output', color: '#003B2C' },
+        { icon: Clock, label: 'Agent work time', value: '25 seconds', sub: 'From request to published output', color: '#1c519c' },
         { icon: AlertTriangle, label: 'EPS risk quantified', value: '-$0.18 to -$0.35', sub: 'Adverse and severe VoBP scenarios', color: '#B45309' },
         { icon: CheckCircle, label: 'Delivered to CFO', value: '7 min post-review', sub: 'Guidance risk assessment complete', color: '#065F46' },
     ],
@@ -448,7 +448,7 @@ const alarisScenario = {
         {
             time: '11:05:01',
             agent: 'The Team Lead',
-            agentColor: '#003B2C',
+            agentColor: '#1c519c',
             agentBg: '#F0F0F0',
             icon: Brain,
             action: 'Reads & routes the request',
@@ -508,7 +508,7 @@ const alarisScenario = {
         {
             time: '11:05:26',
             agent: 'The Team Lead',
-            agentColor: '#003B2C',
+            agentColor: '#1c519c',
             agentBg: '#F0F0F0',
             icon: Sparkles,
             action: 'Assembles and publishes',
@@ -537,7 +537,7 @@ const alarisScenario = {
         },
     ],
     outcomes: [
-        { icon: Clock, label: 'Agent work time', value: '27 seconds', sub: 'From request to published output', color: '#003B2C' },
+        { icon: Clock, label: 'Agent work time', value: '27 seconds', sub: 'From request to published output', color: '#1c519c' },
         { icon: TrendingUp, label: 'EPS upside modeled', value: '$0.16–$0.43', sub: 'Base, upside, acceleration scenarios FY26-FY27', color: '#065F46' },
         { icon: CheckCircle, label: 'Investor day ready', value: '13 min post-review', sub: 'Narrative package complete', color: '#0070C0' },
     ],
@@ -575,7 +575,7 @@ const guardrails = [
         icon: BookOpen,
         title: 'Every value has a source',
         desc: 'Numbers on this platform are tagged [CITED], [DERIVED], [INTERPOLATED], or [ASSUMED]. Cited values trace to a filed SEC document. Assumed values are clearly marked.',
-        color: '#003B2C',
+        color: '#1c519c',
     },
     {
         icon: Eye,
@@ -630,7 +630,7 @@ export default function AIOverviewPage() {
         <div className="bg-gray-50 min-h-screen">
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] text-white">
+            <div className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] text-white">
                 <div className="max-w-6xl mx-auto px-6 py-14">
                     <motion.div initial="hidden" animate="show" variants={fade} transition={{ duration: 0.5 }}>
                         <div className="flex items-center gap-2 mb-4">
@@ -671,7 +671,7 @@ export default function AIOverviewPage() {
                 {/* ── Section 1: The Team ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 1</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 1</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">The AI team — six roles, one goal.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">Think of these agents like specialist team members. Each has a defined job, clear boundaries, and reports back to the orchestrator who coordinates the whole effort.</p>
                     </motion.div>
@@ -715,14 +715,14 @@ export default function AIOverviewPage() {
                 {/* ── Section 2: How They Work Together ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 2</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 2</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">How a request moves through the team.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">Every time you load a dashboard or ask a question, this six-step sequence runs in the background — in seconds.</p>
                     </motion.div>
 
                     <div className="relative">
                         {/* connecting line */}
-                        <div className="absolute left-8 top-10 bottom-10 w-0.5 bg-gradient-to-b from-[#003B2C] to-[#7C3AED] hidden md:block" />
+                        <div className="absolute left-8 top-10 bottom-10 w-0.5 bg-gradient-to-b from-[#1c519c] to-[#7C3AED] hidden md:block" />
 
                         <div className="space-y-4">
                             {workflowSteps.map((step, i) => {
@@ -757,7 +757,7 @@ export default function AIOverviewPage() {
                 {/* ── Section 3: AI in the App ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 3</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 3</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">Where AI shows up — right now.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">Every highlighted feature below is live and powered by the agent team. Click any card to go directly to that part of the app.</p>
                     </motion.div>
@@ -822,7 +822,7 @@ export default function AIOverviewPage() {
                 {/* ── Section 4: Day in the Life ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 4 — AI in Action</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 4 — AI in Action</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">A day in the life.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-6">
                             Follow a real request through the agent pipeline — from the first message to an executive-ready briefing. Choose a scenario to see how the team handles it.
@@ -843,7 +843,7 @@ export default function AIOverviewPage() {
                                     onClick={() => { setActiveScenario(s.id as ScenarioKey); setShowSummaryModal(false); setExpandedSteps(new Set()); }}
                                     className={`text-left rounded-2xl border-2 p-4 transition-all ${
                                         isActive
-                                            ? 'border-[#003B2C] bg-[#F0F0F0] shadow-sm'
+                                            ? 'border-[#1c519c] bg-[#F0F0F0] shadow-sm'
                                             : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
                                     }`}
                                 >
@@ -856,11 +856,11 @@ export default function AIOverviewPage() {
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center gap-2 mb-0.5">
-                                                <p className={`text-sm font-bold truncate ${isActive ? 'text-[#003B2C]' : 'text-gray-700'}`}>
+                                                <p className={`text-sm font-bold truncate ${isActive ? 'text-[#1c519c]' : 'text-gray-700'}`}>
                                                     {s.label}
                                                 </p>
                                                 {isActive && (
-                                                    <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#003B2C] text-white">
+                                                    <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#1c519c] text-white">
                                                         Viewing
                                                     </span>
                                                 )}
@@ -877,7 +877,7 @@ export default function AIOverviewPage() {
                     <motion.div
                         key={`trigger-${activeScenario}`}
                         initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}
-                        className="mb-6 bg-gradient-to-r from-[#003B2C] to-[#003B2C] rounded-2xl p-6 text-white"
+                        className="mb-6 bg-gradient-to-r from-[#1c519c] to-[#1c519c] rounded-2xl p-6 text-white"
                     >
                         <div className="flex items-start gap-4">
                             <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
@@ -906,7 +906,7 @@ export default function AIOverviewPage() {
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: 0.05 }}
                     >
                         <div className="relative">
-                            <div className="absolute left-[31px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#003B2C] via-[#7C3AED] to-[#065F46]" />
+                            <div className="absolute left-[31px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#1c519c] via-[#7C3AED] to-[#065F46]" />
                             <div className="space-y-2">
                                 {scenario.steps.map((step, i) => {
                                     const Icon = step.icon;
@@ -1008,7 +1008,7 @@ export default function AIOverviewPage() {
                     >
                         <button
                             onClick={() => setShowSummaryModal(true)}
-                            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-[#003B2C] text-white text-sm font-semibold shadow-md hover:bg-[#007A3D] transition-all"
+                            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-[#1c519c] text-white text-sm font-semibold shadow-md hover:bg-[#1c519c] transition-all"
                         >
                             <FileText className="w-4 h-4" />
                             View AI Analysis Brief
@@ -1028,7 +1028,7 @@ export default function AIOverviewPage() {
                             onClick={e => e.stopPropagation()}
                         >
                             {/* Modal header */}
-                            <div className="sticky top-0 bg-gradient-to-r from-[#003B2C] to-[#003B2C] text-white rounded-t-2xl px-6 py-5 flex items-start justify-between">
+                            <div className="sticky top-0 bg-gradient-to-r from-[#1c519c] to-[#1c519c] text-white rounded-t-2xl px-6 py-5 flex items-start justify-between">
                                 <div>
                                     <div className="flex items-center gap-2 mb-1">
                                         <Sparkles className="w-4 h-4 text-[#009AC7]" />
@@ -1068,7 +1068,7 @@ export default function AIOverviewPage() {
                 {/* ── Section 5: Guardrails ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Section 5</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Section 5</p>
                         <h2 className="text-2xl font-bold text-gray-900 mb-1">Six guardrails keeping the data honest.</h2>
                         <p className="text-gray-500 text-sm max-w-2xl mb-8">AI moves fast. These controls make sure it moves accurately — and that your finance team stays in charge.</p>
                     </motion.div>
@@ -1097,7 +1097,7 @@ export default function AIOverviewPage() {
                 {/* ── Closing CTA ── */}
                 <motion.section
                     initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}
-                    className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-3xl p-10 text-white text-center"
+                    className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-3xl p-10 text-white text-center"
                 >
                     <Sparkles className="w-8 h-8 text-[#009AC7] mx-auto mb-4" />
                     <h3 className="text-2xl font-extrabold mb-3">The agents work. You decide.</h3>

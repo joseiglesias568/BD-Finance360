@@ -52,10 +52,10 @@ export default function DriverMatrix({ drivers, onSelectDriver }: DriverMatrixPr
             {/* Driver Name */}
             <div className="col-span-4">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-[#003B2C] group-hover:text-[#003B2C] transition-colors">
+                <span className="text-sm font-medium text-[#1c519c] group-hover:text-[#1c519c] transition-colors">
                   {driver.name}
                 </span>
-                <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#003B2C] transition-colors" />
+                <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#1c519c] transition-colors" />
               </div>
               {driver.subDrivers && driver.subDrivers.length > 0 && (
                 <div className="flex items-center gap-1.5 mt-1">
@@ -81,7 +81,7 @@ export default function DriverMatrix({ drivers, onSelectDriver }: DriverMatrixPr
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-[#003B2C]">
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-[#1c519c]">
                   {isNaN(driver.score) ? '–' : driver.score}
                 </span>
               </div>

@@ -90,7 +90,7 @@ function SignalDetailModal({
                 className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-gray-200"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-[#003B2C] to-[#003B2C] text-white shrink-0">
+                <div className="flex items-start justify-between gap-4 px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-[#1c519c] to-[#1c519c] text-white shrink-0">
                     <div className="min-w-0">
                         <p className="text-[11px] uppercase tracking-wide text-white/70 mb-1">{signal.category}</p>
                         <h2 id="signal-modal-title" className="text-lg font-semibold leading-snug">
@@ -114,7 +114,7 @@ function SignalDetailModal({
                             {importanceLabel(signal.importance)}
                         </span>
                         <span className="text-xs text-gray-600 flex items-center gap-1">
-                            <Target className="w-3.5 h-3.5 text-[#003B2C]" />
+                            <Target className="w-3.5 h-3.5 text-[#1c519c]" />
                             {signal.materialityNote}
                         </span>
                     </div>
@@ -144,7 +144,7 @@ function SignalDetailModal({
                         <ul className="space-y-1.5">
                             {signal.indicatorsToWatch.map((ind) => (
                                 <li key={ind} className="text-sm text-gray-700 flex gap-2">
-                                    <ChevronRight className="w-4 h-4 text-[#003B2C] shrink-0 mt-0.5" />
+                                    <ChevronRight className="w-4 h-4 text-[#1c519c] shrink-0 mt-0.5" />
                                     <span>{ind}</span>
                                 </li>
                             ))}
@@ -166,7 +166,7 @@ function SignalDetailModal({
                         />
                         <SwotColumn
                             title="Opportunities"
-                            icon={<ArrowUpRight className="w-4 h-4 text-[#003B2C]" />}
+                            icon={<ArrowUpRight className="w-4 h-4 text-[#1c519c]" />}
                             items={signal.swot.opportunities}
                             tone="border-sky-100 bg-sky-50/50"
                         />
@@ -205,7 +205,7 @@ function SignalDetailModal({
                                 onApplyToPl();
                                 onClose();
                             }}
-                            className="px-4 py-2 text-sm font-semibold rounded-lg bg-[#003B2C] text-white hover:bg-[#003B2C] transition-colors"
+                            className="px-4 py-2 text-sm font-semibold rounded-lg bg-[#1c519c] text-white hover:bg-[#1c519c] transition-colors"
                         >
                             Sync preset to P&L Impact
                         </button>
@@ -289,7 +289,7 @@ export default function ExternalSignalsTab({
             >
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-xl bg-[#003B2C] text-white shrink-0">
+                        <div className="p-3 rounded-xl bg-[#1c519c] text-white shrink-0">
                             <Radar className="w-7 h-7" />
                         </div>
                         <div>
@@ -298,7 +298,7 @@ export default function ExternalSignalsTab({
                             </h3>
                             <p className="text-sm text-gray-600 mt-1">{EXTERNAL_COMPETITIVE_SIGNALS_INTRO.subtext}</p>
                             <p className="text-xs text-gray-500 mt-3 leading-relaxed flex gap-2">
-                                <Sparkles className="w-4 h-4 text-[#003B2C] shrink-0 mt-0.5" />
+                                <Sparkles className="w-4 h-4 text-[#1c519c] shrink-0 mt-0.5" />
                                 <span>{EXTERNAL_COMPETITIVE_SIGNALS_INTRO.methodology}</span>
                             </p>
                         </div>
@@ -320,7 +320,7 @@ export default function ExternalSignalsTab({
                         return (
                             <div
                                 key={signal.id}
-                                className="flex bg-white rounded-xl shadow-sm border border-gray-200 hover:border-[#003B2C]/40 hover:shadow-md transition-all overflow-hidden group"
+                                className="flex bg-white rounded-xl shadow-sm border border-gray-200 hover:border-[#1c519c]/40 hover:shadow-md transition-all overflow-hidden group"
                             >
                                 <button
                                     type="button"
@@ -329,20 +329,20 @@ export default function ExternalSignalsTab({
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex gap-3 min-w-0">
-                                            <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#003B2C] text-white text-sm font-bold shrink-0">
+                                            <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#1c519c] text-white text-sm font-bold shrink-0">
                                                 {signal.rank}
                                             </span>
                                             <div className="min-w-0">
-                                                <p className="text-[11px] font-semibold uppercase tracking-wide text-[#003B2C]">
+                                                <p className="text-[11px] font-semibold uppercase tracking-wide text-[#1c519c]">
                                                     {signal.category}
                                                 </p>
-                                                <h4 className="text-base font-semibold text-gray-900 mt-0.5 group-hover:text-[#003B2C] transition-colors">
+                                                <h4 className="text-base font-semibold text-gray-900 mt-0.5 group-hover:text-[#1c519c] transition-colors">
                                                     {signal.title}
                                                 </h4>
                                                 <p className="text-sm text-gray-600 mt-2 leading-snug">{signal.summary}</p>
                                             </div>
                                         </div>
-                                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#003B2C] shrink-0 mt-1" />
+                                        <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#1c519c] shrink-0 mt-1" />
                                     </div>
 
                                     <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -369,7 +369,7 @@ export default function ExternalSignalsTab({
                                         type="button"
                                         title="Sync editorial lever preset to P&L Impact tab"
                                         onClick={() => onSyncPresetToPl(signal)}
-                                        className="shrink-0 px-4 border-l border-gray-100 text-gray-400 hover:text-[#003B2C] hover:bg-gray-50 transition-colors flex items-center"
+                                        className="shrink-0 px-4 border-l border-gray-100 text-gray-400 hover:text-[#1c519c] hover:bg-gray-50 transition-colors flex items-center"
                                     >
                                         <Link2 className="w-5 h-5" />
                                     </button>

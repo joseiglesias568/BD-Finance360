@@ -9,8 +9,8 @@ import SummaryMetricCard from '@/components/epm/SummaryMetricCard';
 import { CHART_AXIS_STYLE, CHART_GRID_STYLE, CHART_TOOLTIP_DARK } from '@/lib/chart-theme';
 import type { FiscalYearPlanData, FiscalYearMetric } from '@/lib/epm/fiscal-year-data';
 
-const GREEN = '#003B2C';
-const GREEN_DARK = '#003B2C';
+const GREEN = '#1c519c';
+const GREEN_DARK = '#1c519c';
 const RED = '#dc2626';
 
 function fmtCurrency(value: number, unit: string): string {
@@ -89,8 +89,8 @@ export default function FiscalYearPlanClient({ data }: FiscalYearPlanClientProps
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <SummaryMetricCard label="YTD Revenue vs Plan" value="$18,950M" subtitle="vs Plan $19,200M" icon={Target} trend="down" trendLabel="-1.3%" index={0} />
         <SummaryMetricCard label="Full-Year Forecast" value="$38.9B" subtitle="vs Plan $39.2B" icon={TrendingUp} trend="down" trendLabel="-0.9%" index={1} />
-        <SummaryMetricCard label="Operating Margin" value="15.0%" subtitle="Plan: 15.1%" icon={BarChart3} accentColor="#007A3D" trend="flat" trendLabel="-0.1pp" index={2} />
-        <SummaryMetricCard label="Annual Target Progress" value="48%" subtitle="YTD Revenue / Full Year Plan" icon={Activity} accentColor="#003B2C" index={3} />
+        <SummaryMetricCard label="Operating Margin" value="15.0%" subtitle="Plan: 15.1%" icon={BarChart3} accentColor="#1c519c" trend="flat" trendLabel="-0.1pp" index={2} />
+        <SummaryMetricCard label="Annual Target Progress" value="48%" subtitle="YTD Revenue / Full Year Plan" icon={Activity} accentColor="#1c519c" index={3} />
       </div>
 
       {/* Quarterly Revenue Chart */}

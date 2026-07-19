@@ -98,7 +98,7 @@ export default function FinancialPerformance({ periodLabel, financials }: Financ
         ].map(m => (
           <div key={m.label} className="bg-white rounded-xl border border-gray-200 p-4">
             <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">{m.label}</p>
-            <p className="text-2xl font-bold text-[#003B2C]">{m.value}</p>
+            <p className="text-2xl font-bold text-[#1c519c]">{m.value}</p>
             <div className="flex items-center justify-between mt-1">
               <span className="text-xs text-gray-500">{m.sub}</span>
               <span className={`text-xs font-semibold ${m.positive ? 'text-emerald-600' : 'text-red-500'}`}>{m.delta}</span>

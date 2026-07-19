@@ -13,7 +13,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
         <p className="text-sm text-gray-500 mb-6">{error.message || 'Failed to load AI Search.'}</p>
         <button
           onClick={reset}
-          className="px-4 py-2 bg-[#003B2C] text-white text-sm font-medium rounded-lg hover:bg-[#007A3D] transition-colors"
+          className="px-4 py-2 bg-[#1c519c] text-white text-sm font-medium rounded-lg hover:bg-[#1c519c] transition-colors"
         >
           Try again
         </button>

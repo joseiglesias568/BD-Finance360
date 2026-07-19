@@ -19,19 +19,19 @@
     --secondary-danger: 239 68 68; /* #ef4444 - Danger red */
 
     --background-secondary: 249 250 251;
-    --background-dark: 0 59 44; /* #003B2C - Nav background */
+    --background-dark: 0 59 44; /* #1c519c - Nav background */
 
     --text-primary: 17 24 39;
     --text-secondary: 107 114 128;
     --text-muted: 156 163 175;
     --text-inverse: 255 255 255;
 
-    --accent-green: 0 166 81; /* #00A651 - BD Green */
+    --accent-green: 0 166 81; /* #1c519c - BD Green */
     --accent-red: 239 68 68;
     --accent-yellow: 245 158 11;
 
     --border-default: 229 231 235;
-    --border-green: 0 166 81; /* #00A651 */
+    --border-green: 0 166 81; /* #1c519c */
 
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     --glow-green: 0 0 20px rgba(0, 166, 81, 0.3);
@@ -44,7 +44,7 @@
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 145 100% 33%; /* #00A651 - BD Green HSL */
+    --primary: 145 100% 33%; /* #1c519c - BD Green HSL */
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 98%;
     --secondary-foreground: 222 47% 11%;
@@ -56,7 +56,7 @@
     --destructive-foreground: 0 0% 100%;
     --border-color: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 145 100% 33%; /* #00A651 HSL */
+    --ring: 145 100% 33%; /* #1c519c HSL */
     --radius: 0.5rem;
 }
 
@@ -97,10 +97,10 @@ body {
     /* Clean button styles - Verizon Black */
     .btn-primary {
         @apply text-white font-medium py-2 px-4 rounded-md transition-colors;
-        background-color: #003B2C;
+        background-color: #1c519c;
     }
     .btn-primary:hover {
-        background-color: #007A3D;
+        background-color: #1c519c;
     }
 
     .btn-secondary {
@@ -114,7 +114,7 @@ body {
     /* Minimal input style - Verizon Black focus */
     .input {
         @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:border-transparent transition-colors;
-        --tw-ring-color: #003B2C;
+        --tw-ring-color: #1c519c;
     }
 
     /* Clean metric card */
@@ -125,8 +125,8 @@ body {
     /* Professional gradient text - Verizon Black */
     .gradient-text {
         @apply bg-gradient-to-r bg-clip-text text-transparent;
-        --tw-gradient-from: #003B2C;
-        --tw-gradient-to: #003B2C;
+        --tw-gradient-from: #1c519c;
+        --tw-gradient-to: #1c519c;
     }
 }
 
@@ -178,7 +178,7 @@ body {
 
 .bg-purple-gradient {
     /* Legacy alias - uses Verizon Black */
-    background: linear-gradient(135deg, #003B2C 0%, #003B2C 100%);
+    background: linear-gradient(135deg, #1c519c 0%, #1c519c 100%);
 }
 
 .text-cyan {

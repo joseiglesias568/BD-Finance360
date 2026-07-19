@@ -4,10 +4,10 @@
 // =============================================================================
 
 export const CHART_COLORS = {
-  green: '#003B2C',
-  greenLight: '#007A3D',
+  green: '#1c519c',
+  greenLight: '#1c519c',
   greenSoft: '#F0F0F0',
-  greenDark: '#003B2C',
+  greenDark: '#1c519c',
   emerald: '#10B981',
   blue: '#3B82F6',
   amber: '#F59E0B',
@@ -24,7 +24,7 @@ export const CHART_AXIS_STYLE = { fontSize: 10, fill: '#6B7280' };
 
 export const CHART_TOOLTIP_DARK = {
   contentStyle: {
-    background: '#003B2C',
+    background: '#1c519c',
     border: 'none',
     borderRadius: 8,
     fontSize: 11,

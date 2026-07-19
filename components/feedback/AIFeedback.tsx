@@ -56,8 +56,8 @@ export default function AIFeedback({ contentId, contentType, size = 'sm', onFeed
           onClick={() => handleRating('up')}
           className={`${btnPadding} rounded transition-all duration-150 ${
             rating === 'up'
-              ? 'text-[#003B2C] bg-[#F0F0F0]'
-              : 'text-gray-300 hover:text-[#003B2C] hover:bg-[#F0F0F0]/50'
+              ? 'text-[#1c519c] bg-[#F0F0F0]'
+              : 'text-gray-300 hover:text-[#1c519c] hover:bg-[#F0F0F0]/50'
           }`}
           title="Helpful"
         >
@@ -90,13 +90,13 @@ export default function AIFeedback({ contentId, contentType, size = 'sm', onFeed
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="What could be improved?"
-                className="w-full text-xs p-2 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-[#003B2C]/30 bg-white"
+                className="w-full text-xs p-2 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-[#1c519c]/30 bg-white"
                 rows={2}
                 autoFocus
               />
               <button
                 onClick={handleSubmitComment}
-                className="flex items-center gap-1 px-3 py-1 bg-[#003B2C] text-white text-xs rounded-lg hover:bg-[#007A3D] transition-colors"
+                className="flex items-center gap-1 px-3 py-1 bg-[#1c519c] text-white text-xs rounded-lg hover:bg-[#1c519c] transition-colors"
               >
                 <Send className="w-3 h-3" />
                 Submit

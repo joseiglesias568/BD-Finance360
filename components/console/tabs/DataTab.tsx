@@ -119,7 +119,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search data..."
-              className="pl-8 pr-3 py-1.5 text-xs border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C] w-48"
+              className="pl-8 pr-3 py-1.5 text-xs border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c] w-48"
             />
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
             <Download className="w-3.5 h-3.5" />
             CSV
           </button>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-[#003B2C] text-white rounded-lg hover:bg-[#003B2C] transition-colors">
+          <button className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-[#1c519c] text-white rounded-lg hover:bg-[#1c519c] transition-colors">
             <Download className="w-3.5 h-3.5" />
             Generate Report
           </button>
@@ -150,7 +150,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
           </button>
           <button
             onClick={() => setShowNotes(!showNotes)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${showNotes ? 'bg-[#003B2C] text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${showNotes ? 'bg-[#1c519c] text-white' : 'text-gray-600 hover:bg-gray-100'}`}
           >
             <MessageSquare className="w-3.5 h-3.5" />
             Notes
@@ -161,7 +161,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
       {/* P&L Table */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="px-5 py-3 border-b border-gray-100">
-          <h3 className="text-sm font-semibold text-[#003B2C]">Financial Performance</h3>
+          <h3 className="text-sm font-semibold text-[#1c519c]">Financial Performance</h3>
         </div>
 
         <div className="overflow-x-auto">
@@ -209,7 +209,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
       {/* Driver Metrics Table */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="px-5 py-3 border-b border-gray-100">
-          <h3 className="text-sm font-semibold text-[#003B2C]">Driver-Based Metrics</h3>
+          <h3 className="text-sm font-semibold text-[#1c519c]">Driver-Based Metrics</h3>
         </div>
 
         <div className="overflow-x-auto">
@@ -242,8 +242,8 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
       {showNotes && (
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
           <div className="flex items-center justify-between mb-3">
-            <h4 className="text-sm font-semibold text-[#003B2C] flex items-center gap-2">
-              <MessageSquare className="w-4 h-4 text-[#003B2C]" />
+            <h4 className="text-sm font-semibold text-[#1c519c] flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-[#1c519c]" />
               Analyst Notes
             </h4>
             <span className="text-xs text-gray-400">Auto-saved</span>
@@ -267,7 +267,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
               placeholder="Add a note..."
               value={noteText}
               onChange={(e) => setNoteText(e.target.value)}
-              className="w-full px-3 py-2 text-xs border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C] focus:border-[#003B2C] resize-none"
+              className="w-full px-3 py-2 text-xs border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c] focus:border-[#1c519c] resize-none"
               rows={2}
             />
             <div className="flex items-center justify-between">
@@ -277,7 +277,7 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
               <button
                 onClick={saveNoteToCommentary}
                 disabled={!noteText.trim() || noteSaving}
-                className="px-3 py-1 text-xs font-medium text-white bg-[#003B2C] rounded-lg hover:bg-[#003B2C] disabled:opacity-40 transition-colors"
+                className="px-3 py-1 text-xs font-medium text-white bg-[#1c519c] rounded-lg hover:bg-[#1c519c] disabled:opacity-40 transition-colors"
               >
                 {noteSaving ? 'Saving...' : 'Save Note'}
               </button>
@@ -289,11 +289,11 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
       {/* Drill to Detailed Reports */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
         <div className="flex items-center justify-between mb-3">
-          <h4 className="text-sm font-semibold text-[#003B2C] flex items-center gap-2">
-            <Bookmark className="w-4 h-4 text-[#003B2C]" />
+          <h4 className="text-sm font-semibold text-[#1c519c] flex items-center gap-2">
+            <Bookmark className="w-4 h-4 text-[#1c519c]" />
             Drill to Detailed Reports
           </h4>
-          <Link href="/report-hub" className="text-xs text-[#003B2C] hover:underline">
+          <Link href="/report-hub" className="text-xs text-[#1c519c] hover:underline">
             Browse Report Hub
           </Link>
         </div>
@@ -306,13 +306,13 @@ export default function DataTab({ quarterLabels, plData, driverData, consoleSlug
             <Link
               key={report.id}
               href={`/report-hub/${report.id}`}
-              className="group flex items-center gap-2.5 bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#003B2C]/30 rounded-lg p-3 transition-all"
+              className="group flex items-center gap-2.5 bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#1c519c]/30 rounded-lg p-3 transition-all"
             >
               <div className="min-w-0 flex-1">
-                <div className="text-xs font-medium text-gray-900 group-hover:text-[#003B2C]">{report.name}</div>
+                <div className="text-xs font-medium text-gray-900 group-hover:text-[#1c519c]">{report.name}</div>
                 <div className="text-[10px] text-gray-500 truncate">{report.desc}</div>
               </div>
-              <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#003B2C] flex-shrink-0" />
+              <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#1c519c] flex-shrink-0" />
             </Link>
           ))}
         </div>
@@ -340,13 +340,13 @@ function PLRowComponent({
     <>
       <tr
         className={`
-          ${row.isTotal ? 'bg-[#003B2C]' : row.isCategory ? 'bg-gray-50/60' : 'hover:bg-gray-50/40'}
+          ${row.isTotal ? 'bg-[#1c519c]' : row.isCategory ? 'bg-gray-50/60' : 'hover:bg-gray-50/40'}
           ${hasChildren ? 'cursor-pointer' : ''}
         `}
         onClick={hasChildren ? onToggle : undefined}
       >
         <td className={`px-5 py-2.5 text-sm font-medium sticky left-0 z-[1] ${
-          row.isTotal ? 'text-white bg-[#003B2C]' : row.isCategory ? 'text-[#003B2C] font-semibold bg-gray-50/60' : 'text-gray-700'
+          row.isTotal ? 'text-white bg-[#1c519c]' : row.isCategory ? 'text-[#1c519c] font-semibold bg-gray-50/60' : 'text-gray-700'
         }`}>
           <div className="flex items-center gap-2">
             {hasChildren && (
@@ -408,7 +408,7 @@ function DriverCategoryRows({
   return (
     <>
       <tr className="bg-gray-50/60 cursor-pointer" onClick={onToggle}>
-        <td colSpan={5} className="px-5 py-2.5 text-xs font-semibold text-[#003B2C]">
+        <td colSpan={5} className="px-5 py-2.5 text-xs font-semibold text-[#1c519c]">
           <div className="flex items-center gap-2">
             {isExpanded ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
             {category}

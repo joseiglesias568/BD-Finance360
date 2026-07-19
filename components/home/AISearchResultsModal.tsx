@@ -40,7 +40,7 @@ export default function AISearchResultsModal({
                     className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
                 >
                     {/* Header */}
-                    <div className="bg-gradient-to-r from-[#003B2C] to-[#003B2C] p-6 text-white">
+                    <div className="bg-gradient-to-r from-[#1c519c] to-[#1c519c] p-6 text-white">
                         <div className="flex items-start justify-between">
                             <div>
                                 <div className="flex items-center space-x-3 mb-2">
@@ -62,7 +62,7 @@ export default function AISearchResultsModal({
                     <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
                         {isSearching ? (
                             <div className="flex flex-col items-center justify-center py-20">
-                                <div className="w-16 h-16 border-4 border-[#003B2C] border-t-transparent rounded-full animate-spin mb-4"></div>
+                                <div className="w-16 h-16 border-4 border-[#1c519c] border-t-transparent rounded-full animate-spin mb-4"></div>
                                 <p className="text-gray-600">Analyzing business data and generating insights...</p>
                             </div>
                         ) : searchResults ? (
@@ -76,7 +76,7 @@ export default function AISearchResultsModal({
                                 {/* Key Findings */}
                                 <div>
                                     <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                                        <Target className="w-5 h-5 mr-2 text-[#003B2C]" />
+                                        <Target className="w-5 h-5 mr-2 text-[#1c519c]" />
                                         Key Findings
                                     </h3>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -86,7 +86,7 @@ export default function AISearchResultsModal({
                                                     <h4 className="font-medium text-gray-900 text-sm">{finding.title}</h4>
                                                     <div className="flex items-center space-x-1">
                                                         <span className="text-xs text-gray-500">Confidence</span>
-                                                        <span className="text-xs font-bold text-[#003B2C]">{finding.confidence}%</span>
+                                                        <span className="text-xs font-bold text-[#1c519c]">{finding.confidence}%</span>
                                                     </div>
                                                 </div>
                                                 <p className="text-sm text-gray-600">{finding.detail}</p>
@@ -99,7 +99,7 @@ export default function AISearchResultsModal({
                                 {searchResults.visualizations && (
                                     <div>
                                         <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                                            <BarChart3 className="w-5 h-5 mr-2 text-[#003B2C]" />
+                                            <BarChart3 className="w-5 h-5 mr-2 text-[#1c519c]" />
                                             Data Visualizations
                                         </h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -183,7 +183,7 @@ export default function AISearchResultsModal({
                                                                         </div>
                                                                         <div className="w-full bg-gray-200 rounded-full h-2">
                                                                             <div
-                                                                                className={`h-2 rounded-full ${d.change !== undefined && d.change < 0 ? 'bg-red-400' : 'bg-[#003B2C]'
+                                                                                className={`h-2 rounded-full ${d.change !== undefined && d.change < 0 ? 'bg-red-400' : 'bg-[#1c519c]'
                                                                                     }`}
                                                                                 style={{ width: `${percentage}%` }}
                                                                             />
@@ -538,7 +538,7 @@ export default function AISearchResultsModal({
                                 {/* Related Business Drivers */}
                                 <div>
                                     <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                                        <Building className="w-5 h-5 mr-2 text-[#003B2C]" />
+                                        <Building className="w-5 h-5 mr-2 text-[#1c519c]" />
                                         Related Business Drivers
                                     </h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -568,14 +568,14 @@ export default function AISearchResultsModal({
                                 {/* AI Recommendations */}
                                 <div>
                                     <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                                        <Brain className="w-5 h-5 mr-2 text-[#003B2C]" />
+                                        <Brain className="w-5 h-5 mr-2 text-[#1c519c]" />
                                         AI Recommendations
                                     </h3>
-                                    <div className="bg-gradient-to-br from-[#F0F0F0] to-emerald-50 rounded-xl p-5 border border-[#003B2C]/20">
+                                    <div className="bg-gradient-to-br from-[#F0F0F0] to-emerald-50 rounded-xl p-5 border border-[#1c519c]/20">
                                         <div className="space-y-3">
                                             {searchResults.recommendations?.map((rec: string, idx: number) => (
                                                 <div key={idx} className="flex items-start space-x-3">
-                                                    <div className="w-7 h-7 rounded-full bg-[#003B2C] text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                                                    <div className="w-7 h-7 rounded-full bg-[#1c519c] text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
                                                         {idx + 1}
                                                     </div>
                                                     <p className="text-sm text-gray-700">{rec}</p>
@@ -589,7 +589,7 @@ export default function AISearchResultsModal({
                                 {searchResults.dataQuality && (
                                     <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
                                         <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                                            <LineChart className="w-5 h-5 mr-2 text-[#003B2C]" />
+                                            <LineChart className="w-5 h-5 mr-2 text-[#1c519c]" />
                                             Data Quality & Transparency
                                         </h3>
                                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
@@ -610,7 +610,7 @@ export default function AISearchResultsModal({
                                                 <div className="flex items-center space-x-2">
                                                     <div className="flex-1 bg-gray-200 rounded-full h-2">
                                                         <div
-                                                            className="bg-[#003B2C] h-2 rounded-full"
+                                                            className="bg-[#1c519c] h-2 rounded-full"
                                                             style={{ width: `${searchResults.dataQuality.accuracy}%` }}
                                                         />
                                                     </div>
@@ -622,7 +622,7 @@ export default function AISearchResultsModal({
                                                 <div className="flex items-center space-x-2">
                                                     <div className="flex-1 bg-gray-200 rounded-full h-2">
                                                         <div
-                                                            className="bg-[#003B2C] h-2 rounded-full"
+                                                            className="bg-[#1c519c] h-2 rounded-full"
                                                             style={{ width: `${searchResults.dataQuality.timeliness}%` }}
                                                         />
                                                     </div>
@@ -634,7 +634,7 @@ export default function AISearchResultsModal({
                                                 <div className="flex items-center space-x-2">
                                                     <div className="flex-1 bg-gray-200 rounded-full h-2">
                                                         <div
-                                                            className="bg-[#003B2C] h-2 rounded-full"
+                                                            className="bg-[#1c519c] h-2 rounded-full"
                                                             style={{ width: `${Math.round((searchResults.dataQuality.completeness + searchResults.dataQuality.accuracy + searchResults.dataQuality.timeliness) / 3)}%` }}
                                                         />
                                                     </div>
@@ -658,7 +658,7 @@ export default function AISearchResultsModal({
                                     </div>
                                     <button
                                         onClick={onClose}
-                                        className="px-4 py-2 bg-[#003B2C] text-white rounded-lg hover:bg-[#007A3D] transition-colors text-sm font-medium"
+                                        className="px-4 py-2 bg-[#1c519c] text-white rounded-lg hover:bg-[#1c519c] transition-colors text-sm font-medium"
                                     >
                                         Close
                                     </button>

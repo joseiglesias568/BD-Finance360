@@ -47,7 +47,7 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
                     <Sparkles className="w-3 h-3 mr-1" />AI Insight
                   </PillBadge>
                 ) : (
-                  <PillBadge className="bg-[#F0F0F0] text-[#003B2C]">
+                  <PillBadge className="bg-[#F0F0F0] text-[#1c519c]">
                     <User className="w-3 h-3 mr-1" />Commentary
                   </PillBadge>
                 )}
@@ -63,11 +63,11 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
             <div className="p-4 space-y-4">
               {/* Title + value */}
               <div>
-                <h2 className="text-lg font-semibold text-[#003B2C]">{item.title}</h2>
+                <h2 className="text-lg font-semibold text-[#1c519c]">{item.title}</h2>
                 {item.kpiValue && (
                   <div className="flex items-center gap-2 mt-1">
                     <TrendIcon direction={item.trendDirection} className="w-4 h-4" />
-                    <span className="text-xl font-bold text-[#003B2C]">{item.kpiValue}</span>
+                    <span className="text-xl font-bold text-[#1c519c]">{item.kpiValue}</span>
                   </div>
                 )}
               </div>
@@ -78,7 +78,7 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
                   {item.driverPath.map((p, i) => (
                     <span key={i} className="flex items-center gap-1">
                       {i > 0 && <ChevronRight className="w-3 h-3" />}
-                      <span className={i === item.driverPath.length - 1 ? 'text-[#003B2C] font-medium' : ''}>
+                      <span className={i === item.driverPath.length - 1 ? 'text-[#1c519c] font-medium' : ''}>
                         {p}
                       </span>
                     </span>
@@ -118,11 +118,11 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
               {/* Author (for human) */}
               {item.source === 'human' && item.authorName && (
                 <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                  <div className="w-8 h-8 rounded-full bg-[#003B2C] text-white flex items-center justify-center text-xs font-semibold">
+                  <div className="w-8 h-8 rounded-full bg-[#1c519c] text-white flex items-center justify-center text-xs font-semibold">
                     {item.authorName.split(' ').map(n => n[0]).join('').toUpperCase()}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#003B2C]">{item.authorName}</p>
+                    <p className="text-sm font-medium text-[#1c519c]">{item.authorName}</p>
                     <p className="text-xs text-gray-500">{item.authorRole}</p>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
                       <div key={i} className="flex items-center justify-between text-xs bg-gray-50 rounded px-2 py-1.5">
                         <span className="text-gray-700">{m.metric}</span>
                         <div className="flex items-center gap-1">
-                          <span className="font-medium text-[#003B2C]">{m.value}</span>
+                          <span className="font-medium text-[#1c519c]">{m.value}</span>
                           <TrendIcon direction={m.trend === 'positive' ? 'up' : m.trend === 'negative' ? 'down' : 'flat'} className="w-3 h-3" />
                         </div>
                       </div>
@@ -188,7 +188,7 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
                   <ol className="space-y-2">
                     {item.recommendations.map((r, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                        <span className="w-5 h-5 rounded-full bg-[#F0F0F0] text-[#003B2C] flex items-center justify-center shrink-0 text-xs font-semibold mt-0.5">
+                        <span className="w-5 h-5 rounded-full bg-[#F0F0F0] text-[#1c519c] flex items-center justify-center shrink-0 text-xs font-semibold mt-0.5">
                           {i + 1}
                         </span>
                         {r}
@@ -226,7 +226,7 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
               {item.consoleLink && (
                 <a
                   href={item.consoleLink}
-                  className="inline-flex items-center gap-1.5 text-sm text-[#003B2C] hover:text-[#007A3D] font-medium"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#1c519c] hover:text-[#1c519c] font-medium"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   View in Business Console
@@ -249,10 +249,10 @@ export default function InsightDetailPanel({ item, relatedItems, onClose, onSele
                         {ri.source === 'ai' ? (
                           <Sparkles className="w-3.5 h-3.5 text-purple-500 shrink-0 mt-0.5" />
                         ) : (
-                          <User className="w-3.5 h-3.5 text-[#003B2C] shrink-0 mt-0.5" />
+                          <User className="w-3.5 h-3.5 text-[#1c519c] shrink-0 mt-0.5" />
                         )}
                         <div className="min-w-0 flex-1">
-                          <p className="text-xs font-medium text-[#003B2C] truncate">{ri.title}</p>
+                          <p className="text-xs font-medium text-[#1c519c] truncate">{ri.title}</p>
                           <p className="text-[10px] text-gray-500 truncate mt-0.5">{ri.summary}</p>
                         </div>
                         <ArrowRight className="w-3 h-3 text-gray-400 shrink-0 mt-1" />

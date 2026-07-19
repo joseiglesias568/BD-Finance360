@@ -31,7 +31,7 @@ export default function AIAgentsPage() {
                 <div className="max-w-7xl mx-auto px-6 py-6">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
-                            <div className="p-3 bg-[#003B2C] rounded-xl shadow-lg">
+                            <div className="p-3 bg-[#1c519c] rounded-xl shadow-lg">
                                 <Brain className="w-8 h-8 text-white" />
                             </div>
                             <div>
@@ -56,7 +56,7 @@ export default function AIAgentsPage() {
                                     className={`
                                         flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors
                                         ${activeTab === tab.id
-                                            ? 'border-[#003B2C] text-[#003B2C]'
+                                            ? 'border-[#1c519c] text-[#1c519c]'
                                             : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
                                         }
                                     `}

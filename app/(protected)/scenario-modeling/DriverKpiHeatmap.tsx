@@ -93,7 +93,7 @@ export default function DriverKpiHeatmap({ levers }: DriverKpiHeatmapProps) {
                                     return (
                                         <td
                                             key={col.id}
-                                            className={`border-b border-gray-100 p-0 text-center tabular-nums ${active ? 'ring-2 ring-[#003B2C] ring-inset z-[1] relative' : ''}`}
+                                            className={`border-b border-gray-100 p-0 text-center tabular-nums ${active ? 'ring-2 ring-[#1c519c] ring-inset z-[1] relative' : ''}`}
                                             onMouseEnter={() => setHover({ r, c })}
                                             onMouseLeave={() => setHover(null)}
                                             title={`${nameOf(rowId)} × ${col.label}: ${v.toFixed(2)} (${col.executiveLens})`}

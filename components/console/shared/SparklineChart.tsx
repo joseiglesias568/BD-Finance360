@@ -12,7 +12,7 @@ export default function SparklineChart({
   data,
   width = 80,
   height = 28,
-  color = '#003B2C',
+  color = '#1c519c',
   className = '',
 }: SparklineChartProps) {
   if (!data || data.length < 2) return null;

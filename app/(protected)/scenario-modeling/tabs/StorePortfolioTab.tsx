@@ -193,7 +193,7 @@ export default function StorePortfolioTab({ leverValues, onLeverChange }: StoreP
                     </div>
                     <div className="bg-gray-50 rounded-lg p-4">
                         <p className="text-xs text-gray-600 mb-1">GLP-1 Share</p>
-                        <p className="text-xl font-bold text-[#003B2C]">
+                        <p className="text-xl font-bold text-[#1c519c]">
                             {impact.glp1MarketShare}%
                         </p>
                     </div>
@@ -207,8 +207,8 @@ export default function StorePortfolioTab({ leverValues, onLeverChange }: StoreP
 
                 {/* AI Insight */}
                 <div className="bg-[#F0F0F0] rounded-lg p-4 flex items-start space-x-3">
-                    <Sparkles className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
-                    <div className="text-sm text-[#003B2C]">
+                    <Sparkles className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
+                    <div className="text-sm text-[#1c519c]">
                         <span className="font-semibold">AI Insight:</span>{' '}
                         {impact.components.glp1Revenue > 200
                             ? `GLP-1 market share at ${impact.glp1MarketShare}% drives +$${impact.components.glp1Revenue}M revenue, but net AOI contribution is modest ($${impact.components.glp1AOI}M) due to compressed margins on high-ingredient-cost scripts. Same-store Rx growth of ${leverValues['same-store-rx-growth'] ?? 7.0}% generates +$${impact.components.rxGrowthRevenue}M — the highest-ROI PCW driver.`
@@ -227,8 +227,8 @@ export default function StorePortfolioTab({ leverValues, onLeverChange }: StoreP
                     <h3 className="text-sm font-semibold text-gray-900 mb-4">Regional Pharmacy Revenue ($M)</h3>
                     <div className="space-y-3">
                         {regionData.map((region, idx) => (
-                            <div key={idx} className="flex items-center space-x-3 p-3 rounded-lg border border-gray-100 hover:border-[#003B2C]/20 transition-colors">
-                                <MapPin className="w-4 h-4 text-[#003B2C]" />
+                            <div key={idx} className="flex items-center space-x-3 p-3 rounded-lg border border-gray-100 hover:border-[#1c519c]/20 transition-colors">
+                                <MapPin className="w-4 h-4 text-[#1c519c]" />
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center justify-between">
                                         <p className="text-sm font-medium text-gray-900">{region.region}</p>
@@ -242,7 +242,7 @@ export default function StorePortfolioTab({ leverValues, onLeverChange }: StoreP
                                     </div>
                                     <div className="w-full bg-gray-100 rounded-full h-1.5 mt-1.5">
                                         <div
-                                            className="bg-[#003B2C] h-1.5 rounded-full"
+                                            className="bg-[#1c519c] h-1.5 rounded-full"
                                             style={{ width: `${(region.base / 7500) * 100}%` }}
                                         />
                                     </div>
@@ -354,7 +354,7 @@ export default function StorePortfolioTab({ leverValues, onLeverChange }: StoreP
                 <div className="grid grid-cols-4 gap-4">
                     <div className="bg-gray-50 rounded-lg p-3 text-center">
                         <p className="text-xs text-gray-600 mb-1">CVS Store Locations</p>
-                        <p className="text-lg font-bold text-[#003B2C]">~9,000</p>
+                        <p className="text-lg font-bold text-[#1c519c]">~9,000</p>
                     </div>
                     <div className="bg-gray-50 rounded-lg p-3 text-center">
                         <p className="text-xs text-gray-600 mb-1">HealthHUB Conversions</p>

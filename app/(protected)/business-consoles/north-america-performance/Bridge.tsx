@@ -370,7 +370,7 @@ export default function Bridge({ dbData }: BridgeProps) {
                             const height = Math.abs(y2 - y1);
                             const y = Math.min(y1, y2);
 
-                            const color = item.type === 'start' || item.type === 'end' ? '#003B2C' :
+                            const color = item.type === 'start' || item.type === 'end' ? '#1c519c' :
                                 item.type === 'positive' ? '#10b981' : '#ef4444';
 
                             return (
@@ -465,7 +465,7 @@ export default function Bridge({ dbData }: BridgeProps) {
                         <select
                             value={selectedPeriod}
                             onChange={(e) => setSelectedPeriod(e.target.value)}
-                            className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                            className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                         >
                             <option value="current-month">Current Quarter</option>
                             <option value="current-quarter">Year to Date</option>
@@ -475,7 +475,7 @@ export default function Bridge({ dbData }: BridgeProps) {
                     </div>
                     <div className="flex items-center space-x-3">
                         <span className="text-sm text-gray-500">Auto-save enabled</span>
-                        <button className="px-4 py-2 bg-[#003B2C] text-white rounded-lg font-medium hover:bg-[#007A3D] transition-all flex items-center space-x-2">
+                        <button className="px-4 py-2 bg-[#1c519c] text-white rounded-lg font-medium hover:bg-[#1c519c] transition-all flex items-center space-x-2">
                             <Users className="w-4 h-4" />
                             <span>Submit for Review</span>
                         </button>
@@ -593,7 +593,7 @@ export default function Bridge({ dbData }: BridgeProps) {
                                                             {/* AI Suggestion */}
                                                             {item.commentary.aiSuggestion && (
                                                                 <div className="flex items-start space-x-2 text-sm">
-                                                                    <Brain className="w-4 h-4 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                                                                    <Brain className="w-4 h-4 text-[#1c519c] mt-0.5 flex-shrink-0" />
                                                                     <p className="text-gray-600 italic">{item.commentary.aiSuggestion}</p>
                                                                 </div>
                                                             )}
@@ -603,14 +603,14 @@ export default function Bridge({ dbData }: BridgeProps) {
                                                                     <textarea
                                                                         value={item.commentary.userCommentary}
                                                                         onChange={(e) => handleCommentaryEdit('revenue', item.id, e.target.value)}
-                                                                        className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                                                                        className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                                                                         rows={3}
                                                                         placeholder="Add your commentary..."
                                                                     />
                                                                     <div className="flex space-x-2">
                                                                         <button
                                                                             onClick={() => saveCommentary('revenue', item.id)}
-                                                                            className="px-3 py-1 bg-[#003B2C] text-white rounded text-sm font-medium hover:bg-[#007A3D]"
+                                                                            className="px-3 py-1 bg-[#1c519c] text-white rounded text-sm font-medium hover:bg-[#1c519c]"
                                                                         >
                                                                             Save
                                                                         </button>
@@ -668,7 +668,7 @@ export default function Bridge({ dbData }: BridgeProps) {
                                                                             className="p-1 hover:bg-gray-200 rounded"
                                                                             title="Sign Off"
                                                                         >
-                                                                            <FileText className="w-4 h-4 text-[#003B2C]" />
+                                                                            <FileText className="w-4 h-4 text-[#1c519c]" />
                                                                         </button>
                                                                     )}
                                                                     {item.details && (

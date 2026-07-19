@@ -179,13 +179,13 @@ export default function DashboardKPIGrid({ kpiConfig }: DashboardKPIGridProps) {
                                                     <motion.div
                                                         key={`${kpi.label}-${idx}`}
                                                         whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                                                        className="bg-gray-50/80 rounded-xl border border-gray-100 hover:border-[#003B2C]/20 hover:shadow-md hover:bg-white transition-all cursor-pointer overflow-hidden group"
+                                                        className="bg-gray-50/80 rounded-xl border border-gray-100 hover:border-[#1c519c]/20 hover:shadow-md hover:bg-white transition-all cursor-pointer overflow-hidden group"
                                                     >
                                                         {/* Status bar */}
                                                         <div className={`h-0.5 ${
                                                             kpi.status === 'critical' ? 'bg-red-500' :
                                                             kpi.status === 'warning' ? 'bg-yellow-500' :
-                                                            'bg-[#003B2C]'
+                                                            'bg-[#1c519c]'
                                                         }`} />
 
                                                         <div className="p-4">
@@ -247,7 +247,7 @@ export default function DashboardKPIGrid({ kpiConfig }: DashboardKPIGridProps) {
                                                             {/* Console link */}
                                                             <div
                                                                 onClick={() => router.push(`/business-consoles/${kpi.consoleId}`)}
-                                                                className="flex items-center justify-between text-xs font-medium text-[#003B2C] group-hover:text-[#007A3D] transition-colors"
+                                                                className="flex items-center justify-between text-xs font-medium text-[#1c519c] group-hover:text-[#1c519c] transition-colors"
                                                             >
                                                                 <span>{kpi.consoleName}</span>
                                                                 <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />

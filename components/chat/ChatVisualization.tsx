@@ -21,7 +21,7 @@ interface VisualizationSpec {
   mermaidCode?: string;
 }
 
-const COLORS = ['#003B2C', '#007A3D', '#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6'];
+const COLORS = ['#1c519c', '#1c519c', '#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6'];
 const TOOLTIP_STYLE = { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 11, padding: '6px 10px', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' };
 
 export default function ChatVisualization({ spec }: { spec: VisualizationSpec }) {
@@ -32,7 +32,7 @@ export default function ChatVisualization({ spec }: { spec: VisualizationSpec })
   useEffect(() => {
     if (spec.type === 'mermaid' && spec.mermaidCode) {
       import('mermaid').then((m) => {
-        m.default.initialize({ startOnLoad: false, theme: 'neutral', themeVariables: { primaryColor: '#F0F0F0', primaryTextColor: '#003B2C', primaryBorderColor: '#003B2C', lineColor: '#003B2C' } });
+        m.default.initialize({ startOnLoad: false, theme: 'neutral', themeVariables: { primaryColor: '#F0F0F0', primaryTextColor: '#1c519c', primaryBorderColor: '#1c519c', lineColor: '#1c519c' } });
         m.default.render(`mermaid-${uid}-${Date.now()}`, spec.mermaidCode!).then(({ svg }) => {
           setMermaidSvg(svg);
         }).catch(() => {
@@ -45,12 +45,12 @@ export default function ChatVisualization({ spec }: { spec: VisualizationSpec })
   if (spec.type === 'mermaid') {
     return (
       <div className="my-3 p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p className="text-xs font-semibold text-[#003B2C] mb-2">{spec.title}</p>
+        <p className="text-xs font-semibold text-[#1c519c] mb-2">{spec.title}</p>
         {mermaidSvg ? (
           <div ref={mermaidRef} className="overflow-x-auto [&_svg]:max-w-full" dangerouslySetInnerHTML={{ __html: mermaidSvg }} />
         ) : (
           <div className="flex items-center gap-2 py-4">
-            <div className="w-4 h-4 border-2 border-[#003B2C] border-t-transparent rounded-full animate-spin" />
+            <div className="w-4 h-4 border-2 border-[#1c519c] border-t-transparent rounded-full animate-spin" />
             <span className="text-xs text-gray-500">Rendering diagram...</span>
           </div>
         )}
@@ -72,7 +72,7 @@ export default function ChatVisualization({ spec }: { spec: VisualizationSpec })
 
   return (
     <div className="my-3 p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
-      <p className="text-xs font-semibold text-[#003B2C] mb-2">{spec.title}</p>
+      <p className="text-xs font-semibold text-[#1c519c] mb-2">{spec.title}</p>
       <ResponsiveContainer width="100%" height={200}>
         {spec.type === 'bar' ? (
           <BarChart data={data} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
@@ -117,7 +117,7 @@ export default function ChatVisualization({ spec }: { spec: VisualizationSpec })
             </Pie>
           </PieChart>
         ) : (
-          <BarChart data={data}><Bar dataKey="value" fill="#003B2C" /></BarChart>
+          <BarChart data={data}><Bar dataKey="value" fill="#1c519c" /></BarChart>
         )}
       </ResponsiveContainer>
     </div>

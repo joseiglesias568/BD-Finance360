@@ -36,15 +36,15 @@ import {
 
 // ── Color palette ─────────────────────────────────────────────────────
 const BRAND = {
-    delta: '#003B2C',
+    delta: '#1c519c',
     deltaLight: '#009AC7',
-    houseDark: '#003B2C',
+    houseDark: '#1c519c',
     softGreen: '#F0F0F0',
 };
 
 const COMMODITY_COLORS: Record<string, { spot: string; hedge: string; icon: React.ElementType }> = {
-    'Plastic Resins & Polymers': { spot: '#003B2C', hedge: '#10B981', icon: Package },
-    'Stainless Steel & Metals': { spot: '#003B2C', hedge: '#34D399', icon: Shield },
+    'Plastic Resins & Polymers': { spot: '#1c519c', hedge: '#10B981', icon: Package },
+    'Stainless Steel & Metals': { spot: '#1c519c', hedge: '#34D399', icon: Shield },
     'Electronic Components': { spot: '#3B82F6', hedge: '#93C5FD', icon: Zap },
     'Energy (Manufacturing)': { spot: '#F59E0B', hedge: '#FCD34D', icon: Zap },
     'Logistics & Freight': { spot: '#8B5CF6', hedge: '#C4B5FD', icon: Package },
@@ -92,7 +92,7 @@ const tooltipStyle = {
         border: '1px solid #e5e7eb',
         borderRadius: 8,
         fontSize: 12,
-        color: '#003B2C',
+        color: '#1c519c',
         padding: '8px 12px',
         boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
     },
@@ -203,10 +203,10 @@ export default function CommodityTrackingClient({ commodityGroups }: Props) {
                 <motion.div {...fadeUp} className="flex items-center justify-between">
                     <div>
                         <div className="flex items-center space-x-3 mb-1">
-                            <div className="p-2 bg-[#003B2C]/10 rounded-lg">
-                                <TrendingUp className="w-6 h-6 text-[#003B2C]" />
+                            <div className="p-2 bg-[#1c519c]/10 rounded-lg">
+                                <TrendingUp className="w-6 h-6 text-[#1c519c]" />
                             </div>
-                            <h1 className="text-2xl font-bold text-[#003B2C]">Cost Index Tracking</h1>
+                            <h1 className="text-2xl font-bold text-[#1c519c]">Cost Index Tracking</h1>
                         </div>
                         <p className="text-sm text-gray-500 ml-12">Market rate monitoring, hedging positions, and operating cost impact analysis</p>
                     </div>
@@ -270,7 +270,7 @@ export default function CommodityTrackingClient({ commodityGroups }: Props) {
 
                 {/* ── 2. Cost Index Trend Charts (2x3 grid) ─────────────── */}
                 <motion.div {...fadeUp}>
-                    <h2 className="text-lg font-semibold text-[#003B2C] mb-4">Cost Index Trends</h2>
+                    <h2 className="text-lg font-semibold text-[#1c519c] mb-4">Cost Index Trends</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                         {commodityNames.map(name => {
                             const data = trendData[name] || [];
@@ -313,8 +313,8 @@ export default function CommodityTrackingClient({ commodityGroups }: Props) {
                 {/* ── 3. Hedging Position Summary ────────────────────────── */}
                 <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                     <div className="flex items-center space-x-2 mb-4">
-                        <Shield className="w-5 h-5 text-[#003B2C]" />
-                        <h2 className="text-lg font-semibold text-[#003B2C]">Hedging Position Summary</h2>
+                        <Shield className="w-5 h-5 text-[#1c519c]" />
+                        <h2 className="text-lg font-semibold text-[#1c519c]">Hedging Position Summary</h2>
                     </div>
                     <ResponsiveContainer width="100%" height={280}>
                         <BarChart data={hedgeCoverageData} layout="vertical">
@@ -346,8 +346,8 @@ export default function CommodityTrackingClient({ commodityGroups }: Props) {
                 {/* ── 4. COGS Impact Simulator ───────────────────────────── */}
                 <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                     <div className="flex items-center space-x-2 mb-2">
-                        <SlidersHorizontal className="w-5 h-5 text-[#003B2C]" />
-                        <h2 className="text-lg font-semibold text-[#003B2C]">COGS Impact Simulator</h2>
+                        <SlidersHorizontal className="w-5 h-5 text-[#1c519c]" />
+                        <h2 className="text-lg font-semibold text-[#1c519c]">COGS Impact Simulator</h2>
                     </div>
                     <p className="text-xs text-gray-400 mb-6">
                         Adjust cost index changes to estimate impact on BD&apos;s annual COGS input cost exposure
@@ -371,7 +371,7 @@ export default function CommodityTrackingClient({ commodityGroups }: Props) {
                                     step={1}
                                     value={sliders[item.name] || 0}
                                     onChange={e => handleSliderChange(item.name, parseInt(e.target.value))}
-                                    className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#003B2C]"
+                                    className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#1c519c]"
                                     style={{
                                         background: `linear-gradient(to right, #10B981 0%, #10B981 50%, #EF4444 50%, #EF4444 100%)`,
                                     }}
@@ -430,8 +430,8 @@ export default function CommodityTrackingClient({ commodityGroups }: Props) {
                 {/* ── 5. YoY Price Change Table ──────────────────────────── */}
                 <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                     <div className="flex items-center space-x-2 mb-4">
-                        <BarChart3 className="w-5 h-5 text-[#003B2C]" />
-                        <h2 className="text-lg font-semibold text-[#003B2C]">Commodity Price Detail</h2>
+                        <BarChart3 className="w-5 h-5 text-[#1c519c]" />
+                        <h2 className="text-lg font-semibold text-[#1c519c]">Commodity Price Detail</h2>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">

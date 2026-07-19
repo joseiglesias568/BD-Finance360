@@ -618,7 +618,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                 <div className="max-w-7xl mx-auto px-6 py-6">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
-                            <div className="p-3 bg-[#003B2C] rounded-xl shadow-lg">
+                            <div className="p-3 bg-[#1c519c] rounded-xl shadow-lg">
                                 <Sliders className="w-8 h-8 text-white" />
                             </div>
                             <div>
@@ -634,11 +634,11 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                 <RefreshCw className="w-4 h-4" />
                                 <span>Reset</span>
                             </button>
-                            <button className="px-4 py-2 bg-[#003B2C] text-white font-semibold rounded-lg hover:bg-[#003B2C] transition-all flex items-center space-x-2">
+                            <button className="px-4 py-2 bg-[#1c519c] text-white font-semibold rounded-lg hover:bg-[#1c519c] transition-all flex items-center space-x-2">
                                 <Save className="w-4 h-4" />
                                 <span>Save</span>
                             </button>
-                            <button className="px-6 py-2 bg-[#003B2C] text-white font-semibold rounded-lg hover:bg-[#003B2C] transition-all flex items-center space-x-2">
+                            <button className="px-6 py-2 bg-[#1c519c] text-white font-semibold rounded-lg hover:bg-[#1c519c] transition-all flex items-center space-x-2">
                                 <Play className="w-4 h-4" />
                                 <span>Run Scenario</span>
                             </button>
@@ -656,7 +656,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`py-4 px-2 border-b-2 transition-colors flex items-center space-x-2 whitespace-nowrap ${activeTab === tab.id
-                                        ? 'border-[#003B2C] text-[#003B2C] font-semibold'
+                                        ? 'border-[#1c519c] text-[#1c519c] font-semibold'
                                         : 'border-transparent text-gray-600 hover:text-gray-900'
                                     }`}
                             >
@@ -700,13 +700,13 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                     onChange={(e) => setChatInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleChatSubmit()}
                                     placeholder={TAB_PLACEHOLDERS[activeTab]}
-                                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#003B2C] focus:border-transparent"
+                                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1c519c] focus:border-transparent"
                                     disabled={isProcessingChat}
                                 />
                                 <button
                                     onClick={handleChatSubmit}
                                     disabled={!chatInput.trim() || isProcessingChat}
-                                    className="px-4 py-2 bg-[#003B2C] text-white font-semibold rounded-lg hover:bg-[#003B2C] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                                    className="px-4 py-2 bg-[#1c519c] text-white font-semibold rounded-lg hover:bg-[#1c519c] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
                                 >
                                     {isProcessingChat ? (
                                         <Loader className="w-4 h-4 animate-spin" />
@@ -728,7 +728,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                         <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                             <div className={`max-w-[80%] rounded-lg p-2 text-sm ${
                                                 message.role === 'user'
-                                                    ? 'bg-[#003B2C] text-white'
+                                                    ? 'bg-[#1c519c] text-white'
                                                     : 'bg-gray-50 border border-gray-200'
                                             }`}>
                                                 <p className="whitespace-pre-wrap">{message.content}</p>
@@ -786,7 +786,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                         transition={{ duration: 0.3 }}
                         className="max-w-7xl mx-auto px-6 pt-6"
                     >
-                        <div className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-xl p-6 shadow-lg text-white">
+                        <div className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-xl p-6 shadow-lg text-white">
                             {isLoadingSummary ? (
                                 <div className="flex items-center space-x-3 py-4">
                                     <div className="relative">
@@ -1015,7 +1015,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                                                 style={{
                                                     background: `linear-gradient(to right, #e5e7eb ${((value - lever.minValue) / (lever.maxValue - lever.minValue)) * 100
-                                                        }%, #003B2C ${((value - lever.minValue) / (lever.maxValue - lever.minValue)) * 100
+                                                        }%, #1c519c ${((value - lever.minValue) / (lever.maxValue - lever.minValue)) * 100
                                                         }%)`
                                                 }}
                                             />
@@ -1042,7 +1042,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                 >
                                     {!impact && !impactError ? (
                                         <div className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center justify-center py-12">
-                                            <Loader className="w-8 h-8 text-[#003B2C] animate-spin mb-4" />
+                                            <Loader className="w-8 h-8 text-[#1c519c] animate-spin mb-4" />
                                             <p className="text-gray-600">Calculating P&L impact...</p>
                                         </div>
                                     ) : !impact && impactError ? (
@@ -1276,7 +1276,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                                 {/* Operating Income */}
                                                 <div className="flex items-center justify-between py-2 border-b border-gray-100 bg-[#F0F0F0] rounded px-3 -mx-3">
                                                     <div>
-                                                        <p className="text-sm font-bold text-[#003B2C]">Operating Income</p>
+                                                        <p className="text-sm font-bold text-[#1c519c]">Operating Income</p>
                                                         <p className="text-xs text-gray-500">Margin: {impact.operatingMargin.toFixed(1)}%</p>
                                                     </div>
                                                     <div className="text-right w-32">
@@ -1315,7 +1315,7 @@ export default function ScenarioModelingClient({ scenarioConfig }: ScenarioModel
                                                 </div>
 
                                                 {/* Net Income */}
-                                                <div className="flex items-center justify-between py-2 bg-[#003B2C] rounded px-3 -mx-3">
+                                                <div className="flex items-center justify-between py-2 bg-[#1c519c] rounded px-3 -mx-3">
                                                     <div>
                                                         <p className="text-sm font-bold text-white">Net Income</p>
                                                         <p className="text-xs text-gray-300">EPS Impact: {impact.netIncome >= 0 ? '+' : ''}{(impact.netIncome / 1278).toFixed(2)}</p>

@@ -22,7 +22,7 @@ export const branding: BrandingConfig = {
   industry: 'Medical Technology',
   headquarters: 'Franklin Lakes, New Jersey',
   // BD official brand colors (Finance360 implementation)
-  //   BD Green:     #00A94F — globe icon green
+  //   BD Green:     #1c519c — globe icon green
   //   BD Navy:      #1B3A6B — primary navy blue (dominant in presentations)
   //   BD Orange:    #E87722 — accent/highlight color
   //   BD Light Blue:#4A90D9 — secondary highlight

@@ -102,7 +102,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
           icon={Target}
           trend="up"
           trendLabel="Expanding"
-          accentColor="#007A3D"
+          accentColor="#1c519c"
           index={1}
         />
         <SummaryMetricCard
@@ -111,7 +111,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
           subtitle="Across all forecast periods"
           icon={Brain}
           trend={avgConfidence >= 80 ? 'up' : 'flat'}
-          accentColor="#003B2C"
+          accentColor="#1c519c"
           index={2}
         />
         <SummaryMetricCard
@@ -119,7 +119,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
           value={bestAccuracy?.lineItem || 'N/A'}
           subtitle={`MAPE: ${bestAccuracy?.mape}% (${bestAccuracy?.bestModel})`}
           icon={Zap}
-          accentColor="#003B2C"
+          accentColor="#1c519c"
           index={3}
         />
       </div>
@@ -131,7 +131,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
         transition={{ delay: 0.3 }}
       >
         <div className="flex items-center gap-2 mb-3">
-          <BarChart3 className="h-4 w-4 text-[#003B2C]" />
+          <BarChart3 className="h-4 w-4 text-[#1c519c]" />
           <h2 className="text-sm font-bold text-gray-900">P&L Forecast Cascade</h2>
           <span className="text-[10px] text-gray-400 ml-1">Click any line item to expand driver detail</span>
         </div>
@@ -295,7 +295,7 @@ function AnnualView({ data, selectedLine, onRowClick }: {
               <tr
                 key={row.lineItem}
                 className={`border-b border-gray-100 cursor-pointer transition-colors ${
-                  isSelected ? 'bg-[#003B2C]/5' : 'hover:bg-gray-50'
+                  isSelected ? 'bg-[#1c519c]/5' : 'hover:bg-gray-50'
                 }`}
                 onClick={() => onRowClick(row.lineItem)}
               >

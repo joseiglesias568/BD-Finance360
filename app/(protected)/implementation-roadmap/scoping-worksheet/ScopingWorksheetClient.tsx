@@ -60,7 +60,7 @@ type Phase = typeof PHASES[number];
 const PHASE_META = {
   poc:        { label: 'Proof of Concept', short: 'POC',        color: '#F59E0B', bg: 'bg-amber-50', border: 'border-amber-300', icon: GitBranch  },
   pilot:      { label: 'Pilot',            short: 'Pilot',       color: '#3B82F6', bg: 'bg-blue-50',  border: 'border-blue-300',  icon: Rocket     },
-  production: { label: 'Production',       short: 'Production',  color: '#003B2C', bg: 'bg-gray-900', border: 'border-gray-800',  icon: TrendingUp },
+  production: { label: 'Production',       short: 'Production',  color: '#1c519c', bg: 'bg-gray-900', border: 'border-gray-800',  icon: TrendingUp },
 } as const;
 
 function phaseUCs(phase: Phase) {
@@ -257,7 +257,7 @@ function SummaryView({ phases, poc, pilot, prod }: { phases: Record<Phase, Phase
                 <span className="text-xs font-semibold text-gray-700">{meta.label}</span>
                 <div className="h-5 bg-gray-100 rounded-full overflow-hidden">
                   <motion.div initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="h-full rounded-full" style={{ backgroundColor: meta.color === '#003B2C' ? '#1F2937' : meta.color }} />
+                    className="h-full rounded-full" style={{ backgroundColor: meta.color === '#1c519c' ? '#1F2937' : meta.color }} />
                 </div>
                 <span className="text-xs font-bold text-gray-700 text-right">{total} wks</span>
               </div>
@@ -342,7 +342,7 @@ function PhaseWorksheet({ phase, ps, setPsField, poc, setPoc, pilot, setPilot, p
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 flex-wrap">
                     <p className="text-xs font-medium text-gray-800">{uc.label}</p>
-                    {isNewInThisPhase && <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded" style={{ backgroundColor: `${meta.color}20`, color: meta.color === '#003B2C' ? '#374151' : meta.color }}>New in {meta.short}</span>}
+                    {isNewInThisPhase && <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded" style={{ backgroundColor: `${meta.color}20`, color: meta.color === '#1c519c' ? '#374151' : meta.color }}>New in {meta.short}</span>}
                   </div>
                   <p className="text-[10px] text-gray-400 mt-0.5">+{uc.weeks}w est.</p>
                 </div>

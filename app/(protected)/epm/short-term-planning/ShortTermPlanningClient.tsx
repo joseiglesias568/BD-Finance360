@@ -154,7 +154,7 @@ export default function ShortTermPlanningClient({ levers, baseline }: ShortTermP
           <div className="relative">
             <button
               onClick={handleSave}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[#003B2C] px-3.5 py-2 text-xs font-medium text-white shadow-sm hover:bg-[#007A3D] transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#1c519c] px-3.5 py-2 text-xs font-medium text-white shadow-sm hover:bg-[#1c519c] transition-colors"
             >
               <Save className="h-3.5 w-3.5" />
               Save Scenario
@@ -187,7 +187,7 @@ export default function ShortTermPlanningClient({ levers, baseline }: ShortTermP
               transition={{ duration: 0.35 }}
               className="bg-white rounded-xl border border-gray-200 p-4"
             >
-              <h3 className="text-xs font-semibold text-[#003B2C] uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-semibold text-[#1c519c] uppercase tracking-wider mb-3">
                 {category}
               </h3>
               <div className="space-y-4">
@@ -220,7 +220,7 @@ export default function ShortTermPlanningClient({ levers, baseline }: ShortTermP
               value={fmtDelta(revenueDelta, 'currency')}
               subtitle={`Adjusted: ${fmtCurrency(impact.adjusted.revenue)}`}
               icon={DollarSign}
-              accentColor={revenueDelta >= 0 ? '#003B2C' : '#dc2626'}
+              accentColor={revenueDelta >= 0 ? '#1c519c' : '#dc2626'}
               trend={revenueDelta > 0 ? 'up' : revenueDelta < 0 ? 'down' : 'flat'}
               trendLabel={`vs ${fmtCurrency(impact.baseline.revenue)} baseline`}
               index={0}
@@ -230,7 +230,7 @@ export default function ShortTermPlanningClient({ levers, baseline }: ShortTermP
               value={fmtDelta(oiDelta, 'currency')}
               subtitle={`Adjusted: ${fmtCurrency(impact.adjusted.operatingIncome)}`}
               icon={TrendingUp}
-              accentColor={oiDelta >= 0 ? '#003B2C' : '#dc2626'}
+              accentColor={oiDelta >= 0 ? '#1c519c' : '#dc2626'}
               trend={oiDelta > 0 ? 'up' : oiDelta < 0 ? 'down' : 'flat'}
               trendLabel={`vs ${fmtCurrency(impact.baseline.operatingIncome)} baseline`}
               index={1}
@@ -240,7 +240,7 @@ export default function ShortTermPlanningClient({ levers, baseline }: ShortTermP
               value={fmtDelta(marginDelta, 'percent')}
               subtitle={`Adjusted: ${impact.adjusted.operatingMargin.toFixed(1)}%`}
               icon={Percent}
-              accentColor={marginDelta >= 0 ? '#003B2C' : '#dc2626'}
+              accentColor={marginDelta >= 0 ? '#1c519c' : '#dc2626'}
               trend={marginDelta > 0 ? 'up' : marginDelta < 0 ? 'down' : 'flat'}
               trendLabel={`vs ${impact.baseline.operatingMargin.toFixed(1)}% baseline`}
               index={2}

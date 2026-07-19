@@ -216,7 +216,7 @@ export default function BusinessConsolesClient({ dbConsoles }: BusinessConsolesC
             {/* Page header */}
             <div className="bg-white border-b border-gray-200">
                 <div className="px-4 sm:px-6 lg:px-8 py-6">
-                    <h1 className="text-3xl font-bold text-[#003B2C]">Business Insight Consoles</h1>
+                    <h1 className="text-3xl font-bold text-[#1c519c]">Business Insight Consoles</h1>
                     <p className="mt-1 text-gray-500">
                         Comprehensive business intelligence across all key performance areas
                     </p>
@@ -233,7 +233,7 @@ export default function BusinessConsolesClient({ dbConsoles }: BusinessConsolesC
                             placeholder="Search consoles..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-9 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#003B2C] focus:border-transparent"
+                            className="w-full pl-9 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1c519c] focus:border-transparent"
                         />
                     </div>
                     <div className="flex space-x-1 overflow-x-auto pb-1">
@@ -288,7 +288,7 @@ export default function BusinessConsolesClient({ dbConsoles }: BusinessConsolesC
                                         transition={{ delay: index * 0.04 }}
                                         className={`rounded-xl border-2 cursor-pointer transition-all
                                             ${isSelected
-                                                ? 'bg-[#003B2C] border-[#003B2C] shadow-lg'
+                                                ? 'bg-[#1c519c] border-[#1c519c] shadow-lg'
                                                 : `${c.bgColor} ${c.borderColor} hover:shadow-md`
                                             }
                                             ${!c.isViewable && !isSelected ? 'opacity-60' : ''}

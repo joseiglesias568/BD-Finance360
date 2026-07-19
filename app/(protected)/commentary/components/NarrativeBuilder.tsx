@@ -114,13 +114,13 @@ export default function NarrativeBuilder({ items, selectedId, onSelect }: Narrat
                     )}
                     <PriorityDot priority={group.topPriority} />
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-sm font-semibold text-[#003B2C]">{group.consoleName}</h3>
+                      <h3 className="text-sm font-semibold text-[#1c519c]">{group.consoleName}</h3>
                     </div>
                     <div className="flex items-center gap-3 shrink-0">
                       <span className="flex items-center gap-1 text-xs text-purple-600">
                         <Sparkles className="w-3 h-3" />{group.aiCount}
                       </span>
-                      <span className="flex items-center gap-1 text-xs text-[#003B2C]">
+                      <span className="flex items-center gap-1 text-xs text-[#1c519c]">
                         <User className="w-3 h-3" />{group.humanCount}
                       </span>
                       {group.criticalCount > 0 && (
@@ -155,7 +155,7 @@ export default function NarrativeBuilder({ items, selectedId, onSelect }: Narrat
                                 <span className="text-xs font-medium text-gray-500">{driverName}</span>
                                 <span className="text-[10px] text-gray-400">({driverItems.length} items)</span>
                                 {hasAI && hasHuman && (
-                                  <span className="text-[10px] bg-[#F0F0F0] text-[#003B2C] px-1.5 py-0.5 rounded font-medium">
+                                  <span className="text-[10px] bg-[#F0F0F0] text-[#1c519c] px-1.5 py-0.5 rounded font-medium">
                                     Combined
                                   </span>
                                 )}
@@ -178,15 +178,15 @@ export default function NarrativeBuilder({ items, selectedId, onSelect }: Narrat
                                       {item.source === 'ai' ? (
                                         <Sparkles className="w-3 h-3 text-purple-500 shrink-0 mt-0.5" />
                                       ) : (
-                                        <User className="w-3 h-3 text-[#003B2C] shrink-0 mt-0.5" />
+                                        <User className="w-3 h-3 text-[#1c519c] shrink-0 mt-0.5" />
                                       )}
                                       <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                          <span className="text-xs font-medium text-[#003B2C] truncate">{item.title}</span>
+                                          <span className="text-xs font-medium text-[#1c519c] truncate">{item.title}</span>
                                           {item.kpiValue && (
                                             <span className="flex items-center gap-0.5 shrink-0">
                                               <TrendIcon direction={item.trendDirection} className="w-3 h-3" />
-                                              <span className="text-xs font-semibold text-[#003B2C]">{item.kpiValue}</span>
+                                              <span className="text-xs font-semibold text-[#1c519c]">{item.kpiValue}</span>
                                             </span>
                                           )}
                                         </div>
@@ -218,7 +218,7 @@ export default function NarrativeBuilder({ items, selectedId, onSelect }: Narrat
       {!showAll && groups.length > 20 && (
         <button
           onClick={() => setShowAll(true)}
-          className="w-full py-3 text-sm text-[#003B2C] font-medium hover:bg-[#F0F0F0]/30 rounded-lg border border-dashed border-[#003B2C]/30"
+          className="w-full py-3 text-sm text-[#1c519c] font-medium hover:bg-[#F0F0F0]/30 rounded-lg border border-dashed border-[#1c519c]/30"
         >
           Show all {groups.length} console groups
         </button>

@@ -15,7 +15,7 @@ export default function QuarterSelector({ quarters, selected, onSelect }: Quarte
           onClick={() => onSelect(q)}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
             selected === q
-              ? 'bg-[#003B2C] text-white'
+              ? 'bg-[#1c519c] text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >

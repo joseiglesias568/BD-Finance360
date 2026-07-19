@@ -107,7 +107,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                 <div className="px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between py-6">
                         <div className="flex items-center space-x-4">
-                            <div className="p-2 bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-lg shadow-lg">
+                            <div className="p-2 bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-lg shadow-lg">
                                 <Calculator className="w-6 h-6 text-white" />
                             </div>
                             <div>
@@ -120,7 +120,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                 <Bell className="w-4 h-4" />
                                 <span>Alerts (3)</span>
                             </button>
-                            <button className="px-4 py-1.5 text-sm bg-[#003B2C] text-white rounded-lg font-semibold hover:bg-[#003B2C] transition-all flex items-center space-x-2">
+                            <button className="px-4 py-1.5 text-sm bg-[#1c519c] text-white rounded-lg font-semibold hover:bg-[#1c519c] transition-all flex items-center space-x-2">
                                 <FileCheck className="w-4 h-4" />
                                 <span>Close Checklist</span>
                             </button>
@@ -140,7 +140,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`py-3 px-1 border-b-2 font-medium text-sm transition-colors flex items-center space-x-2 whitespace-nowrap ${activeTab === tab.id
-                                            ? 'border-[#003B2C] text-[#003B2C]'
+                                            ? 'border-[#1c519c] text-[#1c519c]'
                                             : 'border-transparent text-gray-500 hover:text-gray-700'
                                         }`}
                                 >
@@ -171,7 +171,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                             </div>
                                             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                                                 <div
-                                                    className={`h-full rounded-full transition-all ${phase.status === 'completed' ? 'bg-[#003B2C]' :
+                                                    className={`h-full rounded-full transition-all ${phase.status === 'completed' ? 'bg-[#1c519c]' :
                                                             phase.status === 'in-progress' ? 'bg-emerald-400' :
                                                                 'bg-gray-300'
                                                         }`}
@@ -180,7 +180,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                             </div>
                                         </div>
                                         <div className="w-24 text-right">
-                                            {phase.status === 'completed' && <CheckCircle className="w-5 h-5 text-[#003B2C] inline" />}
+                                            {phase.status === 'completed' && <CheckCircle className="w-5 h-5 text-[#1c519c] inline" />}
                                             {phase.status === 'in-progress' && <Clock className="w-5 h-5 text-emerald-400 inline" />}
                                             {phase.status === 'pending' && <AlertCircle className="w-5 h-5 text-gray-400 inline" />}
                                         </div>
@@ -194,7 +194,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                             <div className="bg-white rounded-lg border border-gray-200 p-4">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm text-gray-600">Tasks Completed</span>
-                                    <CheckCircle className="w-4 h-4 text-[#003B2C]" />
+                                    <CheckCircle className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <p className="text-2xl font-bold text-gray-900">{completedTasks}/{totalTasks}</p>
                                 <p className="text-xs text-gray-500 mt-1">{completionPercent}% complete</p>
@@ -210,7 +210,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                             <div className="bg-white rounded-lg border border-gray-200 p-4">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm text-gray-600">Automated</span>
-                                    <Zap className="w-4 h-4 text-[#003B2C]" />
+                                    <Zap className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <p className="text-2xl font-bold text-gray-900">{jeAutomated}</p>
                                 <p className="text-xs text-gray-500 mt-1">{jeManual} manual entries</p>
@@ -218,7 +218,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                             <div className="bg-white rounded-lg border border-gray-200 p-4">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm text-gray-600">Days to Close</span>
-                                    <Calendar className="w-4 h-4 text-[#003B2C]" />
+                                    <Calendar className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <p className="text-2xl font-bold text-gray-900">{currentDay}</p>
                                 <p className="text-xs text-gray-500 mt-1">{daysRemaining} remaining</p>
@@ -269,12 +269,12 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                     <FileText className="w-4 h-4 text-emerald-500" />
                                 </div>
                                 <p className="text-2xl font-bold text-gray-900">{jeTotal}</p>
-                                <p className="text-xs text-[#003B2C] mt-1">+1.1% vs last month</p>
+                                <p className="text-xs text-[#1c519c] mt-1">+1.1% vs last month</p>
                             </div>
                             <div className="bg-white rounded-lg border border-gray-200 p-4">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm text-gray-600">Total Amount</span>
-                                    <DollarSign className="w-4 h-4 text-[#003B2C]" />
+                                    <DollarSign className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <p className="text-2xl font-bold text-gray-900">${(jeTotalAmount / 1000000).toFixed(0)}M</p>
                                 <p className="text-xs text-gray-500 mt-1">Gross value</p>
@@ -282,7 +282,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                             <div className="bg-white rounded-lg border border-gray-200 p-4">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm text-gray-600">Automated</span>
-                                    <Zap className="w-4 h-4 text-[#003B2C]" />
+                                    <Zap className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <p className="text-2xl font-bold text-gray-900">{jeAutomatedPct}%</p>
                                 <p className="text-xs text-gray-500 mt-1">{jeAutomated} entries</p>
@@ -306,7 +306,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                         <div className="w-full bg-[#F0F0F0] rounded-t" style={{
                                             height: `${(month.count / 300) * 100}%`
                                         }}>
-                                            <div className="text-xs font-medium text-center pt-2 text-[#003B2C]">{month.count}</div>
+                                            <div className="text-xs font-medium text-center pt-2 text-[#1c519c]">{month.count}</div>
                                         </div>
                                         <div className="text-xs text-gray-600 mt-2">{month.month}</div>
                                     </div>
@@ -318,7 +318,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                         <div className="bg-white rounded-lg border border-gray-200">
                             <div className="p-4 border-b border-gray-200 flex items-center justify-between">
                                 <h3 className="text-lg font-semibold text-gray-900">Recent Journal Entries</h3>
-                                <button className="text-sm text-[#003B2C] hover:text-[#003B2C] font-medium">View All</button>
+                                <button className="text-sm text-[#1c519c] hover:text-[#1c519c] font-medium">View All</button>
                             </div>
                             <div className="divide-y divide-gray-100">
                                 {recentEntries.map((entry) => (
@@ -329,7 +329,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                                     <span className="text-sm font-medium text-gray-900">{entry.id}</span>
                                                     <span className={`text-xs px-2 py-0.5 rounded-full ${entry.type === 'Recurring' ? 'bg-emerald-100 text-emerald-700' :
                                                             entry.type === 'Manual' ? 'bg-gray-100 text-gray-700' :
-                                                                'bg-[#F0F0F0] text-[#003B2C]'
+                                                                'bg-[#F0F0F0] text-[#1c519c]'
                                                         }`}>
                                                         {entry.type}
                                                     </span>
@@ -396,7 +396,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                     </button>
                                 )}
                             </div>
-                            <button className="px-3 py-2 text-sm bg-[#003B2C] text-white rounded-lg font-medium hover:bg-[#003B2C] transition-all">
+                            <button className="px-3 py-2 text-sm bg-[#1c519c] text-white rounded-lg font-medium hover:bg-[#1c519c] transition-all">
                                 Export Results
                             </button>
                         </div>
@@ -442,14 +442,14 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                                         <td className="text-right py-3 text-gray-600">
                                                             ${(values.prior / 1000000).toFixed(0)}
                                                         </td>
-                                                        <td className={`text-right py-3 font-medium ${actualVsPrior >= 0 ? 'text-[#003B2C]' : 'text-red-600'
+                                                        <td className={`text-right py-3 font-medium ${actualVsPrior >= 0 ? 'text-[#1c519c]' : 'text-red-600'
                                                             }`}>
                                                             {actualVsPrior >= 0 ? '+' : ''}{actualVsPrior.toFixed(1)}%
                                                         </td>
                                                         <td className="text-right py-3 text-gray-600">
                                                             ${(values.budget / 1000000).toFixed(0)}
                                                         </td>
-                                                        <td className={`text-right py-3 font-medium ${actualVsBudget >= 0 ? 'text-[#003B2C]' : 'text-red-600'
+                                                        <td className={`text-right py-3 font-medium ${actualVsBudget >= 0 ? 'text-[#1c519c]' : 'text-red-600'
                                                             }`}>
                                                             {actualVsBudget >= 0 ? '+' : ''}{actualVsBudget.toFixed(1)}%
                                                         </td>
@@ -539,13 +539,13 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                                         <td className="text-right py-3 text-gray-600">
                                                             ${(row.priorMonth / 1000000).toFixed(0)}
                                                         </td>
-                                                        <td className={`text-right py-3 font-medium ${varVsPrior >= 0 ? 'text-[#003B2C]' : 'text-red-600'}`}>
+                                                        <td className={`text-right py-3 font-medium ${varVsPrior >= 0 ? 'text-[#1c519c]' : 'text-red-600'}`}>
                                                             {varVsPrior >= 0 ? '+' : ''}{varVsPrior.toFixed(1)}%
                                                         </td>
                                                         <td className="text-right py-3 text-gray-600">
                                                             ${(row.budget / 1000000).toFixed(0)}
                                                         </td>
-                                                        <td className={`text-right py-3 font-medium ${varVsBudget >= 0 ? 'text-[#003B2C]' : 'text-red-600'}`}>
+                                                        <td className={`text-right py-3 font-medium ${varVsBudget >= 0 ? 'text-[#1c519c]' : 'text-red-600'}`}>
                                                             {varVsBudget >= 0 ? '+' : ''}{varVsBudget.toFixed(1)}%
                                                         </td>
                                                     </tr>
@@ -566,7 +566,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                         <div className="bg-white rounded-lg border border-gray-200 p-6">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-lg font-semibold text-gray-900">Adjustments Queue</h3>
-                                <button className="px-3 py-1.5 text-sm bg-[#003B2C] text-white rounded-lg font-medium hover:bg-[#003B2C] transition-all flex items-center space-x-2">
+                                <button className="px-3 py-1.5 text-sm bg-[#1c519c] text-white rounded-lg font-medium hover:bg-[#1c519c] transition-all flex items-center space-x-2">
                                     <Plus className="w-4 h-4" />
                                     <span>New Adjustment</span>
                                 </button>
@@ -598,7 +598,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                             </div>
                                             <div className="text-right ml-4">
                                                 <p className="text-sm text-gray-600">P&L Impact</p>
-                                                <p className={`text-lg font-semibold ${adj.impact.pl >= 0 ? 'text-[#003B2C]' : 'text-red-600'}`}>
+                                                <p className={`text-lg font-semibold ${adj.impact.pl >= 0 ? 'text-[#1c519c]' : 'text-red-600'}`}>
                                                     {adj.impact.pl >= 0 ? '+' : ''}${(adj.impact.pl / 1000000).toFixed(1)}M
                                                 </p>
                                             </div>
@@ -617,10 +617,10 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                         <div className="bg-white rounded-lg border border-gray-200 p-6">
                             <div className="flex items-center justify-between mb-4">
                                 <div className="flex items-center space-x-3">
-                                    <Brain className="w-6 h-6 text-[#003B2C]" />
+                                    <Brain className="w-6 h-6 text-[#1c519c]" />
                                     <h3 className="text-lg font-semibold text-gray-900">AI-Generated Commentary</h3>
                                 </div>
-                                <button className="px-3 py-1.5 text-sm bg-[#003B2C] text-white rounded-lg font-medium hover:bg-[#003B2C] transition-all">
+                                <button className="px-3 py-1.5 text-sm bg-[#1c519c] text-white rounded-lg font-medium hover:bg-[#1c519c] transition-all">
                                     Regenerate All
                                 </button>
                             </div>
@@ -686,7 +686,7 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                                                         }
                                                     }}
                                                     disabled={savedCommentaryIds.has(idx) || savingCommentaryIdx === idx}
-                                                    className="text-xs text-[#003B2C] hover:text-[#003B2C] font-medium disabled:text-gray-400 disabled:cursor-default"
+                                                    className="text-xs text-[#1c519c] hover:text-[#1c519c] font-medium disabled:text-gray-400 disabled:cursor-default"
                                                 >
                                                     {savedCommentaryIds.has(idx) ? '✓ Saved to Commentary Engine' : savingCommentaryIdx === idx ? 'Saving...' : 'Save to Commentary Engine'}
                                                 </button>
@@ -710,23 +710,23 @@ export default function MonthEndCloseClient({ monthEnd, monthEndExtra, completio
                             <div className="space-y-3">
                                 <div className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                                     <div className="flex items-center space-x-3">
-                                        <CheckCircle className="w-5 h-5 text-[#003B2C]" />
+                                        <CheckCircle className="w-5 h-5 text-[#1c519c]" />
                                         <div>
                                             <p className="text-sm font-medium text-gray-900">Property Revenue Reconciliation</p>
                                             <p className="text-xs text-gray-600">Approved by Property Accounting Manager at 2:30 PM</p>
                                         </div>
                                     </div>
-                                    <Lock className="w-4 h-4 text-[#003B2C]" />
+                                    <Lock className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <div className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                                     <div className="flex items-center space-x-3">
-                                        <CheckCircle className="w-5 h-5 text-[#003B2C]" />
+                                        <CheckCircle className="w-5 h-5 text-[#1c519c]" />
                                         <div>
                                             <p className="text-sm font-medium text-gray-900">Partnership Fee Revenue Recognition</p>
                                             <p className="text-xs text-gray-600">Approved by Revenue Accounting at 4:15 PM</p>
                                         </div>
                                     </div>
-                                    <Lock className="w-4 h-4 text-[#003B2C]" />
+                                    <Lock className="w-4 h-4 text-[#1c519c]" />
                                 </div>
                                 <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
                                     <div className="flex items-center space-x-3">

@@ -83,7 +83,7 @@ export default function BridgeWalksClient({ bridgeData }: BridgeWalksClientProps
             value={summary.largestDriver}
             subtitle="By absolute impact"
             icon={BarChart3}
-            accentColor="#003B2C"
+            accentColor="#1c519c"
             index={1}
           />
           <SummaryMetricCard
@@ -115,7 +115,7 @@ export default function BridgeWalksClient({ bridgeData }: BridgeWalksClientProps
           className="bg-white rounded-xl border border-gray-200 p-5"
         >
           <div className="flex items-center gap-2 mb-4">
-            <TrendingUp className="h-4 w-4 text-[#003B2C]" />
+            <TrendingUp className="h-4 w-4 text-[#1c519c]" />
             <h2 className="text-sm font-bold text-gray-900">
               {selectedLine} Bridge — {selectedQuarter}
             </h2>

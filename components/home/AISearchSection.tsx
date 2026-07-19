@@ -50,7 +50,7 @@ export default function AISearchSection({
                     <button
                         onClick={onSearch}
                         disabled={isSearching || !searchQuery.trim()}
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#003B2C] text-white p-3 rounded-xl hover:bg-[#007A3D] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#1c519c] text-white p-3 rounded-xl hover:bg-[#1c519c] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                         {isSearching ? (
                             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

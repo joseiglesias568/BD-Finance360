@@ -23,17 +23,17 @@ export const branding: BrandingConfig = {
   industry: 'Airline / Aviation',
   headquarters: 'Atlanta, Georgia',
   // Delta Air Lines official brand colors (Pantone references from brand standards)
-  //   Delta Blue: #003B2C (Pantone 654 C) — primary brand color
+  //   Delta Blue: #1c519c (Pantone 654 C) — primary brand color
   //   Delta Red:  #C01933 (Pantone 187 C) — accent/action color
-  //   Dark Navy:  #003B2C                  — deep backgrounds
+  //   Dark Navy:  #1c519c                  — deep backgrounds
   //   Light Blue: #009AC7                  — secondary accent
   colors: {
-    primary: '#003B2C',      // Delta Blue (Pantone 654 C)
-    primaryDark: '#003B2C',  // Dark Navy
+    primary: '#1c519c',      // Delta Blue (Pantone 654 C)
+    primaryDark: '#1c519c',  // Dark Navy
     primaryLight: '#D6E4F0', // Light Delta Blue tint
     primaryAlt: '#009AC7',   // Delta Light Blue
-    navBg: '#003B2C',        // Dark Navy nav background
-    navBgLight: '#003B2C',   // Delta Blue nav highlight
+    navBg: '#1c519c',        // Dark Navy nav background
+    navBgLight: '#1c519c',   // Delta Blue nav highlight
     accent: '#C01933',       // Delta Red (Pantone 187 C)
     success: '#10b981',
     warning: '#f59e0b',

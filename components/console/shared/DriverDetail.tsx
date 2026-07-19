@@ -67,7 +67,7 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-lg font-bold text-[#003B2C]">{driver.name}</h2>
+          <h2 className="text-lg font-bold text-[#1c519c]">{driver.name}</h2>
           <p className="text-sm text-gray-500 mt-0.5">{driver.description}</p>
         </div>
         <StatusBadge status={driver.status} />
@@ -78,14 +78,14 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
         <div className="bg-gray-50 rounded-lg p-3">
           <p className="text-xs text-gray-500">Current</p>
           <div className="flex items-baseline gap-1 mt-1">
-            <span className="text-xl font-bold text-[#003B2C]">{driver.value}</span>
+            <span className="text-xl font-bold text-[#1c519c]">{driver.value}</span>
             {driver.unit && <span className="text-xs text-gray-500">{driver.unit}</span>}
           </div>
         </div>
         {driver.target && (
           <div className="bg-gray-50 rounded-lg p-3">
             <p className="text-xs text-gray-500">Target</p>
-            <p className="text-xl font-bold text-[#003B2C] mt-1">{driver.target}</p>
+            <p className="text-xl font-bold text-[#1c519c] mt-1">{driver.target}</p>
           </div>
         )}
         {driver.gap && (
@@ -115,7 +115,7 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
       {/* Trend Chart */}
       {driver.trendData.length > 0 && (
         <div className="bg-white rounded-xl border border-gray-200 p-4">
-          <h3 className="text-sm font-semibold text-[#003B2C] mb-3">Trend Analysis</h3>
+          <h3 className="text-sm font-semibold text-[#1c519c] mb-3">Trend Analysis</h3>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={driver.trendData}>
               <CartesianGrid {...CHART_GRID_STYLE} />
@@ -149,7 +149,7 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
       {/* Sub-Driver Contributions */}
       {driver.subDrivers.length > 0 && (
         <div className="bg-white rounded-xl border border-gray-200 p-4">
-          <h3 className="text-sm font-semibold text-[#003B2C] mb-3">Driver Contributions</h3>
+          <h3 className="text-sm font-semibold text-[#1c519c] mb-3">Driver Contributions</h3>
           <div className="space-y-2.5">
             {driver.subDrivers.map((sd) => {
               const pct = (Math.abs(sd.contribution) / maxContribution) * 100;
@@ -162,7 +162,7 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
                       initial={{ width: 0 }}
                       animate={{ width: `${Math.min(pct, 100)}%` }}
                       transition={{ duration: 0.5, ease: 'easeOut' }}
-                      className={`h-full rounded-full ${isPositive ? 'bg-[#003B2C]' : 'bg-red-400'}`}
+                      className={`h-full rounded-full ${isPositive ? 'bg-[#1c519c]' : 'bg-red-400'}`}
                     />
                   </div>
                   <span className={`text-xs font-semibold w-16 text-right ${
@@ -180,29 +180,29 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
       {/* Variance Card */}
       {driver.variance && (
         <div className="grid grid-cols-3 gap-3">
-          <div className="bg-[#003B2C] rounded-lg p-3 text-white">
+          <div className="bg-[#1c519c] rounded-lg p-3 text-white">
             <p className="text-xs text-white/70">Actual</p>
             <p className="text-lg font-bold mt-1">{driver.variance.actual}</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-3">
             <p className="text-xs text-gray-500">vs Plan</p>
-            <p className="text-lg font-bold text-[#003B2C] mt-1">{driver.variance.plan}</p>
+            <p className="text-lg font-bold text-[#1c519c] mt-1">{driver.variance.plan}</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-3">
             <p className="text-xs text-gray-500">vs Prior Year</p>
-            <p className="text-lg font-bold text-[#003B2C] mt-1">{driver.variance.priorYear}</p>
+            <p className="text-lg font-bold text-[#1c519c] mt-1">{driver.variance.priorYear}</p>
           </div>
         </div>
       )}
 
       {/* AI Insight */}
       {driver.aiInsight && (
-        <div className="p-4 bg-[#F0F0F0]/40 rounded-xl border border-[#003B2C]/10">
+        <div className="p-4 bg-[#F0F0F0]/40 rounded-xl border border-[#1c519c]/10">
           <div className="flex items-center gap-1.5 mb-2">
-            <Sparkles className="w-4 h-4 text-[#003B2C]" />
-            <span className="text-xs font-semibold text-[#003B2C]">AI Analysis</span>
+            <Sparkles className="w-4 h-4 text-[#1c519c]" />
+            <span className="text-xs font-semibold text-[#1c519c]">AI Analysis</span>
           </div>
-          <p className="text-sm text-[#003B2C] leading-relaxed">{driver.aiInsight}</p>
+          <p className="text-sm text-[#1c519c] leading-relaxed">{driver.aiInsight}</p>
         </div>
       )}
 
@@ -214,7 +214,7 @@ export default function DriverDetail({ driver }: DriverDetailProps) {
             {driver.crossRefs.map((ref) => (
               <span
                 key={ref.consoleId}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-700 hover:border-[#003B2C]/30 hover:text-[#003B2C] cursor-pointer transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-700 hover:border-[#1c519c]/30 hover:text-[#1c519c] cursor-pointer transition-colors"
               >
                 <ExternalLink className="w-3 h-3" />
                 {ref.label}

@@ -95,11 +95,11 @@ function computeOnTrackPercent(kpis: PillarKPI[]): number {
 }
 
 const statusIcons = {
-  'on-track': { Icon: CheckCircle2, color: 'text-[#003B2C]', bg: 'bg-[#F0F0F0]' },
-  'ahead': { Icon: TrendingUp, color: 'text-[#003B2C]', bg: 'bg-[#F0F0F0]' },
+  'on-track': { Icon: CheckCircle2, color: 'text-[#1c519c]', bg: 'bg-[#F0F0F0]' },
+  'ahead': { Icon: TrendingUp, color: 'text-[#1c519c]', bg: 'bg-[#F0F0F0]' },
   'at-risk': { Icon: AlertTriangle, color: 'text-amber-700', bg: 'bg-amber-50' },
   'behind': { Icon: XCircle, color: 'text-red-700', bg: 'bg-red-50' },
-  'completed': { Icon: CheckCircle2, color: 'text-[#003B2C]', bg: 'bg-[#F0F0F0]' },
+  'completed': { Icon: CheckCircle2, color: 'text-[#1c519c]', bg: 'bg-[#F0F0F0]' },
 };
 
 export default function StrategyExecutionClient({
@@ -185,29 +185,29 @@ export default function StrategyExecutionClient({
             <Link href="/business-consoles" className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors">
               <ArrowLeft className="w-4 h-4 text-gray-500" />
             </Link>
-            <Target className="w-6 h-6 text-[#003B2C]" />
+            <Target className="w-6 h-6 text-[#1c519c]" />
             <div>
-              <h1 className="text-2xl font-bold text-[#003B2C]">BD Finance360 Value Creation Strategy</h1>
+              <h1 className="text-2xl font-bold text-[#1c519c]">BD Finance360 Value Creation Strategy</h1>
               <p className="text-sm text-gray-500 mt-0.5">CEO Martin J. Lyons Jr.&apos;s value creation framework: Missouri rate base CAGR, ESA data center expansion, Illinois ROE recovery, FFO/debt discipline</p>
             </div>
           </div>
 
           {/* Overall Status Bar */}
           <div className="grid grid-cols-4 gap-4 mt-4">
-            <div className="bg-[#F0F0F0]/30 rounded-lg p-4 border border-[#003B2C]/10">
+            <div className="bg-[#F0F0F0]/30 rounded-lg p-4 border border-[#1c519c]/10">
               <p className="text-xs text-gray-500 mb-1">Overall KPI Achievement</p>
-              <p className="text-2xl font-bold text-[#003B2C]">{overallOnTrack}%</p>
+              <p className="text-2xl font-bold text-[#1c519c]">{overallOnTrack}%</p>
               <p className="text-xs text-gray-500 mt-1">{pillars.reduce((s, p) => s + p.kpis.length, 0)} KPIs tracked</p>
             </div>
-            <div className="bg-[#F0F0F0]/30 rounded-lg p-4 border border-[#003B2C]/10">
+            <div className="bg-[#F0F0F0]/30 rounded-lg p-4 border border-[#1c519c]/10">
               <p className="text-xs text-gray-500 mb-1">Pillars On Track</p>
-              <p className="text-2xl font-bold text-[#003B2C]">{pillarStatusCounts.onTrack} / {pillars.length}</p>
+              <p className="text-2xl font-bold text-[#1c519c]">{pillarStatusCounts.onTrack} / {pillars.length}</p>
               <div className="flex gap-1 mt-2">
                 {pillars.map((p, i) => (
                   <div
                     key={i}
                     className={`h-2 flex-1 rounded-full ${
-                      p.overallStatus === 'on-track' || p.overallStatus === 'ahead' ? 'bg-[#003B2C]' :
+                      p.overallStatus === 'on-track' || p.overallStatus === 'ahead' ? 'bg-[#1c519c]' :
                       p.overallStatus === 'at-risk' ? 'bg-amber-500' : 'bg-red-500'
                     }`}
                   />
@@ -232,7 +232,7 @@ export default function StrategyExecutionClient({
       <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-[1440px] mx-auto">
         {/* Pillar Cards Grid */}
         <div className="mb-8">
-          <h2 className="text-lg font-bold text-[#003B2C] mb-4">Strategy Pillars</h2>
+          <h2 className="text-lg font-bold text-[#1c519c] mb-4">Strategy Pillars</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {pillars.map((pillar) => (
               <PillarCard
@@ -249,8 +249,8 @@ export default function StrategyExecutionClient({
         {initiatives.length > 0 && (
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
             <div className="flex items-center gap-2 mb-6">
-              <Calendar className="w-5 h-5 text-[#003B2C]" />
-              <h2 className="text-lg font-bold text-[#003B2C]">Strategic Initiative Timeline</h2>
+              <Calendar className="w-5 h-5 text-[#1c519c]" />
+              <h2 className="text-lg font-bold text-[#1c519c]">Strategic Initiative Timeline</h2>
             </div>
 
             <div className="space-y-3">
@@ -294,7 +294,7 @@ export default function StrategyExecutionClient({
                         <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                           <div
                             className={`h-full rounded-full transition-all ${
-                              initiative.status === 'on-track' || initiative.status === 'completed' ? 'bg-[#003B2C]' :
+                              initiative.status === 'on-track' || initiative.status === 'completed' ? 'bg-[#1c519c]' :
                               initiative.status === 'at-risk' ? 'bg-amber-500' : 'bg-red-500'
                             }`}
                             style={{ width: `${initiative.progress}%` }}

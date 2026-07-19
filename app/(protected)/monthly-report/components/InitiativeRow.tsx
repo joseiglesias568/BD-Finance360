@@ -29,7 +29,7 @@ export default function InitiativeRow({ initiative }: InitiativeRowProps) {
   const budgetUsed = initiative.budget > 0 ? Math.round((initiative.spent / initiative.budget) * 100) : 0;
 
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#003B2C]/30 transition-colors">
+    <div className="border border-gray-200 rounded-lg overflow-hidden hover:border-[#1c519c]/30 transition-colors">
       {/* Compact row */}
       <button
         onClick={() => setExpanded(!expanded)}

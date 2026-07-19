@@ -62,7 +62,7 @@ export default function StrategicInitiatives({ periodLabel, strategic }: Strateg
           </div>
           <div>
             <p className="text-xs font-medium text-gray-500 uppercase">Total</p>
-            <p className="text-2xl font-bold text-[#003B2C]">{initiatives.length}</p>
+            <p className="text-2xl font-bold text-[#1c519c]">{initiatives.length}</p>
             <p className="text-[10px] text-gray-400">Strategic programs</p>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function StrategicInitiatives({ periodLabel, strategic }: Strateg
 
         <div className="bg-white rounded-xl border border-gray-200 p-4">
           <p className="text-xs font-medium text-gray-500 uppercase">Total Investment</p>
-          <p className="text-2xl font-bold text-[#003B2C]">{formatBudget(totalBudget)}</p>
+          <p className="text-2xl font-bold text-[#1c519c]">{formatBudget(totalBudget)}</p>
           <p className="text-[10px] text-gray-400">
             {formatBudget(totalSpent)} spent ({totalBudget > 0 ? calculateMargin(totalSpent, totalBudget).toFixed(0) : 0}%)
           </p>

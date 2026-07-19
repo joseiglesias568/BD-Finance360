@@ -50,7 +50,7 @@ export default function InsightsGrid({ items, selectedId, onSelect, columns = 2 
                       PRIORITY_COLORS[item.priority] ?? PRIORITY_COLORS.medium
                     } ${
                       isSelected
-                        ? 'ring-2 ring-[#003B2C] shadow-md'
+                        ? 'ring-2 ring-[#1c519c] shadow-md'
                         : 'hover:shadow-sm hover:border-gray-300'
                     }`}
                   >
@@ -61,7 +61,7 @@ export default function InsightsGrid({ items, selectedId, onSelect, columns = 2 
                           <Sparkles className="w-2.5 h-2.5 mr-0.5" />AI
                         </PillBadge>
                       ) : (
-                        <PillBadge className="bg-[#F0F0F0] text-[#003B2C]">
+                        <PillBadge className="bg-[#F0F0F0] text-[#1c519c]">
                           <User className="w-2.5 h-2.5 mr-0.5" />Human
                         </PillBadge>
                       )}
@@ -73,11 +73,11 @@ export default function InsightsGrid({ items, selectedId, onSelect, columns = 2 
 
                     {/* Title + value */}
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-sm font-semibold text-[#003B2C] line-clamp-1">{item.title}</h3>
+                      <h3 className="text-sm font-semibold text-[#1c519c] line-clamp-1">{item.title}</h3>
                       {item.kpiValue && (
                         <div className="flex items-center gap-1 shrink-0">
                           <TrendIcon direction={item.trendDirection} className="w-3 h-3" />
-                          <span className="text-xs font-semibold text-[#003B2C]">{item.kpiValue}</span>
+                          <span className="text-xs font-semibold text-[#1c519c]">{item.kpiValue}</span>
                         </div>
                       )}
                     </div>

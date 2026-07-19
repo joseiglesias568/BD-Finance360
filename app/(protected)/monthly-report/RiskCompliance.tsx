@@ -73,7 +73,7 @@ export default function RiskCompliance({ periodLabel, strategic, market }: RiskC
         </div>
         <div className="bg-white rounded-xl border border-gray-200 p-4">
           <p className="text-xs font-medium text-gray-500 uppercase">Market Share</p>
-          <p className="text-2xl font-bold text-[#003B2C]">{market?.companyMarketShare?.toFixed(1) ?? 0}%</p>
+          <p className="text-2xl font-bold text-[#1c519c]">{market?.companyMarketShare?.toFixed(1) ?? 0}%</p>
           <p className="text-[10px] text-gray-400">
             Target: {market?.marketShareTarget?.toFixed(1) ?? 0}% | YoY: {(market?.marketShareYoY ?? 0) >= 0 ? '+' : ''}{market?.marketShareYoY?.toFixed(1) ?? 0}%
           </p>

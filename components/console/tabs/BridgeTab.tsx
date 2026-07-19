@@ -94,12 +94,12 @@ export default function BridgeTab({
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h2 className="text-base font-semibold text-[#003B2C]">{title}</h2>
+            <h2 className="text-base font-semibold text-[#1c519c]">{title}</h2>
             <p className="text-xs text-gray-500">{periodLabel}</p>
           </div>
           <div className="flex items-center gap-4 text-xs">
             <span className="text-gray-500">
-              <span className="font-bold text-[#003B2C]">{signedOff}</span> of {items.length} signed off
+              <span className="font-bold text-[#1c519c]">{signedOff}</span> of {items.length} signed off
             </span>
             <span className="text-gray-500">
               <span className="font-bold text-amber-600">{submitted}</span> submitted
@@ -113,7 +113,7 @@ export default function BridgeTab({
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: `${progressPct}%` }}
-            className="h-full rounded-full bg-[#003B2C]"
+            className="h-full rounded-full bg-[#1c519c]"
           />
         </div>
       </div>
@@ -175,7 +175,7 @@ export default function BridgeTab({
                         {isExpanded ? <ChevronDown className="w-3.5 h-3.5 text-gray-400" /> : <ChevronRight className="w-3.5 h-3.5 text-gray-400" />}
                       </button>
                     )}
-                    <span className="text-sm font-medium text-[#003B2C]">{item.component}</span>
+                    <span className="text-sm font-medium text-[#1c519c]">{item.component}</span>
                   </div>
 
                   {/* Value */}
@@ -198,7 +198,7 @@ export default function BridgeTab({
                           value={editText}
                           onChange={(e) => setEditText(e.target.value)}
                           rows={3}
-                          className="w-full text-xs text-gray-700 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C]"
+                          className="w-full text-xs text-gray-700 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c]"
                           placeholder="Add your commentary..."
                         />
                         <div className="flex items-center gap-2">
@@ -207,7 +207,7 @@ export default function BridgeTab({
                               saveToCommentary(item, editText);
                               setEditingId(null);
                             }}
-                            className="px-3 py-1 text-xs font-medium text-white bg-[#003B2C] rounded-lg hover:bg-[#003B2C] transition-colors"
+                            className="px-3 py-1 text-xs font-medium text-white bg-[#1c519c] rounded-lg hover:bg-[#1c519c] transition-colors"
                           >
                             Save
                           </button>
@@ -223,7 +223,7 @@ export default function BridgeTab({
                       <div className="space-y-1.5">
                         {/* AI suggestion */}
                         <div className="flex items-start gap-1.5">
-                          <Brain className="w-3 h-3 text-[#003B2C] mt-0.5 flex-shrink-0" />
+                          <Brain className="w-3 h-3 text-[#1c519c] mt-0.5 flex-shrink-0" />
                           <p className="text-xs text-gray-500 italic leading-relaxed">{item.aiSuggestion}</p>
                         </div>
                         {/* User commentary */}
@@ -262,7 +262,7 @@ export default function BridgeTab({
                   <div className="col-span-1 flex justify-center gap-1">
                     <button
                       onClick={() => startEditing(item)}
-                      className="p-1.5 text-gray-400 hover:text-[#003B2C] hover:bg-gray-100 rounded-lg transition-colors"
+                      className="p-1.5 text-gray-400 hover:text-[#1c519c] hover:bg-gray-100 rounded-lg transition-colors"
                       title="Edit commentary"
                     >
                       <Edit2 className="w-3.5 h-3.5" />

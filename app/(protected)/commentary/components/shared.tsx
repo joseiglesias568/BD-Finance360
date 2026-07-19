@@ -223,7 +223,7 @@ export function ConfidenceBar({ score }: { score: number }) {
   return (
     <div className="flex items-center gap-2">
       <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-        <div className="h-full rounded-full bg-[#003B2C]" style={{ width: `${score}%` }} />
+        <div className="h-full rounded-full bg-[#1c519c]" style={{ width: `${score}%` }} />
       </div>
       <span className="text-xs text-gray-500 tabular-nums w-8">{score}%</span>
     </div>

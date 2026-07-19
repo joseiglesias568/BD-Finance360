@@ -71,8 +71,8 @@ export default function InsightsTable({ items, selectedId, onSelect }: InsightsT
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field) return <ArrowUpDown className="w-3 h-3 text-gray-300" />;
     return sortDir === 'asc'
-      ? <ArrowUp className="w-3 h-3 text-[#003B2C]" />
-      : <ArrowDown className="w-3 h-3 text-[#003B2C]" />;
+      ? <ArrowUp className="w-3 h-3 text-[#1c519c]" />
+      : <ArrowDown className="w-3 h-3 text-[#1c519c]" />;
   };
 
   // Normalize confidence: if <=1 treat as 0-1 scale, otherwise 0-100
@@ -122,7 +122,7 @@ export default function InsightsTable({ items, selectedId, onSelect }: InsightsT
                 onClick={() => onSelect(item.id)}
                 className={`absolute left-0 right-0 flex items-center text-xs border-b border-gray-100 cursor-pointer transition-colors ${
                   isSelected
-                    ? 'bg-[#F0F0F0]/60 border-l-2 border-l-[#003B2C]'
+                    ? 'bg-[#F0F0F0]/60 border-l-2 border-l-[#1c519c]'
                     : 'hover:bg-gray-50 border-l-2 border-l-transparent'
                 }`}
                 style={{
@@ -143,7 +143,7 @@ export default function InsightsTable({ items, selectedId, onSelect }: InsightsT
                       <span className="text-[10px] font-medium uppercase">{item.insightLevel || 'AI'}</span>
                     </span>
                   ) : (
-                    <span className="flex items-center gap-0.5 text-[#003B2C]">
+                    <span className="flex items-center gap-0.5 text-[#1c519c]">
                       <User className="w-3 h-3" />
                       <span className="text-[10px] font-medium uppercase truncate">
                         {item.insightType.slice(0, 4)}
@@ -154,7 +154,7 @@ export default function InsightsTable({ items, selectedId, onSelect }: InsightsT
 
                 {/* Title */}
                 <div className="flex-1 min-w-[200px] pr-2 overflow-hidden">
-                  <p className="truncate text-[#003B2C] font-medium">{item.title}</p>
+                  <p className="truncate text-[#1c519c] font-medium">{item.title}</p>
                 </div>
 
                 {/* Console */}
@@ -163,7 +163,7 @@ export default function InsightsTable({ items, selectedId, onSelect }: InsightsT
                 </div>
 
                 {/* KPI value */}
-                <div className="w-16 shrink-0 font-semibold text-[#003B2C] tabular-nums">
+                <div className="w-16 shrink-0 font-semibold text-[#1c519c] tabular-nums">
                   {item.kpiValue}
                 </div>
 
@@ -183,7 +183,7 @@ export default function InsightsTable({ items, selectedId, onSelect }: InsightsT
                     <div className="flex items-center gap-1">
                       <div className="w-8 h-1.5 bg-gray-200 rounded-full overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-[#003B2C]"
+                          className="h-full rounded-full bg-[#1c519c]"
                           style={{ width: `${conf}%` }}
                         />
                       </div>

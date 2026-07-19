@@ -37,7 +37,7 @@ export default function ConsoleFilterBar({
               onClick={() => onFilterChange(f.id, opt.value)}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${
                 val === opt.value
-                  ? 'bg-white text-[#003B2C] shadow-sm'
+                  ? 'bg-white text-[#1c519c] shadow-sm'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -55,7 +55,7 @@ export default function ConsoleFilterBar({
         value={val}
         onChange={(e) => onFilterChange(f.id, e.target.value)}
         className="px-3 py-1.5 border border-gray-200 rounded-lg text-xs font-medium text-gray-700 bg-white
-          focus:outline-none focus:ring-2 focus:ring-[#003B2C]/20 focus:border-[#003B2C] transition-all"
+          focus:outline-none focus:ring-2 focus:ring-[#1c519c]/20 focus:border-[#1c519c] transition-all"
       >
         {f.options.map((opt) => (
           <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -78,7 +78,7 @@ export default function ConsoleFilterBar({
               <button
                 onClick={() => setShowSecondary(!showSecondary)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  showSecondary ? 'bg-[#F0F0F0] text-[#003B2C]' : 'text-gray-500 hover:bg-gray-100'
+                  showSecondary ? 'bg-[#F0F0F0] text-[#1c519c]' : 'text-gray-500 hover:bg-gray-100'
                 }`}
               >
                 <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -98,7 +98,7 @@ export default function ConsoleFilterBar({
               return (
                 <span
                   key={f.id}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#F0F0F0]/50 text-[#003B2C] rounded-full text-xs font-medium"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#F0F0F0]/50 text-[#1c519c] rounded-full text-xs font-medium"
                 >
                   {f.label}: {opt?.label || filters[f.id]}
                   <button

@@ -28,16 +28,16 @@ export async function seedCompany(prisma: PrismaClient) {
   });
 
   // Brand colors per BD brand guidelines.
-  // BD Green #00A94F is the primary brand anchor; BD Dark Green #007A37 is the dark variant.
+  // BD Green #1c519c is the primary brand anchor; BD Dark Green #007A37 is the dark variant.
   await prisma.brandColors.create({
     data: {
       companyId: company.id,
-      primary: '#00A94F',       // BD Green
+      primary: '#1c519c',       // BD Green
       primaryDark: '#007A37',   // Dark Green
       primaryLight: '#E6F6ED',  // Light Green
       primaryAlt: '#0066CC',    // BD Blue
       navBg: '#007A37',         // Nav BG
-      navBgLight: '#00A94F',    // Nav BG Light
+      navBgLight: '#1c519c',    // Nav BG Light
       accent: '#0066CC',        // BD Blue accent
       success: '#10b981',
       warning: '#f59e0b',

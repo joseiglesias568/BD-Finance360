@@ -60,7 +60,7 @@ export default function DriverAnalyticsTrendChart({ series }: DriverAnalyticsTre
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
                 <p className="text-xs font-bold uppercase tracking-wide text-gray-500">Quarterly trajectory</p>
                 <p className="text-[10px] text-gray-500">
-                    <span className="text-[#003B2C] font-semibold">Solid</span> = FY24–FY25 actual / disclosed{' '}
+                    <span className="text-[#1c519c] font-semibold">Solid</span> = FY24–FY25 actual / disclosed{' '}
                     <span className="text-[#009AC7] font-semibold">Dashed</span> = FY26–FY27 projected
                 </p>
             </div>
@@ -101,7 +101,7 @@ export default function DriverAnalyticsTrendChart({ series }: DriverAnalyticsTre
                 <path
                     d={pointsToPath(histPts)}
                     fill="none"
-                    stroke="#003B2C"
+                    stroke="#1c519c"
                     strokeWidth={2.25}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -125,7 +125,7 @@ export default function DriverAnalyticsTrendChart({ series }: DriverAnalyticsTre
                         cx={xAt(i)}
                         cy={yAt(v)}
                         r={i === splitIndex || i === splitIndex - 1 ? 3 : 2}
-                        fill={i < splitIndex ? '#003B2C' : '#009AC7'}
+                        fill={i < splitIndex ? '#1c519c' : '#009AC7'}
                         opacity={0.9}
                     />
                 ))}

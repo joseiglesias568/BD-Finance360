@@ -64,7 +64,7 @@ export default function HeroKPICard({
       <motion.div
         className={`bg-white rounded-xl border border-gray-200 p-5 transition-all hover:shadow-md ${
           detail ? 'cursor-pointer' : ''
-        } ${expanded ? 'ring-2 ring-[#003B2C]/20' : ''}`}
+        } ${expanded ? 'ring-2 ring-[#1c519c]/20' : ''}`}
         onClick={() => detail && setExpanded(!expanded)}
         whileTap={detail ? { scale: 0.98 } : undefined}
       >
@@ -79,7 +79,7 @@ export default function HeroKPICard({
 
         {/* Value row */}
         <div className="flex items-baseline gap-1.5 mb-1">
-          <span className="text-3xl font-bold text-[#003B2C]">{value}</span>
+          <span className="text-3xl font-bold text-[#1c519c]">{value}</span>
           {unit && <span className="text-sm text-gray-500">{unit}</span>}
         </div>
 
@@ -141,7 +141,7 @@ export default function HeroKPICard({
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="mt-1 px-5 py-3 bg-[#F0F0F0]/30 rounded-lg border border-[#003B2C]/10 text-sm text-[#003B2C]">
+            <div className="mt-1 px-5 py-3 bg-[#F0F0F0]/30 rounded-lg border border-[#1c519c]/10 text-sm text-[#1c519c]">
               {detail}
             </div>
           </motion.div>

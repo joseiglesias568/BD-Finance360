@@ -79,7 +79,7 @@ export default function RisksOpportunitiesClient({
           value={formatM(adjustment.adjustedForecast)}
           subtitle={`Net: ${adjustment.adjustedForecast - adjustment.mlForecast >= 0 ? '+' : ''}${formatM(adjustment.adjustedForecast - adjustment.mlForecast)}`}
           icon={Shield}
-          accentColor="#003B2C"
+          accentColor="#1c519c"
           trend={adjustment.adjustedForecast >= adjustment.mlForecast ? 'up' : 'down'}
           index={3}
         />
@@ -93,7 +93,7 @@ export default function RisksOpportunitiesClient({
         className="bg-white rounded-xl border border-gray-200 p-5"
       >
         <div className="flex items-center gap-2 mb-4">
-          <BarChart3 className="h-4 w-4 text-[#003B2C]" />
+          <BarChart3 className="h-4 w-4 text-[#1c519c]" />
           <h2 className="text-sm font-bold text-gray-900">Forecast Adjustment Waterfall</h2>
           <span className="text-[10px] text-gray-400 ml-1">ML Forecast → Risk/Opportunity adjustments → Management-Adjusted Forecast</span>
         </div>
@@ -121,7 +121,7 @@ export default function RisksOpportunitiesClient({
         className="bg-white rounded-xl border border-gray-200 p-5"
       >
         <div className="flex items-center gap-2 mb-4">
-          <AlertTriangle className="h-4 w-4 text-[#003B2C]" />
+          <AlertTriangle className="h-4 w-4 text-[#1c519c]" />
           <h2 className="text-sm font-bold text-gray-900">Impact Range Analysis</h2>
           <span className="text-[10px] text-gray-400 ml-1">Full downside/upside impact at 100% probability</span>
         </div>
@@ -139,8 +139,8 @@ export default function RisksOpportunitiesClient({
             <div className="h-2 w-2 rounded-full bg-red-400" />
           </div>
           <div className="text-center">
-            <p className="text-[10px] text-[#003B2C] font-semibold uppercase tracking-wider">Expected</p>
-            <p className="text-lg font-bold text-[#003B2C]">{formatM(adjustment.expectedCase)}</p>
+            <p className="text-[10px] text-[#1c519c] font-semibold uppercase tracking-wider">Expected</p>
+            <p className="text-lg font-bold text-[#1c519c]">{formatM(adjustment.expectedCase)}</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-emerald-400" />

@@ -60,15 +60,15 @@ export default function DrillDownTile({
       <motion.button
         onClick={() => detail && setExpanded(!expanded)}
         className={`w-full text-left bg-white rounded-xl border border-gray-200 p-4 shadow-sm transition-all ${
-          detail ? 'cursor-pointer hover:shadow-md hover:border-[#003B2C]/30' : ''
-        } ${expanded ? 'ring-2 ring-[#003B2C]/20' : ''}`}
+          detail ? 'cursor-pointer hover:shadow-md hover:border-[#1c519c]/30' : ''
+        } ${expanded ? 'ring-2 ring-[#1c519c]/20' : ''}`}
         whileTap={detail ? { scale: 0.98 } : undefined}
       >
         <div className="flex items-start justify-between">
           <div className="flex-1 min-w-0">
             <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{title}</p>
             <div className="flex items-baseline gap-1.5 mt-1">
-              <span className="text-2xl font-bold text-[#003B2C]">{value}</span>
+              <span className="text-2xl font-bold text-[#1c519c]">{value}</span>
               {unit && <span className="text-sm text-gray-500">{unit}</span>}
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function DrillDownTile({
           </div>
         </div>
         {detail && !expanded && (
-          <div className="flex items-center gap-1 mt-2 text-xs text-[#003B2C]">
+          <div className="flex items-center gap-1 mt-2 text-xs text-[#1c519c]">
             <span>View details</span>
             <ChevronRight className="w-3 h-3" />
           </div>
@@ -136,7 +136,7 @@ export default function DrillDownTile({
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${pct}%` }}
-                              className={`h-full rounded-full ${d.value >= 0 ? 'bg-[#003B2C]' : 'bg-red-400'}`}
+                              className={`h-full rounded-full ${d.value >= 0 ? 'bg-[#1c519c]' : 'bg-red-400'}`}
                             />
                           </div>
                           <span className="text-xs font-medium text-gray-700 w-12">{d.value}</span>
@@ -169,11 +169,11 @@ export default function DrillDownTile({
 
               {/* AI Insight */}
               {detail.aiInsight && (
-                <div className="p-3 bg-[#F0F0F0]/40 rounded-lg border border-[#003B2C]/10 mb-4">
+                <div className="p-3 bg-[#F0F0F0]/40 rounded-lg border border-[#1c519c]/10 mb-4">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <p className="text-xs font-semibold text-[#003B2C] mb-1">AI Insight</p>
-                      <p className="text-sm text-[#003B2C]">{detail.aiInsight}</p>
+                      <p className="text-xs font-semibold text-[#1c519c] mb-1">AI Insight</p>
+                      <p className="text-sm text-[#1c519c]">{detail.aiInsight}</p>
                     </div>
                     <div className="flex-shrink-0 ml-2">
                       <AIFeedback contentId={`drilldown-${title}-insight`} contentType="insight" size="sm" />
@@ -186,7 +186,7 @@ export default function DrillDownTile({
               {reportLink && (
                 <Link
                   href={reportLink}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#003B2C] hover:text-[#003B2C] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1c519c] hover:text-[#1c519c] transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   {reportLabel || 'View full report'}

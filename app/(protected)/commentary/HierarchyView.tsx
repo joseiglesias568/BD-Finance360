@@ -26,7 +26,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Property & Operations': 'border-l-blue-500',
   'Digital & Customer': 'border-l-violet-500',
   'People & Culture': 'border-l-amber-500',
-  'Financial Stewardship': 'border-l-[#003B2C]',
+  'Financial Stewardship': 'border-l-[#1c519c]',
   'Risk & Sustainability': 'border-l-red-400',
 };
 
@@ -113,16 +113,16 @@ export default function HierarchyView({ consoleTrees, allCommentary }: Hierarchy
       {/* Summary bar */}
       <div className="flex items-center gap-4 text-xs text-gray-500 px-1">
         <span className="flex items-center gap-1">
-          <GitBranch className="w-3.5 h-3.5 text-[#003B2C]" />
-          <strong className="text-[#003B2C]">{driverLinked}</strong> driver-linked entries
+          <GitBranch className="w-3.5 h-3.5 text-[#1c519c]" />
+          <strong className="text-[#1c519c]">{driverLinked}</strong> driver-linked entries
         </span>
         <span className="flex items-center gap-1">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <strong className="text-[#003B2C]">{aiAggregated}</strong> AI aggregations
+          <strong className="text-[#1c519c]">{aiAggregated}</strong> AI aggregations
         </span>
         <span className="flex items-center gap-1">
           <Layers className="w-3.5 h-3.5 text-gray-400" />
-          <strong className="text-[#003B2C]">{consoleTrees.length}</strong> consoles
+          <strong className="text-[#1c519c]">{consoleTrees.length}</strong> consoles
         </span>
       </div>
 
@@ -150,14 +150,14 @@ export default function HierarchyView({ consoleTrees, allCommentary }: Hierarchy
                     {isOpen
                       ? <ChevronDown className="w-4 h-4 text-gray-400" />
                       : <ChevronRight className="w-4 h-4 text-gray-400" />}
-                    <span className="text-sm font-semibold text-[#003B2C]">{console.title}</span>
+                    <span className="text-sm font-semibold text-[#1c519c]">{console.title}</span>
                     <span className="text-[10px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">
                       {console.drivers.length} drivers
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     {totalCount > 0 && (
-                      <span className="text-[10px] font-medium text-[#003B2C] bg-[#F0F0F0] px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-medium text-[#1c519c] bg-[#F0F0F0] px-2 py-0.5 rounded-full">
                         {totalCount} commentary
                       </span>
                     )}
@@ -268,7 +268,7 @@ function DriverNode({
         )}
 
         {/* Driver name */}
-        <span className={`text-xs font-medium ${totalCount > 0 ? 'text-[#003B2C]' : 'text-gray-500'}`}>
+        <span className={`text-xs font-medium ${totalCount > 0 ? 'text-[#1c519c]' : 'text-gray-500'}`}>
           {node.name}
         </span>
 
@@ -283,7 +283,7 @@ function DriverNode({
         {directCommentary.length > 0 && (
           <button
             onClick={() => toggleNode(`commentary-${node.id}`)}
-            className="flex items-center gap-0.5 text-[10px] text-[#003B2C] bg-[#F0F0F0] px-1.5 py-0.5 rounded-full hover:bg-[#003B2C]/20 transition-colors"
+            className="flex items-center gap-0.5 text-[10px] text-[#1c519c] bg-[#F0F0F0] px-1.5 py-0.5 rounded-full hover:bg-[#1c519c]/20 transition-colors"
           >
             <MessageSquare className="w-2.5 h-2.5" />
             {directCommentary.length}
@@ -303,7 +303,7 @@ function DriverNode({
           <button
             onClick={() => onAggregate(node.id)}
             disabled={isAggregating}
-            className="ml-auto opacity-0 group-hover:opacity-100 flex items-center gap-1 text-[10px] font-medium text-[#003B2C] bg-[#F0F0F0] px-2 py-0.5 rounded-full hover:bg-[#003B2C] hover:text-white transition-all disabled:opacity-50"
+            className="ml-auto opacity-0 group-hover:opacity-100 flex items-center gap-1 text-[10px] font-medium text-[#1c519c] bg-[#F0F0F0] px-2 py-0.5 rounded-full hover:bg-[#1c519c] hover:text-white transition-all disabled:opacity-50"
           >
             {isAggregating ? (
               <>
@@ -387,7 +387,7 @@ function CommentaryCard({ commentary: c }: { commentary: DBCommentary }) {
           ) : (
             <MessageSquare className="w-3 h-3 text-gray-400 flex-shrink-0" />
           )}
-          <span className="font-medium text-[#003B2C] truncate">{c.title}</span>
+          <span className="font-medium text-[#1c519c] truncate">{c.title}</span>
         </div>
         <span className={`flex-shrink-0 px-1.5 py-0.5 rounded-full text-[9px] font-medium ${
           c.priority === 'critical' ? 'bg-red-100 text-red-700' :

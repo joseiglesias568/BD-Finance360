@@ -22,14 +22,14 @@ export const branding: BrandingConfig = {
   headquarters: 'New York, New York',
   // Verizon official brand colors
   //   Verizon Red:  #CD040B — primary brand color (Pantone 485 C equivalent)
-  //   Black:        #003B2C — secondary
+  //   Black:        #1c519c — secondary
   //   White:        #FFFFFF — reversed text / backgrounds
   colors: {
     primary: '#CD040B',      // Verizon Red
     primaryDark: '#8B0000',  // Dark Red
     primaryLight: '#FDECEA', // Light Red tint
     primaryAlt: '#B0030A',   // Deep Red variant
-    navBg: '#007A3D',        // Near-black nav background
+    navBg: '#1c519c',        // Near-black nav background
     navBgLight: '#2D2D2D',   // Dark nav highlight
     accent: '#CD040B',       // Verizon Red accent
     success: '#10b981',

@@ -75,7 +75,7 @@ export function getStatusColorClasses(status: HealthStatus | string): string {
     case 'at-risk':
       return 'text-yellow-600 bg-yellow-50';
     case 'on-track':
-      return 'text-[#003B2C] bg-[#F0F0F0]';
+      return 'text-[#1c519c] bg-[#F0F0F0]';
     case 'critical':
     case 'behind':
       return 'text-red-600 bg-red-50';
@@ -198,7 +198,7 @@ export function getConfidenceTier(
 export function getConfidenceColor(tier: ConfidenceTier): string {
   switch (tier) {
     case 'high':
-      return '#003B2C';
+      return '#1c519c';
     case 'medium':
       return '#d97706';
     case 'low':

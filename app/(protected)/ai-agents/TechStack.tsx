@@ -46,7 +46,7 @@ const techLayers: TechLayer[] = [
             { name: 'Recharts', icon: BarChart3 },
             { name: 'Tailwind CSS', icon: Eye },
         ],
-        gradient: 'from-[#003B2C] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
     },
     {
         name: 'Cognitive and Orchestration',
@@ -56,7 +56,7 @@ const techLayers: TechLayer[] = [
             { name: 'Vercel AI SDK', icon: Sparkles },
             { name: 'Semantic Model', icon: Zap },
         ],
-        gradient: 'from-[#003B2C] to-[#007A3D]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
     },
     {
         name: 'Integration & Data Layer',
@@ -65,7 +65,7 @@ const techLayers: TechLayer[] = [
             { name: 'Prisma ORM', icon: Database },
             { name: 'Neon Postgres', icon: Cloud },
         ],
-        gradient: 'from-[#003B2C] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
     },
     {
         name: 'Native Finance Apps',
@@ -75,7 +75,7 @@ const techLayers: TechLayer[] = [
             { name: 'SAP / Oracle ERP', icon: Server },
             { name: 'Blackline', icon: Shield },
         ],
-        gradient: 'from-[#007A3D] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
     },
     {
         name: 'Enterprise Core Systems',
@@ -84,7 +84,7 @@ const techLayers: TechLayer[] = [
             { name: 'Oracle ERP', icon: Database },
             { name: 'Salesforce CRM', icon: Server },
         ],
-        gradient: 'from-[#003B2C] to-[#003B2C]',
+        gradient: 'from-[#1c519c] to-[#1c519c]',
     },
 ];
 
@@ -127,7 +127,7 @@ export default function TechStack() {
             >
                 <div className="flex items-start space-x-4">
                     <div className="p-3 bg-[#F0F0F0] rounded-lg">
-                        <Layers className="w-6 h-6 text-[#003B2C]" />
+                        <Layers className="w-6 h-6 text-[#1c519c]" />
                     </div>
                     <div className="flex-1">
                         <h2 className="text-xl font-bold text-gray-900 mb-2">
@@ -139,7 +139,7 @@ export default function TechStack() {
                         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-6">
                             {techLayers.map((layer) => (
                                 <div key={layer.name} className="text-center p-3 bg-gray-50 rounded-lg">
-                                    <div className="text-2xl font-bold text-[#003B2C]">{layer.technologies.length}</div>
+                                    <div className="text-2xl font-bold text-[#1c519c]">{layer.technologies.length}</div>
                                     <div className="text-xs text-gray-500 mt-1">{layer.name.split(' ')[0]}</div>
                                 </div>
                             ))}
@@ -166,7 +166,7 @@ export default function TechStack() {
                                 <div className="p-5">
                                     <div className="flex items-start justify-between">
                                         <div className="flex items-center space-x-3">
-                                            <div className="w-8 h-8 rounded-full bg-[#003B2C] text-white flex items-center justify-center text-sm font-bold">
+                                            <div className="w-8 h-8 rounded-full bg-[#1c519c] text-white flex items-center justify-center text-sm font-bold">
                                                 {index + 1}
                                             </div>
                                             <div>
@@ -183,8 +183,8 @@ export default function TechStack() {
                                                     key={tech.name}
                                                     className="flex items-center space-x-2 px-3 py-2 bg-[#F0F0F0] rounded-lg"
                                                 >
-                                                    <TechIcon className="w-4 h-4 text-[#003B2C]" />
-                                                    <span className="text-sm font-medium text-[#003B2C]">{tech.name}</span>
+                                                    <TechIcon className="w-4 h-4 text-[#1c519c]" />
+                                                    <span className="text-sm font-medium text-[#1c519c]">{tech.name}</span>
                                                 </div>
                                             );
                                         })}
@@ -204,14 +204,14 @@ export default function TechStack() {
                         transition={{ delay: 0.3 }}
                         className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
                     >
-                        <div className="h-2 bg-gradient-to-r from-[#003B2C] to-[#003B2C]" />
+                        <div className="h-2 bg-gradient-to-r from-[#1c519c] to-[#1c519c]" />
                         <div className="p-5 space-y-0">
                             {strategicPillars.map((pillar, index) => {
                                 const PillarIcon = pillar.icon;
                                 return (
                                     <div key={pillar.name}>
                                         <div className="flex items-start space-x-3 py-4">
-                                            <div className="p-2 bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-lg flex-shrink-0">
+                                            <div className="p-2 bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-lg flex-shrink-0">
                                                 <PillarIcon className="w-4 h-4 text-white" />
                                             </div>
                                             <div className="flex-1 min-w-0">
@@ -233,7 +233,7 @@ export default function TechStack() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="mt-4 p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#003B2C]/10"
+                        className="mt-4 p-4 bg-[#F0F0F0]/30 rounded-lg border border-[#1c519c]/10"
                     >
                         <p className="text-xs text-gray-500 italic">
                             *Example applications used across the Finance tech stack. Additional technologies may be considered across these layers as requirements evolve.

@@ -45,7 +45,7 @@ export default function ExternalSignalsPlStrip({
             <div className="max-w-7xl mx-auto px-6 py-3">
                 <div className="flex items-center justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2 min-w-0">
-                        <Radar className="w-4 h-4 text-[#003B2C] shrink-0" />
+                        <Radar className="w-4 h-4 text-[#1c519c] shrink-0" />
                         <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500 truncate">
                             External signals
                         </span>
@@ -54,7 +54,7 @@ export default function ExternalSignalsPlStrip({
                     <button
                         type="button"
                         onClick={onOpenExternalTab}
-                        className="text-[11px] font-semibold text-[#003B2C] hover:text-[#003B2C] flex items-center gap-0.5 shrink-0"
+                        className="text-[11px] font-semibold text-[#1c519c] hover:text-[#1c519c] flex items-center gap-0.5 shrink-0"
                     >
                         Full analysis
                         <ChevronRight className="w-3.5 h-3.5" />
@@ -65,7 +65,7 @@ export default function ExternalSignalsPlStrip({
                     {EXTERNAL_COMPETITIVE_SIGNALS.map((s) => (
                         <div
                             key={s.id}
-                            className="flex shrink-0 rounded-xl border border-gray-200/90 bg-white shadow-sm hover:border-[#003B2C]/25 hover:shadow transition-all overflow-hidden"
+                            className="flex shrink-0 rounded-xl border border-gray-200/90 bg-white shadow-sm hover:border-[#1c519c]/25 hover:shadow transition-all overflow-hidden"
                         >
                             <button
                                 type="button"
@@ -77,7 +77,7 @@ export default function ExternalSignalsPlStrip({
                                     className={`w-1.5 h-1.5 rounded-full shrink-0 ${dotClass(s.importance)}`}
                                     aria-hidden
                                 />
-                                <span className="text-[10px] font-bold text-[#003B2C] tabular-nums w-4 shrink-0">
+                                <span className="text-[10px] font-bold text-[#1c519c] tabular-nums w-4 shrink-0">
                                     {s.rank}
                                 </span>
                                 <span className="text-xs font-medium text-gray-900 truncate">{s.shortTitle}</span>
@@ -91,7 +91,7 @@ export default function ExternalSignalsPlStrip({
                                     e.stopPropagation();
                                     onSyncPreset(s.id);
                                 }}
-                                className="px-2.5 border-l border-gray-100 text-gray-400 hover:text-[#003B2C] hover:bg-gray-50 transition-colors"
+                                className="px-2.5 border-l border-gray-100 text-gray-400 hover:text-[#1c519c] hover:bg-gray-50 transition-colors"
                                 title="Sync lever preset to P&L Impact"
                             >
                                 <Link2 className="w-3.5 h-3.5" />

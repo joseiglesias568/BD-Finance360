@@ -53,7 +53,7 @@ const days = [
     { num: 2, label: 'Day 2', sub: 'Variance Resolution', color: '#7C3AED' },
     { num: 3, label: 'Day 3', sub: 'Review & Challenge', color: '#B45309' },
     { num: 4, label: 'Day 4', sub: 'Consolidation & Sign-Off', color: '#065F46' },
-    { num: 5, label: 'Day 5', sub: 'Publish & Distribute', color: '#003B2C' },
+    { num: 5, label: 'Day 5', sub: 'Publish & Distribute', color: '#1c519c' },
 ];
 
 const laneConfig: Record<Lane, { label: string; sub: string; color: string; bg: string }> = {
@@ -317,7 +317,7 @@ const activities: Activity[] = [
         lane: 'ai',
         title: 'Dashboard Refresh with Actuals',
         owner: 'Team Lead + Gatekeeper',
-        ownerColor: '#003B2C',
+        ownerColor: '#1c519c',
         ownerBg: '#F0F0F0',
         icon: Sparkles,
         status: 'complete',
@@ -361,7 +361,7 @@ const statusConfig: Record<ActivityStatus, { label: string; color: string; bg: s
 };
 
 const closeKPIs = [
-    { label: 'Close Cycle', value: '5 days', sub: 'Day 1–5, March 2026', color: '#003B2C' },
+    { label: 'Close Cycle', value: '5 days', sub: 'Day 1–5, March 2026', color: '#1c519c' },
     { label: 'Lines Reconciled', value: '18', sub: 'All P&L lines, 100% coverage', color: '#0070C0' },
     { label: 'Escalations', value: '4', sub: 'Policy-breach variances raised', color: '#B45309' },
     { label: 'Time to Sign-Off', value: 'Day 4', sub: 'Ahead of Day 5 deadline', color: '#065F46' },
@@ -384,7 +384,7 @@ export default function FinancialClosePage() {
         <div className="bg-gray-50 min-h-screen">
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] text-white">
+            <div className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] text-white">
                 <div className="max-w-7xl mx-auto px-6 py-12">
                     <motion.div initial="hidden" animate="show" variants={fade} transition={{ duration: 0.5 }}>
                         <div className="flex items-center gap-2 mb-4">
@@ -456,7 +456,7 @@ export default function FinancialClosePage() {
 
                 {/* ── Section header ── */}
                 <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                    <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Process Flow — Swimlane View</p>
+                    <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Process Flow — Swimlane View</p>
                     <h2 className="text-xl font-bold text-gray-900 mb-1">Five-day close: who does what, when.</h2>
                     <p className="text-gray-500 text-sm max-w-3xl">
                         Three swim lanes — Agentic Layer, Finance Owners, and Controller & CFO — across five close days. Click any activity for success criteria and detail.
@@ -528,7 +528,7 @@ export default function FinancialClosePage() {
                                                         onClick={() => setSelected(isSelected ? null : act)}
                                                         className={`w-full text-left rounded-xl border p-2.5 transition-all ${
                                                             isSelected
-                                                                ? 'border-[#003B2C] shadow-md ring-1 ring-[#003B2C]/20 bg-white'
+                                                                ? 'border-[#1c519c] shadow-md ring-1 ring-[#1c519c]/20 bg-white'
                                                                 : act.escalation
                                                                     ? 'border-amber-200 bg-amber-50 hover:border-amber-300 hover:shadow-sm'
                                                                     : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
@@ -663,7 +663,7 @@ export default function FinancialClosePage() {
                 {/* ── Day-by-day activity log ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Daily Activity Log</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Daily Activity Log</p>
                         <h2 className="text-xl font-bold text-gray-900 mb-1">What happens each day — expanded.</h2>
                         <p className="text-gray-500 text-sm max-w-3xl mb-6">
                             Click any day to expand the full activity sequence with timing and success criteria.
@@ -778,7 +778,7 @@ export default function FinancialClosePage() {
                 {/* ── Escalation policy reference ── */}
                 <section>
                     <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}>
-                        <p className="text-xs font-bold text-[#003B2C] uppercase tracking-widest mb-1">Escalation Policy</p>
+                        <p className="text-xs font-bold text-[#1c519c] uppercase tracking-widest mb-1">Escalation Policy</p>
                         <h2 className="text-xl font-bold text-gray-900 mb-1">What triggers a human escalation.</h2>
                         <p className="text-gray-500 text-sm max-w-3xl mb-6">
                             Any variance that meets one or more of these criteria is automatically escalated — commentary cannot be signed off until a finance owner responds.
@@ -815,7 +815,7 @@ export default function FinancialClosePage() {
                                 threshold: 'Strategic flag',
                                 label: 'Strategic significance override',
                                 desc: 'Team Lead can escalate any item it identifies as strategically significant regardless of dollar threshold.',
-                                color: '#003B2C',
+                                color: '#1c519c',
                                 bg: '#F0F0F0',
                                 icon: Brain,
                             },
@@ -843,7 +843,7 @@ export default function FinancialClosePage() {
                 {/* ── Closing note ── */}
                 <motion.div
                     initial="hidden" whileInView="show" viewport={{ once: true }} variants={fade} transition={{ duration: 0.4 }}
-                    className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-3xl p-8 text-white flex flex-col md:flex-row items-start md:items-center gap-6"
+                    className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-3xl p-8 text-white flex flex-col md:flex-row items-start md:items-center gap-6"
                 >
                     <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
                         <Sparkles className="w-6 h-6 text-[#009AC7]" />

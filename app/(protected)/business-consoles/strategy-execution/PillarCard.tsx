@@ -29,15 +29,15 @@ interface PillarCardProps {
 }
 
 const statusConfig = {
-  'on-track': { color: '#003B2C', bg: 'bg-[#F0F0F0]', text: 'text-[#003B2C]', label: 'On Track', icon: CheckCircle2, ring: 'stroke-[#003B2C]' },
-  'ahead': { color: '#003B2C', bg: 'bg-[#F0F0F0]', text: 'text-[#003B2C]', label: 'Ahead', icon: TrendingUp, ring: 'stroke-[#003B2C]' },
+  'on-track': { color: '#1c519c', bg: 'bg-[#F0F0F0]', text: 'text-[#1c519c]', label: 'On Track', icon: CheckCircle2, ring: 'stroke-[#1c519c]' },
+  'ahead': { color: '#1c519c', bg: 'bg-[#F0F0F0]', text: 'text-[#1c519c]', label: 'Ahead', icon: TrendingUp, ring: 'stroke-[#1c519c]' },
   'at-risk': { color: '#D97706', bg: 'bg-amber-50', text: 'text-amber-700', label: 'At Risk', icon: AlertTriangle, ring: 'stroke-amber-500' },
   'behind': { color: '#DC2626', bg: 'bg-red-50', text: 'text-red-700', label: 'Behind', icon: XCircle, ring: 'stroke-red-500' },
 };
 
 const kpiStatusColors: Record<string, { bg: string; text: string; border: string }> = {
-  'on-track': { bg: 'bg-[#F0F0F0]', text: 'text-[#003B2C]', border: 'border-[#003B2C]/20' },
-  'ahead': { bg: 'bg-[#F0F0F0]', text: 'text-[#003B2C]', border: 'border-[#003B2C]/20' },
+  'on-track': { bg: 'bg-[#F0F0F0]', text: 'text-[#1c519c]', border: 'border-[#1c519c]/20' },
+  'ahead': { bg: 'bg-[#F0F0F0]', text: 'text-[#1c519c]', border: 'border-[#1c519c]/20' },
   'at-risk': { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200' },
   'behind': { bg: 'bg-red-50', text: 'text-red-700', border: 'border-red-200' },
 };
@@ -102,12 +102,12 @@ export default function PillarCard({ pillar, isExpanded, onToggle }: PillarCardP
   return (
     <motion.div
       layout
-      className={`bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden transition-shadow ${isExpanded ? 'shadow-md ring-1 ring-[#003B2C]/10' : 'hover:shadow-md'}`}
+      className={`bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden transition-shadow ${isExpanded ? 'shadow-md ring-1 ring-[#1c519c]/10' : 'hover:shadow-md'}`}
     >
       {/* Card Header */}
       <button
         onClick={onToggle}
-        className="w-full text-left p-5 focus:outline-none focus:ring-2 focus:ring-[#003B2C]/20 rounded-xl"
+        className="w-full text-left p-5 focus:outline-none focus:ring-2 focus:ring-[#1c519c]/20 rounded-xl"
       >
         <div className="flex items-start gap-4">
           {/* Progress Ring */}
@@ -116,7 +116,7 @@ export default function PillarCard({ pillar, isExpanded, onToggle }: PillarCardP
           {/* Title + Status */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-sm font-bold text-[#003B2C] truncate">{pillar.name}</h3>
+              <h3 className="text-sm font-bold text-[#1c519c] truncate">{pillar.name}</h3>
               <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold ${cfg.bg} ${cfg.text}`}>
                 <StatusIcon className="w-3 h-3" />
                 {cfg.label}
@@ -182,7 +182,7 @@ export default function PillarCard({ pillar, isExpanded, onToggle }: PillarCardP
                         animate={{ width: `${Math.max(0, Math.min(100, progress))}%` }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className={`h-full rounded-full ${
-                          kpi.status === 'on-track' || kpi.status === 'ahead' ? 'bg-[#003B2C]' :
+                          kpi.status === 'on-track' || kpi.status === 'ahead' ? 'bg-[#1c519c]' :
                           kpi.status === 'at-risk' ? 'bg-amber-500' : 'bg-red-500'
                         }`}
                       />

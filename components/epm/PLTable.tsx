@@ -63,7 +63,7 @@ export default function PLTable({ rows, periods, selectedLine, onRowClick }: PLT
               <motion.tr
                 key={row.lineItem}
                 className={`border-b border-gray-100 transition-colors ${
-                  isSelected ? 'bg-[#003B2C]/5 border-l-2 border-l-[#003B2C]' :
+                  isSelected ? 'bg-[#1c519c]/5 border-l-2 border-l-[#1c519c]' :
                   hoveredRow === row.lineItem && isClickable ? 'bg-gray-50' : ''
                 } ${isClickable ? 'cursor-pointer' : ''} ${
                   row.lineItem === 'Gross Profit' || row.lineItem === 'Operating Income'
@@ -75,10 +75,10 @@ export default function PLTable({ rows, periods, selectedLine, onRowClick }: PLT
               >
                 <td className={`py-2 px-3 sticky left-0 bg-white z-10 ${
                   isBold ? 'font-bold text-gray-900' : 'text-gray-700'
-                } ${isIndent ? 'pl-6' : ''} ${isSelected ? 'bg-[#003B2C]/5' : ''}`}>
+                } ${isIndent ? 'pl-6' : ''} ${isSelected ? 'bg-[#1c519c]/5' : ''}`}>
                   <div className="flex items-center gap-1.5">
                     {isClickable && (
-                      <ChevronRight className={`h-3 w-3 transition-transform ${isSelected ? 'rotate-90 text-[#003B2C]' : 'text-gray-300'}`} />
+                      <ChevronRight className={`h-3 w-3 transition-transform ${isSelected ? 'rotate-90 text-[#1c519c]' : 'text-gray-300'}`} />
                     )}
                     {row.lineItem}
                   </div>
@@ -92,7 +92,7 @@ export default function PLTable({ rows, periods, selectedLine, onRowClick }: PLT
                       className={`py-2 px-2.5 text-right font-mono tabular-nums ${
                         isBold ? 'font-bold text-gray-900' : 'text-gray-700'
                       } ${p.isHistorical ? 'bg-gray-50/50' : p.isCurrent ? 'bg-amber-50/30' : ''
-                      } ${isSelected ? 'bg-[#003B2C]/5' : ''}`}
+                      } ${isSelected ? 'bg-[#1c519c]/5' : ''}`}
                     >
                       <div className="flex items-center justify-end gap-1">
                         <span>{formatCell(val, row.lineItem)}</span>

@@ -223,7 +223,7 @@ export default function CommentaryClient({ commentary, insights, consoleTrees }:
     <div className="flex flex-col h-[calc(100vh-64px)]">
       {/* Page header */}
       <div className="px-4 pt-4 pb-2 bg-white border-b border-gray-200">
-        <h1 className="text-xl font-bold text-[#003B2C]">AI Insights & Human Commentary</h1>
+        <h1 className="text-xl font-bold text-[#1c519c]">AI Insights & Human Commentary</h1>
         <p className="text-sm text-gray-500 mt-0.5">
           Intelligence layer combining AI-generated insights with analyst commentary across {totalAI.toLocaleString()} insights and {totalHuman.toLocaleString()} commentary entries
         </p>
@@ -255,7 +255,7 @@ export default function CommentaryClient({ commentary, insights, consoleTrees }:
                 <p className="text-sm text-gray-500">No insights or commentary match your filters</p>
                 <button
                   onClick={() => dispatch({ type: 'CLEAR_ALL' })}
-                  className="mt-2 text-sm text-[#003B2C] hover:text-[#007A3D] font-medium"
+                  className="mt-2 text-sm text-[#1c519c] hover:text-[#1c519c] font-medium"
                 >
                   Clear all filters
                 </button>

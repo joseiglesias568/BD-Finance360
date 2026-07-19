@@ -104,7 +104,7 @@ export default function DataLineagePage() {
     <div className="bg-gray-50 min-h-screen">
 
       {/* ── Hero ── */}
-      <div className="bg-gradient-to-br from-[#003B2C] to-[#003B2C] text-white">
+      <div className="bg-gradient-to-br from-[#1c519c] to-[#1c519c] text-white">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <motion.div initial="hidden" animate="show" variants={fade} transition={{ duration: 0.4 }}>
             <div className="flex items-center gap-2 mb-3">

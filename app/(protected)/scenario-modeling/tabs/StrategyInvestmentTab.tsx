@@ -177,8 +177,8 @@ export default function StrategyInvestmentTab({ leverValues, onLeverChange }: St
 
                 {/* AI Insight */}
                 <div className="bg-[#F0F0F0] rounded-lg p-4 flex items-start space-x-3">
-                    <Sparkles className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
-                    <div className="text-sm text-[#003B2C]">
+                    <Sparkles className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
+                    <div className="text-sm text-[#1c519c]">
                         <span className="font-semibold">AI Insight:</span>{' '}
                         {impact.totalAOI > 2000
                             ? `Bull case: MA bid-year premium increase of ${leverValues['ma-bid-year-premium-rate'] ?? 8.5}% combined with $${leverValues['health100-sga-savings'] ?? 500}M Health100 savings and ${leverValues['oak-street-clinic-count'] ?? 170} Oak Street clinics projects +$${(impact.totalAOI / 1000).toFixed(1)}B AOI uplift. Prior auth automation at ${leverValues['prior-auth-automation-rate'] ?? 85}% adds $${impact.components.priorAuthSavings}M admin savings.`
@@ -195,7 +195,7 @@ export default function StrategyInvestmentTab({ leverValues, onLeverChange }: St
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Strategic Initiative Scorecard</h3>
                 <div className="grid grid-cols-2 gap-4">
                     {initiatives.slice(0, 4).map((initiative) => (
-                        <div key={initiative.id} className="border border-gray-200 rounded-lg p-4 hover:border-[#003B2C]/30 transition-colors">
+                        <div key={initiative.id} className="border border-gray-200 rounded-lg p-4 hover:border-[#1c519c]/30 transition-colors">
                             <div className="flex items-center justify-between mb-3">
                                 <h4 className="text-sm font-semibold text-gray-900 truncate flex-1 mr-2">{initiative.name}</h4>
                                 <span className={`px-2 py-0.5 text-xs font-medium rounded-full flex items-center space-x-1 ${statusColor(initiative.status)}`}>
@@ -212,7 +212,7 @@ export default function StrategyInvestmentTab({ leverValues, onLeverChange }: St
                                 </div>
                                 <div className="w-full bg-gray-100 rounded-full h-2">
                                     <div
-                                        className="bg-[#003B2C] h-2 rounded-full transition-all"
+                                        className="bg-[#1c519c] h-2 rounded-full transition-all"
                                         style={{ width: `${Math.min(100, initiative.progress)}%` }}
                                     />
                                 </div>
@@ -328,7 +328,7 @@ export default function StrategyInvestmentTab({ leverValues, onLeverChange }: St
                 </div>
                 <div className="mt-4 flex items-center justify-end text-sm">
                     <span className="text-gray-500 mr-2">Scenario MA Repricing Impact:</span>
-                    <span className="font-bold text-[#003B2C]">
+                    <span className="font-bold text-[#1c519c]">
                         +${(impact.components.maPremiumRevenue / 1000).toFixed(1)}B HCB revenue @ {leverValues['ma-bid-year-premium-rate'] ?? 8.5}% rate increase
                     </span>
                 </div>

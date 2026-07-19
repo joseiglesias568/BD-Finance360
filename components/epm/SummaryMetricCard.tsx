@@ -15,7 +15,7 @@ interface SummaryMetricCardProps {
 }
 
 export default function SummaryMetricCard({
-  label, value, subtitle, icon: Icon, accentColor = '#003B2C',
+  label, value, subtitle, icon: Icon, accentColor = '#1c519c',
   trend, trendLabel, index = 0,
 }: SummaryMetricCardProps) {
   const TrendIcon = trend === 'up' ? TrendingUp : trend === 'down' ? TrendingDown : Minus;

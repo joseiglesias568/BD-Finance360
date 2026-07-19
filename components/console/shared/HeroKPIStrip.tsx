@@ -58,7 +58,7 @@ export default function HeroKPIStrip({ kpis, onNavigateToDrivers }: HeroKPIStrip
               onClick={() => setExpandedId(isExpanded ? null : kpi.id)}
               className={`w-full text-left bg-white rounded-xl border border-gray-200 border-l-4 ${borderColor} p-4 shadow-sm
                 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer
-                ${isExpanded ? 'ring-2 ring-[#003B2C]/20 shadow-md' : ''}`}
+                ${isExpanded ? 'ring-2 ring-[#1c519c]/20 shadow-md' : ''}`}
             >
               <div className="flex items-start justify-between mb-1">
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider leading-tight">{kpi.label}</p>
@@ -68,7 +68,7 @@ export default function HeroKPIStrip({ kpis, onNavigateToDrivers }: HeroKPIStrip
               <div className="flex items-end justify-between mt-2">
                 <div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-bold text-[#003B2C]">{kpi.value}</span>
+                    <span className="text-2xl font-bold text-[#1c519c]">{kpi.value}</span>
                     {kpi.unit && <span className="text-sm text-gray-500">{kpi.unit}</span>}
                   </div>
                   <div className="flex items-center gap-1 mt-1">
@@ -86,7 +86,7 @@ export default function HeroKPIStrip({ kpis, onNavigateToDrivers }: HeroKPIStrip
                   data={kpi.sparkline}
                   width={64}
                   height={24}
-                  color={kpi.status === 'critical' ? '#EF4444' : kpi.status === 'warning' ? '#F59E0B' : '#003B2C'}
+                  color={kpi.status === 'critical' ? '#EF4444' : kpi.status === 'warning' ? '#F59E0B' : '#1c519c'}
                 />
               </div>
 
@@ -104,7 +104,7 @@ export default function HeroKPIStrip({ kpis, onNavigateToDrivers }: HeroKPIStrip
               )}
 
               {!isExpanded && (
-                <div className="flex items-center gap-1 mt-2 text-xs text-[#003B2C] opacity-60">
+                <div className="flex items-center gap-1 mt-2 text-xs text-[#1c519c] opacity-60">
                   <span>Details</span>
                   <ChevronRight className="w-3 h-3" />
                 </div>
@@ -123,7 +123,7 @@ export default function HeroKPIStrip({ kpis, onNavigateToDrivers }: HeroKPIStrip
                 >
                   <div className="mt-2 bg-white rounded-xl border border-gray-200 shadow-lg p-4">
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className="text-sm font-semibold text-[#003B2C]">Key Drivers</h4>
+                      <h4 className="text-sm font-semibold text-[#1c519c]">Key Drivers</h4>
                       <button onClick={(e) => { e.stopPropagation(); setExpandedId(null); }} className="text-gray-400 hover:text-gray-600">
                         <X className="w-4 h-4" />
                       </button>
@@ -146,19 +146,19 @@ export default function HeroKPIStrip({ kpis, onNavigateToDrivers }: HeroKPIStrip
                     )}
 
                     {kpi.aiInsight && (
-                      <div className="p-2.5 bg-[#F0F0F0]/40 rounded-lg border border-[#003B2C]/10 mb-3">
+                      <div className="p-2.5 bg-[#F0F0F0]/40 rounded-lg border border-[#1c519c]/10 mb-3">
                         <div className="flex items-center gap-1.5 mb-1">
-                          <Sparkles className="w-3 h-3 text-[#003B2C]" />
-                          <span className="text-xs font-semibold text-[#003B2C]">AI Insight</span>
+                          <Sparkles className="w-3 h-3 text-[#1c519c]" />
+                          <span className="text-xs font-semibold text-[#1c519c]">AI Insight</span>
                         </div>
-                        <p className="text-xs text-[#003B2C] leading-relaxed">{kpi.aiInsight}</p>
+                        <p className="text-xs text-[#1c519c] leading-relaxed">{kpi.aiInsight}</p>
                       </div>
                     )}
 
                     {kpi.driversTabId && onNavigateToDrivers && (
                       <button
                         onClick={(e) => { e.stopPropagation(); onNavigateToDrivers(kpi.driversTabId!); }}
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#003B2C] hover:text-[#003B2C] transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#1c519c] hover:text-[#1c519c] transition-colors"
                       >
                         <span>View full analysis</span>
                         <ChevronRight className="w-3 h-3" />

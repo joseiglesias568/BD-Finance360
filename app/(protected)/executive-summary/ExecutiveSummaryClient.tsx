@@ -30,11 +30,11 @@ import {
 } from 'recharts';
 
 // ── Chart constants ──────────────────────────────────────────────────
-const CK = { green: '#003B2C', greenLight: '#007A3D', emerald: '#10B981', blue: '#3B82F6', amber: '#F59E0B', red: '#EF4444', gray: '#9CA3AF', grayLight: '#E5E7EB' };
+const CK = { green: '#1c519c', greenLight: '#1c519c', emerald: '#10B981', blue: '#3B82F6', amber: '#F59E0B', red: '#EF4444', gray: '#9CA3AF', grayLight: '#E5E7EB' };
 const darkAxis = { fontSize: 9, fill: 'rgba(255,255,255,0.5)' };
 const lightAxis = { fontSize: 10, fill: '#6B7280' };
-const darkTooltip = { contentStyle: { background: '#003B2C', border: 'none', borderRadius: 8, fontSize: 11, color: '#fff', padding: '6px 10px' } };
-const lightTooltip = { contentStyle: { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 11, color: '#003B2C', padding: '6px 10px', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' } };
+const darkTooltip = { contentStyle: { background: '#1c519c', border: 'none', borderRadius: 8, fontSize: 11, color: '#fff', padding: '6px 10px' } };
+const lightTooltip = { contentStyle: { background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, fontSize: 11, color: '#1c519c', padding: '6px 10px', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' } };
 
 // ── Data transformation helpers ──────────────────────────────────────
 function buildRevenueTrend(fin: FinancialConfig) {
@@ -75,7 +75,7 @@ function buildWaterfall(fin: FinancialConfig) {
         }
         running += item.impact;
     });
-    steps.push({ name: 'Actual', base: 0, value: running, color: '#003B2C' });
+    steps.push({ name: 'Actual', base: 0, value: running, color: '#1c519c' });
     return steps;
 }
 
@@ -375,13 +375,13 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-4 bg-gradient-to-br from-[#003B2C] via-[#003B2C] to-[#003B2C] rounded-xl p-6 border border-emerald-600/30 shadow-lg shadow-emerald-500/10"
+                    className="mb-4 bg-gradient-to-br from-[#1c519c] via-[#1c519c] to-[#1c519c] rounded-xl p-6 border border-emerald-600/30 shadow-lg shadow-emerald-500/10"
                 >
                     {/* Header row */}
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center space-x-2">
                             <div className="p-1.5 bg-[#F0F0F0] rounded-lg">
-                                <Sparkles className="w-4 h-4 text-[#003B2C]" />
+                                <Sparkles className="w-4 h-4 text-[#1c519c]" />
                             </div>
                             <h2 className="text-base font-bold text-white">AI Financial Snapshot</h2>
                             <span className="text-xs text-white/40 ml-2">— {financials.latestQuarter?.quarter ?? 'Current Quarter'}</span>
@@ -591,7 +591,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                             style={{
                                                 width: `${seg.pct}%`,
                                                 backgroundColor: i === 0 ? '#F0F0F0' : i === 1 ? '#3B82F6' : '#F59E0B',
-                                                color: i === 0 ? '#003B2C' : '#fff',
+                                                color: i === 0 ? '#1c519c' : '#fff',
                                             }}
                                         >
                                             {seg.pct}%
@@ -655,11 +655,11 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                 const outcomeInsights = businessInsights.filter(insight => insight.businessOutcome === outcome);
                                 const criticalCount = outcomeInsights.filter(i => i.status === 'critical' || i.status === 'high').length;
 
-                                const outcomeColor = outcome === 'Commercial' ? 'border-l-[#003B2C]' :
+                                const outcomeColor = outcome === 'Commercial' ? 'border-l-[#1c519c]' :
                                     outcome === 'Operational' ? 'border-l-emerald-500' :
                                         outcome === 'Financial' ? 'border-l-green-500' : 'border-l-red-500';
 
-                                const outcomeIcon = outcome === 'Commercial' ? <TrendingUp className="w-4 h-4 text-[#003B2C]" /> :
+                                const outcomeIcon = outcome === 'Commercial' ? <TrendingUp className="w-4 h-4 text-[#1c519c]" /> :
                                     outcome === 'Operational' ? <Activity className="w-4 h-4 text-emerald-600" /> :
                                         outcome === 'Financial' ? <DollarSign className="w-4 h-4 text-green-600" /> :
                                             <Shield className="w-4 h-4 text-red-600" />;
@@ -689,7 +689,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                         <div className="px-5 py-3 flex items-center justify-between">
                                             <div className="flex items-center space-x-3">
                                                 {outcomeIcon}
-                                                <h3 className="text-sm font-bold text-[#003B2C]">{overviewUi.sectionTitle}</h3>
+                                                <h3 className="text-sm font-bold text-[#1c519c]">{overviewUi.sectionTitle}</h3>
                                                 <span className="text-xs text-gray-400">
                                                     {outcomeInsights.length}{' '}
                                                     {outcomeInsights.length === 1 ? 'insight' : 'insights'}
@@ -795,7 +795,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                                                                 const s = t >= 1000 ? `$${(t / 1000).toFixed(2)}B` : `$${t}M`;
                                                                                 return (
                                                                                     <div
-                                                                                        className="rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs text-[#003B2C]"
+                                                                                        className="rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs text-[#1c519c]"
                                                                                         style={lightTooltip.contentStyle}
                                                                                     >
                                                                                         <p className="font-semibold">{row.name}</p>
@@ -855,7 +855,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                                                             }`}>
                                                                             {insight.category}
                                                                         </span>
-                                                                        <span className="text-sm font-bold text-[#003B2C]">{insight.metric}</span>
+                                                                        <span className="text-sm font-bold text-[#1c519c]">{insight.metric}</span>
                                                                     </div>
                                                                     <span className={`text-xs font-bold ${insight.change > 0 ? 'text-green-600' : insight.change < 0 ? 'text-red-600' : 'text-gray-500'}`}>
                                                                         {insight.change > 0 ? '+' : ''}{insight.change}%
@@ -898,7 +898,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                     <div className="bg-white rounded-xl shadow-sm p-4 mb-2 flex items-center justify-between">
                                         <div className="flex items-center space-x-6">
                                             <div className="flex items-center space-x-2">
-                                                <span className="text-2xl font-bold text-[#003B2C]">{total}</span>
+                                                <span className="text-2xl font-bold text-[#1c519c]">{total}</span>
                                                 <span className="text-sm text-gray-500">decisions</span>
                                             </div>
                                             <div className="h-8 w-px bg-gray-200" />
@@ -910,7 +910,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                         </div>
                                         <div className="flex items-center space-x-6">
                                             <div className="text-center">
-                                                <p className="text-lg font-bold text-[#003B2C]">{pending}</p>
+                                                <p className="text-lg font-bold text-[#1c519c]">{pending}</p>
                                                 <p className="text-xs text-gray-500">pending</p>
                                             </div>
                                             <div className="text-center">
@@ -919,7 +919,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                             </div>
                                             <div className="h-8 w-px bg-gray-200" />
                                             <div className="text-center">
-                                                <p className="text-lg font-bold text-[#003B2C]">{avgDays}</p>
+                                                <p className="text-lg font-bold text-[#1c519c]">{avgDays}</p>
                                                 <p className="text-xs text-gray-500">avg days left</p>
                                             </div>
                                         </div>
@@ -939,7 +939,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                                 outcome === 'Financial' ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
                                             }`}>
                                             <h2 className="text-lg font-semibold text-gray-900 flex items-center">
-                                                {outcome === 'Commercial' && <TrendingUp className="w-5 h-5 mr-2 text-[#003B2C]" />}
+                                                {outcome === 'Commercial' && <TrendingUp className="w-5 h-5 mr-2 text-[#1c519c]" />}
                                                 {outcome === 'Operational' && <Activity className="w-5 h-5 mr-2 text-emerald-600" />}
                                                 {outcome === 'Financial' && <DollarSign className="w-5 h-5 mr-2 text-green-600" />}
                                                 {outcome === 'Risk' && <Shield className="w-5 h-5 mr-2 text-red-600" />}
@@ -952,7 +952,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                                     <div className="flex items-start justify-between">
                                                         <div className="flex-1">
                                                             <div className="flex items-center space-x-3 mb-2">
-                                                                <h3 className="text-base font-medium text-[#003B2C]">{decision.title}</h3>
+                                                                <h3 className="text-base font-medium text-[#1c519c]">{decision.title}</h3>
                                                                 <span className={`text-xs font-medium px-2 py-1 rounded-full ${decision.urgency === 'critical' ? 'bg-red-100 text-red-700' :
                                                                     decision.urgency === 'high' ? 'bg-amber-100 text-amber-700' :
                                                                         'bg-blue-100 text-blue-700'
@@ -1003,7 +1003,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                                             )}
                                                         </div>
                                                         <div className="ml-4 text-right">
-                                                            <button className="px-4 py-2 bg-[#F0F0F0] text-[#003B2C] text-sm font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all border border-emerald-400">
+                                                            <button className="px-4 py-2 bg-[#F0F0F0] text-[#1c519c] text-sm font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all border border-emerald-400">
                                                                 Review Decision
                                                             </button>
                                                             <p className="text-xs text-gray-500 mt-1">
@@ -1031,7 +1031,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                             {/* Risk Heat Map */}
                             <div className="bg-white rounded-xl shadow-sm p-6">
                                 <h2 className="text-base font-semibold text-gray-900 mb-4 flex items-center">
-                                    <Target className="w-4 h-4 mr-2 text-[#003B2C]" />
+                                    <Target className="w-4 h-4 mr-2 text-[#1c519c]" />
                                     Risk &amp; Opportunity Heat Map
                                 </h2>
                                 <div className="flex items-start space-x-8">
@@ -1464,7 +1464,7 @@ export default function ExecutiveSummaryClient({ pillars: _pillars, briefing, de
                                                         Priority: {idx === 0 ? 'Immediate' : idx === 1 ? 'High' : 'Medium'}
                                                     </p>
                                                 </div>
-                                                <button className="text-sm font-medium text-[#003B2C] hover:text-[#003B2C]">
+                                                <button className="text-sm font-medium text-[#1c519c] hover:text-[#1c519c]">
                                                     Assign →
                                                 </button>
                                             </div>

@@ -18,11 +18,11 @@ export default function ConsoleHeader({ title, subtitle, icon: Icon, onToggleAI,
         <div className="flex items-center justify-between h-14">
           {/* Left: Icon + Title */}
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-[#003B2C] rounded-lg shadow-sm">
+            <div className="p-2 bg-[#1c519c] rounded-lg shadow-sm">
               <Icon className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-[#003B2C] leading-tight">{title}</h1>
+              <h1 className="text-lg font-bold text-[#1c519c] leading-tight">{title}</h1>
               <p className="text-xs text-gray-500 leading-tight">{subtitle}</p>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function ConsoleHeader({ title, subtitle, icon: Icon, onToggleAI,
             {onToggleAI && (
               <button
                 onClick={onToggleAI}
-                className="p-2 rounded-lg text-[#003B2C] hover:bg-[#F0F0F0]/50 transition-colors"
+                className="p-2 rounded-lg text-[#1c519c] hover:bg-[#F0F0F0]/50 transition-colors"
                 title="AI Assistant"
               >
                 <Sparkles className="w-4.5 h-4.5" />

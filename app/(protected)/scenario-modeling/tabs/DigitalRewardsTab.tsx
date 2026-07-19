@@ -187,7 +187,7 @@ export default function DigitalPlatformTab({ leverValues, onLeverChange }: Digit
                     </div>
                     <div className="bg-gray-50 rounded-lg p-4">
                         <p className="text-xs text-gray-600 mb-1">Health100 Adoption</p>
-                        <p className="text-xl font-bold text-[#003B2C]">
+                        <p className="text-xl font-bold text-[#1c519c]">
                             {impact.health100.adoption}%
                         </p>
                     </div>
@@ -206,7 +206,7 @@ export default function DigitalPlatformTab({ leverValues, onLeverChange }: Digit
                 </div>
 
                 {/* Digital Health Flywheel */}
-                <div className="bg-[#003B2C] rounded-xl p-6">
+                <div className="bg-[#1c519c] rounded-xl p-6">
                     <h4 className="text-sm font-semibold text-white mb-4">Digital Health Flywheel</h4>
                     <div className="flex items-center justify-between">
                         {flywheelSteps.map((step, idx) => (
@@ -315,7 +315,7 @@ export default function DigitalPlatformTab({ leverValues, onLeverChange }: Digit
                     </table>
                     <div className="mt-3 pt-3 border-t border-gray-200 flex justify-between text-sm">
                         <span className="text-gray-600">Total Digital Investment:</span>
-                        <span className="font-bold text-[#003B2C]">${impact.investment.total}M ({impact.investment.roi}% ROI)</span>
+                        <span className="font-bold text-[#1c519c]">${impact.investment.total}M ({impact.investment.roi}% ROI)</span>
                     </div>
                 </div>
             </div>
@@ -362,7 +362,7 @@ export default function DigitalPlatformTab({ leverValues, onLeverChange }: Digit
                                     <p className="text-sm font-medium text-gray-900">{metric.label}</p>
                                     <p className="text-xs text-gray-500">{metric.description}</p>
                                 </div>
-                                <p className="text-sm font-bold text-[#003B2C]">{metric.value}</p>
+                                <p className="text-sm font-bold text-[#1c519c]">{metric.value}</p>
                             </div>
                         ))}
                     </div>
@@ -371,8 +371,8 @@ export default function DigitalPlatformTab({ leverValues, onLeverChange }: Digit
 
             {/* AI Insight */}
             <div className="bg-[#F0F0F0] rounded-lg p-4 flex items-start space-x-3">
-                <Sparkles className="w-5 h-5 text-[#003B2C] mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-[#003B2C]">
+                <Sparkles className="w-5 h-5 text-[#1c519c] mt-0.5 flex-shrink-0" />
+                <div className="text-sm text-[#1c519c]">
                     <span className="font-semibold">AI Insight:</span>{' '}
                     {impact.health100.adoption > 80
                         ? `Strong Health100 adoption at ${impact.health100.adoption}% drives $${impact.health100.savings}M in SG&A savings — on pace toward the $2B program target. AI prior authorization at ${impact.aiAuth.rate}% automation generates $${impact.aiAuth.savings}M in administrative savings. Combined digital efficiency delivers $${impact.totalAOI}M total AOI improvement.`

@@ -32,18 +32,18 @@ export default function SummaryStatsBar({ items, totalAI, totalHuman, view, onVi
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-4 flex-wrap">
           <Stat icon={Sparkles} label="AI Insights" value={totalAI} color="text-purple-600" bg="bg-purple-50" />
-          <Stat icon={User} label="Human Commentary" value={totalHuman} color="text-[#003B2C]" bg="bg-[#F0F0F0]" />
+          <Stat icon={User} label="Human Commentary" value={totalHuman} color="text-[#1c519c]" bg="bg-[#F0F0F0]" />
           <div className="w-px h-8 bg-gray-200" />
           <Stat icon={AlertTriangle} label="Critical" value={criticalCount} color="text-red-600" bg="bg-red-50" />
           <Stat icon={Bot} label="High Priority" value={highCount} color="text-amber-600" bg="bg-amber-50" />
           <div className="w-px h-8 bg-gray-200" />
           <div className="text-xs text-gray-500">
-            <span className="font-semibold text-[#003B2C] text-sm">{consoleCount}</span> Consoles
+            <span className="font-semibold text-[#1c519c] text-sm">{consoleCount}</span> Consoles
           </div>
           {filtered && (
             <>
               <div className="w-px h-8 bg-gray-200" />
-              <div className="text-xs font-medium text-[#003B2C] bg-[#F0F0F0] px-2 py-1 rounded">
+              <div className="text-xs font-medium text-[#1c519c] bg-[#F0F0F0] px-2 py-1 rounded">
                 Showing {items.length.toLocaleString()} of {(totalAI + totalHuman).toLocaleString()}
               </div>
             </>
@@ -58,7 +58,7 @@ export default function SummaryStatsBar({ items, totalAI, totalHuman, view, onVi
               onClick={() => onViewChange(v.key)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                 view === v.key
-                  ? 'bg-white text-[#003B2C] shadow-sm'
+                  ? 'bg-white text-[#1c519c] shadow-sm'
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
@@ -81,7 +81,7 @@ function Stat({ icon: Icon, label, value, color, bg }: {
         <Icon className={`w-3.5 h-3.5 ${color}`} />
       </div>
       <div className="leading-tight">
-        <span className="font-semibold text-sm text-[#003B2C]">{value.toLocaleString()}</span>
+        <span className="font-semibold text-sm text-[#1c519c]">{value.toLocaleString()}</span>
         <span className="text-xs text-gray-500 ml-1">{label}</span>
       </div>
     </div>

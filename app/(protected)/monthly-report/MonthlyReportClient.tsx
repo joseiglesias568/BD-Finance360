@@ -120,7 +120,7 @@ export default function MonthlyReportClient({ narrative, criticalActions, forwar
                     <div className="py-6">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-4">
-                                <div className="p-3 bg-gradient-to-br from-[#003B2C] to-[#003B2C] rounded-xl shadow-lg shadow-[#003B2C]/20">
+                                <div className="p-3 bg-gradient-to-br from-[#1c519c] to-[#1c519c] rounded-xl shadow-lg shadow-[#1c519c]/20">
                                     <FileText className="w-8 h-8 text-white" />
                                 </div>
                                 <div>
@@ -149,9 +149,9 @@ export default function MonthlyReportClient({ narrative, criticalActions, forwar
                 <div className="px-4 sm:px-6 lg:px-8">
                     <div className="py-3 flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                            <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#F0F0F0] border border-[#003B2C]/20 rounded-lg">
-                                <Calendar className="w-4 h-4 text-[#003B2C]" />
-                                <span className="text-sm font-medium text-[#003B2C]">
+                            <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#F0F0F0] border border-[#1c519c]/20 rounded-lg">
+                                <Calendar className="w-4 h-4 text-[#1c519c]" />
+                                <span className="text-sm font-medium text-[#1c519c]">
                                     {periodLabel} &bull; vs Plan
                                 </span>
                             </div>
@@ -186,7 +186,7 @@ export default function MonthlyReportClient({ narrative, criticalActions, forwar
                                     className={`
                                         group flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap
                                         ${activeTab === tab.id
-                                            ? 'border-[#003B2C] text-[#003B2C]'
+                                            ? 'border-[#1c519c] text-[#1c519c]'
                                             : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300'
                                         }
                                     `}

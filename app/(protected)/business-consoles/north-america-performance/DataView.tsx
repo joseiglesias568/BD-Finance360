@@ -328,7 +328,7 @@ export default function DataView({ dbData }: DataViewProps) {
                             <select
                                 value={selectedView}
                                 onChange={(e) => setSelectedView(e.target.value)}
-                                className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#003B2C]"
+                                className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1c519c]"
                             >
                                 <option value="actual">Actual vs Plan</option>
                                 <option value="trend">Trend Analysis</option>
@@ -386,28 +386,28 @@ export default function DataView({ dbData }: DataViewProps) {
                                 <th className="text-left py-3 px-4 font-medium text-gray-700 w-48">Item</th>
                                 <th className="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200" colSpan={2}>
                                     <div className="flex items-center justify-center space-x-1">
-                                        <span className="w-2 h-2 bg-[#003B2C] rounded-full"></span>
+                                        <span className="w-2 h-2 bg-[#1c519c] rounded-full"></span>
                                         <span>Actual</span>
                                     </div>
                                     Q1 FY25
                                 </th>
                                 <th className="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200" colSpan={2}>
                                     <div className="flex items-center justify-center space-x-1">
-                                        <span className="w-2 h-2 bg-[#003B2C] rounded-full"></span>
+                                        <span className="w-2 h-2 bg-[#1c519c] rounded-full"></span>
                                         <span>Actual</span>
                                     </div>
                                     Q2 FY25
                                 </th>
                                 <th className="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200" colSpan={2}>
                                     <div className="flex items-center justify-center space-x-1">
-                                        <span className="w-2 h-2 bg-[#003B2C] rounded-full"></span>
+                                        <span className="w-2 h-2 bg-[#1c519c] rounded-full"></span>
                                         <span>Actual</span>
                                     </div>
                                     Q3 FY25
                                 </th>
                                 <th className="text-center py-3 px-4 font-medium text-gray-700 border-l border-gray-200" colSpan={2}>
                                     <div className="flex items-center justify-center space-x-1">
-                                        <span className="w-2 h-2 bg-[#003B2C] rounded-full"></span>
+                                        <span className="w-2 h-2 bg-[#1c519c] rounded-full"></span>
                                         <span>Actual</span>
                                     </div>
                                     Q4 FY25
@@ -512,7 +512,7 @@ export default function DataView({ dbData }: DataViewProps) {
                                 const opMargin = dbData?.financials?.annualOperatingMargin ?? null;
                                 const cols = quarters.length > 0 ? quarters.slice(0, 6) : [null, null, null, null, null, null];
                                 return (
-                                    <tr className="bg-[#003B2C] text-white font-semibold">
+                                    <tr className="bg-[#1c519c] text-white font-semibold">
                                         <td className="py-3 px-4">Operating Margin (%)</td>
                                         {cols.map((q, i) => (
                                             <React.Fragment key={i}>
@@ -623,7 +623,7 @@ export default function DataView({ dbData }: DataViewProps) {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                     <h4 className="font-semibold text-gray-900">Monthly Performance Trends</h4>
-                    <button className="text-sm text-[#003B2C] hover:text-[#007A3D] font-medium flex items-center">
+                    <button className="text-sm text-[#1c519c] hover:text-[#1c519c] font-medium flex items-center">
                         <Calendar className="w-4 h-4 mr-1" />
                         View Full History
                     </button>
@@ -684,7 +684,7 @@ export default function DataView({ dbData }: DataViewProps) {
             </div>
 
             {/* Analyst Toolbar — Export, Save View, Notes */}
-            <div className="bg-gradient-to-r from-[#F0F0F0] to-emerald-50 rounded-xl p-6 border border-[#003B2C]/20">
+            <div className="bg-gradient-to-r from-[#F0F0F0] to-emerald-50 rounded-xl p-6 border border-[#1c519c]/20">
                 <div className="flex items-center justify-between">
                     <div>
                         <h4 className="font-semibold text-gray-900 mb-1">Analyst Tools</h4>
@@ -708,7 +708,7 @@ export default function DataView({ dbData }: DataViewProps) {
                         </button>
                         <button
                             onClick={() => setShowNotes(!showNotes)}
-                            className={`px-4 py-2 border rounded-lg text-sm font-medium transition-colors flex items-center ${showNotes ? 'bg-[#003B2C] text-white border-[#003B2C]' : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'}`}
+                            className={`px-4 py-2 border rounded-lg text-sm font-medium transition-colors flex items-center ${showNotes ? 'bg-[#1c519c] text-white border-[#1c519c]' : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'}`}
                         >
                             <MessageSquare className="w-4 h-4 mr-2" />
                             Notes
@@ -722,7 +722,7 @@ export default function DataView({ dbData }: DataViewProps) {
                 <div className="bg-white rounded-xl border border-gray-200 p-6">
                     <div className="flex items-center justify-between mb-3">
                         <h4 className="font-semibold text-gray-900 flex items-center">
-                            <MessageSquare className="w-4 h-4 mr-2 text-[#003B2C]" />
+                            <MessageSquare className="w-4 h-4 mr-2 text-[#1c519c]" />
                             Analyst Notes
                         </h4>
                         <span className="text-xs text-gray-400">Auto-saved</span>
@@ -744,7 +744,7 @@ export default function DataView({ dbData }: DataViewProps) {
                         </div>
                         <textarea
                             placeholder="Add a note..."
-                            className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#003B2C] focus:border-[#003B2C] resize-none"
+                            className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1c519c] focus:border-[#1c519c] resize-none"
                             rows={2}
                         />
                     </div>
@@ -755,10 +755,10 @@ export default function DataView({ dbData }: DataViewProps) {
             <div className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                     <h4 className="font-semibold text-gray-900 flex items-center">
-                        <Bookmark className="w-4 h-4 mr-2 text-[#003B2C]" />
+                        <Bookmark className="w-4 h-4 mr-2 text-[#1c519c]" />
                         Drill to Detailed Reports
                     </h4>
-                    <Link href="/report-hub" className="text-sm text-[#003B2C] hover:underline">
+                    <Link href="/report-hub" className="text-sm text-[#1c519c] hover:underline">
                         Browse Report Hub
                     </Link>
                 </div>
@@ -771,13 +771,13 @@ export default function DataView({ dbData }: DataViewProps) {
                         <Link
                             key={report.id}
                             href={`/report-hub/${report.id}`}
-                            className="group flex items-center space-x-3 bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#003B2C]/30 rounded-lg p-3 transition-all"
+                            className="group flex items-center space-x-3 bg-gray-50 hover:bg-[#F0F0F0]/30 border border-gray-200 hover:border-[#1c519c]/30 rounded-lg p-3 transition-all"
                         >
                             <div className="min-w-0 flex-1">
-                                <div className="text-sm font-medium text-gray-900 group-hover:text-[#003B2C]">{report.name}</div>
+                                <div className="text-sm font-medium text-gray-900 group-hover:text-[#1c519c]">{report.name}</div>
                                 <div className="text-xs text-gray-500 truncate">{report.desc}</div>
                             </div>
-                            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#003B2C] flex-shrink-0" />
+                            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#1c519c] flex-shrink-0" />
                         </Link>
                     ))}
                 </div>

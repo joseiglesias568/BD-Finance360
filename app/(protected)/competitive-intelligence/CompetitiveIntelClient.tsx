@@ -95,7 +95,7 @@ const tooltipStyle = {
         border: '1px solid #e5e7eb',
         borderRadius: 8,
         fontSize: 12,
-        color: '#003B2C',
+        color: '#1c519c',
         padding: '8px 12px',
         boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
     },
@@ -268,10 +268,10 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                 <motion.div {...fadeUp} className="flex items-center justify-between">
                     <div>
                         <div className="flex items-center space-x-3 mb-1">
-                            <div className="p-2 bg-[#003B2C]/10 rounded-lg">
-                                <Swords className="w-6 h-6 text-[#003B2C]" />
+                            <div className="p-2 bg-[#1c519c]/10 rounded-lg">
+                                <Swords className="w-6 h-6 text-[#1c519c]" />
                             </div>
-                            <h1 className="text-2xl font-bold text-[#003B2C]">Competitive Intelligence</h1>
+                            <h1 className="text-2xl font-bold text-[#1c519c]">Competitive Intelligence</h1>
                         </div>
                         <p className="text-sm text-gray-500 ml-12">US wireless industry competitive landscape and market share benchmarking</p>
                     </div>
@@ -288,8 +288,8 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                             value: market.totalMarketSize || '$340B',
                             sub: `${market.segmentGrowth > 0 ? '+' : ''}${market.segmentGrowth}% CAGR`,
                             icon: Globe,
-                            color: 'text-[#003B2C]',
-                            bg: 'bg-[#003B2C]/5',
+                            color: 'text-[#1c519c]',
+                            bg: 'bg-[#1c519c]/5',
                         },
                         {
                             label: 'BD Market Position',
@@ -333,7 +333,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                 <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Pie Chart */}
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                        <h2 className="text-lg font-semibold text-[#003B2C] mb-4">Market Share Distribution</h2>
+                        <h2 className="text-lg font-semibold text-[#1c519c] mb-4">Market Share Distribution</h2>
                         <ResponsiveContainer width="100%" height={320}>
                             <PieChart>
                                 <Pie
@@ -361,7 +361,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
 
                     {/* YoY Share Change Bar Chart */}
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                        <h2 className="text-lg font-semibold text-[#003B2C] mb-4">YoY Market Share Change (bps)</h2>
+                        <h2 className="text-lg font-semibold text-[#1c519c] mb-4">YoY Market Share Change (bps)</h2>
                         <ResponsiveContainer width="100%" height={320}>
                             <BarChart data={shareChangeBars} layout="vertical">
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -387,7 +387,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                 {/* ── 3. Revenue Growth Comparison ─────────────────────── */}
                 {compSalesTrend.length > 0 && (
                     <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                        <h2 className="text-lg font-semibold text-[#003B2C] mb-4">Revenue Growth Trend (%)</h2>
+                        <h2 className="text-lg font-semibold text-[#1c519c] mb-4">Revenue Growth Trend (%)</h2>
                         <ResponsiveContainer width="100%" height={350}>
                             <LineChart data={compSalesTrend}>
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -417,7 +417,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                 {/* ── 4. Postpaid Subscriber Growth ──────────────────────── */}
                 {storeCountData.length > 0 && (
                     <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                        <h2 className="text-lg font-semibold text-[#003B2C] mb-4">Postpaid Subscribers by Quarter (M)</h2>
+                        <h2 className="text-lg font-semibold text-[#1c519c] mb-4">Postpaid Subscribers by Quarter (M)</h2>
                         <ResponsiveContainer width="100%" height={350}>
                             <BarChart data={storeCountData}>
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -440,7 +440,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                 {revBenchmark.length > 0 && (
                     <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <h2 className="text-lg font-semibold text-[#003B2C]">Competitor Benchmarking (Latest Quarter)</h2>
+                            <h2 className="text-lg font-semibold text-[#1c519c]">Competitor Benchmarking (Latest Quarter)</h2>
                             <span className="text-xs text-gray-400">Revenue from DB · Market share from public filings</span>
                         </div>
                         <div className="overflow-x-auto">
@@ -551,7 +551,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                                 <div key={r.label} className="flex items-center justify-between text-sm">
                                     <span className="text-gray-500">{r.label}</span>
                                     <div className="text-right">
-                                        <span className="font-semibold text-[#003B2C]">{r.value}</span>
+                                        <span className="font-semibold text-[#1c519c]">{r.value}</span>
                                         <span className="text-gray-400 text-xs ml-2">{r.note}</span>
                                     </div>
                                 </div>
@@ -563,8 +563,8 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                 {/* ── 7. Competitive Strengths & Weaknesses ──────────────── */}
                 <motion.div {...fadeUp} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                     <div className="flex items-center space-x-2 mb-4">
-                        <Shield className="w-5 h-5 text-[#003B2C]" />
-                        <h2 className="text-lg font-semibold text-[#003B2C]">Competitor Strengths</h2>
+                        <Shield className="w-5 h-5 text-[#1c519c]" />
+                        <h2 className="text-lg font-semibold text-[#1c519c]">Competitor Strengths</h2>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
@@ -614,7 +614,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                         <div className="flex items-center space-x-2 mb-4">
                             <TrendingUp className="w-5 h-5 text-emerald-600" />
-                            <h2 className="text-lg font-semibold text-[#003B2C]">Market Drivers</h2>
+                            <h2 className="text-lg font-semibold text-[#1c519c]">Market Drivers</h2>
                         </div>
                         <ul className="space-y-2">
                             {market.marketDrivers.map((d, i) => (
@@ -628,7 +628,7 @@ export default function CompetitiveIntelClient({ market, competitorMetrics }: Pr
                     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                         <div className="flex items-center space-x-2 mb-4">
                             <Shield className="w-5 h-5 text-amber-500" />
-                            <h2 className="text-lg font-semibold text-[#003B2C]">Market Challenges</h2>
+                            <h2 className="text-lg font-semibold text-[#1c519c]">Market Challenges</h2>
                         </div>
                         <ul className="space-y-2">
                             {market.marketChallenges.map((c, i) => (
