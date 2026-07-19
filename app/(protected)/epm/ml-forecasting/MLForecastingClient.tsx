@@ -98,7 +98,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
         <SummaryMetricCard
           label="Operating Margin Trajectory"
           value={`${fy26Margin}%`}
-          subtitle={`FY25: ${(fy25Rollup['Operating Income'] / fy25Rollup.Revenue * 100).toFixed(1)}% → FY26: ${fy26Margin}%`}
+          subtitle={`FY25: ${(fy25Rollup['Adjusted Operating Income'] / fy25Rollup.Revenue * 100).toFixed(1)}% → FY26: ${fy26Margin}%`}
           icon={Target}
           trend="up"
           trendLabel="Expanding"
@@ -136,7 +136,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
           <span className="text-[10px] text-gray-400 ml-1">Click any line item to expand driver detail</span>
         </div>
 
-        {viewMode === 'quarterly' ? (
+        {viewMode === 'monthly' ? (
           <PLTable
             rows={data.rows}
             periods={data.periods}
