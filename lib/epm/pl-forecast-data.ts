@@ -84,9 +84,9 @@ export function getDriversForLine(lineItem: PLLineItem): readonly string[] {
 
 // Period types
 export interface PLPeriod {
-  label: string;       // "Q1 FY25"
-  fiscalYear: string;  // "FY25"
-  quarter: number;     // 1-4
+  label: string;       // "Oct '25"
+  fiscalYear: string;  // "FY26"
+  month: number;       // 1-12 (BD fiscal: 1=Oct, 12=Sep)
   isHistorical: boolean;
   isCurrent: boolean;
   isForecast: boolean;
@@ -122,61 +122,82 @@ export interface PLForecastData {
 
 // =============================================================================
 // DATA GENERATION — Becton, Dickinson and Company
-// All quarterly values in $M. Revenue scale: ~$4.3-5.4B/quarter.
-// BD fiscal year: Q1=Oct-Dec, Q2=Jan-Mar, Q3=Apr-Jun, Q4=Jul-Sep.
-// BioPharma Systems and Medical Essentials tend to be strongest in Q2/Q3.
+// All monthly values in $M. Revenue scale: ~$1.5-1.8B/month.
+// BD fiscal year: M1=Oct, M9=Jun, M12=Sep.
+// 18-month window: Oct '25 (FY26 M1) through Mar '27 (FY27 M6).
+// Monthly values derived from quarterly actuals/guidance ÷ 3 with intra-quarter ramp.
 // =============================================================================
 
 function generatePeriods(): PLPeriod[] {
   return [
-    { label: 'Q1 FY25', fiscalYear: 'FY25', quarter: 1, isHistorical: true, isCurrent: false, isForecast: false },
-    { label: 'Q2 FY25', fiscalYear: 'FY25', quarter: 2, isHistorical: true, isCurrent: false, isForecast: false },
-    { label: 'Q3 FY25', fiscalYear: 'FY25', quarter: 3, isHistorical: true, isCurrent: false, isForecast: false },
-    { label: 'Q4 FY25', fiscalYear: 'FY25', quarter: 4, isHistorical: true, isCurrent: false, isForecast: false },
-    { label: 'Q1 FY26', fiscalYear: 'FY26', quarter: 1, isHistorical: false, isCurrent: true, isForecast: false },
-    { label: 'Q2 FY26', fiscalYear: 'FY26', quarter: 2, isHistorical: false, isCurrent: false, isForecast: true },
-    { label: 'Q3 FY26', fiscalYear: 'FY26', quarter: 3, isHistorical: false, isCurrent: false, isForecast: true },
-    { label: 'Q4 FY26', fiscalYear: 'FY26', quarter: 4, isHistorical: false, isCurrent: false, isForecast: true },
-    { label: 'Q1 FY27', fiscalYear: 'FY27', quarter: 1, isHistorical: false, isCurrent: false, isForecast: true },
-    { label: 'Q2 FY27', fiscalYear: 'FY27', quarter: 2, isHistorical: false, isCurrent: false, isForecast: true },
-    { label: 'Q3 FY27', fiscalYear: 'FY27', quarter: 3, isHistorical: false, isCurrent: false, isForecast: true },
-    { label: 'Q4 FY27', fiscalYear: 'FY27', quarter: 4, isHistorical: false, isCurrent: false, isForecast: true },
+    // FY26: Oct 2025 – Sep 2026 (BD fiscal year Oct–Sep)
+    { label: "Oct '25", fiscalYear: 'FY26', month: 1,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Nov '25", fiscalYear: 'FY26', month: 2,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Dec '25", fiscalYear: 'FY26', month: 3,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Jan '26", fiscalYear: 'FY26', month: 4,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Feb '26", fiscalYear: 'FY26', month: 5,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Mar '26", fiscalYear: 'FY26', month: 6,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Apr '26", fiscalYear: 'FY26', month: 7,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "May '26", fiscalYear: 'FY26', month: 8,  isHistorical: true,  isCurrent: false, isForecast: false },
+    { label: "Jun '26", fiscalYear: 'FY26', month: 9,  isHistorical: false, isCurrent: true,  isForecast: false },
+    { label: "Jul '26", fiscalYear: 'FY26', month: 10, isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Aug '26", fiscalYear: 'FY26', month: 11, isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Sep '26", fiscalYear: 'FY26', month: 12, isHistorical: false, isCurrent: false, isForecast: true  },
+    // FY27: Oct 2026 – Mar 2027 (6-month forward horizon)
+    { label: "Oct '26", fiscalYear: 'FY27', month: 1,  isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Nov '26", fiscalYear: 'FY27', month: 2,  isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Dec '26", fiscalYear: 'FY27', month: 3,  isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Jan '27", fiscalYear: 'FY27', month: 4,  isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Feb '27", fiscalYear: 'FY27', month: 5,  isHistorical: false, isCurrent: false, isForecast: true  },
+    { label: "Mar '27", fiscalYear: 'FY27', month: 6,  isHistorical: false, isCurrent: false, isForecast: true  },
   ];
 }
 
-// Quarterly revenue ($M) — BD fiscal year (Oct-Sep)
-// FY25 total ~$18.2B; FY26 guidance ~$19.8-20.0B
-const QUARTERLY_REVENUE = [
-  4334, 4480, 4676, 4705,    // FY25 Q1-Q4 (~$18.2B)
-  4486, 4714, 4850, 4950,    // FY26 Q1-Q4 (~$19.0B guided)
-  5000, 5150, 5250, 5350,    // FY27 Q1-Q4 (~$20.75B projected)
+// Monthly revenue ($M) — 18 months: Oct '25 through Mar '27
+// Quarterly anchors: Q1 FY26=4486, Q2=4714, Q3=4850, Q4=4950; Q1 FY27=5000, Q2 FY27(partial)=5150
+const MONTHLY_REVENUE = [
+  1471, 1495, 1520,   // Oct-Dec '25  (Q1 FY26 = 4486)
+  1546, 1570, 1598,   // Jan-Mar '26  (Q2 FY26 = 4714)
+  1591, 1616, 1643,   // Apr-Jun '26  (Q3 FY26 = 4850)
+  1624, 1649, 1677,   // Jul-Sep '26  (Q4 FY26 = 4950)
+  1640, 1665, 1695,   // Oct-Dec '26  (Q1 FY27 = 5000)
+  1689, 1716, 1745,   // Jan-Mar '27  (Q2 FY27 pace = 5150/qtr)
 ];
 
-// Adjusted Operating Income ($M) — BD ~25% adj. operating margin
-// FY25: ~$4.5B annual; FY26: guidance implies ~$4.8B; FY27: ~$5.4B
-const QUARTERLY_AOI = [
-  1083, 1120, 1169, 1175,   // FY25 (~$4.55B annual; ~25% margin)
-  1121, 1202, 1261, 1311,   // FY26 (~$4.90B annual; margin expansion with BD Simplify)
-  1350, 1390, 1417, 1498,   // FY27 (~$5.65B annual; full BD Simplify benefit)
+// Monthly Adjusted Operating Income ($M) — ~25% adj. operating margin
+// Quarterly anchors: Q1 FY26=1121, Q2=1202, Q3=1261, Q4=1311; Q1 FY27=1350, Q2 FY27=1390
+const MONTHLY_AOI = [
+  368, 373, 380,   // Oct-Dec '25  (Q1 FY26 = 1121)
+  394, 400, 408,   // Jan-Mar '26  (Q2 FY26 = 1202)
+  413, 420, 428,   // Apr-Jun '26  (Q3 FY26 = 1261)
+  430, 436, 445,   // Jul-Sep '26  (Q4 FY26 = 1311)
+  442, 449, 459,   // Oct-Dec '26  (Q1 FY27 = 1350)
+  456, 463, 471,   // Jan-Mar '27  (Q2 FY27 pace = 1390/qtr)
 ];
 
-// R&D Expense ($M) — BD ~6.8% of revenue; growing with pipeline investment
+// Monthly R&D Expense ($M) — ~6.8% of revenue
 const RD_BASE = [
-  295, 305, 318, 320,   // FY25 (~$1.24B annual; ~6.8% of revenue)
-  305, 321, 330, 337,   // FY26 (~$1.29B annual; growing with BioPharma Systems pipeline)
-  340, 350, 357, 364,   // FY27 (~$1.41B annual; continued pipeline investment)
+  101, 102, 102,   // Oct-Dec '25  (Q1 FY26 = 305)
+  106, 107, 108,   // Jan-Mar '26  (Q2 FY26 = 321)
+  109, 110, 111,   // Apr-Jun '26  (Q3 FY26 = 330)
+  112, 112, 113,   // Jul-Sep '26  (Q4 FY26 = 337)
+  112, 113, 115,   // Oct-Dec '26  (Q1 FY27 = 340)
+  115, 117, 118,   // Jan-Mar '27  (Q2 FY27 pace = 350/qtr)
 ];
 
-// SG&A Expense ($M) — declining with BD Simplify savings program
+// Monthly SG&A Expense ($M) — declining with BD Simplify savings
 const SGA_BASE = [
-  780, 806, 841, 847,   // FY25 (~$3.27B annual; pre-BD Simplify full benefit)
-  747, 785, 808, 825,   // FY26 (~$3.17B; BD Simplify Year 1 savings)
-  750, 773, 788, 803,   // FY27 (~$3.11B; cumulative BD Simplify savings vs FY25 base)
+  245, 249, 253,   // Oct-Dec '25  (Q1 FY26 = 747)
+  259, 263, 263,   // Jan-Mar '26  (Q2 FY26 = 785)
+  266, 270, 272,   // Apr-Jun '26  (Q3 FY26 = 808)
+  272, 276, 277,   // Jul-Sep '26  (Q4 FY26 = 825)
+  247, 250, 253,   // Oct-Dec '26  (Q1 FY27 = 750)
+  254, 258, 261,   // Jan-Mar '27  (Q2 FY27 pace = 773/qtr)
 ];
 
-// Interest expense ($M) — BD ~$17B net debt at blended ~3.5%; quarterly ~$150M
+// Interest expense ($M) — BD ~$17B net debt at blended ~3.5%; monthly ~$50M
 // BD FY26 interest ~$600M annual per guidance
-const INTEREST_EXPENSE = 150;
+const INTEREST_EXPENSE = 50;
 
 // Effective tax rate — BD 16.5%
 const EFFECTIVE_TAX_RATE = 0.165;
@@ -210,14 +231,14 @@ function generatePLRows(periods: PLPeriod[]): PLForecastRow[] {
     const bandWidth = p.isHistorical ? 0 : p.isCurrent ? 0.003 : 0.018 + forecastDist * 0.010;
 
     // Revenue
-    const rev = QUARTERLY_REVENUE[i];
+    const rev = MONTHLY_REVENUE[i];
     revenue.values[k] = rev;
     revenue.confidence[k] = conf;
     revenue.lowerBound[k] = Math.round(rev * (1 - bandWidth));
     revenue.upperBound[k] = Math.round(rev * (1 + bandWidth));
 
     // Adjusted Operating Income (target)
-    const aoiVal = QUARTERLY_AOI[i];
+    const aoiVal = MONTHLY_AOI[i];
     aoi.values[k] = aoiVal;
     aoi.confidence[k] = Math.max(conf - 5, 55); // AOI sensitive to China VoBP and FX
     aoi.lowerBound[k] = Math.round(aoiVal * (1 - bandWidth * 2.2));
@@ -280,20 +301,20 @@ function generateDrivers(periods: PLPeriod[]): DriverForecastRow[] {
   const fxImpact: DriverForecastRow = { driverName: 'FX Translation Impact', parentLine: 'Revenue', unit: '$M', values: {}, impactOnParent: {} };
   const bdSimplifyRev: DriverForecastRow = { driverName: 'BD Simplify Program Revenue Contribution', parentLine: 'Revenue', unit: '$M', values: {}, impactOnParent: {} };
 
-  // Medical Essentials (~38-40% of total revenue): core med-surg, dispensing, lab
-  const medEss = [1650, 1710, 1785, 1800, 1720, 1805, 1860, 1900, 1950, 2010, 2050, 2095];
-  // Connected Care (~12% of revenue): Alaris infusion systems, digital health
-  const cc = [520, 540, 565, 570, 540, 570, 590, 605, 625, 650, 670, 690];
-  // BioPharma Systems (~18% of revenue): prefillable syringes, GLP-1 devices, injectables
-  const bpGlp1 = [760, 790, 825, 840, 790, 840, 870, 895, 935, 975, 1010, 1050];
-  // Interventional (~25% of revenue): Peripheral, Urology, Surgery
-  const interv = [1070, 1105, 1155, 1165, 1100, 1160, 1200, 1230, 1275, 1315, 1350, 1390];
-  // Organic pricing net of China VoBP headwind
-  const orgPr = [200, 205, 215, 215, 210, 215, 210, 205, 200, 190, 185, 185];
-  // FX translation impact (negative = headwind)
-  const fx = [-65, -75, -85, -80, -70, -80, -85, -90, -75, -80, -85, -90];
-  // BD Simplify program contribution
-  const bdSimp = [199, 205, 216, 195, 196, 204, 205, 205, 90, 90, 90, 30];
+  // Medical Essentials (~38-40% of total revenue) — monthly values
+  const medEss = [541, 549, 560, 561, 569, 580, 585, 594, 606, 590, 599, 611, 564, 572, 584, 591, 601, 613];
+  // Connected Care (~12% of revenue) — monthly values
+  const cc = [170, 173, 177, 177, 180, 183, 185, 188, 192, 187, 190, 193, 177, 180, 183, 187, 191, 192];
+  // BioPharma Systems GLP-1 (~18% of revenue) — monthly values
+  const bpGlp1 = [249, 253, 258, 259, 263, 268, 270, 274, 281, 275, 280, 285, 259, 263, 268, 275, 280, 285];
+  // Interventional (~25% of revenue) — monthly values
+  const interv = [351, 356, 363, 362, 368, 375, 379, 384, 392, 382, 387, 396, 361, 366, 373, 380, 387, 393];
+  // Organic pricing net of China VoBP headwind — monthly values
+  const orgPr = [66, 67, 67, 67, 68, 70, 71, 71, 73, 70, 72, 73, 69, 70, 71, 70, 72, 73];
+  // FX translation impact (negative = headwind) — monthly values
+  const fx = [-21, -22, -22, -25, -25, -25, -28, -28, -29, -26, -27, -27, -23, -23, -24, -26, -27, -27];
+  // BD Simplify program contribution — monthly values
+  const bdSimp = [65, 66, 68, 67, 68, 70, 71, 72, 73, 64, 65, 66, 64, 65, 67, 67, 68, 69];
 
   periods.forEach((p, i) => {
     const k = p.label;
@@ -317,9 +338,9 @@ function generateDrivers(periods: PLPeriod[]): DriverForecastRow[] {
 
   // Cost of Products Sold drivers
   const cogsDriverDefs = [
-    { name: 'Manufacturing Cost per Unit', unit: '$M', base: [1320, 1365, 1425, 1435, 1370, 1440, 1484, 1515, 1545, 1590, 1620, 1655] },
-    { name: 'Raw Materials & Component Cost', unit: '$M', base: [680, 705, 735, 740, 708, 744, 766, 782, 795, 820, 837, 855] },
-    { name: 'Supply Chain & Logistics COGS', unit: '$M', base: [280, 290, 305, 305, 292, 308, 318, 325, 333, 342, 350, 357] },
+    { name: 'Manufacturing Cost per Unit', unit: '$M', base: [433, 440, 447, 448, 454, 463, 467, 474, 484, 471, 478, 486, 449, 456, 465, 472, 480, 488] },
+    { name: 'Raw Materials & Component Cost', unit: '$M', base: [223, 226, 231, 231, 235, 239, 241, 245, 249, 243, 246, 251, 232, 236, 240, 244, 248, 252] },
+    { name: 'Supply Chain & Logistics COGS', unit: '$M', base: [92, 93, 95, 95, 97, 98, 100, 101, 104, 100, 102, 103, 96, 97, 99, 101, 103, 104] },
   ];
 
   for (const def of cogsDriverDefs) {
@@ -333,10 +354,10 @@ function generateDrivers(periods: PLPeriod[]): DriverForecastRow[] {
 
   // OpEx drivers — BD cost decomposition
   const opexDriverDefs = [
-    { name: 'R&D Investment', unit: '$M', base: [295, 305, 318, 320, 305, 321, 330, 337, 340, 350, 357, 364] },
-    { name: 'SG&A Net of BD Simplify Savings', unit: '$M', base: [780, 806, 841, 847, 747, 785, 808, 825, 750, 773, 788, 803] },
-    { name: 'D&A — Acquisition & PP&E Depreciation', unit: '$M', base: [285, 290, 295, 298, 295, 300, 305, 308, 312, 316, 320, 324] },
-    { name: 'Restructuring & Integration Costs', unit: '$M', base: [120, 115, 110, 125, 100, 95, 92, 90, 80, 75, 72, 70] },
+    { name: 'R&D Investment', unit: '$M', base: [101, 102, 102, 106, 107, 108, 109, 110, 111, 112, 112, 113, 112, 113, 115, 115, 117, 118] },
+    { name: 'SG&A Net of BD Simplify Savings', unit: '$M', base: [245, 249, 253, 259, 263, 263, 266, 270, 272, 272, 276, 277, 247, 250, 253, 254, 258, 261] },
+    { name: 'D&A — Acquisition & PP&E Depreciation', unit: '$M', base: [93, 95, 97, 95, 97, 98, 97, 98, 100, 98, 99, 101, 97, 98, 100, 99, 100, 101] },
+    { name: 'Restructuring & Integration Costs', unit: '$M', base: [39, 40, 41, 38, 38, 39, 36, 37, 37, 41, 42, 42, 33, 33, 34, 31, 32, 32] },
   ];
 
   for (const def of opexDriverDefs) {
@@ -382,7 +403,20 @@ export function getPLForecastData(): PLForecastData {
   return _cached;
 }
 
+// FY25 hardcoded actuals ($M) — used as prior-year comparison since FY25 months are outside the 18-month window
+const FY25_ACTUALS: Record<PLLineItem, number> = {
+  'Revenue': 18195,
+  'Cost of Products Sold': 9274,
+  'Gross Profit': 8921,
+  'R&D Expense': 1238,
+  'SG&A Expense': 3273,
+  'Adjusted Operating Income': 4547,
+  'Net Income': 3236,
+  'Adjusted EPS': 11.47,
+};
+
 export function getAnnualRollup(data: PLForecastData, fiscalYear: string): Record<PLLineItem, number> {
+  if (fiscalYear === 'FY25') return FY25_ACTUALS;
   const result = {} as Record<PLLineItem, number>;
   const fyPeriods = data.periods.filter(p => p.fiscalYear === fiscalYear).map(p => p.label);
 

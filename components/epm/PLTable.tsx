@@ -14,7 +14,7 @@ interface PLTableProps {
 }
 
 function formatCell(value: number, lineItem: PLLineItem): string {
-  if (lineItem === 'EPS') return `$${value.toFixed(2)}`;
+  if (lineItem === 'Adjusted EPS') return `$${value.toFixed(2)}`;
   if (Math.abs(value) >= 10000) return `$${(value / 1000).toFixed(1)}B`;
   return `$${value.toLocaleString(undefined, { maximumFractionDigits: 0 })}M`;
 }

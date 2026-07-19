@@ -17,7 +17,7 @@ interface MLForecastingClientProps {
 
 export default function MLForecastingClient({ data }: MLForecastingClientProps) {
   const [selectedLine, setSelectedLine] = useState<PLLineItem | null>(null);
-  const [viewMode, setViewMode] = useState<'quarterly' | 'annual'>('quarterly');
+  const [viewMode, setViewMode] = useState<'monthly' | 'annual'>('monthly');
 
   // Computed metrics for summary cards
   const fy26Rollup = useMemo(() => getAnnualRollup(data, 'FY26'), [data]);
@@ -34,7 +34,7 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
     : '0';
 
   const fy26Margin = fy26Rollup.Revenue > 0
-    ? (fy26Rollup['Operating Income'] / fy26Rollup.Revenue * 100).toFixed(1)
+    ? (fy26Rollup['Adjusted Operating Income'] / fy26Rollup.Revenue * 100).toFixed(1)
     : '0';
 
   // Best model accuracy
@@ -59,18 +59,18 @@ export default function MLForecastingClient({ data }: MLForecastingClientProps) 
         <div>
           <h1 className="text-xl font-bold text-gray-900">18-Month Rolling Forecast</h1>
           <p className="text-xs text-gray-500 mt-0.5">
-            Full P&L cascade with ML-predicted drivers &bull; Q1 FY25 through Q4 FY27
+            Full P&L cascade with ML-predicted drivers &bull; Oct &apos;25 through Mar &apos;27 (18 months)
           </p>
         </div>
         <div className="flex items-center gap-2">
           <div className="flex bg-gray-100 rounded-lg p-0.5">
             <button
-              onClick={() => setViewMode('quarterly')}
+              onClick={() => setViewMode('monthly')}
               className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${
-                viewMode === 'quarterly' ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500'
+                viewMode === 'monthly' ? 'bg-white shadow-sm text-gray-900' : 'text-gray-500'
               }`}
             >
-              Quarterly
+              Monthly
             </button>
             <button
               onClick={() => setViewMode('annual')}
