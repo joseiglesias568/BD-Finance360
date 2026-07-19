@@ -22,21 +22,21 @@ export const branding: BrandingConfig = {
   industry: 'Medical Technology',
   headquarters: 'Franklin Lakes, New Jersey',
   // BD official brand colors (Finance360 implementation)
-  //   BD Green:     #00A651 — primary brand; nav, buttons, active links
-  //   Dark Green:   #007A3D — deep green for hover / nav bg
-  //   BD Blue:      #005A8B — secondary brand accent
-  //   Light Green:  #E6F5EC — background tints, card highlights
+  //   BD Green:     #00A94F — globe icon green
+  //   BD Navy:      #1B3A6B — primary navy blue (dominant in presentations)
+  //   BD Orange:    #E87722 — accent/highlight color
+  //   BD Light Blue:#4A90D9 — secondary highlight
   colors: {
-    primary: '#00A651',        // BD Green
-    primaryDark: '#007A3D',    // Dark BD Green
+    primary: '#00A94F',        // BD Green
+    primaryDark: '#007A33',    // Dark BD Green
     primaryLight: '#E6F5EC',   // Light green tint
-    primaryAlt: '#005A8B',     // BD Blue (secondary)
-    navBg: '#003B2C',          // Dark nav background
-    navBgLight: '#004F3A',     // Slightly lighter nav
-    accent: '#00A651',         // Accent/action color
+    primaryAlt: '#1B3A6B',     // BD Navy Blue
+    navBg: '#1B3A6B',          // BD Navy nav background
+    navBgLight: '#24508A',     // Slightly lighter navy
+    accent: '#E87722',         // BD Orange accent
     success: '#10b981',
     warning: '#f59e0b',
     danger: '#ef4444',
-    info: '#3b82f6',
+    info: '#4A90D9',
   },
 };
