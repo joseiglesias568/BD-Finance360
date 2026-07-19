@@ -27,13 +27,13 @@ export const branding: BrandingConfig = {
   //   BD Orange:    #E87722 — accent/highlight color
   //   BD Light Blue:#4A90D9 — secondary highlight
   colors: {
-    primary: '#00A94F',        // BD Green
-    primaryDark: '#007A33',    // Dark BD Green
-    primaryLight: '#E6F5EC',   // Light green tint
-    primaryAlt: '#1B3A6B',     // BD Navy Blue
-    navBg: '#1B3A6B',          // BD Navy nav background
-    navBgLight: '#24508A',     // Slightly lighter navy
-    accent: '#E87722',         // BD Orange accent
+    primary: '#1c519c',        // BD Blue (from official logo)
+    primaryDark: '#163d78',    // Darker BD Blue
+    primaryLight: '#e8f0fb',   // Light blue tint
+    primaryAlt: '#e6421e',     // BD Red (globe accent)
+    navBg: '#1c519c',          // BD Blue nav background
+    navBgLight: '#2460b5',     // Slightly lighter BD Blue
+    accent: '#e6421e',         // BD Red accent
     success: '#10b981',
     warning: '#f59e0b',
     danger: '#ef4444',

@@ -5,10 +5,10 @@
 /* CSS Variables for Finance360 - BD Branding */
 :root {
     /* BD Brand Colors (RGB format) */
-    --primary-navy: 27 58 107; /* #1B3A6B - BD Navy Blue */
-    --primary-navy-light: 36 80 138; /* #24508A - BD Navy Light */
-    --primary-green: 0 169 79; /* #00A94F - BD Green */
-    --primary-green-dark: 0 122 51; /* #007A33 - Dark BD Green */
+    --primary-navy: 28 81 156; /* #1c519c - BD Blue */
+    --primary-navy-light: 36 96 181; /* #2460b5 - BD Blue Light */
+    --primary-green: 28 81 156; /* #1c519c - BD Blue */
+    --primary-green-dark: 22 61 120; /* #163d78 - BD Blue Dark */
     --primary-green-light: 230 245 236; /* #E6F5EC - Light Green Tint */
 
     --secondary-green: 0 90 139; /* #005A8B - BD Blue */

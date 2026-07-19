@@ -158,7 +158,7 @@ export default function ManagementReportingLayout({
                                         onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
                                         className={`flex items-center space-x-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                                             isNavItemActive(item)
-                                                ? 'text-[#1B3A6B] bg-[#1B3A6B]/5'
+                                                ? 'text-[#1c519c] bg-[#1c519c]/5'
                                                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                                         }`}
                                     >
@@ -170,7 +170,7 @@ export default function ManagementReportingLayout({
                                         href={item.href || '#'}
                                         className={`flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                                             isNavItemActive(item)
-                                                ? 'text-[#1B3A6B] bg-[#1B3A6B]/5'
+                                                ? 'text-[#1c519c] bg-[#1c519c]/5'
                                                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                                         }`}
                                     >
@@ -182,7 +182,7 @@ export default function ManagementReportingLayout({
                                 {isNavItemActive(item) && (
                                     <motion.div
                                         layoutId="navActiveIndicator"
-                                        className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#1B3A6B]"
+                                        className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#1c519c]"
                                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                     />
                                 )}
@@ -207,13 +207,13 @@ export default function ManagementReportingLayout({
                                                         onClick={() => setActiveDropdown(null)}
                                                         className={`block px-4 py-3 transition-colors ${
                                                             isDropdownItemActive(subItem.href)
-                                                                ? 'bg-[#1B3A6B]/5 border-l-2 border-[#1B3A6B]'
+                                                                ? 'bg-[#1c519c]/5 border-l-2 border-[#1c519c]'
                                                                 : 'hover:bg-gray-50 border-l-2 border-transparent'
                                                         }`}
                                                     >
                                                         <div className="flex items-center justify-between">
                                                             <span className={`text-sm font-medium ${
-                                                                isDropdownItemActive(subItem.href) ? 'text-[#1B3A6B]' : 'text-gray-900'
+                                                                isDropdownItemActive(subItem.href) ? 'text-[#1c519c]' : 'text-gray-900'
                                                             }`}>
                                                                 {subItem.label}
                                                             </span>
@@ -260,7 +260,7 @@ export default function ManagementReportingLayout({
                                                                         }}
                                                                         className={`block px-2 py-1.5 rounded-md text-[13px] transition-colors ${
                                                                             isDropdownItemActive(subItem.href)
-                                                                                ? 'bg-[#1B3A6B]/5 text-[#1B3A6B] font-medium'
+                                                                                ? 'bg-[#1c519c]/5 text-[#1c519c] font-medium'
                                                                                 : subItem.comingSoon
                                                                                     ? 'text-gray-400 cursor-default'
                                                                                     : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
@@ -309,7 +309,7 @@ export default function ManagementReportingLayout({
                                     <p className="text-sm font-medium text-gray-900 leading-tight">{personaName}</p>
                                     <p className="text-[11px] text-gray-400 leading-tight">{personaTitle}</p>
                                 </div>
-                                <div className="w-9 h-9 rounded-full border-2 border-[#1B3A6B]/30 bg-[#1B3A6B] flex items-center justify-center">
+                                <div className="w-9 h-9 rounded-full border-2 border-[#1c519c]/30 bg-[#1c519c] flex items-center justify-center">
                                     <span className="text-white font-semibold text-xs">{personaInitials}</span>
                                 </div>
                             </button>
@@ -375,10 +375,10 @@ export default function ManagementReportingLayout({
                             className="absolute top-full left-0 right-0 bg-gradient-to-b from-white to-gray-50/80 border-b border-gray-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-sm z-30"
                         >
                             <div className="max-w-2xl mx-auto px-4 py-5">
-                                <div className="group relative rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,51,102,0.08)] border border-gray-200/80 hover:shadow-[0_4px_20px_rgba(0,51,102,0.12)] hover:border-[#1B3A6B]/20 transition-all duration-300 focus-within:shadow-[0_4px_20px_rgba(0,51,102,0.15)] focus-within:border-[#1B3A6B]/30">
+                                <div className="group relative rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,51,102,0.08)] border border-gray-200/80 hover:shadow-[0_4px_20px_rgba(0,51,102,0.12)] hover:border-[#1c519c]/20 transition-all duration-300 focus-within:shadow-[0_4px_20px_rgba(0,51,102,0.15)] focus-within:border-[#1c519c]/30">
                                     <div className="flex items-center">
                                         <div className="relative flex-1">
-                                                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px] text-gray-400 group-focus-within:text-[#1B3A6B] transition-colors duration-200" />
+                                                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px] text-gray-400 group-focus-within:text-[#1c519c] transition-colors duration-200" />
                                             <input
                                                 type="text"
                                                 value={searchQuery}
@@ -405,7 +405,7 @@ export default function ManagementReportingLayout({
                                                         setSearchQuery('');
                                                     }
                                                 }}
-                                                className="flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-[#1B3A6B] to-[#1B3A6B] hover:from-[#24508A] hover:to-[#1B3A6B] text-white text-sm font-semibold rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap"
+                                                className="flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-[#1c519c] to-[#1c519c] hover:from-[#2460b5] hover:to-[#1c519c] text-white text-sm font-semibold rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap"
                                             >
                                                 <Sparkles className="w-4 h-4" />
                                                 <span>AI Search</span>
@@ -472,7 +472,7 @@ export default function ManagementReportingLayout({
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={`flex items-center px-4 py-3 rounded-lg mb-1 transition-colors ${
                                         pathname === '/'
-                                            ? 'bg-[#1B3A6B]/20 text-[#F0F0F0]'
+                                            ? 'bg-[#1c519c]/20 text-[#F0F0F0]'
                                             : 'text-gray-300 hover:bg-white/10 hover:text-white'
                                     }`}
                                 >
@@ -490,7 +490,7 @@ export default function ManagementReportingLayout({
                                                     )}
                                                     className={`flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors ${
                                                         isNavItemActive(item)
-                                                            ? 'bg-[#1B3A6B]/20 text-[#F0F0F0]'
+                                                            ? 'bg-[#1c519c]/20 text-[#F0F0F0]'
                                                             : 'text-gray-300 hover:bg-white/10 hover:text-white'
                                                     }`}
                                                 >
@@ -516,7 +516,7 @@ export default function ManagementReportingLayout({
                                                                         onClick={() => setIsMobileMenuOpen(false)}
                                                                         className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-sm transition-colors ${
                                                                             isDropdownItemActive(subItem.href)
-                                                                                ? 'text-[#F0F0F0] bg-[#1B3A6B]/10'
+                                                                                ? 'text-[#F0F0F0] bg-[#1c519c]/10'
                                                                                 : 'text-gray-400 hover:text-white hover:bg-white/5'
                                                                         }`}
                                                                     >
@@ -537,7 +537,7 @@ export default function ManagementReportingLayout({
                                                     )}
                                                     className={`flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors ${
                                                         isNavItemActive(item)
-                                                            ? 'bg-[#1B3A6B]/20 text-[#F0F0F0]'
+                                                            ? 'bg-[#1c519c]/20 text-[#F0F0F0]'
                                                             : 'text-gray-300 hover:bg-white/10 hover:text-white'
                                                     }`}
                                                 >
@@ -574,7 +574,7 @@ export default function ManagementReportingLayout({
                                                                                 }}
                                                                                 className={`flex items-center justify-between px-4 py-2 rounded-lg text-sm transition-colors ${
                                                                                     isDropdownItemActive(subItem.href)
-                                                                                        ? 'text-[#F0F0F0] bg-[#1B3A6B]/10'
+                                                                                        ? 'text-[#F0F0F0] bg-[#1c519c]/10'
                                                                                         : subItem.comingSoon
                                                                                             ? 'text-gray-500 cursor-default'
                                                                                             : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -599,7 +599,7 @@ export default function ManagementReportingLayout({
                                                 onClick={() => setIsMobileMenuOpen(false)}
                                                 className={`flex items-center px-4 py-3 rounded-lg transition-colors ${
                                                     isNavItemActive(item)
-                                                        ? 'bg-[#1B3A6B]/20 text-[#F0F0F0]'
+                                                        ? 'bg-[#1c519c]/20 text-[#F0F0F0]'
                                                         : 'text-gray-300 hover:bg-white/10 hover:text-white'
                                                 }`}
                                             >
@@ -613,7 +613,7 @@ export default function ManagementReportingLayout({
                             {/* Mobile user section */}
                             <div className="p-4 border-t border-gray-700">
                                 <div className="flex items-center space-x-3 mb-3">
-                                    <div className="w-10 h-10 rounded-full border-2 border-[#1B3A6B]/50 bg-[#1B3A6B] flex items-center justify-center">
+                                    <div className="w-10 h-10 rounded-full border-2 border-[#1c519c]/50 bg-[#1c519c] flex items-center justify-center">
                                         <span className="text-white font-semibold text-sm">{personaInitials}</span>
                                     </div>
                                     <div>
