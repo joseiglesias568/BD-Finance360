@@ -133,7 +133,7 @@ export default function ManagementReportingLayout({
                                 unoptimized
                             />
                             <div className="flex flex-col">
-                                <h1 className="text-sm font-semibold text-[#00A651] tracking-wide leading-tight">
+                                <h1 className="text-sm font-semibold text-[#1c519c] tracking-wide leading-tight">
                                     BD Finance360
                                 </h1>
                                 <p className="text-[10px] text-gray-400 font-medium leading-tight tracking-wider uppercase hidden sm:block">
