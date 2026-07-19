@@ -59,7 +59,7 @@ export default function HomeClient({ kpiConfig, financials }: HomeClientProps) {
     return (
         <div className="flex-1 bg-gray-50/50">
             {/* Dark Green Hero Banner */}
-            <div className="relative overflow-hidden px-8" style={{ background: 'linear-gradient(135deg, #003B2C 0%, #003322 30%, #003B2C 70%, #003B2C 100%)' }}>
+            <div className="relative overflow-hidden px-8" style={{ background: 'linear-gradient(135deg, #1c519c 0%, #163d78 30%, #1c519c 70%, #1c519c 100%)' }}>
                 {/* Subtle texture overlay */}
                 <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
                 {/* Soft radial glow */}
@@ -84,7 +84,7 @@ export default function HomeClient({ kpiConfig, financials }: HomeClientProps) {
                                 <button
                                     onClick={handleAISearch}
                                     disabled={!searchQuery.trim()}
-                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 p-2.5 bg-[#F0F0F0] text-[#003B2C] rounded-xl hover:bg-[#003B2C] hover:text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 p-2.5 bg-[#F0F0F0] text-[#1c519c] rounded-xl hover:bg-[#1c519c] hover:text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                                 >
                                     <Sparkles className="w-5 h-5" />
                                 </button>
