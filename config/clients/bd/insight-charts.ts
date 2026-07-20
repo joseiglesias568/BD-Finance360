@@ -74,47 +74,45 @@ export const insightCharts: InsightChartsConfig = {
       },
     },
 
-    // 4. Adjusted EPS by Quarter vs Guidance
+    // 4. BioPharma Systems Revenue & GLP-1 Mix
     {
       id: 4,
-      title: 'Adjusted Diluted EPS vs FY2026 Guidance',
-      subtitle: '$ per share — quarterly (BD fiscal quarters)',
+      title: 'BioPharma Systems Revenue ($M) & GLP-1 Mix (%)',
+      subtitle: 'Quarterly — prefillable syringe & GLP-1 device category',
       chartType: 'composedBar',
       data: [
-        { q: 'Q1 FY25', comp: 2.97, target: 2.90 },    // [INTERPOLATED]
-        { q: 'Q2 FY25', comp: 3.06, target: 2.95 },    // [INTERPOLATED]
-        { q: 'Q3 FY25', comp: 3.18, target: 3.05 },    // [INTERPOLATED]
-        { q: 'Q4 FY25', comp: 2.69, target: 2.60 },    // [INTERPOLATED — seasonally lower Q4]
-        { q: 'Q1 FY26', comp: 3.35, target: 3.15 },    // [CITED:EC-Q2-26]
-        { q: 'Q2 FY26', comp: 3.58, target: 3.40 },    // [CITED:EC-Q2-26]
+        { q: 'Q1 FY25', members: 581, revShare: 18 },   // [INTERPOLATED]
+        { q: 'Q2 FY25', members: 598, revShare: 20 },   // [INTERPOLATED]
+        { q: 'Q3 FY25', members: 582, revShare: 22 },   // [INTERPOLATED]
+        { q: 'Q4 FY25', members: 563, revShare: 24 },   // [INTERPOLATED]
+        { q: 'Q1 FY26', members: 560, revShare: 26 },   // [INTERPOLATED — Q1 FY26 total]
+        { q: 'Q2 FY26', members: 573, revShare: 28 },   // [CITED:EC-Q2-26 +28% GLP-1 YoY]
       ],
-      breakdowns: {
-        ticket: '$3.58 Q2 FY26',
-        traffic: 'H1 FY26 YTD ~$6.93 adj. EPS',
-        revenue: 'FY2026 guidance: $12.52–$12.72',
-        margin: 'FY25 restated basis $11.90 New BD',
+      stats: {
+        netGrowth: '+28% GLP-1 YoY',
+        mopMix: '~28% GLP-1 mix Q2 FY26',
+        spendPerMember: '$2.3B FY25 total',
       },
     },
 
-    // 5. Adjusted Operating Margin by Quarter
+    // 5. Alaris Pump Placements vs Target
     {
       id: 5,
-      title: 'Adjusted Operating Margin Trend',
-      subtitle: '% — Quarterly Trend vs 25% FY2026 Target',
+      title: 'Alaris Pump Placements (Units/Qtr) vs Target',
+      subtitle: 'Consent decree remediation ramp — quarterly placements',
       chartType: 'composedBar',
       data: [
-        { q: 'Q1 FY25', comp: 25.0, target: 24.5 },    // [INTERPOLATED]
-        { q: 'Q2 FY25', comp: 25.0, target: 24.5 },    // [INTERPOLATED]
-        { q: 'Q3 FY25', comp: 25.0, target: 24.8 },    // [INTERPOLATED]
-        { q: 'Q4 FY25', comp: 25.0, target: 24.8 },    // [INTERPOLATED]
-        { q: 'Q1 FY26', comp: 23.5, target: 24.5 },    // [INTERPOLATED — lower seasonality]
-        { q: 'Q2 FY26', comp: 24.2, target: 25.0 },    // [CITED:EC-Q2-26]
+        { period: 'Q1 FY25', time: 10, target: 40 },    // [INTERPOLATED]
+        { period: 'Q2 FY25', time: 20, target: 50 },    // [INTERPOLATED]
+        { period: 'Q3 FY25', time: 35, target: 65 },    // [INTERPOLATED]
+        { period: 'Q4 FY25', time: 50, target: 80 },    // [INTERPOLATED]
+        { period: 'Q1 FY26', time: 65, target: 90 },    // [INTERPOLATED]
+        { period: 'Q2 FY26', time: 80, target: 100 },   // [CITED:EC-Q2-26 80 placements/qtr]
       ],
-      breakdowns: {
-        ticket: '24.2% Q2 FY26',
-        traffic: 'BD Excellence $150M run-rate savings achieved',
-        revenue: 'FY2026 target: ~25% adj. operating margin',
-        margin: 'Long-term target 25.5%+ as BD Excellence delivers $200M',
+      stats: {
+        primaryStat: '80 units Q2 FY26',
+        peakThroughput: 'Q4 FY26 consent decree target',
+        csatScore: '150-200/qtr FY27 goal',
       },
     },
 

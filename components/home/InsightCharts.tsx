@@ -214,9 +214,9 @@ function PortfolioRetentionChart({ data, stats }: { data: InsightChartDataPoint[
                 <ComposedChart data={data as any[]} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
                     <CartesianGrid vertical={false} stroke="#F3F4F6" />
                     <XAxis dataKey="q" tick={axisStyle} axisLine={false} tickLine={false} />
-                    <YAxis yAxisId="left" tick={axisStyle} axisLine={false} tickLine={false} domain={[6, 10]} tickFormatter={(v) => `${v}B`} />
-                    <YAxis yAxisId="right" orientation="right" tick={axisStyle} axisLine={false} tickLine={false} domain={[85, 98]} tickFormatter={(v) => `${v}%`} />
-                    <Tooltip {...tooltipStyle} formatter={(value: number, name: string) => [name === 'members' ? `${value}B sqft` : `${value}%`, name === 'members' ? 'Portfolio Size' : 'Client Retention']} />
+                    <YAxis yAxisId="left" tick={axisStyle} axisLine={false} tickLine={false} domain={[450, 650]} tickFormatter={(v) => `$${v}M`} />
+                    <YAxis yAxisId="right" orientation="right" tick={axisStyle} axisLine={false} tickLine={false} domain={[10, 35]} tickFormatter={(v) => `${v}%`} />
+                    <Tooltip {...tooltipStyle} formatter={(value: number, name: string) => [name === 'members' ? `$${value}M` : `${value}%`, name === 'members' ? 'BioPharma Revenue' : 'GLP-1 Mix']} />
                     <Area yAxisId="left" type="monotone" dataKey="members" stroke={COLORS.green} fill={COLORS.green} fillOpacity={0.12} strokeWidth={2} dot={{ r: 2, fill: COLORS.green }} />
                     <Line yAxisId="right" type="monotone" dataKey="revShare" stroke={COLORS.indigo} strokeWidth={2} dot={{ r: 2, fill: COLORS.indigo }} />
                 </ComposedChart>
@@ -260,18 +260,15 @@ function OccupancyChart({ data, stats }: { data: InsightChartDataPoint[]; stats?
                 <ComposedChart data={data as any[]} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
                     <CartesianGrid vertical={false} stroke="#F3F4F6" />
                     <XAxis dataKey="period" tick={axisStyle} axisLine={false} tickLine={false} />
-                    <YAxis yAxisId="left" tick={axisStyle} axisLine={false} tickLine={false} domain={[75, 95]} tickFormatter={(v) => `${v}%`} />
-                    <YAxis yAxisId="right" orientation="right" tick={axisStyle} axisLine={false} tickLine={false} domain={[50, 120]} tickFormatter={(v) => `${v}M`} />
+                    <YAxis yAxisId="left" tick={axisStyle} axisLine={false} tickLine={false} domain={[0, 120]} tickFormatter={(v) => `${v}`} />
                     <Tooltip
                         {...tooltipStyle}
                         formatter={(value: number, name: string) => {
-                            if (name === 'throughput') return [`${value}M sqft`, 'Leasing Vol'];
-                            return [`${value}%`, name === 'time' ? 'Occupancy' : 'Target'];
+                            return [`${value} units`, name === 'time' ? 'Placements' : 'Target'];
                         }}
                     />
-                    <Area yAxisId="right" type="monotone" dataKey="throughput" stroke={COLORS.teal} fill={COLORS.teal} fillOpacity={0.1} strokeWidth={0} />
-                    <Line yAxisId="left" type="monotone" dataKey="time" stroke={COLORS.green} strokeWidth={2.5} dot={{ r: 2, fill: COLORS.green }} />
-                    <Line yAxisId="left" type="monotone" dataKey="target" stroke={COLORS.grayLight} strokeWidth={1.5} strokeDasharray="4 3" dot={false} />
+                    <Bar yAxisId="left" dataKey="time" fill={COLORS.green} radius={[3, 3, 0, 0]} barSize={20} opacity={0.85} />
+                    <Line yAxisId="left" type="monotone" dataKey="target" stroke={COLORS.amber} strokeWidth={1.5} strokeDasharray="4 3" dot={false} />
                 </ComposedChart>
             </ResponsiveContainer>
             {stats && (
