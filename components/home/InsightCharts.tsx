@@ -363,7 +363,7 @@ function MarginChart({ waterfallSteps, stats }: { waterfallSteps: WaterfallStep[
                 <BarChart data={waterfallSteps} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
                     <CartesianGrid vertical={false} stroke="#F3F4F6" />
                     <XAxis dataKey="name" tick={{ fontSize: 9, fill: '#6B7280' }} axisLine={false} tickLine={false} />
-                    <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={(v) => `${v}%`} domain={[0, 14]} />
+                    <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={(v) => `${v}%`} domain={[0, 30]} />
                     <Tooltip
                         {...tooltipStyle}
                         formatter={(value: number, name: string) => {
@@ -523,7 +523,7 @@ function InterestRateChart({ data, stats }: { data: InsightChartDataPoint[]; sta
                 <LineChart data={data as any[]} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
                     <CartesianGrid vertical={false} stroke="#F3F4F6" />
                     <XAxis dataKey="period" tick={axisStyle} axisLine={false} tickLine={false} />
-                    <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={(v) => `${v.toFixed(1)}%`} domain={[2, 6]} />
+                    <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={(v) => `${v.toFixed(1)}x`} domain={[2.0, 3.5]} />
                     <Tooltip {...tooltipStyle} formatter={(value: number, name: string) => [`${value.toFixed(2)}%`, name === 'time' ? 'Fed Funds Rate' : 'Neutral Rate']} />
                     <Line type="monotone" dataKey="time" stroke={COLORS.red} strokeWidth={2} dot={{ r: 2.5, fill: COLORS.red }} />
                     <Line type="monotone" dataKey="target" stroke={COLORS.grayLight} strokeWidth={1.5} strokeDasharray="4 3" dot={false} />

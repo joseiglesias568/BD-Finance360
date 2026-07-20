@@ -139,5 +139,132 @@ export const insightCharts: InsightChartsConfig = {
         margin: 'Net leverage path: 2.9x → 2.5x target by FY27',
       },
     },
+
+    // 7. Alaris Placement Ramp — consent decree remediation progress
+    {
+      id: 7,
+      title: 'Alaris Placement Ramp vs Target',
+      subtitle: 'Units/Quarter — Consent Decree Remediation',
+      chartType: 'composedBar',
+      waterfallSteps: [
+        { name: 'FY24 base', value: 22.0, base: 0,    color: '#1c519c' },
+        { name: 'BD Simplify', value: 1.4, base: 22.0, color: '#10B981' },
+        { name: 'Volume Lev.', value: 0.8, base: 23.4, color: '#10B981' },
+        { name: 'China VoBP', value: -0.7, base: 24.2, color: '#EF4444' },
+        { name: 'FX Impact',  value: -0.4, base: 23.5, color: '#EF4444' },
+        { name: 'FY26E',      value: 24.5, base: 0,    color: '#1c519c' },
+      ],
+      data: [
+        { q: 'Q1 FY25', comp: 10,  target: 40  },
+        { q: 'Q2 FY25', comp: 20,  target: 50  },
+        { q: 'Q3 FY25', comp: 35,  target: 65  },
+        { q: 'Q4 FY25', comp: 50,  target: 80  },
+        { q: 'Q1 FY26', comp: 65,  target: 90  },
+        { q: 'Q2 FY26', comp: 80,  target: 100 },
+      ],
+      stats: { personnelCost: 'Q4 FY26 target', laborPctRev: '$120M CapEx committed', target: '150-200/qtr FY27' },
+    },
+
+    // 8. BD Simplify Cost Savings Ramp
+    {
+      id: 8,
+      title: 'BD Simplify Cost Savings Ramp',
+      subtitle: '$M Quarterly Run-Rate — Road to $300M+ Annual Target',
+      chartType: 'composedBar',
+      data: [
+        { q: 'Q1 FY25', cold: 20, hot: 10, ticket: 22.0 },
+        { q: 'Q2 FY25', cold: 35, hot: 20, ticket: 22.5 },
+        { q: 'Q3 FY25', cold: 55, hot: 30, ticket: 23.0 },
+        { q: 'Q4 FY25', cold: 75, hot: 40, ticket: 23.5 },
+        { q: 'Q1 FY26', cold: 85, hot: 50, ticket: 23.8 },
+        { q: 'Q2 FY26', cold: 90, hot: 60, ticket: 24.2 },
+      ],
+      stats: { coldTicket: '$120M/qtr run-rate', hotTicket: '$480M annualized', mixShiftImpact: '$300M+ FY27 target' },
+    },
+
+    // 10. Interventional Organic Growth
+    {
+      id: 10,
+      title: 'Interventional Segment Organic Growth',
+      subtitle: '% FXN — Quarterly vs 6% FY26 Target',
+      chartType: 'composedBar',
+      data: [
+        { q: 'Q1 FY25', comp: 4.5, target: 5.0 },
+        { q: 'Q2 FY25', comp: 4.8, target: 5.0 },
+        { q: 'Q3 FY25', comp: 5.2, target: 5.5 },
+        { q: 'Q4 FY25', comp: 5.5, target: 5.5 },
+        { q: 'Q1 FY26', comp: 5.9, target: 6.0 },
+        { q: 'Q2 FY26', comp: 6.2, target: 6.0 },
+      ],
+      breakdowns: { ticket: '+6.2% FXN Q2 FY26', traffic: 'FY26 target: 6%+', morning: 'Vascular & EP gaining share', afternoon: '~22% of BD revenue' },
+    },
+
+    // 11. Free Cash Flow quarterly trend
+    {
+      id: 11,
+      title: 'Free Cash Flow by Quarter',
+      subtitle: '$M — vs $3.0B FY26 Annual Target',
+      chartType: 'composedBar',
+      data: [
+        { q: 'Q1 FY25', comp: 580,  target: 600 },
+        { q: 'Q2 FY25', comp: 740,  target: 720 },
+        { q: 'Q3 FY25', comp: 810,  target: 800 },
+        { q: 'Q4 FY25', comp: 670,  target: 680 },
+        { q: 'Q1 FY26', comp: 490,  target: 520 },
+        { q: 'Q2 FY26', comp: 605,  target: 620 },
+      ],
+      breakdowns: { ticket: 'H1 FY26: $1,095M', traffic: 'FY26 target: $3.0B', morning: '85%+ FCF conversion target', afternoon: 'Supports <2.5x leverage by FY27' },
+    },
+
+    // 12. Net Leverage trend
+    {
+      id: 12,
+      title: 'Net Debt / EBITDA Leverage Trend',
+      subtitle: 'x — Path to <2.5x Target by FY27',
+      chartType: 'lineChart',
+      data: [
+        { period: 'Q1 FY25', time: 3.0, target: 2.8 },
+        { period: 'Q2 FY25', time: 2.9, target: 2.8 },
+        { period: 'Q3 FY25', time: 2.8, target: 2.7 },
+        { period: 'Q4 FY25', time: 2.7, target: 2.6 },
+        { period: 'Q1 FY26', time: 2.6, target: 2.6 },
+        { period: 'Q2 FY26', time: 2.5, target: 2.5 },
+      ],
+      stats: { primaryStat: '2.5x Q2 FY26', peakThroughput: '<2.5x by FY27', csatScore: 'IG rated (all 3 agencies)' },
+    },
+
+    // 14. BD Revenue by Segment Mix
+    {
+      id: 14,
+      title: 'Revenue by Segment Mix (%)',
+      subtitle: 'Quarterly — Medical Essentials | Interventional | Connected Care | BioPharma',
+      chartType: 'stackedBar',
+      data: [
+        { q: 'Q1 FY25', NA: 34, Intl: 29, Channel: 25 },
+        { q: 'Q2 FY25', NA: 35, Intl: 28, Channel: 25 },
+        { q: 'Q3 FY25', NA: 33, Intl: 30, Channel: 25 },
+        { q: 'Q4 FY25', NA: 33, Intl: 30, Channel: 25 },
+        { q: 'Q1 FY26', NA: 34, Intl: 28, Channel: 26 },
+        { q: 'Q2 FY26', NA: 33, Intl: 29, Channel: 26 },
+      ],
+      growth: { na: 'Med. Essentials 33%', intl: 'Interventional 29%', channel: 'Connected + BioPharma 38%' },
+    },
+
+    // 15. Adj. EPS quarterly trajectory
+    {
+      id: 15,
+      title: 'Adjusted Diluted EPS Trajectory',
+      subtitle: '$/share — Quarterly Actuals vs FY26 Guidance ($13.25–$13.50)',
+      chartType: 'composedBar',
+      data: [
+        { q: 'Q1 FY25', comp: 2.97, target: 3.10 },
+        { q: 'Q2 FY25', comp: 3.06, target: 3.10 },
+        { q: 'Q3 FY25', comp: 3.18, target: 3.20 },
+        { q: 'Q4 FY25', comp: 2.69, target: 2.80 },
+        { q: 'Q1 FY26', comp: 3.35, target: 3.30 },
+        { q: 'Q2 FY26', comp: 3.58, target: 3.40 },
+      ],
+      breakdowns: { ticket: '$3.58 Q2 FY26', traffic: 'H1 FY26 YTD: $6.93', morning: 'FY26E: $13.25–$13.50', afternoon: '8–10% EPS CAGR target' },
+    },
   ],
 };
