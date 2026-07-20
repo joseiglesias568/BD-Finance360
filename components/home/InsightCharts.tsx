@@ -50,13 +50,13 @@ const tooltipStyle = {
     labelStyle: { color: '#fff', fontSize: 11, fontWeight: 600 },
 };
 
-// ── 1. Global network revenue share (id=1) — Horizontal bar: share-of-market breakdown ──
+// ── 1. BD Segment Revenue Contribution (id=1) — Horizontal bar ──
 
 function MarketShareChart({ data, trendData }: { data: InsightChartDataPoint[]; trendData?: InsightChartTrendPoint[] }) {
     return (
         <div className="space-y-2">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Global U.S. Network Airline Revenue Share</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Segment Revenue Contribution</span>
                 <span className="text-[10px] text-gray-400">FY2025</span>
             </div>
             <ResponsiveContainer width="100%" height={130}>
@@ -97,16 +97,15 @@ function MarketShareChart({ data, trendData }: { data: InsightChartDataPoint[]; 
     );
 }
 
-// ── 2. Industry revenue / volume trend (id=2) — Quarterly trend with recovery trajectory ─────
+// ── 2. BD Organic Revenue Growth by Segment (id=2) ─────
 
 function TransactionVolumeChart({ data, breakdowns }: { data: InsightChartDataPoint[]; breakdowns?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Industry Passenger Revenue (% YoY)</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Organic Revenue Growth by Segment (% FXN)</span>
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Actual</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-amber-400 rounded" style={{ borderTop: '1px dashed #F59E0B' }} /><span className="text-[9px] text-gray-400">Forecast</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
                 </div>
             </div>
@@ -152,17 +151,17 @@ function TransactionVolumeChart({ data, breakdowns }: { data: InsightChartDataPo
     );
 }
 
-// ── 3. Revenue by Segment (id=3) — Stacked bar by segment ───────────────────────
+// ── 3. BD Total Revenue by Quarter (id=3) ───────────────────────
 
 function RevenueChart({ data, growth }: { data: InsightChartDataPoint[]; growth?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Revenue by Segment ($B)</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Total Revenue by Quarter ($M)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Mainline</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Regional</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">Loyalty / Other</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Med. Essentials</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Interventional</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">Other Segments</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -199,16 +198,16 @@ function RevenueChart({ data, growth }: { data: InsightChartDataPoint[]; growth?
     );
 }
 
-// ── 4. Loyalty & digital engagement (id=4) — Area chart: portfolio + retention ─
+// ── 4. BioPharma Systems GLP-1 Revenue & Share (id=4) ─
 
 function PortfolioRetentionChart({ data, stats }: { data: InsightChartDataPoint[]; stats?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Managed Portfolio (B sqft) & Retention (%)</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BioPharma Systems Revenue ($M) & GLP-1 Mix (%)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Portfolio</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-indigo-500" /><span className="text-[9px] text-gray-400">Retention</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Revenue ($M)</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-indigo-500" /><span className="text-[9px] text-gray-400">GLP-1 Mix %</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -244,17 +243,17 @@ function PortfolioRetentionChart({ data, stats }: { data: InsightChartDataPoint[
     );
 }
 
-// ── 5. Office Occupancy & Leasing (id=5) — Line chart: occupancy trend ──────
+// ── 5. Alaris Pump Placements vs Target (id=5) ──────
 
 function OccupancyChart({ data, stats }: { data: InsightChartDataPoint[]; stats?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Office Occupancy Rate (%) & Leasing Volume</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Alaris Pump Placements (Units/Qtr) vs Target</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Occupancy</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Placements</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-teal-400 opacity-40" /><span className="text-[9px] text-gray-400">Leasing Vol</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-teal-400 opacity-40" /><span className="text-[9px] text-gray-400">Ramp Vol</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -297,16 +296,16 @@ function OccupancyChart({ data, stats }: { data: InsightChartDataPoint[]; stats?
     );
 }
 
-// ── 6. Regional Revenue & Market Position (id=6) — Dual: revenue trend + competitive ───
+// ── 6. FX Translation Impact & Revenue Growth (id=6) ───
 
 function RegionalChart({ data, stats }: { data: InsightChartDataPoint[]; stats?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Regional Revenue Growth & Market Position</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Revenue Growth vs FX Translation Impact</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#003087]" /><span className="text-[9px] text-gray-400">BD</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-red-400" /><span className="text-[9px] text-gray-400">Peer</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">BD Revenue</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-red-400" /><span className="text-[9px] text-gray-400">FX Headwind</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -350,14 +349,14 @@ function RegionalChart({ data, stats }: { data: InsightChartDataPoint[]; stats?:
     );
 }
 
-// ── 7. Operating Margin (id=7) — Waterfall / bridge showing margin recovery ───
+// ── 7. BD Adj. Operating Margin Bridge (id=7) ───
 
 function MarginChart({ waterfallSteps, stats }: { waterfallSteps: WaterfallStep[]; stats?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Margin Bridge: FY24 &rarr; FY26E</span>
-                <span className="text-[10px] text-gray-400">Operating Margin %</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Adj. Operating Margin Bridge: FY24 &rarr; FY26E</span>
+                <span className="text-[10px] text-gray-400">Margin %</span>
             </div>
             <ResponsiveContainer width="100%" height={140}>
                 <BarChart data={waterfallSteps} margin={{ top: 5, right: 10, left: -10, bottom: 0 }}>
@@ -401,17 +400,17 @@ function MarginChart({ waterfallSteps, stats }: { waterfallSteps: WaterfallStep[
     );
 }
 
-// ── 8. Service Line Mix (id=8) — Stacked area: transactional vs resilient mix ────
+// ── 8. BD Simplify Cost Savings Ramp (id=8) ────
 
 function ServiceMixChart({ data, stats }: { data: InsightChartDataPoint[]; stats?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Transactional vs Resilient Revenue Mix</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Simplify Savings Ramp ($M) & Margin Expansion</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Resilient</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">Transact.</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Margin</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Manuf. Savings</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">SG&A Savings</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Adj. Margin %</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -454,13 +453,13 @@ function ServiceMixChart({ data, stats }: { data: InsightChartDataPoint[]; stats
     );
 }
 
-// ── 10. Digital Transformation Progress (id=10) — Platform adoption progress ────────────
+// ── 10. Interventional Organic Growth (id=10) ────────────
 
 function DigitalProgressChart({ data, breakdowns }: { data: InsightChartDataPoint[]; breakdowns?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Digital Transformation Progress</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Interventional Organic Growth (% FXN) vs Target</span>
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Adoption</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
@@ -507,16 +506,16 @@ function DigitalProgressChart({ data, breakdowns }: { data: InsightChartDataPoin
     );
 }
 
-// ── 12. Interest Rate Sensitivity (id=12) — Rate trend & demand proxy ─────────────
+// ── 12. Net Debt/EBITDA Leverage Trend (id=12) ─────────────
 
 function InterestRateChart({ data, stats }: { data: InsightChartDataPoint[]; stats?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Fed Funds Rate vs. Industry Demand Proxy</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Net Debt / EBITDA Leverage Trend (x)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-red-500 rounded" /><span className="text-[9px] text-gray-400">Fed Rate</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Neutral</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-[#1c519c] rounded" /><span className="text-[9px] text-gray-400">Leverage</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -551,17 +550,17 @@ function InterestRateChart({ data, stats }: { data: InsightChartDataPoint[]; sta
     );
 }
 
-// ── 14. Revenue by Service Line (id=14) — Revenue by service mix ────────────────────
+// ── 14. BD Revenue Mix by Segment (id=14) ────────────────────
 
 function ServiceLineChart({ data, growth }: { data: InsightChartDataPoint[]; growth?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Revenue by Service Line (%)</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Revenue Mix by Segment (%)</span>
                 <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Leasing</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Cap Mkts</span></div>
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">FM</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Med. Essentials</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-blue-500" /><span className="text-[9px] text-gray-400">Interventional</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-amber-400" /><span className="text-[9px] text-gray-400">Connected + BioPharma</span></div>
                 </div>
             </div>
             <ResponsiveContainer width="100%" height={140}>
@@ -598,13 +597,13 @@ function ServiceLineChart({ data, growth }: { data: InsightChartDataPoint[]; gro
     );
 }
 
-// ── 15. Non-GAAP EPS (id=15) — Quarterly EPS trajectory ──────────────────────
+// ── 15. BD Adjusted EPS Trajectory (id=15) ──────────────────────
 
 function EPSChart({ data, breakdowns }: { data: InsightChartDataPoint[]; breakdowns?: Record<string, string> }) {
     return (
         <div className="space-y-1">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Non-GAAP EPS Trajectory ($/share)</span>
+                <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">BD Adjusted Diluted EPS Trajectory ($/share)</span>
                 <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm bg-[#1c519c]" /><span className="text-[9px] text-gray-400">Actual</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-0.5 bg-gray-300 rounded" /><span className="text-[9px] text-gray-400">Target</span></div>
