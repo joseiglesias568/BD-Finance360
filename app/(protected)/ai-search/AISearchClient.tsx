@@ -495,7 +495,7 @@ export default function AISearchClient() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <span className="text-xs font-semibold text-[#1c519c]">Delta AI</span>
+                          <span className="text-xs font-semibold text-[#1c519c]">BD AI</span>
                           <span className="text-[10px] text-gray-400">{formatTimestamp(msg.createdAt)}</span>
                         </div>
                         <div className="bg-white rounded-2xl rounded-tl-md px-5 py-4 text-sm text-gray-800 border border-gray-100 shadow-sm">
@@ -540,7 +540,7 @@ export default function AISearchClient() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1.5">
-                          <span className="text-xs font-semibold text-[#1c519c]">Delta AI</span>
+                          <span className="text-xs font-semibold text-[#1c519c]">BD AI</span>
                           {status === 'streaming' && (
                             <span className="text-[10px] text-[#1c519c] font-medium flex items-center gap-1">
                               <span className="w-1.5 h-1.5 bg-[#1c519c] rounded-full animate-pulse" />
@@ -580,7 +580,7 @@ export default function AISearchClient() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-xs font-semibold text-[#1c519c]">Delta AI</span>
+                        <span className="text-xs font-semibold text-[#1c519c]">BD AI</span>
                         <span className="text-[10px] text-[#1c519c] font-medium flex items-center gap-1">
                           <span className="w-1.5 h-1.5 bg-[#1c519c] rounded-full animate-pulse" />
                           Analyzing
